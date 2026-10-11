@@ -23,6 +23,8 @@ _Canonical research document. Version 3.2, 2026-10-11 (scope narrowed to a sourc
 | `docs/evidence_extraction_protocol.md` | **Current work:** source-grounded extraction and pilot |
 | `docs/evidence_extraction_protocol_v1.1.md` | Protocol v1.1 (frozen), used for round 2 |
 | `docs/feasibility_report.md` | **Counts-only feasibility report** over the 48 practice lemmas |
+| `paper/main.tex` | Paper **draft** built from the feasibility report (spot check pending) |
+| `README.md` | Division of work: Part 1 (assistant, done), Part 2 (project lead) |
 
 ---
 

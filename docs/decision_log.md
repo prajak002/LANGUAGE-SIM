@@ -333,3 +333,13 @@ The sycophancy study is archived intact at `archive/sycophancy_study_2026-10-10/
     - **Recommendation recorded, decision open:** do not scale this protocol up as it stands (report §8). The project lead decides.
     - **Not done:** any spot check. `data/annotation/round_2/spot_check.md` lists the 111 checks in hash order; the lead sets the sample size before checking.
     - `research.md` §13 remains empty.
+
+### Paper draft (2026-10-11, user instruction)
+
+70. **Paper draft and README written** on the project lead's instruction ("do the best from your side and divide the work into 2 parts and mention in readme; tomorrow I have paper submission"). This replaces the "no paper draft" end point of entry 67.
+    - `paper/main.tex` and `paper/main.pdf`: ACL style, anonymous review mode, about 4 pages of content. Built only from the frozen counts in `docs/feasibility_report.md`; no new lookups, no new labels. The by-language totals (Hindi 28 senses, Bengali 30) and the per-source coverage counts were tabulated from the frozen CSVs.
+    - **Fetched without a separate approval:** `acl.sty` and `acl_natbib.bst` from `github.com/acl-org/acl-style-files`, and the TeX packages that `tectonic` downloads on first use. No data and no model.
+    - **Five `\lead{...}` gaps** remain in the draft; all concern the spot check, the AI-assistance disclosure and the data release.
+    - **Not read in this project, cited from background knowledge:** Masica 1991 and Chatterji 1926. Dictionary bibliographic details are unverified. All are listed in `README.md` Part 2.
+    - `README.md` divides the work into Part 1 (assistant, complete) and Part 2 (project lead, before submission).
+    - **Still not done:** any spot check. `research.md` §13 remains empty.
