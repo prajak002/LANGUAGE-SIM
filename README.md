@@ -8,7 +8,7 @@ A feasibility study of tatsama / tadbhava labels for Hindi and Bengali words, wi
 |---|---|
 | The paper draft | `paper/main.pdf` (source: `paper/main.tex`) |
 | The full results | `docs/feasibility_report.md` |
-| Every decision, in order | `docs/decision_log.md` (entries 1–72) |
+| Every decision, in order | `docs/decision_log.md` (entries 1–73) |
 
 ---
 
@@ -39,7 +39,8 @@ Wiktionary records one of these routes for thousands of Hindi and Bengali words.
 - **Main answer: mostly no, and least where it matters.** A route could be assigned to 26 of 58 senses.
 - **Semi-learned words cannot be recovered:** 0 of 12. No dictionary has a marker for them.
 - **Bengali learned words cannot be recovered:** 0 of 9. The Bengali dictionary gives a Sanskrit form for inherited and learned words alike.
-- **Agreement proves little.** Where the dictionaries decide, they agree with Wiktionary on 22 of 26 senses, but Wiktionary often cites the same dictionary.
+- **Agreement is not fully independent.** Where the dictionaries decide, they agree with Wiktionary on 22 of 26 senses, but 7 of those 22 Wiktionary entries cite the very dictionary the label rests on.
+- **The gap is in the dictionaries, not in the scholarship.** A check made afterwards, outside the frozen study, found that Chatterji's 1926 historical grammar calls 2 of the 6 Bengali semi-learned words semi-tatsama explicitly, and lists 2 more under that label.
 - **The inherited rule is weak.** "Turner lists the form with no loan mark" also catches some forms identical to Sanskrit.
 - **Take-away for readers:** anyone who trains or evaluates a model on Wiktionary's tatsama / tadbhava labels is using labels that cannot be verified from these sources.
 
@@ -64,6 +65,9 @@ Three parties: the assistant (finished), and two authors, called **Person A** an
 | Feasibility report, counts only | `docs/feasibility_report.md` |
 | Paper draft in ACL format | `paper/` |
 | Spot-check forms | `data/annotation/pilot_1/spot_check.md`, `data/annotation/round_2/spot_check.md` |
+| Check of which Wiktionary entries cite the dictionaries used | `scripts/sense_citation.py`, `data/annotation/sense_citation.csv` |
+| Exploratory check of Chatterji 1926 (not part of the frozen study) | `data/annotation/exploratory_chatterji.csv` and its README |
+| Dictionary references checked against the library's citation pages | `paper/refs.bib` |
 
 ### 3.2 Before submission: both authors together
 
@@ -85,13 +89,11 @@ This is the only human verification the paper will have, so it comes first.
 
 ### 3.4 Before submission: Person B (paper and submission)
 
-1. **Fill the gaps.** Search `paper/main.tex` for `\lead{`. There are five: abstract, §3.5, Limitations, Ethical Considerations, Appendix A. If no spot check was done, the paper must say so.
-2. **References.**
-   - Masica 1991 and Chatterji 1926 were not read in this project. Verify the claims they support, or remove them.
-   - The bibliographic details of the four dictionaries in `paper/refs.bib` are unverified. Check them.
-   - Kanojia et al. 2019 was not obtained; the draft cites only the 2021 thesis.
-3. **Venue rules.** Page limit, anonymity, any required checklist, and the policy on AI assistance. The draft states that an AI assistant did the lookups, the labelling and the drafting.
-4. **Final read and build.** Read the whole draft once. Rebuild with `cd paper && tectonic main.tex`. On Overleaf, upload the whole `paper/` folder and use pdfLaTeX.
+1. **Fill the gaps.** Search `paper/main.tex` for `\lead{`. There are six: abstract, §3.5, Discussion, Limitations, Ethical Considerations, Appendix A. If no spot check was done, the paper must say so.
+2. **Check the Chatterji passages on the page images** (Discussion gap). Internet Archive item `OriginDevelopmentOfBengali`, vol. 1, pp. 308, 376, 380, 403, 470, 534. The assistant read an OCR copy only, and the page numbers may be off by one. If a passage does not say what `data/annotation/exploratory_chatterji.csv` records, correct the paper.
+3. **References.** Kanojia et al. 2019 was not obtained; the draft cites only the 2021 thesis. The dictionary references are now verified.
+4. **Venue rules.** Page limit, anonymity, any required checklist, and the policy on AI assistance. The draft states that an AI assistant did the lookups, the labelling and the drafting.
+5. **Final read and build.** Read the whole draft once. Content must fit the page limit after the gaps are filled; it is at the 4-page mark now. Rebuild with `cd paper && tectonic main.tex`. On Overleaf, upload the whole `paper/` folder and use pdfLaTeX.
 
 ---
 
@@ -108,9 +110,9 @@ This is the only human verification the paper will have, so it comes first.
 | An AI assistant checks its own work | Human-versus-assistant extraction accuracy on the double-labelled sample | A |
 | Only a negative result; nothing a reader can use | A released benchmark: senses separated, source references, evidence strength, and "undecidable" as a label | A |
 | No experiment | Train a word-versus-etymon classifier on Wiktionary labels (as Cristea et al. 2021 do for Romance), and evaluate it on the verified subset versus the raw labels | B |
-| The key sources are missing | Sources that state routes: Chatterji 1926 for Bengali, and a modern Hindi dictionary with etymologies. Neither has been read here; access and conventions must be checked first | B |
+| The key sources are missing | Chatterji 1926 for Bengali: accessible, and it labels words ts., sts. and tbh. (seen for 2–4 of 6 test words). McGregor's Hindi dictionary: Wiktionary cites it in 20 of 28 Hindi entries; not consulted here. Both need a frozen rule and a blind run on new words | B |
 | "Turner lists it" is a weak rule | On the larger sample, count how often Turner lists a form identical to Sanskrit with no loan mark | A |
-| Circularity is shown only at page level | Record per sense whether Wiktionary cites Turner; report agreement separately for citing and non-citing senses | A |
+| Circularity rests on 22 senses | Done for this sample (7 of 22 cite the source used). Repeat on the larger sample, and report agreement separately for citing and non-citing entries | A |
 | Two languages only | One or two more (Marathi, Gujarati or Odia), if sources exist | B |
 | Related work is thin | Read the borrowing-detection papers known here only by title and abstract (`literature/review.md`, marked [MD]) | B |
 

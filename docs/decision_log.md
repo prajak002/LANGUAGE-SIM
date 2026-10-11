@@ -345,3 +345,23 @@ The sycophancy study is archived intact at `archive/sycophancy_study_2026-10-10/
     - **Still not done:** any spot check. `research.md` §13 remains empty.
 71. **README Part 2 rewritten for two authors** on the project lead's instruction: plain-language statement of the paper's point, tasks for Person A (evidence and data) and Person B (paper and submission), and a table of likely reviewer objections with what would answer each. Both authors spot-check the same rows independently, so the paper can report one human agreement figure. The table is a plan only: no experiment, model call or data fetch in it is authorised. No claim is made that any change secures acceptance.
 72. **README restructured** on the project lead's instruction: background and the paper's point first, then the division of work (assistant; both authors; Person A; Person B), then the longer plan and the repository rules. No content of the study changed.
+
+### Deepening pass (2026-10-11, user instruction "start work on it very deeply")
+
+73. **Work done without new labels or new frozen-study lookups.**
+    - **Error found and corrected.** The report's "8 of 17 agreeing rows are on pages that cite Turner" counted citations in other languages' sections of the same Wiktionary page. `scripts/sense_citation.py` recounts inside the Hindi or Bengali section from the stored pages: 7 of the 22 agreeing rows cite the dictionary the label rests on (4 the same Turner article; 3 Platts). The report keeps the old sentence struck through and adds §10; the paper is updated.
+    - **New observation:** 20 of 28 Hindi rows are in entries citing McGregor's dictionary, which was not consulted.
+    - **Dictionary references verified** against four DSAL citation pages (4 page fetches plus 3 failed URL guesses). Turner's title has no "the"; publisher details added.
+    - **Chatterji 1926 located and partly read.** Internet Archive item `OriginDevelopmentOfBengali` (Public Domain Mark on the item page). Its catalogue record and the OCR text of both volumes were fetched to a temporary folder; nothing is stored in the repository except page references and paraphrases. Read: vol. 1, Appendix D, §111 (definitions), and the passages for the 6 Bengali semi-learned rows.
+    - **Exploratory result, outside the frozen study:** Chatterji labels 2 of the 6 explicitly as semi-tatsama, lists 2 more under that label (reading uncertain), and 2 were not found. Recorded in `data/annotation/exploratory_chatterji.csv`. It was not blind and followed no frozen rule; it changes no count. Searches for the other Bengali words were run and are not reported as results.
+    - **Masica 1991 removed** from the paper; the definitions now cite Chatterji §111, which was read.
+    - **Paper:** abstract, agreement paragraph, discussion and limitations updated; one new `\lead{}` gap (check the Chatterji passages on page images). Content trimmed to the 4-page mark.
+    - **Not done, and not authorised:** a larger sample, any classifier or model experiment, any re-extraction with Chatterji or McGregor. `research.md` §13 remains empty.
+
+### Cross-lingual audit (2026-10-11, user instruction)
+
+74. **Cross-lingual audit plan v1.0 frozen** before any size, member list or page was retrieved. `docs/crosslingual_audit_plan.md`, SHA-256 `fb4a595ec9ca24ca1be50d023014c200bcb670dd71e3f7287cf5a65b23eacbd1`, read-only.
+    - **Authorisation:** the project lead's instruction "works continuously add huge dataset, multiple cross-language lingual work on more global languages". This is taken as approval for a large, read-only Wiktionary fetch. It is **not** taken as approval for model calls, classifier experiments, large-scale dictionary queries or recruiting annotators.
+    - **What it is:** an automatic audit of Wiktionary's own route records (category against template, homographs, citations) in every candidate pair that passes the frozen size rule. It validates no label.
+    - **Sizing (category metadata, 2026-10-11T15:13Z):** 32 candidate pairs; **17 included**: Sanskrit → Hindi, Bengali, Marathi, Gujarati, Punjabi, Odia, Assamese, Urdu; Latin → Spanish, Portuguese, French, Italian, Romanian, Catalan, Galician; Ancient Greek → Greek; Old Armenian → Armenian. The 15 excluded pairs and their sizes are in `data/raw/wiktionary/crosslingual_v1/sizes.csv`.
+    - **Fetch:** `scripts/fetch_crosslingual.py`; requests 1.5 s apart, `maxlag=5`, User-Agent without personal contact.

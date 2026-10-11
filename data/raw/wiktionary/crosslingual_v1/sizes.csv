@@ -1,0 +1,97 @@
+ancestor,ancestor_code,lang,category,category_name,exists,pages,pair_included
+Sanskrit,sa,Hindi,LRN,Hindi learned borrowings from Sanskrit,True,1337,True
+Sanskrit,sa,Hindi,SEMI,Hindi semi-learned borrowings from Sanskrit,True,98,True
+Sanskrit,sa,Hindi,INH,Hindi terms inherited from Sanskrit,True,2241,True
+Sanskrit,sa,Bengali,LRN,Bengali learned borrowings from Sanskrit,True,1075,True
+Sanskrit,sa,Bengali,SEMI,Bengali semi-learned borrowings from Sanskrit,True,44,True
+Sanskrit,sa,Bengali,INH,Bengali terms inherited from Sanskrit,True,1045,True
+Sanskrit,sa,Marathi,LRN,Marathi learned borrowings from Sanskrit,True,358,True
+Sanskrit,sa,Marathi,SEMI,Marathi semi-learned borrowings from Sanskrit,True,12,True
+Sanskrit,sa,Marathi,INH,Marathi terms inherited from Sanskrit,True,955,True
+Sanskrit,sa,Gujarati,LRN,Gujarati learned borrowings from Sanskrit,True,466,True
+Sanskrit,sa,Gujarati,SEMI,Gujarati semi-learned borrowings from Sanskrit,True,30,True
+Sanskrit,sa,Gujarati,INH,Gujarati terms inherited from Sanskrit,True,1161,True
+Sanskrit,sa,Punjabi,LRN,Punjabi learned borrowings from Sanskrit,True,224,True
+Sanskrit,sa,Punjabi,SEMI,Punjabi semi-learned borrowings from Sanskrit,True,36,True
+Sanskrit,sa,Punjabi,INH,Punjabi terms inherited from Sanskrit,True,1453,True
+Sanskrit,sa,Odia,LRN,Odia learned borrowings from Sanskrit,True,269,True
+Sanskrit,sa,Odia,SEMI,Odia semi-learned borrowings from Sanskrit,True,3,True
+Sanskrit,sa,Odia,INH,Odia terms inherited from Sanskrit,True,655,True
+Sanskrit,sa,Assamese,LRN,Assamese learned borrowings from Sanskrit,True,149,True
+Sanskrit,sa,Assamese,SEMI,Assamese semi-learned borrowings from Sanskrit,True,7,True
+Sanskrit,sa,Assamese,INH,Assamese terms inherited from Sanskrit,True,1082,True
+Sanskrit,sa,Nepali,LRN,Nepali learned borrowings from Sanskrit,True,80,False
+Sanskrit,sa,Nepali,SEMI,Nepali semi-learned borrowings from Sanskrit,True,4,False
+Sanskrit,sa,Nepali,INH,Nepali terms inherited from Sanskrit,True,351,False
+Sanskrit,sa,Sinhalese,LRN,Sinhalese learned borrowings from Sanskrit,True,48,False
+Sanskrit,sa,Sinhalese,SEMI,Sinhalese semi-learned borrowings from Sanskrit,False,0,False
+Sanskrit,sa,Sinhalese,INH,Sinhalese terms inherited from Sanskrit,True,364,False
+Sanskrit,sa,Urdu,LRN,Urdu learned borrowings from Sanskrit,True,209,True
+Sanskrit,sa,Urdu,SEMI,Urdu semi-learned borrowings from Sanskrit,True,48,True
+Sanskrit,sa,Urdu,INH,Urdu terms inherited from Sanskrit,True,769,True
+Sanskrit,sa,Konkani,LRN,Konkani learned borrowings from Sanskrit,True,28,False
+Sanskrit,sa,Konkani,SEMI,Konkani semi-learned borrowings from Sanskrit,True,2,False
+Sanskrit,sa,Konkani,INH,Konkani terms inherited from Sanskrit,True,322,False
+Sanskrit,sa,Maithili,LRN,Maithili learned borrowings from Sanskrit,True,2,False
+Sanskrit,sa,Maithili,SEMI,Maithili semi-learned borrowings from Sanskrit,False,0,False
+Sanskrit,sa,Maithili,INH,Maithili terms inherited from Sanskrit,True,25,False
+Latin,la,Spanish,LRN,Spanish learned borrowings from Latin,True,3345,True
+Latin,la,Spanish,SEMI,Spanish semi-learned borrowings from Latin,True,129,True
+Latin,la,Spanish,INH,Spanish terms inherited from Latin,True,2815,True
+Latin,la,Portuguese,LRN,Portuguese learned borrowings from Latin,True,4206,True
+Latin,la,Portuguese,SEMI,Portuguese semi-learned borrowings from Latin,True,129,True
+Latin,la,Portuguese,INH,Portuguese terms inherited from Latin,True,2479,True
+Latin,la,French,LRN,French learned borrowings from Latin,True,2697,True
+Latin,la,French,SEMI,French semi-learned borrowings from Latin,True,25,True
+Latin,la,French,INH,French terms inherited from Latin,True,2191,True
+Latin,la,Italian,LRN,Italian learned borrowings from Latin,True,2025,True
+Latin,la,Italian,SEMI,Italian semi-learned borrowings from Latin,True,64,True
+Latin,la,Italian,INH,Italian terms inherited from Latin,True,3499,True
+Latin,la,Romanian,LRN,Romanian learned borrowings from Latin,True,1634,True
+Latin,la,Romanian,SEMI,Romanian semi-learned borrowings from Latin,True,3,True
+Latin,la,Romanian,INH,Romanian terms inherited from Latin,True,2116,True
+Latin,la,Catalan,LRN,Catalan learned borrowings from Latin,True,3614,True
+Latin,la,Catalan,SEMI,Catalan semi-learned borrowings from Latin,True,70,True
+Latin,la,Catalan,INH,Catalan terms inherited from Latin,True,2118,True
+Latin,la,Galician,LRN,Galician learned borrowings from Latin,True,885,True
+Latin,la,Galician,SEMI,Galician semi-learned borrowings from Latin,True,26,True
+Latin,la,Galician,INH,Galician terms inherited from Latin,True,2397,True
+Latin,la,Occitan,LRN,Occitan learned borrowings from Latin,True,25,False
+Latin,la,Occitan,SEMI,Occitan semi-learned borrowings from Latin,True,2,False
+Latin,la,Occitan,INH,Occitan terms inherited from Latin,True,907,False
+Ancient Greek,grc,Greek,LRN,Greek learned borrowings from Ancient Greek,True,1225,True
+Ancient Greek,grc,Greek,SEMI,Greek semi-learned borrowings from Ancient Greek,False,0,True
+Ancient Greek,grc,Greek,INH,Greek terms inherited from Ancient Greek,True,3427,True
+Old Armenian,xcl,Armenian,LRN,Armenian learned borrowings from Old Armenian,True,1753,True
+Old Armenian,xcl,Armenian,SEMI,Armenian semi-learned borrowings from Old Armenian,True,32,True
+Old Armenian,xcl,Armenian,INH,Armenian terms inherited from Old Armenian,True,1363,True
+Middle Persian,pal,Persian,LRN,Persian learned borrowings from Middle Persian,True,3,False
+Middle Persian,pal,Persian,SEMI,Persian semi-learned borrowings from Middle Persian,True,1,False
+Middle Persian,pal,Persian,INH,Persian terms inherited from Middle Persian,True,1463,False
+Old Irish,sga,Irish,LRN,Irish learned borrowings from Old Irish,False,0,False
+Old Irish,sga,Irish,SEMI,Irish semi-learned borrowings from Old Irish,False,0,False
+Old Irish,sga,Irish,INH,Irish terms inherited from Old Irish,True,2473,False
+Old Norse,non,Icelandic,LRN,Icelandic learned borrowings from Old Norse,False,0,False
+Old Norse,non,Icelandic,SEMI,Icelandic semi-learned borrowings from Old Norse,False,0,False
+Old Norse,non,Icelandic,INH,Icelandic terms inherited from Old Norse,True,3575,False
+Old Georgian,oge,Georgian,LRN,Georgian learned borrowings from Old Georgian,True,11,False
+Old Georgian,oge,Georgian,SEMI,Georgian semi-learned borrowings from Old Georgian,False,0,False
+Old Georgian,oge,Georgian,INH,Georgian terms inherited from Old Georgian,True,957,False
+Ottoman Turkish,ota,Turkish,LRN,Turkish learned borrowings from Ottoman Turkish,True,6,False
+Ottoman Turkish,ota,Turkish,SEMI,Turkish semi-learned borrowings from Ottoman Turkish,False,0,False
+Ottoman Turkish,ota,Turkish,INH,Turkish terms inherited from Ottoman Turkish,True,10781,False
+Old East Slavic,orv,Russian,LRN,Russian learned borrowings from Old East Slavic,True,2,False
+Old East Slavic,orv,Russian,SEMI,Russian semi-learned borrowings from Old East Slavic,False,0,False
+Old East Slavic,orv,Russian,INH,Russian terms inherited from Old East Slavic,True,1528,False
+Old Javanese,kaw,Javanese,LRN,Javanese learned borrowings from Old Javanese,False,0,False
+Old Javanese,kaw,Javanese,SEMI,Javanese semi-learned borrowings from Old Javanese,False,0,False
+Old Javanese,kaw,Javanese,INH,Javanese terms inherited from Old Javanese,True,1455,False
+Old Japanese,ojp,Japanese,LRN,Japanese learned borrowings from Old Japanese,True,2,False
+Old Japanese,ojp,Japanese,SEMI,Japanese semi-learned borrowings from Old Japanese,False,0,False
+Old Japanese,ojp,Japanese,INH,Japanese terms inherited from Old Japanese,True,1423,False
+Biblical Hebrew,hbo,Hebrew,LRN,Hebrew learned borrowings from Biblical Hebrew,False,0,False
+Biblical Hebrew,hbo,Hebrew,SEMI,Hebrew semi-learned borrowings from Biblical Hebrew,False,0,False
+Biblical Hebrew,hbo,Hebrew,INH,Hebrew terms inherited from Biblical Hebrew,True,4,False
+Old English,ang,English,LRN,English learned borrowings from Old English,True,82,False
+Old English,ang,English,SEMI,English semi-learned borrowings from Old English,True,1,False
+Old English,ang,English,INH,English terms inherited from Old English,True,6632,False

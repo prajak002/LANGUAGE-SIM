@@ -10,7 +10,7 @@ _2026-10-11. Pilot 1 (10 lemmas, protocol v1.0) plus round 2 (38 lemmas, protoco
 
 ## 1. Answer to RQ-F in one paragraph
 
-With the dictionaries that are freely consultable online, a route could be assigned to **26 of 58 sense rows**. Almost all of those are either inherited words that Turner lists, or Hindi words that Platts marks as Sanskrit. **The boundary the project cares about was not recoverable:** none of the 12 words Wiktionary calls semi-learned, and none of the 9 Bengali words it calls learned, could be labelled as such from the sources. Where the sources do decide, they agree with Wiktionary on 22 of 26 rows, but that agreement is not independent, because Wiktionary cites Turner on many of the same pages.
+With the dictionaries that are freely consultable online, a route could be assigned to **26 of 58 sense rows**. Almost all of those are either inherited words that Turner lists, or Hindi words that Platts marks as Sanskrit. **The boundary the project cares about was not recoverable:** none of the 12 words Wiktionary calls semi-learned, and none of the 9 Bengali words it calls learned, could be labelled as such from the sources. Where the sources do decide, they agree with Wiktionary on 22 of 26 rows, but that agreement is not fully independent: 7 of the 22 agreeing Wiktionary entries cite the dictionary the label rests on (corrected, §10).
 
 ## 2. What was done
 
@@ -82,7 +82,7 @@ The third unspecified row is कांड, which the sources label LRN (see §5)
   - अमावस 'new moon': sources INH (Turner lists it); Wiktionary semi-learned "through" a Prakrit form.
   - ভাল 'forehead': sources INH (Turner lists it); Wiktionary learned.
 - **कांड (pilot 1) is reclassified here.** The pilot report counted it as a disagreement (sources LRN, Wiktionary inherited). Read by templates, the page carries both a borrowing template and an inheritance template, so the candidate is "unspecified". The pilot report is left as written.
-- **The agreement is not independent.** In round 2, 8 of the 17 agreeing rows are on pages that cite Turner's dictionary themselves (checked at page level, not per sense).
+- **The agreement is not fully independent.** ~~In round 2, 8 of the 17 agreeing rows are on pages that cite Turner's dictionary themselves.~~ **Corrected 2026-10-11 (§10):** that page-level count included citations in other languages' sections of the same page. Counted within the Hindi or Bengali entry, 7 of the 22 agreeing rows cite the dictionary the label rests on.
 
 ## 6. Weaknesses found in the label rules
 
@@ -112,3 +112,24 @@ Three options, in the order I would consider them:
 - The project lead completes the pilot 1 spot check (`data/annotation/pilot_1/spot_check.md`, 23 rows).
 - The project lead fixes a sample size and checks that many rows from the top of `data/annotation/round_2/spot_check.md` (the 111 checks in hash order).
 - Discrepancies are logged, and the counts above are recomputed if any label changes.
+
+## 10. Addendum, 2026-10-11 (after the report; decision log 73)
+
+**Correction to §5.** The "8 of 17" figure was wrong as a measure of circularity. A Wiktionary page holds entries for several languages, and the count included Turner citations in the Sanskrit and Assamese sections. Recounted inside the Hindi or Bengali section (`scripts/sense_citation.py`, output `data/annotation/sense_citation.csv`):
+
+| Of the 22 agreeing rows | Rows |
+|---|---|
+| Entry cites the same Turner article the label rests on (all inherited) | 4 |
+| Entry cites Platts, and the label rests on Platts' S marker (learned) | 3 |
+| Entry cites neither | 15 |
+
+- An entry can draw on a source without citing it, so 7 is a lower bound.
+- 20 of the 28 Hindi rows are in entries that cite McGregor's Hindi dictionary, which this study did not consult. It is the obvious next Hindi source; its conventions have not been read.
+
+**Exploratory check of Chatterji 1926** (`data/annotation/exploratory_chatterji.csv`). Not blind, no frozen rule, OCR text only; it changes no count above.
+- Chatterji uses the abbreviations ts., sts. and tbh. for tatsama, semi-tatsama and tadbhava words, so the semi-learned boundary **is** stated in this source.
+- Of the 6 Bengali rows that Wiktionary calls semi-learned: 2 are called semi-tatsama explicitly (জাইত, জোছনা); 2 are in a list that opens with that label, reading uncertain (সোয়াদ 'taste', সোয়ামি); 2 were not found (যশ, জ্বী).
+- **Consequence for §8:** option 1 is now supported by evidence. The source is accessible and states routes for some words. Its coverage of a random sample is unknown, because a grammar cites words as examples.
+- A person must check the passages on the page images (vol. 1, pp. 308, 376, 380, 403, 470, 534).
+
+**References verified.** The four dictionary citations were checked against the DSAL citation pages. Chatterji's definitions of the three terms were read (vol. 1, Appendix D, §111, pp. 189–191, OCR).

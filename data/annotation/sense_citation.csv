@@ -1,0 +1,59 @@
+round,item_id,lang,lemma,source_label,relation,page_cites_CDIAL,lang_cites_CDIAL,same_article,wiktionary_CDIAL_args,extractor_Turner_refs,other_refs_in_lang_section
+pilot_1,a24845e36b,hi,उपवास,LRN,agree,yes,no,no,,entry 2244 upavāsa,R:Platts; R:Rekhta; R:hi:Dasa; R:hi:McGregor
+pilot_1,b521961c5b,hi,कांड,LRN,disagree,no,no,no,,entry 3023 kā́ṇḍa,R:hi:Chaturvedi; R:hi:Dasa; R:hi:McGregor
+pilot_1,e262474c7b,hi,मिर्गी,UNK,undecided by sources,no,no,no,,entry 10264 mr̥gá,R:Rekhta; R:hi:Caturvedi; R:hi:Collins; R:hi:McGregor
+pilot_1,7c19a5abef,hi,कमउम्र,EXT,agree,no,no,no,,,R:hi:McGregor
+pilot_1,959f9ccd4d,hi,यक्षगान,NSF,no source found,no,no,no,,,
+pilot_1,03c56abeca,bn,কলা,INH,agree,no,no,no,,entry 2712 kadala,
+pilot_1,03c56abeca,bn,কলা,UNK,undecided by sources,no,no,no,,entry 2712 kadala,
+pilot_1,bdb2ac80cb,bn,যশ,UNK,undecided by sources,no,no,no,,entry 10443 yáśas,R:bn:BAD; R:bn:BiswasBangala; R:bn:Dasa
+pilot_1,c609392fe5,bn,খেত,INH,agree,no,no,no,,entry 3735 kṣḗtra,
+pilot_1,e9a389ae92,bn,কিংবা,UNK,undecided by sources,no,no,no,,,
+pilot_1,f66607b9cd,bn,বদ,EXT,agree,no,no,no,,,
+pilot_1,f66607b9cd,bn,বদ,UNK,no counterpart,no,no,no,,,
+round_2,1a61764406-1,hi,भेदना,UNK,undecided by sources,no,no,no,,—,R:hi:McGregor
+round_2,1e4399cb53-1,hi,रामराज्य,UNK,undecided by sources,no,no,no,,—,R:hi:Dasa
+round_2,434bcca23a-1,hi,सैर,EXT,agree,no,no,no,,—,R:Bahri; R:Chaturvedi; R:hi:Dasa; R:hi:McGregor; R:ur:Rekhta
+round_2,434bcca23a-2,hi,सैर,UNK,undecided by sources,no,no,no,,entry 13602a saira-,R:Bahri; R:Chaturvedi; R:hi:Dasa; R:hi:McGregor; R:ur:Rekhta
+round_2,507c3f7c13-1,hi,पुरा,UNK,undecided by sources,yes,no,no,,entry 8281 purás (with purā́),R:hi:Dasa; R:hi:McGregor
+round_2,507c3f7c13-2,hi,पुरा,INH,agree,yes,no,no,,entry 8278 púra,R:hi:Dasa; R:hi:McGregor
+round_2,632b7cea10-1,hi,दरस,UNK,undecided by sources,no,no,no,,entry 6207 darśá,
+round_2,6d142d4fd8-1,hi,मसलना,INH,agree,no,no,no,,entry 9919 maṣati,
+round_2,821dd712f9-1,hi,पेंसिल,EXT,agree,no,no,no,,—,
+round_2,86de5e37dd-1,hi,बाँचना,INH,disagree,no,no,no,,entry 11471 vācayati,R:hi:Dasa; R:hi:McGregor; R:ur:Rekhta
+round_2,89d35eb38d-1,hi,हान,INH,agree,no,no,no,,entry 14055 hāní-,R:hi:Dasa
+round_2,a6642e98e1-1,hi,सेंत,UNK,undecided by sources,no,no,no,,—,R:hi:Dasa; R:hi:McGregor
+round_2,a6642e98e1-2,hi,सेंत,UNK,undecided by sources,no,no,no,,—,R:hi:Dasa; R:hi:McGregor
+round_2,cb94945a69-1,hi,अमावस,INH,disagree,no,no,no,,entry 565 amāvāsyā̀,R:hi:Bahri; R:hi:McGregor
+round_2,d7f633ee5c-1,hi,ठंड,INH,agree,no,no,no,,"p. 788, headword stabdha",R:hi:Chaturvedi; R:hi:Dasa; R:hi:McGregor
+round_2,db7e20c432-1,hi,नाक,INH,agree,yes,yes,yes,*nakka|6909,entry 6909 *nakka,R:Bahri; R:Platts; R:Rekhta; R:hi:Dasa; R:hi:McGregor
+round_2,db7e20c432-2,hi,नाक,LRN,agree,yes,yes,no,*nakka|6909,entry 7036 nā́ka,R:Bahri; R:Platts; R:Rekhta; R:hi:Dasa; R:hi:McGregor
+round_2,dc04c1c9ed-1,hi,संवर्धन,NSF,no source found,no,no,no,,—,R:hi:McGregor
+round_2,e98f43633d-1,hi,जामाता,LRN,agree,no,no,no,,entry 5198 jā́mātr̥,R:Platts; R:hi:Dasa; R:hi:McGregor
+round_2,ee2882ba7a-1,hi,बांटना,INH,agree,yes,yes,yes,váṇṭati|11238,entry 11238 váṇṭati,
+round_2,f9b75d2302-1,hi,अगला,UNK,undecided by sources,yes,yes,no,agra|hw=1,entry 68 ágra,
+round_2,f9d1e53c34-1,hi,पूज्य,LRN,agree,no,no,no,,entry 8319 pūjya,R:hi:McGregor
+round_2,fab3254e0c-1,hi,रजत,LRN,agree,yes,no,no,,entry 10576 rajatá,R:hi:Chaturvedi; R:hi:Dasa; R:hi:McGregor
+round_2,0618434674-1,bn,পাহারা,UNK,undecided by sources,yes,yes,yes,prahara|8900|pg=499,entry 8900 prahara,R:bn:DDSA
+round_2,0b75c3f87a-1,bn,জ্বী,UNK,undecided by sources,no,no,no,,"entry 5240 jī́va (imperative, 'long live')",
+round_2,1bd0c88f5c-1,bn,সর্বদা,UNK,undecided by sources,no,no,no,,—,R:bn:Bhattacharya; R:bn:Biswas; R:bn:Dasa
+round_2,20afb9f0d6-1,bn,সোয়ামি,NSF,no source found,no,no,no,,entry 13930 svāmín,
+round_2,32e0b38598-1,bn,জাইত,NSF,no source found,no,no,no,,entry 5185 jāti,
+round_2,4cd53ca9f4-1,bn,জোছনা,UNK,undecided by sources,no,no,no,,entry 5301 jyṓtsnā,
+round_2,4ebd16e802-1,bn,গ্যালারি,NSF,no source found,no,no,no,,—,
+round_2,8900de7aed-1,bn,পাদা,INH,agree,no,no,no,,entry 7933 párdatē,
+round_2,8fd9a0b15d-1,bn,লব্ধ,UNK,undecided by sources,no,no,no,,entry 10946 labdha,R:bn:DDSA
+round_2,92e21d6ebb-1,bn,ইহুদি,EXT,agree,no,no,no,,—,
+round_2,9512aa91f6-1,bn,প্রাচীর,UNK,undecided by sources,no,no,no,,entry 8921 prācīra,R:bn:Biswas
+round_2,981a823173-1,bn,বমি,UNK,undecided by sources,no,no,no,,entry 11294 vámati,
+round_2,a0e3c52f42-1,bn,সোয়াদ,NSF,no source found,no,no,no,,,
+round_2,a0e3c52f42-2,bn,সোয়াদ,NSF,no source found,no,no,no,,—,
+round_2,a0e3c52f42-3,bn,সোয়াদ,NSF,no source found,no,no,no,,entry 13923 svāda,
+round_2,b314616373-1,bn,গৈরিক,UNK,undecided by sources,no,no,no,,entry 4254 gairikā,
+round_2,ba2b5d05c9-1,bn,কমলা,INH,agree,yes,yes,yes,kámala<sup>1</sup>|2763|page=139,entry 2763 kámala (with kamalā 'orange'),R:bn:bad
+round_2,ba2b5d05c9-2,bn,কমলা,UNK,undecided by sources,yes,yes,no,kámala<sup>1</sup>|2763|page=139,,R:bn:bad
+round_2,e8a84295b0-1,bn,অর্পিতা,NSF,no source found,no,no,no,,entry 685 árpita-,
+round_2,e9c488e1d5-1,bn,চুরি,INH,agree,yes,yes,yes,caurikā|4937,entry 4937 caurikā,
+round_2,eade04939b-1,bn,ভাল,INH,agree,yes,no,no,,entry 9408 bhalla,
+round_2,eade04939b-2,bn,ভাল,INH,disagree,yes,no,no,,entry 9472 bhāla,
+round_2,f5d702e794-1,bn,উড়ে,NSF,no source found,no,no,no,,entry 2549 ōḍra,

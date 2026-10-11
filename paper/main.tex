@@ -21,12 +21,12 @@
 \maketitle
 
 \begin{abstract}
-Hindi and Bengali words of Sanskrit origin reached the modern languages by different routes: some were inherited through Middle Indo-Aryan (\textit{tadbhava}), and others were borrowed later from Sanskrit, unchanged (\textit{tatsama}) or partly adapted (\textit{ardhatatsama}). Wiktionary records these routes for thousands of words, and such labels are an obvious training signal for classifiers. We ask a prior question: can the route be recovered from published dictionaries, so that the labels have a checkable source? We select 48 Wiktionary lemmas with rules frozen in advance, look each one up in four dictionaries, and assign a route by label rules that were frozen before the Wiktionary etymology was opened. A route could be assigned to 26 of 58 word senses. None of the 12 senses that Wiktionary calls semi-learned could be labelled as such, and none of the 9 Bengali senses that it calls learned. The dictionaries have no marker for the first category, and the Bengali dictionary has none for the second. Where the dictionaries decide, they agree with Wiktionary on 22 of 26 senses, but Wiktionary often cites the same dictionary. The labels were extracted by a language-model assistant and \lead{state the spot-check outcome, or say that none was done}. We report counts only, and we describe which category boundaries the sources cannot express.
+Hindi and Bengali words of Sanskrit origin reached the modern languages by different routes: some were inherited through Middle Indo-Aryan (\textit{tadbhava}), and others were borrowed later from Sanskrit, unchanged (\textit{tatsama}) or partly adapted (\textit{ardhatatsama}). Wiktionary records these routes for thousands of words, and such labels are an obvious training signal for classifiers. We ask a prior question: can the route be recovered from published dictionaries, so that the labels have a checkable source? We select 48 Wiktionary lemmas with rules frozen in advance, look each one up in four dictionaries, and assign a route by label rules that were frozen before the Wiktionary etymology was opened. A route could be assigned to 26 of 58 word senses. None of the 12 senses that Wiktionary calls semi-learned could be labelled as such, and none of the 9 Bengali senses that it calls learned. The dictionaries have no marker for the first category, and the Bengali dictionary has none for the second. Where the dictionaries decide, they agree with Wiktionary on 22 of 26 senses, but 7 of those 22 Wiktionary entries cite the dictionary on which our label rests. A post hoc check of one historical grammar found the semi-learned label stated explicitly for 2 of the 6 Bengali semi-learned senses, so the gap lies in the dictionaries. The labels were extracted by a language-model assistant and \lead{state the spot-check outcome, or say that none was done}. We report counts only, and we describe which category boundaries the sources cannot express.
 \end{abstract}
 
 \section{Introduction}
 
-A modern Indo-Aryan word with a Sanskrit etymon can have one of several histories. It may have been \textbf{inherited} through the Middle Indo-Aryan stages, with the sound changes of those stages (\textit{tadbhava}). It may be a \textbf{learned} borrowing taken later from Sanskrit as a prestige language (\textit{tatsama}), or a \textbf{semi-learned} borrowing whose form was partly adapted (\textit{ardhatatsama}) \citep{masica1991}. The distinction matters for historical phonology, because learned words do not show the regular changes, and it is a natural target for computational attribution.
+A modern Indo-Aryan word with a Sanskrit etymon can have one of several histories. It may have been \textbf{inherited} through the Middle Indo-Aryan stages, with the sound changes of those stages (\textit{tadbhava}). It may be a \textbf{learned} borrowing taken later from Sanskrit as a prestige language (\textit{tatsama}), or a \textbf{semi-learned} borrowing whose form was partly adapted (\textit{ardhatatsama}, or semi-tatsama) \citep[\S111]{chatterji1926}. As \citeauthor{chatterji1926} notes, \textit{tatsama} in modern use describes the form of a word and not the way it entered the language, so we state our categories as routes. The distinction matters for historical phonology, because learned words do not show the regular changes, and it is a natural target for computational attribution.
 
 For Romance, \citet{cristea2021inherited} trained classifiers to separate inherited from borrowed Latin words, with labels taken from Wiktionary etymology templates. The same kind of label exists for Indo-Aryan. On 10 October 2026 the English Wiktionary category for Hindi learned borrowings from Sanskrit held 1,337 pages, the semi-learned category 98, and the category of terms inherited from Sanskrit 2,241; the Bengali categories held 1,075, 44 and 1,045 pages. These labels are edited by volunteers, and their accuracy is not known.
 
@@ -36,7 +36,7 @@ Our findings are mostly negative:
 \begin{itemize}
 \item A route could be assigned to 26 of 58 word senses.
 \item The semi-learned category was recoverable for 0 of 12 senses, and the learned category for 0 of 9 Bengali senses.
-\item Agreement with Wiktionary on the decided senses is 22 of 26, but it is not independent evidence.
+\item Agreement with Wiktionary on the decided senses is 22 of 26, but 7 of the 22 agreeing entries cite the dictionary that we used.
 \item The rule that produces most of the inherited labels is leaky, for a reason that we document.
 \end{itemize}
 The sample is small and was stratified by hand to over-sample hard cases. \textbf{We therefore report raw counts, and no count here estimates a rate for Hindi or Bengali vocabulary.}
@@ -150,31 +150,29 @@ Other & 3 & -- & 1 & 2 & 0 \\
 
 \paragraph{Agreement.} On the 26 senses with a source-based route, the sources and the Wiktionary candidate agree on 22 and disagree on 3; for the remaining one the candidate is unspecified, because the page carries both a borrowing and an inheritance template. The three disagreements are Hindi \textit{b\=a\~ncn\=a} \gl{to read} and \textit{am\=avas} \gl{new moon}, which the sources label inherited and Wiktionary semi-learned, and Bengali \textit{bh\=al} \gl{forehead}, which the sources label inherited and Wiktionary learned.
 
-\textbf{This agreement is not independent.} In round~2, 8 of the 17 agreeing senses are on Wiktionary pages that cite Turner's dictionary themselves. We checked this at the level of the page, not of the sense.
-
-\paragraph{Source coverage.} In round~2 an entry was located for 17 of 23 Hindi senses in Platts and for 20 of 21 in the \textit{Hind\=\i{} \'sabdas\=agara}. An entry was located for 13 of 23 Bengali senses in J.~D\=asa. A Turner article was located for 33 of the 39 senses for which Turner was queried.
+\textbf{This agreement is not fully independent.} We checked whether the Hindi or Bengali entry on Wiktionary cites the dictionary on which our label rests. Of the 22 agreeing senses, 4 inherited ones cite the same Turner article that we used, and 3 of the 5 learned ones are in entries that cite Platts. The other 15 cite neither, although an entry can draw on a source without citing it. Of the 28 Hindi senses, 20 are in entries that cite a modern Hindi dictionary that we did not consult.
 
 \section{Why the Boundary Is Not Recoverable}
 
-The first three points below are gaps in the sources, and they explain most of Table~\ref{tab:recover}. The last two concern our rules and our sample.
+The first two points below are gaps in the sources, and they explain most of Table~\ref{tab:recover}. The last two concern our rules and our sample.
 
 \paragraph{No source marks semi-learned words.} None of the four dictionaries has a label or a sign for a partly adapted Sanskrit loan. J.~D\=asa's list of abbreviations has a label for a ``Bengali Prakritic form'', but it describes the form and does not state a route. The category cannot be recovered by this method.
 
-\paragraph{Bengali has no equivalent of Platts' S.} J.~D\=asa gives a Sanskrit analysis for words that look inherited and for words that look learned alike. A reader cannot tell from the entry whether the Sanskrit form is an ancestor or a donor.
-
-\paragraph{Hindi learned labels rest on one source.} All 6 learned labels come from the S marker of \citet{platts1884} alone.
+\paragraph{Bengali has no equivalent of Platts' S.} J.~D\=asa gives a Sanskrit analysis for words that look inherited and for words that look learned alike. A reader cannot tell from the entry whether the Sanskrit form is an ancestor or a donor. For Hindi, all 6 learned labels rest on the S marker of \citet{platts1884} alone.
 
 \paragraph{The inherited rule is leaky.} The front matter of \citet{turner1966cdial} says that the forms listed in an article are descendants of the head-word, and it defines marks for loanwords. It does not say that every loan is marked. In the entries that we consulted, Turner lists modern forms that are identical to the Sanskrit word and carry no loan mark: Hindi \textit{h\=ani} \gl{loss}, Bengali \textit{kamal\=a} \gl{orange} and Bengali \textit{bh\=al} \gl{forehead}. An unmarked listing is therefore weaker evidence of inheritance than the convention suggests. Of the 13 inherited labels in round~2, 11 use this rule, and 10 of those have no other support.
 
-\paragraph{The hard-boundary stratum was mostly homographs.} The overlap stratum was meant to hold words whose route is contested. Of its 6 lemmas, 5 are pairs of unrelated words with one spelling, one inherited and one learned. The sixth is in the inherited category only because a template for derived terms adds the category, although the page's etymology template is a learned borrowing. None of the 6 is a single word with a contested route. Category membership is therefore a poor proxy for the route that a page asserts, and we recommend reading the etymology templates of each sense.
+\paragraph{The hard-boundary stratum was mostly homographs.} The overlap stratum was meant to hold words whose route is contested. Of its 6 lemmas, 5 are pairs of unrelated words with one spelling, one inherited and one learned. The sixth is in the inherited category only because a template for derived terms adds the category, although the page's etymology template is a learned borrowing. None of the 6 is a single word with a contested route, so category membership is a poor proxy for the route that a page asserts.
 
 \section{Discussion}
 
 The method works where it is least needed. Inherited words that Turner lists and plain foreign loans are recovered, and these are also the cases in which Wiktionary and the dictionaries agree. The method fails on the boundary between learned and semi-learned words, and for Bengali on the boundary between inherited and learned words, because the sources have no means to express it.
 
-A larger sample drawn by the same protocol would not change this. It would mostly measure how many inherited words Turner lists. Two things could change it: a source that states routes for Bengali and for semi-learned words, such as a historical grammar \citep[the obvious candidate, which we have not consulted, is][]{chatterji1926}, or labels from trained historical linguists.
+A larger sample drawn by the same protocol would not change this. It would mostly measure how many inherited words Turner lists. A different kind of source could change it.
 
-For work that trains on Wiktionary's route labels, the practical points are these. The labels for learned and semi-learned words cannot be validated against the dictionaries that we used. Agreement between Wiktionary and Turner should not be counted as independent confirmation. Homographs must be separated before a lemma is given a label.
+\paragraph{A post hoc check of a historical grammar.} After the study was complete, we searched the text of \citet{chatterji1926} for the 6 Bengali senses that Wiktionary calls semi-learned. \textbf{This check was not blind, it followed no frozen rule, and it used a scanned text; it adds no labels to our counts.} Chatterji uses the abbreviations \textit{ts.}, \textit{sts.} and \textit{tbh.} for tatsama, semi-tatsama and tadbhava words. He calls \textit{j\=ait} \gl{caste} and \textit{jochn\=a} \gl{moonlight} semi-tatsama explicitly (vol.~1, pp.~308 and 470). Two more, \textit{soy\=ad} \gl{taste} and \textit{soy\=ami} \gl{husband}, appear in a list that opens with that label (p.~534), and 2 were not found. The distinction that the dictionaries cannot express is therefore stated in the scholarly literature for some words. A grammar cites words as examples and has no entry for every word, so its coverage of a random sample is unknown. \lead{Check these passages on the page images before submission: vol.~1, pp.~308, 376, 380, 403, 470, 534.}
+
+For work that trains on Wiktionary's route labels: the learned and semi-learned labels cannot be validated against these dictionaries, agreement with a dictionary that the entry cites is not independent confirmation, and homographs must be separated first.
 
 \section*{Limitations}
 
@@ -185,7 +183,8 @@ For work that trains on Wiktionary's route labels, the practical points are thes
 \item \textbf{The Turner head-word was often the extractor's choice}, taken from the language dictionary's etymology where it gave one. A wrong choice produces a false ``not listed''. Turner was not queried for 5 senses that are plain foreign loans.
 \item \textbf{Judgement was needed} to decide whether a near variant of a form counts as listed. We did not count near variants; a looser rule would move 2 senses from \lbl{unk} to inherited.
 \item \textbf{The two rounds used different protocol versions.} The 12 pilot senses were labelled under v1.0, before senses were separated by rule, and were not relabelled. One pilot row was reclassified from ``disagree'' to ``candidate unspecified'' when the template-based candidate was applied.
-\item \textbf{The sources are old and few.} The Hindi learned labels depend on a dictionary of 1884. We did not read the front matter of the \textit{Hind\=\i{} \'sabdas\=agara}, so it contributed no route.
+\item \textbf{The check of the historical grammar is exploratory.} It was made after the Wiktionary labels were known, on a scanned text.
+\item \textbf{The sources are old and few.} The Hindi learned labels depend on a dictionary of 1884. We did not read the front matter of the \textit{Hind\=\i{} \'sabdas\=agara}, so it contributed no route, and we did not consult the modern Hindi dictionary that Wiktionary cites most often.
 \end{itemize}
 
 \section*{Ethical Considerations}
