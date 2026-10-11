@@ -1,0 +1,47 @@
+item_id,lang,lemma,sense,label,pathway,mia_form,evidence_strength,extractor_confidence,flags,notes
+1a61764406-1,hi,भेदना,"to invade, penetrate",UNK,,,none,low,,"Found only in the Hindi sabdasagara, which asserts no route under v1.1"
+1e4399cb53-1,hi,रामराज्य,the rule of Rama; a righteous society,UNK,,,none,low,,Found only in the Hindi sabdasagara
+434bcca23a-1,hi,सैर,"excursion, stroll",EXT,,,explicit,high,,"HOMOGRAPH. Platts says Arabic, the Hindi sabdasagara says Persian; both external"
+434bcca23a-2,hi,सैर,relating to a plough,UNK,,,none,low,,HOMOGRAPH. Found only in the Hindi sabdasagara
+507c3f7c13-1,hi,पुरा,formerly; till now,UNK,,,none,low,,HOMOGRAPH. Found only in the Hindi sabdasagara
+507c3f7c13-2,hi,पुरा,"large village, town; ward",INH,REG-U,,structural,medium,,HOMOGRAPH. Rests on the Turner listing; Platts gives only a Sanskrit equivalent
+632b7cea10-1,hi,दरस,"sight, glance",UNK,,,none,low,,Sources give only the Sanskrit equivalent
+6d142d4fd8-1,hi,मसलना,"to squish, crush",INH,REG-U,,structural,medium,,Rests on the Turner listing
+821dd712f9-1,hi,पेंसिल,pencil,EXT,,,explicit,high,,
+86de5e37dd-1,hi,बाँचना,"to read, decipher",INH,REG-A,Pk. vacca(i) (per Platts),structural,medium,,"HOMOGRAPH in the sources (a second verb 'to escape, remain'). Rests on Platts; Turner does not list this verb under vācayati"
+89d35eb38d-1,hi,हान,alt form of हानि (loss),INH,REG-U,,structural,low,,"Rests on the Turner listing, which also lists the Sanskrit-identical H. hāni without a loan mark"
+a6642e98e1-1,hi,सेंत,something obtained free of charge,UNK,,,none,low,,HOMOGRAPH. Platts only cross-refers to a verb whose entry cites a Prakrit form; that is not a route statement for the noun under v1.1
+a6642e98e1-2,hi,सेंत,"collection, clump, mass",UNK,,,none,low,,HOMOGRAPH. Found only as sense 2 of the Hindi sabdasagara entry
+cb94945a69-1,hi,अमावस,new moon,INH,REG-A,Pa. amāvasī-type and Pk. amāvassā (per Turner),structural,medium,,Rests on the Turner listing
+d7f633ee5c-1,hi,ठंड,cold; winter,INH,REG-A,Pk. ṭhaḍḍhī (per Platts),structural,medium,,"Rests on Platts. Turner lists the variants ṭhaṇḍh, ṭhaṇḍhā, ṭhaṇḍā, not this exact form"
+db7e20c432-1,hi,नाक,nose,INH,REG-A,Pk. ṇakka (per Platts and Turner),structural,high,,HOMOGRAPH. Platts and Turner agree
+db7e20c432-2,hi,नाक,heaven,LRN,,,structural,medium,single_source_1884,HOMOGRAPH. Platts S only
+dc04c1c9ed-1,hi,संवर्धन,"rearing, fostering, developing",NSF,,,none,—,,"Not found under either spelling (संवर्धन, संवर्द्धन)"
+e98f43633d-1,hi,जामाता,son-in-law,LRN,,,structural,medium,single_source_1884,Turner lists distinct inherited Hindi forms (doublets)
+ee2882ba7a-1,hi,बांटना,"to distribute, divide",INH,REG-U,,structural,medium,,Rests on the Turner listing
+f9b75d2302-1,hi,अगला,next; coming,UNK,,,none,low,,"The Hindi sabdasagara cites a Prakrit form, but that source asserts no route under v1.1. Turner lists aglā for Lahnda and Panjabi, and H. āgal"
+f9d1e53c34-1,hi,पूज्य,venerable; honoured,LRN,,,structural,medium,single_source_1884,Turner lists the distinct Hindi form pūj (doublet)
+fab3254e0c-1,hi,रजत,silvery; white,LRN,,,structural,medium,single_source_1884,
+0618434674-1,bn,পাহারা,"watching, guarding; a watch",UNK,,,none,low,,"J. Dasa cites a Hindi form and a chain from Sanskrit without a labelled MIA form. Turner lists the variant B. paharā, not this form, and suggests the Sanskrit word may itself be a Sanskritization of Persian"
+0b75c3f87a-1,bn,জ্বী,yes (agreement),UNK,,,none,low,,"Not found under this spelling. J. Dasa has জী (p. 859, a sense marked Hindi); Turner 5240 lists B. ji as a particle of assent. No source equates these with the spelling জ্বী"
+1bd0c88f5c-1,bn,সর্বদা,always,UNK,,,none,low,,Sanskrit analysis only
+20afb9f0d6-1,bn,সোয়ামি,"synonym of স্বামী (husband, master)",NSF,,,none,—,,Turner has the etymon but lists only B. sā̃i
+32e0b38598-1,bn,জাইত,type; caste; community,NSF,,,none,—,,
+4cd53ca9f4-1,bn,জোছনা,alternative spelling of জ্যোৎস্না (moonlight),UNK,,,none,low,,J. Dasa gives the Sanskrit word and register labels only (verse form; colloquial variants)
+4ebd16e802-1,bn,গ্যালারি,gallery,NSF,,,none,—,,The word occurs inside a quotation in J. Dasa but has no entry
+8900de7aed-1,bn,পাদা,to fart,INH,REG-U,,structural,medium,,Rests on the Turner listing alone
+8fd9a0b15d-1,bn,লব্ধ,obtained; gained,UNK,,,none,low,,Sanskrit analysis only
+92e21d6ebb-1,bn,ইহুদি,Jew; Jewish,EXT,,,explicit,high,,Found under the spelling ইহুদী
+9512aa91f6-1,bn,প্রাচীর,wall; rampart,UNK,,,none,low,,J. Dasa marks the word Sanskrit and gives a colloquial variant; Turner lists only that variant (doublet)
+981a823173-1,bn,বমি,vomit,UNK,,,none,low,,Sanskrit analysis only
+a0e3c52f42-1,bn,সোয়াদ,(no definition line),NSF,,,none,—,no_gloss,"HOMOGRAPH. The Wiktionary section has no definition line, so no sense could be matched; the lemma is in no source"
+a0e3c52f42-2,bn,সোয়াদ,the Arabic letter ṣād,NSF,,,none,—,,HOMOGRAPH
+a0e3c52f42-3,bn,সোয়াদ,"taste, flavour",NSF,,,none,—,,HOMOGRAPH. Turner has the etymon but no Bengali form
+b314616373-1,bn,গৈরিক,saffron (colour),UNK,,,none,low,,Sanskrit analysis only; Turner lists other Bengali forms (doublets)
+ba2b5d05c9-1,bn,কমলা,"orange (colour, fruit, tree)",INH,REG-U,,structural,low,,HOMOGRAPH. Rests on the Turner listing; the listed form is identical to the Sanskrit head-word form
+ba2b5d05c9-2,bn,কমলা,form of an epithet (per Wiktionary gloss),UNK,,,none,low,,HOMOGRAPH. The gloss is too thin to match a sense with confidence; J. Dasa's goddess-name senses are the nearest
+e8a84295b0-1,bn,অর্পিতা,(no definition line),NSF,,,none,—,no_gloss,The Wiktionary section has no definition line
+e9c488e1d5-1,bn,চুরি,theft,INH,REG-A,Pa. cōrikā; Pk. cōrī (per Turner),structural,medium,,Rests on the Turner listing
+eade04939b-1,bn,ভাল,good,INH,REG-U,,structural,medium,,HOMOGRAPH. Rests on the Turner listing
+eade04939b-2,bn,ভাল,forehead; destiny,INH,REG-A,Pk. bhāla (per Turner),structural,low,,HOMOGRAPH. Rests on the Turner listing; the listed form is identical to the Sanskrit head-word form
+f5d702e794-1,bn,উড়ে,Odia; inhabitant of Odisha,NSF,,,none,—,,Turner has the etymon but lists only B. oṛiyā / uṛiyā

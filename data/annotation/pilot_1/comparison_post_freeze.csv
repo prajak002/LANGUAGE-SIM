@@ -1,0 +1,13 @@
+item_id,lang,lemma,sense,source_label,wiktionary_candidate,relation,note
+a24845e36b,hi,उपवास,fast,LRN,"LRN (lbor); category OVL caused by {{dercat|hi|sa|inh=1}}, not an inheritance claim",agree,Category membership is not an etymology claim
+b521961c5b,hi,कांड,section/joint,LRN,INH (inh+ from Sanskrit काण्ड; doublet काँड),disagree,"Platts marks S; Turner 3023 lists other Hindi inherited forms, not kāṇḍ"
+e262474c7b,hi,मिर्गी,epilepsy,UNK,SEMI (slbor),undecided by sources,—
+7c19a5abef,hi,कमउम्र,young in age,EXT,EXT (bor+ Classical Persian),agree,—
+959f9ccd4d,hi,यक्षगान,—,NSF,LRN (lbor from Sanskrit; Kannada form mentioned),no source found,—
+03c56abeca,bn,কলা,banana,INH,INH (Etymology 1: inh+ via Magadhi Prakrit; Sanskrit कदल),agree,Homograph
+03c56abeca,bn,কলা,lunar digit / art,UNK,LRN (Etymology 2: lbor कला),undecided by sources,Homograph
+bdb2ac80cb,bn,যশ,fame,UNK,SEMI (slbor यशस्),undecided by sources,LRN/SEMI boundary
+c609392fe5,bn,খেত,field,INH,INH (etymon template: inherited via Prakrit; doublet ক্ষেত্র),agree,—
+e9a389ae92,bn,কিংবা,or,UNK,LRN (lbor किंवा),undecided by sources,—
+f66607b9cd,bn,বদ,bad,EXT,EXT (bor+ Classical Persian),agree,Homograph
+f66607b9cd,bn,বদ,speaking (Skt vad),UNK,— (no Wiktionary section for this sense),no counterpart,Homograph

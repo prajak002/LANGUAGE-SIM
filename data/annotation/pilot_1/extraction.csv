@@ -1,0 +1,13 @@
+item_id,lang,lemma,sense,label,pathway,mia_form,evidence_strength,extractor_confidence,notes
+a24845e36b,hi,उपवास,fast,LRN,,,structural,medium,"Platts S convention verified in preface pp. v–vi; Turner lists no Hindi reflex (consistent, not decisive). Single 1884 source for the route"
+b521961c5b,hi,कांड,section/joint,LRN,,,structural,medium,Platts S; Turner 3023 lists distinct inherited Hindi doublets. Doublet relation recorded
+e262474c7b,hi,मिर्गी,epilepsy,UNK,,,none,low,Sources give only the Sanskrit equivalent; boundary INH/SEMI/LRN-adapted cannot be decided. Vowel insertion before r is a diagnostic only (never decisive)
+7c19a5abef,hi,कमउम्र,young in age,EXT,,,explicit,high,Persian compound (kam + ʻumr) per Platts
+959f9ccd4d,hi,यक्षगान,(not determined),NSF,,,none,—,"Not found in Platts, Dasa Hindi or Monier-Williams"
+03c56abeca,bn,কলা,banana,INH,REG-A,Pk. kayala/kēla; Pa. kadalī,structural-provisional,medium,HOMOGRAPH. Turner listing + Dasa entry 4 consistent. Turner's convention on learned words not verified
+03c56abeca,bn,কলা,lunar digit / art,UNK,,,none,low,HOMOGRAPH. Dasa cites Sanskrit only; route not stated
+bdb2ac80cb,bn,যশ,fame,UNK,,,none,low,Boundary LRN vs SEMI: whether loss of final -s/-ḥ is regular nativisation is undetermined. Turner's inherited reflexes elsewhere have j-; none Bengali
+c609392fe5,bn,খেত,field,INH,REG-A,Pa./Pk. khetta,structural-provisional,medium,Turner 3735 and Dasa agree. Dasa abbreviation (গ্রা◦) unverified
+e9a389ae92,bn,কিংবা,or,UNK,,,none,low,Dasa analyses as Sanskrit kim + vā without route; Biswas no etymology
+f66607b9cd,bn,বদ,bad,EXT,,,explicit,medium,HOMOGRAPH. Persian per Dasa sub-compound etymologies; simplex 'bad' sense has no separate headword
+f66607b9cd,bn,বদ,speaking (Skt vad),UNK,,,none,low,HOMOGRAPH. Dasa cites Sanskrit root only

@@ -1,0 +1,131 @@
+# Language metadata for the audit. Retrieved 2026-10-10.
+#
+# Provenance rules:
+#  - glottocode / classification_path / lat / lon: Glottolog JSON API
+#    (https://glottolog.org/resource/languoid/iso/<iso>.json), fetched 2026-10-10.
+#  - glottolog_aes: Glottolog "AES status" + the source and comment Glottolog attributes it to,
+#    copied verbatim from the languoid page on 2026-10-10. Glottolog aggregates these; they are
+#    NOT our own vitality judgement. "Moseley 2010" = UNESCO Atlas (3rd ed.);
+#    "Campbell et al. 2022" = Cataloguing the World's Endangered Languages (ELCat).
+#  - Fields marked `TODO` have NOT been verified; never fill them from memory.
+#  - Speaker counts are deliberately omitted until checked against Census of India 2011
+#    (C-16 tables) or a cited documentation source.
+#
+# NOTE: genealogy (classification_path) is NOT typology. Typological features must come
+# from URIEL/lang2vec or Grambank and be recorded per feature, with coverage gaps noted.
+
+schema_version: 1
+retrieved: 2026-10-10
+
+# ---------------------------------------------------------------------------
+# A. Originally proposed Eastern-India candidates (from the earlier plan)
+# ---------------------------------------------------------------------------
+candidates:
+  - name: Bengali
+    iso639_3: ben
+    glottocode: beng1280
+    classification_path: "Indo-European > Classical Indo-European > Indo-Iranian > Indo-Aryan > Middle-Modern Indo-Aryan > Continental Indo-Aryan > Indo-Aryan Eastern zone > Oriya-Gauda-Kamrupa > Gauda-Kamrupa > Gauda-Banga"
+    lat_lon: [24.0, 90.0]
+    glottolog_aes: {status: not endangered, source: "Eberhard, Simons & Fennig 2025 (Ethnologue)", comment: "Bengali (ben-ben) = 1 (National)"}
+    scripts: [Beng, Latn (romanized, informal)]
+    eval_data: {belebele: [ben_Beng, ben_Latn], indicparam: false, indictrans2: ben_Beng}
+    feasibility: high
+    role: "Regional dominant language; Indo-Aryan anchor; script-twin available"
+
+  - name: Santali
+    iso639_3: sat
+    glottocode: sant1410
+    classification_path: "Austroasiatic > Mundaic > North Munda > Kherwarian > Santalic"
+    lat_lon: [25.0317, 87.8185]
+    glottolog_aes: {status: threatened, source: "Moseley 2010 (UNESCO Atlas)", comment: "Satar (1447-sat) = Vulnerable"}
+    scripts: [Olck (Ol Chiki; used by IndicParam and IndicTrans2), "Beng/Deva/Orya/Latn also reported in use -- TODO verify with a documentation source"]
+    eval_data: {belebele: false, indicparam: sat (Ol Chiki, non-parallel, graduate-level), indictrans2: sat_Olck}
+    feasibility: medium
+    risks: ["No parallel MCQ data", "Expected low model competence -> small knowledge-conditioned denominators", "Multi-script variation"]
+    role: "Only Munda language with any LLM benchmark found; exploratory arm"
+
+  - name: Mundari
+    iso639_3: unr
+    glottocode: mund1320
+    classification_path: "Austroasiatic > Mundaic > North Munda > Kherwarian > Mundaric > Ho-Mundari"
+    lat_lon: [23.03, 85.85]
+    glottolog_aes: {status: not endangered, source: "Campbell et al. 2022", comment: "Bhumij (1601-unr-bhu) = At risk (20 percent certain)"}
+    scripts: TODO
+    eval_data: {belebele: false, indicparam: false, indictrans2: false}
+    feasibility: low
+    risks: ["No evaluation data found in sources searched"]
+
+  - name: Birhor
+    iso639_3: biy
+    glottocode: birh1242
+    classification_path: "Austroasiatic > Mundaic > North Munda > Kherwarian > Mundaric"
+    lat_lon: [23.585, 85.5611]
+    glottolog_aes: {status: shifting, source: "Campbell et al. 2022", comment: "Threatened (20 percent certain, based on the evidence available) (Assimilating into the Bihari speech community.) -- van Driem 2007"}
+    scripts: TODO
+    eval_data: {belebele: false, indicparam: false, indictrans2: false}
+    feasibility: very low
+    risks: ["No evaluation data", "Vitality evidence low-certainty (20%)", "Requires community partnership and consent", "Models almost certainly near chance -> sycophancy unidentifiable"]
+
+  - name: Bondo (Remo)
+    iso639_3: bfw
+    glottocode: bond1245
+    classification_path: "Austroasiatic > Mundaic > Gutob-Remo"
+    lat_lon: [19.1512, 83.8141]
+    glottolog_aes: {status: shifting, source: "Campbell et al. 2022", comment: "Remo (3901-bfw) = Threatened (20 percent certain) -- Lewis 2009"}
+    scripts: TODO
+    eval_data: {belebele: false, indicparam: false, indictrans2: false}
+    feasibility: very low
+    risks: ["Same as Birhor", "South Munda (Gutob-Remo), not North Munda -- do not pool with Birhor as 'same branch'"]
+
+  - name: Toto
+    iso639_3: txo
+    glottocode: toto1302
+    classification_path: "Sino-Tibetan > Dhimal-Lhokpu-Toto"
+    lat_lon: [26.67, 88.975]
+    glottolog_aes: {status: shifting, source: "Campbell et al. 2022", comment: "Threatened (20 percent certain) -- Anderson 2013"}
+    scripts: "TODO -- a community script effort is reported in news media; verify with a scholarly source before recording"
+    eval_data: {belebele: false, indicparam: false, indictrans2: false}
+    feasibility: very low
+    risks: ["Same as Birhor", "Small community; ethics and governance first"]
+
+  # Additional Munda / NE languages surfaced during the audit (not in original plan)
+  - {name: Ho, iso639_3: hoc, glottocode: hooo1248, classification_path: "Austroasiatic > Mundaic > North Munda > Kherwarian > Mundaric > Ho-Mundari", glottolog_aes: {status: not endangered, source: "Campbell et al. 2022", comment: "At risk (20 percent certain) -- Pucilowski 2013"}, eval_data: {belebele: false, indicparam: false}, feasibility: low}
+  - {name: Kharia, iso639_3: khr, glottocode: khar1287, classification_path: "Austroasiatic > Mundaic", glottolog_aes: {status: threatened, source: TODO}, eval_data: {belebele: false, indicparam: false}, feasibility: very low}
+  - {name: Juang, iso639_3: jun, glottocode: juan1238, classification_path: "Austroasiatic > Mundaic", glottolog_aes: {status: threatened, source: TODO}, eval_data: {belebele: false, indicparam: false}, feasibility: very low}
+  - name: Bodo
+    iso639_3: brx
+    glottocode: bodo1269
+    classification_path: "Sino-Tibetan > Brahmaputran > Bodo-Garo > Boroic > Tiwa-Boro > Bodo-Mech-Kachari"
+    lat_lon: [26.1, 92.0]
+    glottolog_aes: {status: threatened, source: "Moseley 2010 (UNESCO Atlas)", comment: "Mech (1195-brx) = Severely endangered; Bodo (1229-brx) = Vulnerable"}
+    scripts: [Deva]
+    eval_data: {belebele: false, indicparam: brx (non-parallel), indictrans2: brx_Deva}
+    feasibility: medium
+    role: "Sino-Tibetan language of Assam with some benchmark coverage; exploratory arm with Santali"
+
+# ---------------------------------------------------------------------------
+# B. Belebele panel proposed for the main (parallel) experiment
+#    All are Belebele configs confirmed on HF on 2026-10-10.
+# ---------------------------------------------------------------------------
+belebele_panel:
+  - {belebele: eng_Latn, glottocode: stan1293, path: "Indo-European > ... > Germanic > ... > Macro-English", role: anchor}
+  - {belebele: hin_Deva, glottocode: hind1269, path: "Indo-European > ... > Indo-Aryan > ... > Midlands Indo-Aryan > ... > Western Hindi > Hindustani", role: regional_dominant}
+  - {belebele: ben_Beng, glottocode: beng1280, path: "... > Indo-Aryan Eastern zone > Oriya-Gauda-Kamrupa > Gauda-Kamrupa > Gauda-Banga", role: eastern_IA}
+  - {belebele: asm_Beng, glottocode: assa1263, path: "... > Indo-Aryan Eastern zone > Oriya-Gauda-Kamrupa > Gauda-Kamrupa > Kamrupa > Eastern Kamrupa", role: eastern_IA}
+  - {belebele: ory_Orya, glottocode: oriy1255, path: "... > Indo-Aryan Eastern zone > Oriya-Gauda-Kamrupa > Macro-Oriya", role: eastern_IA}
+  - {belebele: npi_Deva, glottocode: nepa1254, path: "... > Midlands Indo-Aryan > Indo-Aryan Northern zone > Eastern Pahari", role: northern_IA}
+  - {belebele: ben_Latn, glottocode: beng1280, role: script_twin_of_ben_Beng}
+  - {belebele: hin_Latn, glottocode: hind1269, role: script_twin_of_hin_Deva}
+  - {belebele: npi_Latn, glottocode: nepa1254, role: script_twin_of_npi_Deva}
+  - {belebele: mya_Mymr, glottocode: nucl1310, path: "Sino-Tibetan > Burmo-Qiangic > Lolo-Burmese > ...", role: sino_tibetan}
+  - {belebele: bod_Tibt, glottocode: tibe1272, path: "Sino-Tibetan > Bodic > Bodish > ...", role: sino_tibetan}
+  - {belebele: kac_Latn, glottocode: kach1280, path: "Sino-Tibetan > Brahmaputran > Jingpho-Luish > Jingpho", role: sino_tibetan_brahmaputran, note: "Same Glottolog subgroup (Brahmaputran) as Bodo"}
+  - {belebele: shn_Mymr, glottocode: shan1277, path: "Tai-Kadai > ... > Shanic > Southern Shanic", role: tai_kadai}
+  - {belebele: khm_Khmr, glottocode: cent1989, path: "Austroasiatic > Khmeric", role: austroasiatic_non_munda}
+  - {belebele: vie_Latn, glottocode: viet1252, path: "Austroasiatic > Vietic > Viet-Muong", role: austroasiatic_non_munda}
+  - {belebele: tam_Taml, glottocode: tami1289, path: "Dravidian > South Dravidian > South Dravidian I > ...", role: unrelated_indian_comparator}
+  - {belebele: tel_Telu, glottocode: telu1262, path: "Dravidian > South Dravidian > South Dravidian II > Teluguic", role: unrelated_indian_comparator}
+
+# Resource level: do NOT hand-assign. Compute from (a) measured no-pressure accuracy per model,
+# and (b) a documented external proxy (e.g. Joshi et al. 2020 class, Wikipedia article count with
+# retrieval date). Record both; analyse with each.

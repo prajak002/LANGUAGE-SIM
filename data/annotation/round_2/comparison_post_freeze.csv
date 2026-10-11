@@ -1,0 +1,47 @@
+item_id,lang,lemma,sense,source_label,evidence_strength,wiktionary_candidate,templates,stratum_v1.0,relation,page_cites_CDIAL
+1a61764406-1,hi,भेदना,"to invade, penetrate",UNK,none,SEMI,SEMI<sa,SEMI,undecided by sources,no
+1e4399cb53-1,hi,रामराज्य,the rule of Rama; a righteous society,UNK,none,LRN,LRN<sa,LRN,undecided by sources,no
+434bcca23a-1,hi,सैर,"excursion, stroll",EXT,explicit,EXT,BOR<ar,EXT-AR,agree,no
+434bcca23a-2,hi,सैर,relating to a plough,UNK,none,LRN,LRN<sa,EXT-AR,undecided by sources,no
+507c3f7c13-1,hi,पुरा,formerly; till now,UNK,none,LRN,LRN<sa,OVL,undecided by sources,yes
+507c3f7c13-2,hi,पुरा,"large village, town; ward",INH,structural,INH,INH<pra; INH<sa; INH<ine-pro,OVL,agree,yes
+632b7cea10-1,hi,दरस,"sight, glance",UNK,none,SEMI,SEMI<sa,SEMI,undecided by sources,no
+6d142d4fd8-1,hi,मसलना,"to squish, crush",INH,structural,INH,INH<sa,INH,agree,no
+821dd712f9-1,hi,पेंसिल,pencil,EXT,explicit,EXT,BOR<en,EXT-EN,agree,no
+86de5e37dd-1,hi,बाँचना,"to read, decipher",INH,structural,SEMI,SEMI<sa,SEMI,disagree,no
+89d35eb38d-1,hi,हान,alt form of हानि (loss),INH,structural,INH,INH<pra; INH<sa,INH,agree,no
+a6642e98e1-1,hi,सेंत,something obtained free of charge,UNK,none,NOETY,—,SEMI,undecided by sources,no
+a6642e98e1-2,hi,सेंत,"collection, clump, mass",UNK,none,SEMI,SEMI<sa,SEMI,undecided by sources,no
+cb94945a69-1,hi,अमावस,new moon,INH,structural,SEMI,SEMI<sa; DER<pra,SEMI,disagree,no
+d7f633ee5c-1,hi,ठंड,cold; winter,INH,structural,INH,INH<pra; DER<dra-pro,INH,agree,no
+db7e20c432-1,hi,नाक,nose,INH,structural,INH,INH<pra; INH<pra; INH<sa,OVL,agree,yes
+db7e20c432-2,hi,नाक,heaven,LRN,structural,LRN,LRN<sa,OVL,agree,yes
+dc04c1c9ed-1,hi,संवर्धन,"rearing, fostering, developing",NSF,none,LRN,LRN<sa,LRN,no source found,no
+e98f43633d-1,hi,जामाता,son-in-law,LRN,structural,LRN,LRN<sa,LRN,agree,no
+ee2882ba7a-1,hi,बांटना,"to distribute, divide",INH,structural,INH,INH<pra,INH,agree,yes
+f9b75d2302-1,hi,अगला,next; coming,UNK,none,INH,INH<pra; INH<sa,INH,undecided by sources,yes
+f9d1e53c34-1,hi,पूज्य,venerable; honoured,LRN,structural,LRN,LRN<sa,LRN,agree,no
+fab3254e0c-1,hi,रजत,silvery; white,LRN,structural,LRN,LRN<sa,LRN,agree,yes
+0618434674-1,bn,পাহারা,"watching, guarding; a watch",UNK,none,INH,INH<sa,INH,undecided by sources,yes
+0b75c3f87a-1,bn,জ্বী,yes (agreement),UNK,none,SEMI,SEMI<sa,SEMI,undecided by sources,no
+1bd0c88f5c-1,bn,সর্বদা,always,UNK,none,LRN,LRN<sa,LRN,undecided by sources,no
+20afb9f0d6-1,bn,সোয়ামি,"synonym of স্বামী (husband, master)",NSF,none,SEMI,SEMI<sa,SEMI,no source found,no
+32e0b38598-1,bn,জাইত,type; caste; community,NSF,none,SEMI,SEMI<sa,SEMI,no source found,no
+4cd53ca9f4-1,bn,জোছনা,alternative spelling of জ্যোৎস্না (moonlight),UNK,none,SEMI,SEMI<sa,SEMI,undecided by sources,no
+4ebd16e802-1,bn,গ্যালারি,gallery,NSF,none,EXT,BOR<en,EXT-EN,no source found,no
+8900de7aed-1,bn,পাদা,to fart,INH,structural,INH,INH<sa; INH<inc-pro; INH<iir-pro; INH<ine-pro,INH,agree,no
+8fd9a0b15d-1,bn,লব্ধ,obtained; gained,UNK,none,LRN,LRN<sa,LRN,undecided by sources,no
+92e21d6ebb-1,bn,ইহুদি,Jew; Jewish,EXT,explicit,EXT,BOR<ar; DER<arc; DER<he; DER<he,EXT-AR,agree,no
+9512aa91f6-1,bn,প্রাচীর,wall; rampart,UNK,none,LRN,LRN<sa,LRN,undecided by sources,no
+981a823173-1,bn,বমি,vomit,UNK,none,INH,INH<sa; INH<iir-pro; INH<ine-pro,INH,undecided by sources,no
+a0e3c52f42-1,bn,সোয়াদ,(no definition line),NSF,none,EXT,BOR<ar,SEMI,no source found,no
+a0e3c52f42-2,bn,সোয়াদ,the Arabic letter ṣād,NSF,none,EXT,BOR<ar,SEMI,no source found,no
+a0e3c52f42-3,bn,সোয়াদ,"taste, flavour",NSF,none,SEMI,SEMI<sa,SEMI,no source found,no
+b314616373-1,bn,গৈরিক,saffron (colour),UNK,none,LRN,LRN<sa,LRN,undecided by sources,no
+ba2b5d05c9-1,bn,কমলা,"orange (colour, fruit, tree)",INH,structural,INH,INH<sa,OVL,agree,yes
+ba2b5d05c9-2,bn,কমলা,form of an epithet (per Wiktionary gloss),UNK,none,LRN,LRN<sa,OVL,undecided by sources,yes
+e8a84295b0-1,bn,অর্পিতা,(no definition line),NSF,none,LRN,LRN<sa,LRN,no source found,no
+e9c488e1d5-1,bn,চুরি,theft,INH,structural,INH,INH<pra; INH<sa,INH,agree,yes
+eade04939b-1,bn,ভাল,good,INH,structural,INH,INH<pra-mag; INH<sa; INH<iir-pro; INH<ine-pro,OVL,agree,yes
+eade04939b-2,bn,ভাল,forehead; destiny,INH,structural,LRN,LRN<sa,OVL,disagree,yes
+f5d702e794-1,bn,উড়ে,Odia; inhabitant of Odisha,NSF,none,INH,INH<sa,INH,no source found,no

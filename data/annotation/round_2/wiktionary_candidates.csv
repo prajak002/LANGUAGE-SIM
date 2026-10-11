@@ -1,0 +1,47 @@
+item_id,stratum_v1.0,wiktionary_candidate,templates,etymology_wikitext
+0618434674-1,INH,INH,INH<sa,"{{inh+|bn|sa|प्रहर}}. Cognate with {{cog|gu|પહેરો}}, {{cog|inc-hnd}} {{m|ur|پَہْرا}} / {{m|hi|पहरा}}, and {{cog|ne|पहरा}}."
+0b75c3f87a-1,SEMI,SEMI,SEMI<sa,{{slbor|bn|sa|जीव}}.
+1a61764406-1,SEMI,SEMI,SEMI<sa,"{{slbor|hi|sa|भेदयति}}, with influence from {{m|hi|भेद|t=distinction}}."
+1bd0c88f5c-1,LRN,LRN,LRN<sa,{{lbor|bn|sa|सर्वदा}}.
+1e4399cb53-1,LRN,LRN,LRN<sa,{{lbor|hi|sa|रामराज्य}}.
+20afb9f0d6-1,SEMI,SEMI,SEMI<sa,{{slbor|bn|sa|स्वामिन्|स्वामी}}. {{doublet|bn|স্বামী|সাঁই}}.
+32e0b38598-1,SEMI,SEMI,SEMI<sa,{{slbor|bn|sa|जाति|জাতি}}.
+434bcca23a-1,EXT-AR,EXT,BOR<ar,{{etymid|hi|excursion}}{{root|hi|ar|س ي ر}} {{bor+|hi|ar|سَيْر}}.
+434bcca23a-2,EXT-AR,LRN,LRN<sa,{{etymid|hi|of a plough}} {{lbor|hi|sa|सैर}}.
+4cd53ca9f4-1,SEMI,SEMI,SEMI<sa,{{slbor|bn|sa|ज्योत्स्ना}}.
+4ebd16e802-1,EXT-EN,EXT,BOR<en,{{bor+|bn|en|gallery}}.
+507c3f7c13-1,OVL,LRN,LRN<sa,{{dercat|hi|inc-pro|ine-pro|iir-pro}} {{lbor|hi|sa|पुरा|tr=purā́}}.
+507c3f7c13-2,OVL,INH,INH<pra; INH<sa; INH<ine-pro,"{{inh+|hi|pra|𑀧𑀼𑀭|पुर}} {{inc-ext|hi|ka}}, from {{inh|hi|sa|पुर}}, from {{inh|hi|ine-pro|*tpelH-|*(t)pĺ̥Hs}}. {{dbt|hi|पुर}}."
+632b7cea10-1,SEMI,SEMI,SEMI<sa,{{slbor|hi|sa|दर्श}}.
+6d142d4fd8-1,INH,INH,INH<sa,{{inh+|hi|sa|मषति|t=it crushes}} {{inc-ext|hi|lla}}.
+821dd712f9-1,EXT-EN,EXT,BOR<en,{{bor+|hi|en|pencil}}.
+86de5e37dd-1,SEMI,SEMI,SEMI<sa,"{{root|hi|sa|वच्}} {{slbor|hi|sa|वाचयति|t=causes to speak}}. Compare {{cog|kok|वाजुचे}}, {{m|kok|वाच्चे}}, {{cog|gu|વાંચવું}}, {{cog|mr|वाचणे}}, {{cog|pa|ਵਾਚਣਾ|tr=-}} / {{m|pa|واچݨا}}."
+8900de7aed-1,INH,INH,INH<sa; INH<inc-pro; INH<iir-pro; INH<ine-pro,"{{root|bn|ine-pro|*perd-}} {{inh+|bn|sa|पर्दते|tr=párdate}}, from {{inh|bn|inc-pro|*párdatay}}, from {{inh|bn|iir-pro|*párdatay}}, from {{inh|bn|ine-pro|*pérdetor}}. Cognates include {{cog|hi|पादना}}, {{cog|sq|pjerdh}}, {{cog|en|fart}}."
+89d35eb38d-1,INH,INH,INH<pra; INH<sa,"{{inh+|hi|pra|𑀳𑀸𑀡𑀺|हाणि}}, from {{inh|hi|sa|हानि}}."
+8fd9a0b15d-1,LRN,LRN,LRN<sa,{{lbor|bn|sa|লব্ধ}}.
+92e21d6ebb-1,EXT-AR,EXT,BOR<ar; DER<arc; DER<he; DER<he,"{{bor+|bn|ar|يَهُودِيّ}}, which was borrowed from {{der|bn|arc|יְהוּדָיֵא|tr=yəhūḏāyā}}, from {{der|bn|he|יהודי|tr=yehudí}} (see more at {{der|bn|he|יְהוּדָה|tr=y'hudá}}). Cognate with {{cog|as|ইহুদী}}, {{cog|hi|यहूदी}}, {{cog|ur|یَہُودِی}}, {{cog|ne|यंहुदि}}, {{cog|gu|યહૂદી}}, {{cog|pa|ਯਹੂਦੀ}} / {{m|pa|یَہُودِی}}."
+9512aa91f6-1,LRN,LRN,LRN<sa,{{lbor|bn|sa|प्राचीर}}. {{doublet|bn|পাঁচিল}}.
+981a823173-1,INH,INH,INH<sa; INH<iir-pro; INH<ine-pro,"{{inh+|bn|sa|वमति}}, from {{inh|bn|iir-pro|*wámati}}, from {{inh|bn|ine-pro||*wémh₁-e-ti}}, from {{m|ine-pro|*wemh₁-||to spew, vomit}}. Cognate with {{cog|la|vomō}} (whence {{cog|en|vomit}}) and {{cog|fa-cls|بیمار|tr=bīmār}} (whence {{cog|bn|বিমার||illness}}). {{doublet|bn|বমন}}."
+a0e3c52f42-1,SEMI,EXT,BOR<ar,{{root|bn|ar|س ع د}} {{bor+|bn|ar|سُعَاد||happiness}}.
+a0e3c52f42-2,SEMI,EXT,BOR<ar,{{bor+|bn|ar|صَاد}}.
+a0e3c52f42-3,SEMI,SEMI,SEMI<sa,{{slbor|bn|sa|स्वाद|স্বাদ|tr=svāda}}. {{dbt|bn|স্বাদ}}.
+a6642e98e1-1,SEMI,NOETY,—,{{etymon|hi|id=free|सेंत<id:collection><unc:1>|tree=1}} {{unk|hi}}. Dasa claims the same source as {{m|hi||सेंत|collection}}.
+a6642e98e1-2,SEMI,SEMI,SEMI<sa,{{etymon|hi|id=collection|:slbor|sa:संहति<id:together>|text=+|tree=1}}
+b314616373-1,LRN,LRN,LRN<sa,{{lbor|bn|sa|गैरिक|গৈরিক|tr=gairika}}.
+ba2b5d05c9-1,OVL,INH,INH<sa,"{{inh+|bn|sa|कमला||orange}}, {{m|sa|कमल||pale red}}.{{ref|{{R:CDIAL|kámala<sup>1</sup>|2763|page=139}}}}"
+ba2b5d05c9-2,OVL,LRN,LRN<sa,{{lbor|bn|sa|कमला||Lakshmi}}.
+cb94945a69-1,SEMI,SEMI,SEMI<sa; DER<pra,"{{slbor|hi|sa|अमावस्या}}, through {{der|hi|pra|𑀅𑀫𑀸𑀯𑀲𑁆𑀲𑀸|अमावस्सा}}. Cognate with {{cog|gu|અમાસ}}, {{cog|mr|आवस}}, {{m|mr|अवस}}, {{cog|or|ଉଆଁସ}}. {{dbt|hi|अमावस्या}}."
+d7f633ee5c-1,INH,INH,INH<pra; DER<dra-pro,{{etymon|hi|id=cold|:inh|pra:𑀞𑀟𑁆𑀠<id:cold>|:influence|dra-pro:*taṇ<id:cold>|tree=1}} {{backform|hi|ठंडा|t=cold}}.
+db7e20c432-1,OVL,INH,INH<pra; INH<pra; INH<sa,"{{etymon|hi|id=nose|:inh|pra:𑀡𑀓𑁆𑀓<id:nose>|tree=1}} {{inh+|hi|pra|𑀡𑀓𑁆𑀓|णक्क|t=nose}}, from {{inh|hi|sa|नस्||nose}} {{inc-ext|hi|ka}}. Cognate with {{cog|bn|নাক}}, {{cog|pa|ਨੱਕ}}, {{cog|mr|नाक}}, {{cog|gu|નાક}}, {{cog|rom|nakh}}, and more distantly related to {{cog|en|nose}}, {{cog|fr|nez}}, {{cog|lt|nósis}}, and {{cog|ru|нос}}."
+db7e20c432-2,OVL,LRN,LRN<sa,{{dercat|hi|sa|inh=1}} {{lbor|hi|sa|नाक|tr=nā́ka}}.
+dc04c1c9ed-1,LRN,LRN,LRN<sa,{{lbor|hi|sa|संवर्धन}}; equivalent to {{af|hi|सम्-|वर्धन}}.
+e8a84295b0-1,LRN,LRN,LRN<sa,"{{lbor|bn|sa|अर्पिता|অর্পিতা|g=f}}, feminine of {{m|sa|अर्पित|অর্পিত}}. Ultimately from a causative formation of {{m|sa|ऋ|ঋ|t=to go; to place}}."
+e98f43633d-1,LRN,LRN,LRN<sa,{{root|hi|ine-pro|*ǵem-}} {{dercat|hi|inc-pro|iir-pro|ine-pro}} {{lbor|hi|sa|tr=jā́mātṛ|जामातृ}}. {{doublet|hi|जमाई|दामाद}}.
+e9c488e1d5-1,INH,INH,INH<pra; INH<sa,"{{inh+|bn|pra|𑀘𑁄𑀭𑀺𑀆}}, from {{inh|bn|sa|चौरिका}}, from {{m|sa|चुर्||to steal}}. {{col-top|2|cog}} * {{cog|as|চুৰি}} * {{cog|awa|चोरी}} * {{cog|gu|ચોરી|g=f}} * {{cog|hi|चोरी|g=f}} / {{cog|ur|چوری|g=f}} * {{cog|ks|ژوٗر|g=mf}} * {{cog|kfy|चोरी|tr=corī}} * {{cog|mai|चोरी}} / {{m|mai|𑒔𑒼𑒩𑒲}} * {{cog|mr|चोरी|g=f}} * {{cog|mwr|चोरी|g=f}} / {{m|mwr|𑅙𑅔𑅭𑅑|g=f}} * {{cog|ne|चोरि}} * {{cog|or|ଚୋରି}} * {{cog|pa|"
+eade04939b-1,OVL,INH,INH<pra-mag; INH<sa; INH<iir-pro; INH<ine-pro,"{{inh+|bn|pra-mag|𑀪𑀮𑁆𑀮}}, from {{inh|bn|sa|भल्ल||happy, fortunate, auspicious}}, from earlier {{m|sa|*भद्ल|tr=*bhadlá}}, from {{inh|bn|iir-pro|*bʰadrás|*bʰadrás ~ *bʰadlás}}, from {{inh|bn|ine-pro||*bʰn̥d-lós}}, from {{m|ine-pro|*bʰend-||to be happy}}. {{dbt|bn|ভদ্র|ভাদ্র|ভন্দিষ্ঠ}}."
+eade04939b-2,OVL,LRN,LRN<sa,{{lbor|bn|sa|भाल}}.
+ee2882ba7a-1,INH,INH,INH<pra,{{hi-verb set|बंटना|बांटना|बंटाना}} {{etymon|hi|id=distribute|:inh|pra:𑀯𑀁𑀝𑀇<id:share>|tree=1|text=++}}
+f5d702e794-1,INH,INH,INH<sa,{{inh+|bn|sa|ओड्र}}.
+f9b75d2302-1,INH,INH,INH<pra; INH<sa,"{{inh+|hi|pra|𑀅𑀕𑁆𑀕𑀮}} {{inc-ext|hi|la}}, from {{inh|hi|sa|अग्र|tr=ágra|t=front; top}}.<ref>{{R:CDIAL|agra|hw=1}}</ref>"
+f9d1e53c34-1,LRN,LRN,LRN<sa,{{lbor|hi|sa|पूज्य}}.
+fab3254e0c-1,LRN,LRN,LRN<sa,{{lbor|hi|sa|रजत}}.
