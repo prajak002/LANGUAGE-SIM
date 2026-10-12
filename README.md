@@ -116,15 +116,15 @@ flowchart TD
 
 <p align="center"><img src="docs/figures/baseline_by_language.svg" alt="Macro-F1 of the form-based model in sixteen languages" width="760"></p>
 
-**The three-input experiment** (3,276 Indo-Aryan items, folds grouped by ancestor form):
+**The three-input experiment** (3,289 Indo-Aryan items, pooled folds grouped by ancestor form):
 
-| Model input | Logistic: macro-F1 | Logistic: hard items right (of 191) | Transformer: macro-F1 | Transformer: hard items right (of 191) |
+| Model input | Logistic: macro-F1 | Logistic: hard items right (of 194) | Transformer: macro-F1 | Transformer: hard items right (of 194) |
 |---|---|---|---|---|
-| Word only | 0.79 | 115 | 0.78 | 114 |
-| Word + ancestor form | 0.90 | 12 | 0.86 | 97 |
-| Word + ancestor + intermediate form | 0.90 | 16 | 0.85 | 102 |
+| Word only | 0.78 | 113 | 0.78 | 123 |
+| Word + ancestor form | 0.90 | 11 | 0.86 | 91 |
+| Word + ancestor + intermediate form | 0.90 | 12 | 0.86 | 95 |
 
-The ancestor form buys the overall score at the cost of the hard items, and the intermediate form restores nothing, in either model. (The paper's main text gives the per-language-fold version of the logistic run: 114, 17 and 21 of 191.)
+The ancestor form buys the overall score at the cost of the hard items, and the intermediate form restores nothing, in either model. (The paper's main text gives the per-language-fold version of the logistic run: 120, 15 and 23 of 194.)
 
 <p align="center"><img src="docs/figures/three_inputs.svg" alt="Hard items right by model input, logistic model against Transformer" width="760"></p>
 
@@ -132,7 +132,7 @@ The ancestor form buys the overall score at the cost of the hard items, and the 
 <summary><b>How to read this chart</b></summary>
 
 - **Word only:** both models are a little above chance. They cannot measure resemblance, so they cannot be misled by it.
-- **Word + ancestor form:** the logistic model now measures resemblance directly and drops to 6%. Its overall score rises from 0.79 to 0.90 at the same time. The Transformer follows resemblance less closely, scores lower overall, and sits at chance.
+- **Word + ancestor form:** the logistic model now measures resemblance directly and drops to 6%. Its overall score rises from 0.78 to 0.90 at the same time. The Transformer follows resemblance less closely, scores lower overall, and sits at chance.
 - **+ intermediate form:** no real change in either model. For 84% of the hard inherited words the intermediate form is itself almost the Sanskrit form, so it carries nothing to learn from.
 
 </details>
@@ -213,15 +213,15 @@ R=data/raw/wiktionary/crosslingual_v1
 T=$(mktemp -d)
 curl -sL -o $T/forms.csv https://media.githubusercontent.com/media/moli-mandala/data/main/cldf/forms.csv
 curl -sL -o $T/edges.csv https://raw.githubusercontent.com/moli-mandala/data/main/cldf/edges.csv
-.venv/bin/python scripts/s8a_missing_link.py     $T/forms.csv $T/edges.csv data/baseline_v1 out/s8
-.venv/bin/python scripts/s10_three_conditions.py $T/forms.csv $T/edges.csv data/baseline_v1 out/s10
+.venv/bin/python scripts/s8a_missing_link.py     $T/forms.csv $T/edges.csv data/baseline_v2 out/s8
+.venv/bin/python scripts/s10_three_conditions.py $T/forms.csv $T/edges.csv data/baseline_v2 out/s10
 rm -rf $T
 ```
 
 **The Transformer** (S11; about 30 minutes on a laptop GPU, PyTorch 2.14.1). Results vary slightly by device.
 ```
 uv pip install --python .venv/bin/python -r requirements-neural.txt
-.venv/bin/python scripts/s11_transformer.py $T/forms.csv $T/edges.csv data/baseline_v1 out/s11
+.venv/bin/python scripts/s11_transformer.py $T/forms.csv $T/edges.csv data/baseline_v2 out/s11
 ```
 
 **The charts in this file:** `.venv/bin/python scripts/make_readme_figures.py .`
@@ -239,7 +239,7 @@ uv pip install --python .venv/bin/python -r requirements-neural.txt
 | `tests/` | Hand-worked test cases for the template reader and the distance |
 | `docs/` | Frozen plans, reports, protocols, decision log |
 | `data/raw/wiktionary/` | Retrieved pages and past revisions, with revision IDs |
-| `data/audit/`, `data/baseline_v1/` | Result files |
+| `data/audit/`, `data/baseline_v2/` | Result files |
 | `data/annotation/` | The 48-word dictionary study and the unfilled expert sheets |
 | `data/external/` | Rows used from two open expert databases, with attribution |
 | `data/release/` | Draft benchmark file, data sheet and licensing review (not published) |
@@ -247,20 +247,22 @@ uv pip install --python .venv/bin/python -r requirements-neural.txt
 
 ## 8. Where every number comes from
 
+Folders ending in `_v2` hold the corrected run that the paper reports; the matching `_v1` folders hold the first run and are kept for the record.
+
 | Paper section | Result files | Script | Frozen plan |
 |---|---|---|---|
 | Audit | `data/audit/crosslingual_v1/measures.csv`, `tables.md` | `scripts/audit_crosslingual.py` | `docs/crosslingual_audit_plan.md` |
-| Baseline | `data/baseline_v1/a1_cv.csv`, `a2_semi.csv`, `a3_transfer.csv`, `leakage_check.csv` | `scripts/baseline.py`, `scripts/baseline_leakage_check.py` | `docs/baseline_plan.md` |
-| Dissociation, citation | `data/baseline_v1/s2_dissociation.csv`, `s3_citation.csv`, `oof_predictions.csv.gz` | `scripts/baseline_supplementary.py` | `docs/supplementary_plan.md` |
-| Turner at scale | `data/audit/turner_scale_v1/` | `scripts/turner_scale.py` | `docs/supplementary_plan_s4.md` |
-| Dictionary on the hard items | `data/audit/s7_v1/` | `scripts/s7a_turner_by_subset.py`, `scripts/s7b_history_by_subset.py` | `docs/supplementary_plan_s7.md` |
-| The missing link | `data/audit/s8_v1/` | `scripts/s8a_missing_link.py`, `scripts/s8b_recorded_links.py` | `docs/supplementary_plan_s8.md` |
+| Baseline | `data/baseline_v2/a1_cv.csv`, `a2_semi.csv`, `a3_transfer.csv`, `leakage_check.csv` | `scripts/baseline.py`, `scripts/baseline_leakage_check.py` | `docs/baseline_plan.md` |
+| Dissociation, citation | `data/baseline_v2/s2_dissociation.csv`, `s3_citation.csv`, `oof_predictions.csv.gz` | `scripts/baseline_supplementary.py` | `docs/supplementary_plan.md` |
+| Turner at scale | `data/audit/turner_scale_v2/` | `scripts/turner_scale.py` | `docs/supplementary_plan_s4.md` |
+| Dictionary on the hard items | `data/audit/s7_v2/` | `scripts/s7a_turner_by_subset.py`, `scripts/s7b_history_by_subset.py` | `docs/supplementary_plan_s7.md` |
+| The missing link | `data/audit/s8_v2/` | `scripts/s8a_missing_link.py`, `scripts/s8b_recorded_links.py` | `docs/supplementary_plan_s8.md` |
 | Language model | `data/llm_s5/` | `scripts/llm_dissociation.py` | `docs/supplementary_plan_s5.md` |
 | Language model, larger | `data/llm_s5b/` | `scripts/llm_dissociation.py`, `scripts/llm_by_route.py` | `docs/supplementary_plan_s5b.md` |
-| Expert check, thirteen languages | `data/audit/iecor_v1/`, `data/external/iecor/` | `scripts/iecor_expert.py` | `docs/supplementary_plan_s9.md` |
-| Three input conditions, grouped folds | `data/audit/s10_v1/` | `scripts/s10_three_conditions.py` | `docs/supplementary_plan_s10.md` |
-| The same with a character Transformer (needs PyTorch) | `data/audit/s11_v1/` | `scripts/s11_transformer.py` | `docs/supplementary_plan_s11.md` |
-| Label history, two past snapshots | `data/audit/history_v1/`, `data/audit/s7_v1/s7b_*.csv` | `scripts/history_analysis.py`, `scripts/s7b_history_by_subset.py` | `docs/supplementary_plan.md` (S1), `docs/supplementary_plan_s7.md` (S7b) |
+| Expert check, thirteen languages | `data/audit/iecor_v2/`, `data/external/iecor/` | `scripts/iecor_expert.py` | `docs/supplementary_plan_s9.md` |
+| Three input conditions, grouped folds | `data/audit/s10_v2/` | `scripts/s10_three_conditions.py` | `docs/supplementary_plan_s10.md` |
+| The same with a character Transformer (needs PyTorch) | `data/audit/s11_v2/` | `scripts/s11_transformer.py` | `docs/supplementary_plan_s11.md` |
+| Label history, two past snapshots | `data/audit/history_v1/`, `data/audit/s7_v2/s7b_*.csv` | `scripts/history_analysis.py`, `scripts/s7b_history_by_subset.py` | `docs/supplementary_plan.md` (S1), `docs/supplementary_plan_s7.md` (S7b) |
 | Romanian expert check | `data/audit/wold_romanian_v1/`, `data/external/wold_romanian/` | `scripts/wold_romanian.py` | `docs/supplementary_plan_s6.md` |
 | Hindi/Bengali source study | `data/annotation/pilot_1/`, `data/annotation/round_2/` | `scripts/compare_round.py`, `scripts/sense_citation.py` | `docs/evidence_extraction_protocol_v1.1.md` |
 

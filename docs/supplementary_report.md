@@ -391,3 +391,33 @@ These scripts attach the subset by (language, title, route). Where two senses sh
 ## Known defect in the template reader (found 2026-10-13, not rerun)
 
 Where a template gives `tr=` before the ancestor form, the reader takes `tr` as the form: 21 baseline items (18 Hindi, 2 Marathi, 1 Romance). Eighteen were counted as dissociated learned items. Without them B3 is right on 27 of 260 dissociated items in the Sanskrit family, against the reported 40 of 278. None is among the linked items or the expert comparisons. See decision log entry 114.
+
+## Corrected run (v2), 2026-10-13
+
+Both defects recorded above were fixed and the baseline and everything built on it were rerun into `data/baseline_v2/` and `data/audit/*_v2/`. The first-run sections above are left as written; the figures below supersede them. Only Hindi, Marathi, Bengali and Galician differ from the first run.
+
+| Analysis | First run | Corrected run |
+|---|---|---|
+| Baseline items | 12,777 | 12,778 |
+| B3, dissociated, Sanskrit family | 40/278 (14%) | 27/260 (10%) |
+| B3, dissociated, Romance | 52/273 (19%) | 52/272 (19%) |
+| B3, congruent, Sanskrit family | 3,734/3,737 | 3,746/3,749 |
+| Word-only model, Sanskrit family, congruent to dissociated | 87% to 57% | 87% to 54% |
+| S7a, near-Sanskrit: Turner lists a matching form | 57/125 against 100/996 | 57/125 against 100/1,001 |
+| S8a, linked items | 3,276 of 4,893 | 3,289 of 4,894 |
+| S8a, hard inherited items with an unchanged link | 88/106 (83%) | 92/110 (84%) |
+| S8a, rule agreement where the link changed | 1,476/1,852 (80%) | 1,484/1,864 (80%) |
+| S8a, distance-only models on dissociated items (L1, L0) | 33, 35 of 191 | 32, 34 of 194 |
+| S8c, unchanged link; unit-cost variant | 88/106; 69/106 | 92/110; 74/110 |
+| S8c, models on dissociated items | 39, 37 of 191 | 37, 35 of 194 |
+| S10, macro-F1 (word; + ancestor; + intermediate) | 0.78, 0.90, 0.90 | 0.78, 0.90, 0.90 |
+| S10, dissociated items right | 114, 17, 21 of 191 | 120, 15, 23 of 194 |
+| S11, logistic on pooled folds, dissociated | 115, 12, 16 of 191 | 113, 11, 12 of 194 |
+| S11, Transformer macro-F1 | 0.78, 0.86, 0.85 | 0.78, 0.86, 0.86 |
+| S11, Transformer, dissociated | 114, 97, 102 of 191 | 123, 91, 95 of 194 |
+| S11, abstention at 50% coverage (T1): dissociated kept, right | 41, 21 | 38, 18 |
+| S9 IE-CoR | 277/291; 45 and 22 of 48 | unchanged |
+| S7b, changed labels in 2024: dissociated against congruent | 8/145 against 87/815 | 8/141 against 87/819 |
+| S4 matcher against hand records | 31 of 38 | unchanged |
+
+Readings are unchanged: the intermediate form does not help either model (95 against 91 of 194; intervals overlap), the Transformer with the ancestor form is clearly above the logistic model on dissociated items and near chance, and no model that sees the ancestor form beats the word-only model there. S6 (Romanian) was not rerun because Romanian is identical in the corrected baseline. S5 and S5b were not rerun.
