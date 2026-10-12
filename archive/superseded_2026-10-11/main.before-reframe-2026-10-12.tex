@@ -1,0 +1,346 @@
+% DRAFT, 2026-10-11. Written from docs/feasibility_report.md and the frozen CSVs.
+% Every \lead{...} marks something only the project lead can supply. See README.md, Part 2.
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\newcommand{\lead}[1]{\textcolor{red}{\textbf{[LEAD: #1]}}}
+\newcommand{\lbl}[1]{\textsc{#1}}
+\newcommand{\gl}[1]{`#1'}
+
+\title{Inherited or Learned? Auditing Wiktionary's Route Labels in 17 Languages\\and Testing Them against Dictionaries for Hindi and Bengali}
+
+\author{Anonymous submission}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Words that a language inherited from its ancestor and words that it borrowed back later from the same ancestor are different historical strata: Hindi \textit{tadbhava} against \textit{tatsama}, Spanish inherited against learned Latin words. Wiktionary records these routes for tens of thousands of words, and labels of this kind have been used to train classifiers. We ask whether the labels can be checked. \textbf{First}, we audit Wiktionary's own records in 17 language pairs with four ancestors (Sanskrit, Latin, Ancient Greek, Old Armenian), on 13,128 pages sampled by a plan frozen in advance. The semi-learned category holds at most 129 pages in any language. The statement that a word is a learned borrowing carries a citation of its own in at most 4\% of senses in 16 of the 17 languages, although most entries list references elsewhere. \textbf{Second}, minimal form-based models predict Wiktionary's inherited and learned labels with macro-F1 of 0.86 to 0.96 in seven languages descended from Sanskrit and 0.75 to 0.91 in seven Romance languages, but only 0.62 and 0.59 in Greek and Armenian; they split the semi-learned class, and they are right on 14\% and 19\% of the items in those two families whose label goes against resemblance. Those labels are not noise: among Indo-Aryan words whose form is almost the Sanskrit form, a comparative dictionary lists a matching reflex for 46\% of the ones Wiktionary calls inherited and for 10\% of the ones it calls learned. High scores cannot show that the labels are right; for Romanian, the one language with open expert loanword data, 95\% of 684 inherited labels agree with the expert. \textbf{Third}, for Hindi and Bengali we look 48 lemmas up in four dictionaries, three of which state routes, under label rules frozen before the Wiktionary etymology was opened. A route could be assigned to 26 of 58 senses; none of the 12 semi-learned senses and none of the 9 Bengali learned senses could be recovered; the dictionaries whose conventions we read have no marker for either. A post hoc, non-blind search of a scanned historical grammar found the semi-learned label stated explicitly for 2 of the 6 Bengali cases. The dictionary labels were extracted by a language-model assistant and \lead{state the spot-check outcome, or say that none was done}. The audit describes Wiktionary's records and validates no label; the baseline predicts Wiktionary's unvalidated labels and is not a measure of historical accuracy.
+\end{abstract}
+
+\section{Introduction}
+
+A modern Indo-Aryan word with a Sanskrit etymon can have one of several histories. It may have been \textbf{inherited} through the Middle Indo-Aryan stages, with the sound changes of those stages (\textit{tadbhava}). It may be a \textbf{learned} borrowing taken later from Sanskrit as a prestige language (\textit{tatsama}), or a \textbf{semi-learned} borrowing whose form was partly adapted (\textit{ardhatatsama}, or semi-tatsama) \citep[\S111]{chatterji1926}. As \citeauthor{chatterji1926} notes, \textit{tatsama} in modern use describes the form of a word and not the way it entered the language, so we state our categories as routes. The distinction matters for historical phonology, because learned words do not show the regular changes, and it is a natural target for computational attribution.
+
+For Romance, \citet{cristea2021inherited} trained classifiers to separate inherited from borrowed Latin words, with labels taken from Wiktionary etymology templates. The same kind of label exists for Indo-Aryan. On 10 October 2026 the English Wiktionary category for Hindi learned borrowings from Sanskrit held 1,337 pages, the semi-learned category 98, and the category of terms inherited from Sanskrit 2,241; the Bengali categories held 1,075, 44 and 1,045 pages. These labels are edited by volunteers, and their accuracy is not known.
+
+Before such labels are used to train or to evaluate a model, it is worth asking whether they can be grounded. We state the question as follows: \textbf{for a given Hindi or Bengali word, do accessible scholarly dictionaries state, or let a reader derive by a fixed rule, the route by which the word entered the language?} This paper studies the labels. It is not a study of a classifier.
+
+The paper has three parts. It uses no large model, and its only classifiers are minimal baselines.
+\begin{itemize}
+\item \textbf{A cross-lingual audit} (\S\ref{sec:audit}) of how Wiktionary records these routes in 17 language pairs. It shows what the labels are before anyone tries to verify them: how large the categories are, whether the category agrees with the etymology on the page, and whether the route claim cites a source.
+\item \textbf{A form-based baseline} (\S\ref{sec:baseline}) that asks how far the surface form of a word predicts Wiktionary's label, and what happens to the semi-learned class.
+\item \textbf{A source-grounded study} (\S\ref{sec:method}--\ref{sec:why}) of 48 Hindi and Bengali lemmas, which asks whether dictionaries can decide the route independently.
+\end{itemize}
+The audit covers 13,128 pages and gives sample proportions; their intervals are in Appendix~\ref{app:denominators} and the supplementary tables. The source-grounded study is small and was stratified by hand to over-sample hard cases, so for it \textbf{we report raw counts, and no count estimates a rate for Hindi or Bengali vocabulary.} Only one small part compares labels with an expert's judgement, for Romanian; no part establishes more generally which labels are historically correct.
+
+\section{Related Work}
+
+\citet{cristea2021inherited} is the closest study in design: it discriminates inherited from borrowed Latin words in Romance languages, using Wiktionary templates as labels. For Indo-Aryan, \citet{cathcart2020disentangling} model the sound changes from Old Indo-Aryan etyma to their reflexes, with data taken from \citeauthor{turner1966cdial}'s comparative dictionary, and they state that they do not model contact. \citet{arora2023jambu} compile a database for South Asian historical linguistics that includes the same dictionary, and \citet{arora2022computational} survey the field and identify scattered data as its main obstacle. \citet{list2024openproblems} lists the detection of contact layers among the hard open problems of computational historical linguistics. \citet[\S4.1]{kanojia2021thesis} discusses the tatsama and tadbhava distinction in the context of cognate detection for Indian languages.
+
+In the sources that we searched, we did not find a computational classifier that is evaluated on these historical transmission categories for Indo-Aryan, and we did not find a study that audits Wiktionary's route labels across languages or checks them against dictionaries. This statement is bounded by our search and is not a claim that no such work exists.
+
+\section{A Cross-Lingual Audit of the Labels}
+\label{sec:audit}
+
+\paragraph{Design.} A language pair is a modern language and an ancestor from which it has both inherited words and learned borrowings. For each pair Wiktionary has up to three categories: learned borrowings, semi-learned borrowings, and inherited terms. We fixed 32 candidate pairs and eight measures in a plan that was frozen, with a recorded hash, before any category size or page was retrieved. A pair was included if its learned and inherited categories each held at least 100 pages. Seventeen pairs passed (Table~\ref{tab:audit}); the 15 that failed include Persian, Irish, Icelandic, Turkish, Russian and Japanese, which lack a learned-borrowing category of that size. From each category we took up to 400 pages in the order of a keyed hash, 13,565 sample rows over 13,128 distinct pages. All were retrieved, with revision identifiers, and all had the language section. The route of a sense is read from the etymology templates in its own Etymology section.
+
+\paragraph{One correction after the first run.} The first run reported that up to 28\% of pages in an inherited category had no supporting template. Inspection showed a defect in our template reader, which missed the nested form of a newer etymology template. We corrected the reader, extended a hand-worked test fixture to cover that form, and reran the audit. We report the corrected figures and keep the first run on file.
+
+\begin{table*}[t]
+\centering\small
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+& & \multicolumn{3}{c}{\textbf{Pages in category}} & \textbf{Unsup.} & \textbf{Multi} & \textbf{Confl.} & \textbf{Any ref.} & \multicolumn{2}{c}{\textbf{Inline citation}} \\
+\textbf{Ancestor} & \textbf{Language} & Learned & Semi & Inherited & Inh. & & & & Learned & Inh. \\
+\midrule
+Sanskrit & Assamese & 149 & 7 & 1082 & 3.2 & 7.7 & 0.0 & 19.6 & 0.0 & 1.5 \\
+Sanskrit & Bengali & 1075 & 44 & 1045 & 4.0 & 6.8 & 1.1 & 37.7 & 0.8 & 9.0 \\
+Sanskrit & Gujarati & 466 & 30 & 1161 & 6.8 & 4.1 & 0.6 & 44.9 & 0.0 & 10.1 \\
+Sanskrit & Hindi & 1337 & 98 & 2241 & 7.8 & 9.7 & 2.6 & 82.9 & 1.0 & 8.7 \\
+Sanskrit & Marathi & 358 & 12 & 955 & 3.0 & 4.2 & 0.4 & 84.2 & 0.6 & 7.5 \\
+Sanskrit & Odia & 269 & 3 & 655 & 5.5 & 0.7 & 0.1 & 81.7 & 0.0 & 1.9 \\
+Sanskrit & Punjabi & 224 & 36 & 1453 & 14.2 & 8.2 & 0.3 & 90.0 & 0.4 & 8.4 \\
+Sanskrit & Urdu & 209 & 48 & 769 & 9.8 & 12.2 & 1.9 & 72.8 & 0.5 & 22.7 \\
+\midrule
+Latin & Catalan & 3614 & 70 & 2118 & 0.2 & 10.6 & 0.6 & 90.1 & 4.0 & 2.9 \\
+Latin & French & 2697 & 25 & 2191 & 3.8 & 9.8 & 0.0 & 89.9 & 0.5 & 1.8 \\
+Latin & Galician & 885 & 26 & 2397 & 3.8 & 12.2 & 0.7 & 86.7 & 0.0 & 9.4 \\
+Latin & Italian & 2025 & 64 & 3499 & 0.0 & 17.5 & 0.6 & 46.6 & 1.5 & 5.3 \\
+Latin & Portuguese & 4206 & 129 & 2479 & 11.2 & 16.6 & 0.5 & 93.4 & 3.2 & 6.7 \\
+Latin & Romanian & 1634 & 3 & 2116 & 0.0 & 7.0 & 0.4 & 30.0 & 0.0 & 5.0 \\
+Latin & Spanish & 3345 & 129 & 2815 & 5.2 & 15.7 & 0.5 & 93.3 & 3.5 & 6.7 \\
+\midrule
+Ancient Greek & Greek & 1225 & 0 & 3427 & 0.2 & 2.4 & 0.4 & 64.7 & 57.3 & 8.5 \\
+\midrule
+Old Armenian & Armenian & 1753 & 32 & 1363 & 1.0 & 5.4 & 1.6 & 21.5 & 0.2 & 1.3 \\
+\bottomrule
+\end{tabular}
+\caption{Cross-lingual audit. Category sizes are whole populations; the other columns are percentages of the sample. \textit{Unsup.}: pages sampled from the inherited category with no inheritance template that names the ancestor. \textit{Multi}: sampled titles with two or more etymologies. \textit{Confl.}: sampled titles whose senses have different routes from the ancestor. \textit{Any ref.}: the entry cites any reference. \textit{Inline citation}: the etymology of a sense with that route carries a citation. Wilson 95\% intervals for the last two columns are in Appendix~\ref{app:denominators}; all others are in the supplementary tables.}
+\label{tab:audit}
+\end{table*}
+
+\paragraph{Results.} \textbf{The semi-learned category is small everywhere}: at most 129 pages, and between 0\% and 18.7\% of learned and semi-learned pages together. \textbf{The learned and semi-learned categories agree with the page}: of 6,009 sampled learned pages, 5 lack a learned-borrowing template from the ancestor, and of 756 semi-learned pages, 12. The inherited category is less direct. In 319 of 6,800 sampled pages (0\% to 14.2\% by language) no inheritance template names the ancestor. In 296 of these the page states inheritance from an intermediate stage, such as Old Spanish or a Prakrit, and the ancestor is reached through another entry; this breakdown was added after the plan was frozen. \textbf{Conflicting routes under one spelling are rare}, 0\% to 2.6\% of sampled titles, although two or more etymologies under one spelling are common in some languages (up to 17.5\%). \textbf{The route claim rarely carries its own citation.} We count a citation as inline when the text of the Etymology section contains a reference tag or a reference template. For senses marked as learned borrowings, the etymology carries such a citation in 0\% to 4.0\% of cases in 16 languages; Greek is the exception at 57.3\%. For inherited senses the range is 1.3\% to 10.1\%, with Urdu at 22.7\%. Many entries cite some reference anywhere in the entry (19.6\% to 93.4\% of sampled titles). We did not classify the cited works, and some of them give etymologies, so an entry without an inline citation may still rest on a listed source. Turner's comparative dictionary is among the five most-cited reference templates in 7 of the 8 Indo-Aryan languages.
+
+\paragraph{Reading the audit.} These are properties of the records, and they say nothing about whether a label is right. The 17 pairs are not independent observations: eight share Sanskrit and seven share Latin, and languages in a family share editors, templates and reference works. Differences between languages may reflect editing practice. The audit does show that an entry usually does not say which source, if any, supports the route. That is the reason for the next two parts of this paper.
+
+\section{A Form-Based Baseline}
+\label{sec:baseline}
+
+The audit shows that route claims rarely carry their own citation. If editors mark a word as learned partly because it looks like its etymon, the labels will be predictable from form alone. We test this with deliberately minimal models, under a plan frozen before any feature was computed. \textbf{The target is Wiktionary's label, which is not validated: a score measures how well form predicts the label, not how well it predicts history.}
+
+\paragraph{Setup.} An item is a sense in the audit sample that states exactly one route from the ancestor and gives an ancestor form: 12,777 items in 16 languages. Urdu is left out because its script cannot be compared with Devanagari etyma by our method. Word and etymon are normalised, and Bengali, Gujarati, Gurmukhi and Odia letters are mapped to Devanagari. B1 is a logistic regression on one feature, the normalised edit distance between word and etymon. B3 adds character 1--3-grams of the word and of the etymon. We report macro-F1 for inherited against learned in stratified 5-fold cross-validation; class sizes follow from the sampling design and are roughly equal except in Assamese, Odia and Punjabi (Appendix~\ref{app:denominators}). No parameter was tuned. As a check added after the planned run, we repeated the cross-validation with folds grouped by etymon, so that items sharing an ancestor form stay together: B3 fell by at most 0.013 and rose by at most 0.033 (Armenian). Related words with different ancestor forms can still fall on both sides of a split.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+& \multicolumn{2}{c}{\textbf{Macro-F1}} & \multicolumn{3}{c}{\textbf{Mean distance}} & \textbf{Semi as} \\
+\textbf{Language} & B1 & B3 & Inh. & Semi & Lrn. & \textbf{learned} \\
+\midrule
+Assamese & 0.86 & 0.92 & 0.66 & -- & 0.17 & -- \\
+Bengali & 0.87 & 0.89 & 0.58 & 0.43 & 0.10 & 14/43 \\
+Gujarati & 0.93 & 0.96 & 0.65 & 0.35 & 0.05 & 15/30 \\
+Hindi & 0.89 & 0.93 & 0.62 & 0.48 & 0.09 & 23/96 \\
+Marathi & 0.87 & 0.90 & 0.58 & -- & 0.06 & -- \\
+Odia & 0.89 & 0.91 & 0.63 & -- & 0.11 & -- \\
+Punjabi & 0.80 & 0.86 & 0.75 & 0.65 & 0.31 & 12/35 \\
+\midrule
+Catalan & 0.78 & 0.86 & 0.44 & 0.34 & 0.20 & 32/70 \\
+French & 0.86 & 0.91 & 0.52 & 0.39 & 0.22 & 12/25 \\
+Galician & 0.77 & 0.86 & 0.46 & 0.48 & 0.24 & 6/26 \\
+Italian & 0.70 & 0.75 & 0.41 & 0.35 & 0.25 & 39/58 \\
+Portuguese & 0.79 & 0.87 & 0.45 & 0.36 & 0.23 & 74/129 \\
+Romanian & 0.81 & 0.87 & 0.46 & -- & 0.20 & -- \\
+Spanish & 0.77 & 0.83 & 0.45 & 0.36 & 0.24 & 73/128 \\
+\midrule
+Greek & 0.57 & 0.62 & 0.10 & -- & 0.04 & -- \\
+\midrule
+Armenian & 0.48 & 0.59 & 0.12 & 0.21 & 0.11 & 17/31 \\
+\bottomrule
+\end{tabular}
+\caption{Form-based baseline on Wiktionary's labels. Macro-F1 for inherited against learned (majority baseline: 0.33 to 0.42). Mean normalised edit distance to the ancestor form by Wiktionary route. \textit{Semi as learned}: semi-learned items that B3, trained on the other two classes, calls learned; languages with fewer than 20 such items are omitted.}
+\label{tab:baseline}
+\end{table}
+
+\paragraph{Results.} Table~\ref{tab:baseline} gives the scores. \textbf{For the languages descended from Sanskrit, one number predicts Wiktionary's label}: the distance alone gives macro-F1 between 0.80 and 0.93, and all features give 0.86 to 0.96. For Romance the distance gives 0.70 to 0.86. \textbf{For Greek and Armenian, form barely predicts the label} (0.57 and 0.48 for the distance); in both, inherited and learned words are almost equally close to the ancestor form. \textbf{The semi-learned class lies in between.} In 9 of the 11 languages with at least 20 semi-learned items, its mean distance falls between those of the other two classes, and B3, trained on those two classes, divides it differently by language: the share called learned runs from 23\% to 67\%. The Wilson 95\% interval excludes one half in four languages (Bengali, Hindi and Galician towards inherited, Italian towards learned) and includes it in the other seven. A distance model fitted on the other languages of the same family scores within 0.03 of one fitted on the language itself, except for Punjabi, where it is 0.06 lower (macro-F1 0.74 to 0.93 for Sanskrit, 0.71 to 0.86 for Latin).
+
+\paragraph{Where form and label pull apart.} In a supplementary analysis, planned and frozen after the baseline, we split the items by the distance to the ancestor form. \textit{Congruent} items are inherited and far from it (distance at least 0.5) or learned and close (at most 0.15); \textit{dissociated} items are the reverse. With the same folds, B3 is right on 3,734 of 3,737 congruent items in the seven languages descended from Sanskrit and on 40 of 278 dissociated ones (14\%); for Romance the figures are 98\% and 19\% (52 of 273). Of the 141 Indo-Aryan items that Wiktionary calls inherited although their form is almost the Sanskrit form, B3 is right on one. This is partly by construction, since the subsets are defined by a feature of B3. A model that sees only the word, with no etymon and no distance, falls from 87\% to 57\% (Sanskrit) and from 82\% to 74\% (Latin). \textbf{The models reproduce the label where it follows resemblance and fail where it does not.} Dissociated items are few in these two families, about 5\% of the items, so overall scores hide them; in Greek and Armenian they are about a third. They are candidates for validation and not validated cases: each is either a word whose history and form disagree or a labelling error.
+
+\paragraph{The labels that go against resemblance follow a dictionary.} A dissociated item is either a word whose history and form disagree or a labelling error. In a further analysis, frozen before it was computed, we asked what \citeauthor{turner1966cdial}'s comparative dictionary lists for them, using the automatic matcher described in \S\ref{sec:why}. Take the Indo-Aryan words whose form is almost the Sanskrit form (distance at most 0.15). Wiktionary calls 141 of them inherited and 1,557 learned, and B3 cannot tell these apart. Where the etymon is a head-word of the dictionary, the article lists a matching form for the language in 57 of 125 of those called inherited (46\%) and in 100 of 996 of those called learned (10\%): a difference of 36 points (95\% interval 27 to 45), in the same direction in all seven languages. The first figure equals the rate for ordinary inherited words far from the Sanskrit form (976 of 2,025, 48\%); for words far from it that Wiktionary calls learned the rate is 5 of 97. \textbf{On the items where form misleads the models, Wiktionary's label goes with the dictionary and not with resemblance.} This is not independent confirmation: editors cite this dictionary, so the label may come from the same article, and the matcher errs in both directions at a rate near the learned figure. It does show that these labels carry information from a source that a form-based model cannot recover, and it makes labelling error an unlikely account of most of them.
+
+\paragraph{An expert check for one language.} One of our languages has expert loanword judgements under an open licence: the Romanian vocabulary of the World Loanword Database \citep{schulte2009romanian}, in which a specialist gives each of about 2,100 words a borrowed status and, for loanwords, the donor. The comparison was planned and frozen before any word row was read. Of the 2,111 titles in Wiktionary's category of Romanian terms inherited from Latin, 684 are in the database, and the expert considers 651 of them not borrowed (95.2\%; 95\% interval 93.3 to 96.5). \textbf{For inherited labels in Romanian, Wiktionary and the expert largely agree.} Learned labels cannot be measured in this way: the database is built around basic meanings and contains only 28 of the 1,629 learned-category words, of which the expert calls 19 borrowed with Latin as a donor. Among the Romanian baseline items that the expert classes clearly, six are dissociated. The expert sides with Wiktionary's label on all six, and B3 is right on one. Six items are an illustration and not a measurement, but they are the only dissociated items checked against an expert, and none of them is a labelling error. This is one expert and one language; it is not a two-annotator validation.
+
+\paragraph{Two language models: no conclusion.} We put the dissociated items and matched controls to two open-weight language models run locally (Gemma~3, 4 and 12 billion parameters; fixed prompts, temperature 0; 4,360 answers each), under plans frozen in advance. Both answered ``inherited'' whatever the word, the smaller about four times in five and the larger in 97\% of answers, with balanced scores of 0.50 to 0.60. Both runs are null results and support no claim here.
+
+\paragraph{Citation and predictability.} Greek has both the most inline citations and low predictability. We checked whether the two are linked within languages. In the eight languages with at least 30 cited and 30 uncited items, B3 is slightly more accurate on cited items in seven, with overlapping intervals, and the comparison is confounded by route. We find no support for a link and do not claim one.
+
+\paragraph{Reading the baseline.} High scores do not show that the labels are right. They are what one would see if the labels were correct and history left a clear trace in form, and also what one would see if the labels were assigned by resemblance. The two cannot be told apart without labels that have an independent source, which the next sections attempt for Hindi and Bengali, within the limits stated there.
+
+\section{Method: Can Dictionaries Decide the Route?}
+\label{sec:method}
+
+\subsection{Items}
+
+We selected 48 lemmas from English Wiktionary, 24 for Hindi and 24 for Bengali. The selection rules were frozen, with a recorded SHA-256 hash, before any category member list was retrieved. Each language has seven strata defined by category membership: three lemmas that belong to two or more of the learned, semi-learned and inherited categories (the \textit{overlap} stratum), six from each of those three categories, and one borrowing each from Persian, Arabic and English. Within a stratum, lemmas are ordered by a keyed hash of the title, and the first $n$ are taken. Selection uses only the page title and its category membership. The revision of each page was recorded.
+
+The unit of analysis is the \textbf{sense}: a lemma with several Etymology sections on Wiktionary gives one row per section. The 48 lemmas give 58 sense rows, 28 for Hindi and 30 for Bengali. One of the 58 is a homograph found in a dictionary and absent from Wiktionary; it has no Wiktionary candidate.
+
+\subsection{Sources}
+
+All entries were consulted through the search interface of the Digital South Asia Library. The queries were issued one at a time by the assistant (\S\ref{sec:extraction}), at least two seconds apart.
+\begin{itemize}
+\item \textbf{\citet{platts1884}}, for Hindi. Each headword carries a letter for its language of origin: S for Sanskrit, H for Hindi, P, A and T for Persian, Arabic and Turkish.
+\item \textbf{\citet{turner1966cdial}}, for both languages. Each article has an Old Indo-Aryan head-word followed by its Middle and New Indo-Aryan descendants. The front matter defines a sign and an abbreviation for loanwords.
+\item \textbf{\citet{dasa1937bangala}}, for Bengali. The entries cite Sanskrit, Pali, Prakrit and foreign source forms.
+\item \textbf{\citet{dasa1975sabdasagara}}, for Hindi, as a lookup source only. We did not read its front matter, so its entries assert no route under our rules.
+\end{itemize}
+We read the conventions of the first three dictionaries from their front matter before we relied on them. A fifth dictionary was used in the pilot and then dropped, because it gave no etymology for any pilot item, and a Sanskrit dictionary was queried once in the pilot. Platts is in the public domain. We treat the other three dictionaries as consult-only: we store entry references and our own paraphrases, and no dictionary text.
+
+\subsection{Labels and rules}
+
+Each sense receives one label: inherited (\lbl{inh}), learned (\lbl{lrn}), semi-learned (\lbl{semi}), external loan (\lbl{ext}), disputed between sources (\lbl{dis}), found with no route stated (\lbl{unk}), or found in no source (\lbl{nsf}). Table~\ref{tab:rules} gives the rules that connect a dictionary observation to a route. Phonological shape alone never decides a label. \lbl{semi} is assigned only on an explicit statement, and we expected it to be unrecoverable because no source has a marker for it. Each label also carries an evidence strength: \textit{explicit} if the source states the route, \textit{structural} if the route follows from a documented convention of the source, and \textit{none}.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{p{0.60\columnwidth}p{0.28\columnwidth}}
+\toprule
+\textbf{Observation} & \textbf{Route} \\
+\midrule
+Turner lists the form, with no loan mark & inherited \\
+Turner marks the form as a loanword & as stated \\
+Turner has the etymon, but no form for the language & not stated \\
+Platts marks the word S & learned \\
+Platts marks it H and cites a Prakrit form & inherited \\
+Platts marks it H, Sanskrit form only & not stated \\
+Platts marks it P, A or T & external \\
+J.~D\=asa cites a Pali or Prakrit form & inherited \\
+J.~D\=asa cites only Sanskrit & not stated \\
+J.~D\=asa cites a non-Indo-Aryan source & external \\
+\bottomrule
+\end{tabular}
+\caption{Label rules of protocol v1.1 (abridged). All inherited and learned routes in this table have structural strength.}
+\label{tab:rules}
+\end{table}
+
+\subsection{Blinding and freezing}
+
+The extractor worked from a blind sheet that showed only the item identifier, the language, the lemma and a short gloss. A script built the sheet from the stored Wiktionary pages and printed nothing else, so the etymology text, the templates and the categories stayed unseen. After all lookups the labels were frozen with a SHA-256 hash, and only then was the Wiktionary side opened.
+
+The Wiktionary \textbf{candidate} for a sense is read by a script from the etymology templates in that sense's own Etymology section: an inheritance template gives inherited, a learned-borrowing template gives learned, a semi-learned-borrowing template gives semi-learned, and a borrowing template with a non-Indo-Aryan source gives external. Category membership is not used for the candidate.
+
+The work ran in two rounds. A pilot covered 10 lemmas (12 senses) under protocol v1.0, which worked at the level of the lemma. The pilot led to protocol v1.1, which works at the level of the sense and uses the template-based candidate. Protocol v1.1 was frozen before any of the remaining 38 lemmas (46 senses) was seen. Pilot labels were not changed afterwards.
+
+\subsection{Extraction}
+\label{sec:extraction}
+
+\textbf{The lookups and the labels were produced by a language-model assistant (Claude), which ran the dictionary searches and read the entries under the frozen rules.} The labels are therefore model-extracted. They are not validated gold labels, and we report no inter-annotator agreement. The assistant recorded 134 source-check rows (5 of them record that a source was not queried), each with the query, the entry reference, a paraphrase of the evidence and the route asserted. \lead{Spot check. State n, how the sample was drawn (the round-2 file is in a fixed hash order), the number of discrepancies, and whether any label changed. If no check was done, say so here and in Limitations.}
+
+\section{Results}
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Label} & \textbf{Hindi} & \textbf{Bengali} & \textbf{Total} \\
+\midrule
+Inherited & 8 & 7 & 15 \\
+Learned & 6 & 0 & 6 \\
+External loan & 3 & 2 & 5 \\
+Semi-learned, disputed & 0 & 0 & 0 \\
+\midrule
+Found, no route stated & 9 & 13 & 22 \\
+Found in no source & 2 & 8 & 10 \\
+\midrule
+Total & 28 & 30 & 58 \\
+\bottomrule
+\end{tabular}
+\caption{Source-based labels for the 58 sense rows (pilot and round~2 together).}
+\label{tab:labels}
+\end{table}
+
+\paragraph{Coverage.} Table~\ref{tab:labels} gives the source-based labels. A route was assigned to 26 of the 58 senses: 17 of 28 for Hindi and 9 of 30 for Bengali. Of the remaining 32, 22 were found in a dictionary that states no route, and 10 were found in no dictionary. By evidence strength, 5 labels are explicit, 21 are structural and 32 senses have none; for the 12 pilot senses the strength was re-read after the dictionary conventions had been verified, with no change of label. All 5 explicit labels are external loans. \textbf{No inherited or learned label rests on an explicit statement in a source.}
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Wiktionary} & \textbf{$n$} & \textbf{Same} & \textbf{Other} & \textbf{\lbl{unk}} & \textbf{\lbl{nsf}} \\
+\midrule
+Inherited & 16 & 12 & 0 & 3 & 1 \\
+Learned & 19 & 5 & 1 & 10 & 3 \\
+Semi-learned & 12 & 0 & 2 & 7 & 3 \\
+External & 8 & 5 & 0 & 0 & 3 \\
+Other & 3 & -- & 1 & 2 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Source-based outcome by Wiktionary candidate. \textit{Same}: the sources assign the candidate's label. \textit{Other}: they assign a different label. \textit{Other} candidates are unspecified, unknown or absent.}
+\label{tab:recover}
+\end{table}
+
+\paragraph{Recoverability by category.} Table~\ref{tab:recover} splits the senses by Wiktionary candidate. The sources assign the same label to 12 of 16 inherited candidates and to 5 of 8 external candidates. They assign it to 5 of 19 learned candidates, and all 5 are Hindi; of the 9 Bengali learned candidates, none was recovered. Of the 12 semi-learned candidates, none was recovered: 2 were labelled inherited by the sources, 7 were found with no route, and 3 were not found.
+
+\paragraph{Agreement.} On the 26 senses with a source-based route, the sources and the Wiktionary candidate agree on 22 and disagree on 3; for the remaining one the candidate is unspecified, because the page carries both a borrowing and an inheritance template. The three disagreements are Hindi \textit{b\=a\~ncn\=a} \gl{to read} and \textit{am\=avas} \gl{new moon}, which the sources label inherited and Wiktionary semi-learned, and Bengali \textit{bh\=al} \gl{forehead}, which the sources label inherited and Wiktionary learned.
+
+\textbf{This agreement is not fully independent.} We checked whether the Hindi or Bengali entry on Wiktionary cites the dictionary on which our label rests. Of the 22 agreeing senses, 4 inherited ones cite the same Turner article that we used, and 3 of the 5 learned ones are in entries that cite Platts. The other 15 cite neither, although an entry can draw on a source without citing it. Of the 28 Hindi senses, 20 are in entries that cite a modern Hindi dictionary that we did not consult.
+
+\section{Why the Boundary Is Not Recoverable}
+\label{sec:why}
+
+The first two points below are gaps in the sources, and they explain most of Table~\ref{tab:recover}. The last two concern our rules and our sample.
+
+\paragraph{No source marks semi-learned words.} None of the three dictionaries whose conventions we read has a label or a sign for a partly adapted Sanskrit loan; we did not read the conventions of the fourth. J.~D\=asa's list of abbreviations has a label for a ``Bengali Prakritic form'', but it describes the form and does not state a route. The category cannot be recovered by this method.
+
+\paragraph{Bengali has no equivalent of Platts' S.} In the entries that we consulted, J.~D\=asa gives a Sanskrit analysis for words that look inherited and for words that look learned alike. A reader cannot tell from the entry whether the Sanskrit form is an ancestor or a donor. For Hindi, all 6 learned labels rest on the S marker of \citet{platts1884} alone.
+
+\paragraph{The inherited rule is leaky.} The front matter of \citet{turner1966cdial} says that the forms listed in an article are descendants of the head-word, and it defines marks for loanwords. It does not say that every loan is marked. In the entries that we consulted, Turner lists modern forms that are identical to the Sanskrit word and carry no loan mark: Hindi \textit{h\=ani} \gl{loss}, Bengali \textit{kamal\=a} \gl{orange} and Bengali \textit{bh\=al} \gl{forehead}. An unmarked listing is therefore weaker evidence of inheritance than the convention suggests. Of the 13 inherited labels in round~2, 11 use this rule, and 10 of those have no other support.
+
+\paragraph{The same rule at scale.} We applied the rule by program to the baseline items of seven Indo-Aryan languages, through a machine-readable copy of Turner's dictionary \citep{arora2023jambu}. The copy carries no licence, so we used it for analysis only and release nothing from it. The plan was frozen before the file was read, and the matcher was first compared with our hand records: it agreed in 31 of 38 rows, missing 4 listed forms and accepting 3 near variants that the hand record had rejected. The Sanskrit etymon is a Turner head-word for 93\% of the inherited items, 82\% of the semi-learned and 64\% of the learned ones. Among matched items, a listed form matches the Wiktionary word for 49\% of the inherited ones and for 9.1\% of the learned ones (130 of 1,425). \textbf{The second figure is of the same size as the matcher's false-positive rate, so it gives 130 candidates for a manual check and not a leak rate.} The copy does not carry Turner's loan marks in machine-readable form.
+
+\paragraph{The hard-boundary stratum was mostly homographs.} The overlap stratum was meant to hold words whose route is contested. Of its 6 lemmas, 5 are pairs of unrelated words with one spelling, one inherited and one learned according to Wiktionary's templates. The sixth is in the inherited category only because a template for derived terms adds the category, although the page's etymology template is a learned borrowing. None of the 6 is a single word with a contested route. The audit shows that such pages are rare (Table~\ref{tab:audit}), so this stratum selected an unusual kind of page and did not sample hard boundary cases.
+
+\section{Discussion}
+
+The method works where it is least needed. Inherited words that Turner lists and plain foreign loans are recovered, and these are also the cases in which Wiktionary and the dictionaries agree. The method fails on the boundary between learned and semi-learned words, and for Bengali on the boundary between inherited and learned words, because the sources have no means to express it.
+
+We expect that a larger sample drawn by the same protocol would not change this, because the gap lies in what these sources can express; we have not tested that. A different kind of source could change it.
+
+\paragraph{A post hoc check of a historical grammar.} After the study was complete, we searched the text of \citet{chatterji1926} for the 6 Bengali senses that Wiktionary calls semi-learned. \textbf{This check was not blind, it followed no frozen rule, and it used a scanned text; it adds no labels to our counts.} Chatterji uses the abbreviations \textit{ts.}, \textit{sts.} and \textit{tbh.} for tatsama, semi-tatsama and tadbhava words. He calls \textit{j\=ait} \gl{caste} and \textit{jochn\=a} \gl{moonlight} semi-tatsama explicitly (vol.~1, pp.~308 and 470). Two more, \textit{soy\=ad} \gl{taste} and \textit{soy\=ami} \gl{husband}, appear in a list that opens with that label (p.~534), and 2 were not found. The distinction that the dictionaries cannot express is therefore stated in the scholarly literature for some words. A grammar cites words as examples and has no entry for every word, so its coverage of a random sample is unknown. \lead{Check these passages on the page images before submission: vol.~1, pp.~308, 376, 380, 403, 470, 534.}
+
+For work that trains on Wiktionary's route labels: the semi-learned class holds at most 129 pages in any language we audited; in our sample the semi-learned labels of Hindi and Bengali and the learned labels of Bengali could not be checked against these dictionaries; agreement with a dictionary that the entry cites is not independent confirmation; and routes should be read per sense from the etymology, since up to 17.5\% of titles carry more than one.
+
+\section*{Limitations}
+
+\begin{itemize}
+\item \textbf{The sample is small and not random.} There are 48 lemmas in strata chosen to over-sample hard cases. The counts describe this sample only.
+\item \textbf{The labels are model-extracted.} A language-model assistant performed the lookups and applied the rules. There is no second annotator and no inter-annotator agreement. \lead{State the spot-check coverage and outcome.}
+\item \textbf{Some absences may be search failures.} The Bengali dictionary uses older spellings, and 8 of 30 Bengali senses were found in no source.
+\item \textbf{The Turner head-word was often the extractor's choice}, taken from the language dictionary's etymology where it gave one. A wrong choice produces a false ``not listed''. Turner was not queried for 5 senses that are plain foreign loans.
+\item \textbf{Judgement was needed} to decide whether a near variant of a form counts as listed. We did not count near variants; a looser rule would move 2 senses from \lbl{unk} to inherited.
+\item \textbf{The two rounds used different protocol versions.} The 12 pilot senses were labelled under v1.0, before senses were separated by rule, and were not relabelled. One pilot row was reclassified from ``disagree'' to ``candidate unspecified'' when the template-based candidate was applied.
+\item \textbf{The expert check covers one language and one expert}, on a word list of basic meanings with few learned words; it does not separate learned from semi-learned borrowing.
+\item \textbf{The supplementary analyses were planned after the main ones.} The dissociated subset is defined by a model feature, its items are unvalidated, and the program reading of Turner's dictionary agreed with our hand records in 31 of 38 rows only.
+\item \textbf{The baseline predicts unvalidated labels.} Its etymon comes from the same entry as the label, senses with several routes are left out, classes are balanced by design, and nothing was tuned or tested for significance.
+\item \textbf{The audit validates no label.} It counts what Wiktionary records. Its inline-citation measure misses sources listed only at the foot of an entry, and its template reader counts an etymology written as plain text as stating no route. Its 17 pairs are related and are not independent tests.
+\item \textbf{The check of the historical grammar is exploratory.} It was made after the Wiktionary labels were known, on a scanned text.
+\item \textbf{The sources are old and few.} The Hindi learned labels depend on a dictionary of 1884. We did not read the front matter of the \textit{Hind\=\i{} \'sabdas\=agara}, so it contributed no route, and we did not consult the modern Hindi dictionary that Wiktionary cites most often.
+\end{itemize}
+
+\section*{Ethical Considerations}
+
+One dictionary is in the public domain, and we treat the other three as in copyright. We consulted them through a public library interface with single queries, issued by the assistant at least two seconds apart, and we stored entry references and paraphrases only. Wiktionary text is used under its licence, with page revisions recorded; the audit read 13,128 pages through the public interface in serial requests. No human participants were involved. A language-model assistant performed the dictionary lookups and the labelling as described in the Method section, and assisted in drafting this paper. \lead{Check this disclosure against the venue's policy on AI assistance.}
+
+\bibliography{refs}
+
+\appendix
+
+\section{Protocol Records}
+\label{app:records}
+
+The selection rules, both protocol versions, the blind sheets, the frozen label files and the source checks are kept with SHA-256 hashes in a dated decision log. \lead{Decide what is released with the paper, after the licence review. Entry references and paraphrases can be released; dictionary text cannot.}
+
+\section{Denominators and Intervals}
+\label{app:denominators}
+
+\begin{table}[h]
+\centering\footnotesize
+\setlength{\tabcolsep}{1.2pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+& \multicolumn{2}{c}{\textbf{Inline: learned}} & \multicolumn{2}{c}{\textbf{Inline: inherited}} & \multicolumn{2}{c}{\textbf{Baseline}} \\
+\textbf{Language} & $k/n$ & 95\% & $k/n$ & 95\% & Inh. & Lrn. \\
+\midrule
+Assamese & 0/149 & 0.0--2.5 & 6/404 & 0.7--3.2 & 402 & 149 \\
+Bengali & 3/400 & 0.3--2.2 & 36/401 & 6.6--12.2 & 399 & 407 \\
+Gujarati & 0/400 & 0.0--0.9 & 38/375 & 7.5--13.6 & 372 & 401 \\
+Hindi & 4/403 & 0.4--2.5 & 34/390 & 6.3--11.9 & 390 & 410 \\
+Marathi & 2/358 & 0.1--2.0 & 30/398 & 5.3--10.6 & 394 & 358 \\
+Odia & 0/270 & 0.0--1.4 & 7/378 & 0.9--3.8 & 368 & 268 \\
+Punjabi & 1/225 & 0.1--2.5 & 30/357 & 5.9--11.7 & 353 & 222 \\
+Urdu & 1/213 & 0.1--2.6 & 85/375 & 18.7--27.2 & -- & -- \\
+\midrule
+Catalan & 16/403 & 2.5--6.3 & 12/416 & 1.7--5.0 & 415 & 404 \\
+French & 2/404 & 0.1--1.8 & 7/400 & 0.9--3.6 & 397 & 402 \\
+Galician & 0/399 & 0.0--0.9 & 37/393 & 6.9--12.7 & 389 & 399 \\
+Italian & 6/402 & 0.7--3.2 & 22/417 & 3.5--7.9 & 416 & 403 \\
+Portuguese & 13/403 & 1.9--5.4 & 24/359 & 4.5--9.8 & 359 & 407 \\
+Romanian & 0/400 & 0.0--0.9 & 21/419 & 3.3--7.5 & 415 & 401 \\
+Spanish & 14/402 & 2.1--5.8 & 26/387 & 4.6--9.7 & 387 & 405 \\
+\midrule
+Greek & 228/398 & 52.4--62.1 & 34/400 & 6.2--11.6 & 396 & 393 \\
+\midrule
+Armenian & 1/404 & 0.0--1.4 & 5/399 & 0.5--2.9 & 394 & 406 \\
+\bottomrule
+\end{tabular}
+\caption{Inline-citation counts with Wilson 95\% intervals (in per cent); $n$ is the number of senses with that route on pages sampled from that category. The last two columns give the number of inherited and learned items in the baseline; Urdu is not in the baseline.}
+\label{tab:denominators}
+\end{table}
+
+\end{document}

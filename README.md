@@ -56,12 +56,34 @@ This is the sharpest result.
 - So the model has learned "looks like the ancestor form", not history.
 - **Two cautions.** This is partly built in, because the split uses a feature the model sees; a model that sees only the word still drops from 87% to 57%. And the disagreeing words are unchecked: each is either a real case or a mistake in Wiktionary.
 
+### Finding 3b. Those against-resemblance labels follow a dictionary
+
+- Take Indo-Aryan words that look almost like the Sanskrit form. Turner's comparative dictionary lists a matching form for **46%** of the ones Wiktionary calls inherited (57 of 125) and for **10%** of the ones it calls learned (100 of 996).
+- So on the items where the model fails, the label goes with a scholarly dictionary and not with resemblance.
+- **Caution:** Wiktionary's editors cite Turner, so this is not independent confirmation, and the automatic matcher makes errors.
+
+### Finding 3c. The "missing link" explains the failure and does not repair it
+
+- An inherited word passed through an intermediate stage (Prakrit, Old French). We compared each word with that stage.
+- **Where the intermediate form changed**, a simple rule with no training agrees with Wiktionary for 80% of Indo-Aryan items (1,476 of 1,852).
+- **The hard items are conservative words.** For 83% of the near-Sanskrit words labelled inherited (88 of 106), the Prakrit or Pali form is itself almost the Sanskrit form, so comparing forms cannot decide them.
+- **A model given the intermediate form does no better** on the hard items (17% against 18%). This is a negative result and is reported as one.
+- In the Latin family, 91% of inherited entries that state an Old French, Old Spanish, Old Galician-Portuguese or Old Catalan form are consistent with it.
+- **What this means:** for such words the route is a matter of record (dates, attestations, a dictionary's judgement), not a property of the word's shape.
+
 ### Finding 4. The one expert check we could make came out in Wiktionary's favour
 *(Romanian, against a specialist's published loanword list, open licence)*
 
 - Of 684 words that Wiktionary calls inherited and the expert also covers, **the expert agrees on 651 (95%)**.
 - Learned words could not be measured: the expert's list covers basic vocabulary and has only 28 of them.
 - Six Romanian words are of the "label against resemblance" kind. **The expert sides with Wiktionary on all six; the model gets one right.** Six words are an illustration, not a measurement.
+
+### Finding 4b. A second expert source agrees, in thirteen languages
+
+- IE-CoR is an open database in which specialists record, for 170 basic meanings, whether a word is a loan. Thirteen of our languages are in it.
+- **Inherited labels:** of 291 sampled inherited-category words found there, the specialists treat **277 (95%)** as not a loan.
+- **The hard items:** specialists have judged 48 of the against-resemblance items. They agree with Wiktionary's label on **45**; the model agrees with them on **22**.
+- **Caution:** basic vocabulary only, one team, matched by spelling; only 21 learned words were found, so learned labels are still unchecked.
 
 ### Finding 5. For Hindi and Bengali, dictionaries cannot settle the hard cases
 *(48 words looked up in four dictionaries)*
@@ -123,7 +145,7 @@ Languages: Sanskrit → Hindi, Bengali, Marathi, Gujarati, Punjabi, Odia, Assame
 | Item | State when this was written | What it will add |
 |---|---|---|
 | Language-model evaluation (Gemma 3, two sizes, run locally, no cost) | **Finished: two null results.** The small model answered "inherited" about four times in five whatever the word and was near chance. The larger one (12 billion parameters, same prompts) answered "inherited" 97% of the time | Nothing. The question whether a language model leans on resemblance stays open. The prompts must not be adjusted without a new frozen plan |
-| Label history (past revisions of 2,575 pages) | Running slowly: about 400 of 5,150 requests. The first attempt was refused by Wikimedia | How often a label has changed over 2 and 5 years |
+| Label history (past revisions of 2,575 pages) | Resumed on 2026-10-12 after the stored file was found truncated and repaired; about 10 requests a minute | How often a label has changed over 2 and 5 years |
 | French and Romanian dictionary checks by program | **Blocked** by the sites' rules | Manual lookup sheets are in the kit instead |
 
 To finish the label history once its job ends:
@@ -166,8 +188,14 @@ python3 scripts/history_analysis.py data/raw/wiktionary/crosslingual_v1 data/raw
 | Baseline | `data/baseline_v1/a1_cv.csv`, `a2_semi.csv`, `a3_transfer.csv`, `leakage_check.csv` | `scripts/baseline.py`, `scripts/baseline_leakage_check.py` | `docs/baseline_plan.md` |
 | Dissociation, citation | `data/baseline_v1/s2_dissociation.csv`, `s3_citation.csv`, `oof_predictions.csv.gz` | `scripts/baseline_supplementary.py` | `docs/supplementary_plan.md` |
 | Turner at scale | `data/audit/turner_scale_v1/` | `scripts/turner_scale.py` | `docs/supplementary_plan_s4.md` |
+| Dictionary on the hard items | `data/audit/s7_v1/` | `scripts/s7a_turner_by_subset.py`, `scripts/s7b_history_by_subset.py` | `docs/supplementary_plan_s7.md` |
+| The missing link | `data/audit/s8_v1/` | `scripts/s8a_missing_link.py`, `scripts/s8b_recorded_links.py` | `docs/supplementary_plan_s8.md` |
 | Language model | `data/llm_s5/` | `scripts/llm_dissociation.py` | `docs/supplementary_plan_s5.md` |
 | Language model, larger | `data/llm_s5b/` | `scripts/llm_dissociation.py`, `scripts/llm_by_route.py` | `docs/supplementary_plan_s5b.md` |
+| Expert check, thirteen languages | `data/audit/iecor_v1/`, `data/external/iecor/` | `scripts/iecor_expert.py` | `docs/supplementary_plan_s9.md` |
+| Three input conditions, grouped folds | `data/audit/s10_v1/` | `scripts/s10_three_conditions.py` | `docs/supplementary_plan_s10.md` |
+| The same with a character Transformer (needs PyTorch) | `data/audit/s11_v1/` | `scripts/s11_transformer.py` | `docs/supplementary_plan_s11.md` |
+| Label history, two past snapshots | `data/audit/history_v1/`, `data/audit/s7_v1/s7b_*.csv` | `scripts/history_analysis.py`, `scripts/s7b_history_by_subset.py` | `docs/supplementary_plan.md` (S1), `docs/supplementary_plan_s7.md` (S7b) |
 | Romanian expert check | `data/audit/wold_romanian_v1/`, `data/external/wold_romanian/` | `scripts/wold_romanian.py` | `docs/supplementary_plan_s6.md` |
 | Label history | `data/raw/wiktionary/history_v1/` | `scripts/fetch_history.py`, `scripts/history_analysis.py` | `docs/supplementary_plan.md` |
 | Hindi/Bengali source study | `data/annotation/pilot_1/`, `data/annotation/round_2/` | `scripts/compare_round.py`, `scripts/sense_citation.py` | `docs/evidence_extraction_protocol_v1.1.md` |

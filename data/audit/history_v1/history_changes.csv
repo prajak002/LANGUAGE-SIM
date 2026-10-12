@@ -1,0 +1,101 @@
+ancestor,lang,snapshot,route_then,category_now,pages
+Ancient Greek,Greek,2021-10-11,BOR,LRN,1
+Ancient Greek,Greek,2021-10-11,INH,LRN,12
+Ancient Greek,Greek,2024-10-11,BOR,LRN,1
+Ancient Greek,Greek,2024-10-11,INH,LRN,1
+Latin,Catalan,2021-10-11,BOR,LRN,13
+Latin,Catalan,2021-10-11,BOR,SEMI,3
+Latin,Catalan,2021-10-11,LRN,SEMI,2
+Latin,Catalan,2024-10-11,BOR,LRN,44
+Latin,French,2021-10-11,BOR,LRN,33
+Latin,French,2021-10-11,BOR,SEMI,4
+Latin,French,2021-10-11,INH,SEMI,1
+Latin,French,2024-10-11,BOR,LRN,40
+Latin,French,2024-10-11,BOR,SEMI,1
+Latin,French,2024-10-11,INH,SEMI,1
+Latin,Galician,2021-10-11,BOR,LRN,19
+Latin,Galician,2021-10-11,BOR,SEMI,4
+Latin,Galician,2021-10-11,BOR+INH,SEMI,1
+Latin,Galician,2021-10-11,INH,LRN,1
+Latin,Galician,2021-10-11,INH,SEMI,3
+Latin,Galician,2021-10-11,LRN,SEMI,1
+Latin,Galician,2024-10-11,BOR,LRN,1
+Latin,Galician,2024-10-11,INH,SEMI,1
+Latin,Galician,2024-10-11,LRN,SEMI,1
+Latin,Italian,2021-10-11,BOR,INH,1
+Latin,Italian,2021-10-11,BOR,LRN,22
+Latin,Italian,2021-10-11,INH,LRN,2
+Latin,Italian,2021-10-11,INH,SEMI,1
+Latin,Italian,2021-10-11,LRN,SEMI,1
+Latin,Italian,2024-10-11,BOR,INH,2
+Latin,Italian,2024-10-11,BOR,LRN,40
+Latin,Portuguese,2021-10-11,BOR,LRN,21
+Latin,Portuguese,2021-10-11,BOR,SEMI,6
+Latin,Portuguese,2021-10-11,INH,LRN,1
+Latin,Portuguese,2021-10-11,INH,SEMI,3
+Latin,Portuguese,2021-10-11,LRN,SEMI,1
+Latin,Portuguese,2024-10-11,BOR,LRN,29
+Latin,Portuguese,2024-10-11,BOR,SEMI,1
+Latin,Portuguese,2024-10-11,INH,LRN,1
+Latin,Portuguese,2024-10-11,INH,SEMI,1
+Latin,Portuguese,2024-10-11,LRN,SEMI,2
+Latin,Romanian,2021-10-11,BOR,LRN,23
+Latin,Romanian,2021-10-11,BOR,SEMI,1
+Latin,Romanian,2024-10-11,BOR,LRN,59
+Latin,Spanish,2021-10-11,BOR,LRN,36
+Latin,Spanish,2021-10-11,BOR,SEMI,3
+Latin,Spanish,2021-10-11,INH,SEMI,7
+Latin,Spanish,2024-10-11,BOR,LRN,45
+Latin,Spanish,2024-10-11,BOR,SEMI,4
+Latin,Spanish,2024-10-11,INH,SEMI,6
+Old Armenian,Armenian,2021-10-11,BOR,LRN,1
+Old Armenian,Armenian,2021-10-11,INH,LRN,1
+Old Armenian,Armenian,2021-10-11,INH+LRN,SEMI,1
+Old Armenian,Armenian,2021-10-11,LRN,SEMI,2
+Old Armenian,Armenian,2024-10-11,INH,LRN,1
+Old Armenian,Armenian,2024-10-11,LRN,SEMI,1
+Sanskrit,Assamese,2021-10-11,BOR,LRN,11
+Sanskrit,Assamese,2021-10-11,BOR,SEMI,3
+Sanskrit,Assamese,2021-10-11,INH,SEMI,1
+Sanskrit,Bengali,2021-10-11,BOR,LRN,2
+Sanskrit,Bengali,2021-10-11,BOR,SEMI,7
+Sanskrit,Bengali,2021-10-11,INH,SEMI,3
+Sanskrit,Bengali,2024-10-11,INH,SEMI,1
+Sanskrit,Gujarati,2021-10-11,BOR,INH,1
+Sanskrit,Gujarati,2021-10-11,BOR,LRN,7
+Sanskrit,Gujarati,2021-10-11,BOR,SEMI,3
+Sanskrit,Gujarati,2021-10-11,LRN,SEMI,3
+Sanskrit,Gujarati,2024-10-11,BOR,LRN,2
+Sanskrit,Gujarati,2024-10-11,BOR,SEMI,3
+Sanskrit,Gujarati,2024-10-11,LRN,SEMI,3
+Sanskrit,Hindi,2021-10-11,BOR,LRN,15
+Sanskrit,Hindi,2021-10-11,BOR,SEMI,3
+Sanskrit,Hindi,2021-10-11,INH,LRN,2
+Sanskrit,Hindi,2021-10-11,INH,SEMI,7
+Sanskrit,Hindi,2021-10-11,INH+LRN,SEMI,1
+Sanskrit,Hindi,2024-10-11,BOR,INH,1
+Sanskrit,Hindi,2024-10-11,BOR,LRN,3
+Sanskrit,Hindi,2024-10-11,BOR,SEMI,1
+Sanskrit,Hindi,2024-10-11,INH,SEMI,3
+Sanskrit,Marathi,2021-10-11,BOR,LRN,3
+Sanskrit,Marathi,2021-10-11,BOR,SEMI,1
+Sanskrit,Marathi,2024-10-11,BOR,LRN,6
+Sanskrit,Odia,2024-10-11,BOR,LRN,3
+Sanskrit,Odia,2024-10-11,INH,LRN,1
+Sanskrit,Punjabi,2021-10-11,BOR,LRN,4
+Sanskrit,Punjabi,2021-10-11,INH,SEMI,3
+Sanskrit,Punjabi,2024-10-11,BOR,LRN,3
+Sanskrit,Punjabi,2024-10-11,INH,LRN,1
+Sanskrit,Punjabi,2024-10-11,INH,SEMI,10
+Sanskrit,Punjabi,2024-10-11,LRN,SEMI,1
+Sanskrit,Urdu,2021-10-11,BOR,LRN,5
+Sanskrit,Urdu,2021-10-11,BOR,SEMI,1
+Sanskrit,Urdu,2021-10-11,INH,LRN,1
+Sanskrit,Urdu,2021-10-11,INH,SEMI,8
+Sanskrit,Urdu,2021-10-11,LRN,SEMI,1
+Sanskrit,Urdu,2024-10-11,BOR,INH,1
+Sanskrit,Urdu,2024-10-11,BOR,LRN,3
+Sanskrit,Urdu,2024-10-11,BOR,SEMI,2
+Sanskrit,Urdu,2024-10-11,BOR+LRN,SEMI,1
+Sanskrit,Urdu,2024-10-11,INH,SEMI,1
+Sanskrit,Urdu,2024-10-11,LRN,SEMI,2
