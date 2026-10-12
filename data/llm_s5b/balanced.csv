@@ -1,0 +1,21 @@
+family,condition,subset,n_inherited,correct_inherited,n_learned,correct_learned,balanced_score
+ALL,word,congruent,391,386,699,35,0.5186
+ALL,word,dissociated,847,822,243,12,0.5099
+ALL,word+etymon,congruent,391,386,699,34,0.5179
+ALL,word+etymon,dissociated,847,831,243,15,0.5214
+Ancient Greek,word,congruent,13,13,272,4,
+Ancient Greek,word,dissociated,281,268,4,0,
+Ancient Greek,word+etymon,congruent,13,13,272,3,
+Ancient Greek,word+etymon,dissociated,281,272,4,0,
+Latin,word,congruent,190,187,83,12,0.5644
+Latin,word,dissociated,181,179,92,8,0.538
+Latin,word+etymon,congruent,190,186,83,18,0.5979
+Latin,word+etymon,dissociated,181,178,92,12,0.5569
+Old Armenian,word,congruent,17,15,237,19,
+Old Armenian,word,dissociated,244,234,10,0,
+Old Armenian,word+etymon,congruent,17,16,237,11,
+Old Armenian,word+etymon,dissociated,244,241,10,0,
+Sanskrit,word,congruent,171,171,107,0,0.5
+Sanskrit,word,dissociated,141,141,137,4,0.5146
+Sanskrit,word+etymon,congruent,171,171,107,2,0.5093
+Sanskrit,word+etymon,dissociated,141,140,137,3,0.5074

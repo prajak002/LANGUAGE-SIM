@@ -110,7 +110,35 @@ Plan: `docs/supplementary_plan_s5.md` v1.0 (frozen before any item was queried).
 - **In the Sanskrit and Latin families the model is near chance on both subsets** (49% to 70%), and showing it the source form does not help.
 - **Its answers match the baseline's about half the time** (499 to 551 of 1,090), as two unrelated guessers would.
 
-**Conclusion.** This small model cannot do the task, so the planned question, whether a language model leans on resemblance as the baseline does, **is not answered**. Nothing here supports or weakens the dissociation finding. A larger model might behave differently; that was not tested. The model's answers are not used for anything else.
+**Conclusion.** This small model cannot do the task, so the planned question, whether a language model leans on resemblance as the baseline does, **is not answered**. Nothing here supports or weakens the dissociation finding. A larger model was tested afterwards (S5b, below) and was more one-sided. The model's answers are not used for anything else.
+
+## S5b. The same items with a larger model — a second null result
+
+Plan: `docs/supplementary_plan_s5b.md` v1.0 (frozen before the model was queried). **One thing changed from S5, the model:** `gemma3:12b` (11.8 billion parameters, Q4_K_M, ID `b92b218582c5`) through Ollama 0.31.1, run locally on 2026-10-12. Same 2,180 items, same prompts, temperature 0, same seed; 4,360 answers, none unparsed. Results: `data/llm_s5b/s5_scores.csv`, `by_route.csv` and `balanced.csv` (`scripts/llm_by_route.py`); every raw answer is in `answers.jsonl`.
+
+| Family | Condition | Agrees with Wiktionary: congruent | dissociated |
+|---|---|---|---|
+| Sanskrit (7 languages) | word only | 171/278 (62%) | 145/278 (52%) |
+| Sanskrit | word and source form | 173/278 (62%) | 143/278 (51%) |
+| Latin (7 languages) | word only | 199/273 (73%) | 187/273 (68%) |
+| Latin | word and source form | 204/273 (75%) | 190/273 (70%) |
+| Greek | word only | 17/285 (6%) | 268/285 (94%) |
+| Greek | word and source form | 16/285 (6%) | 272/285 (95%) |
+| Armenian | word only | 34/254 (13%) | 234/254 (92%) |
+| Armenian | word and source form | 27/254 (11%) | 241/254 (95%) |
+
+**How to read this table: as an answer bias again, and a stronger one.**
+
+- **The model answers "inherited" in 4,213 of 4,360 answers (97%).** The 4-billion-parameter model did so about four times in five.
+- **By route, pooled over the sixteen languages:** it agrees with Wiktionary on 97% to 99% of inherited items and on 5% to 6% of learned ones, in both subsets and both conditions. The agreement figures in the table are therefore the share of inherited items in each cell.
+- **Balanced score** (mean of the share correct on inherited and on learned items; cells with at least 20 of each): Sanskrit family 0.50 to 0.51; Latin family 0.54 to 0.60. Greek and Armenian have too few items of one route in each subset for a balanced score.
+- **The only movement is in the Latin family and it is small.** The model says "learned" for 12 of 83 congruent learned items and 8 of 92 dissociated ones (word only), and for 18 of 83 and 12 of 92 with the source form shown. The intervals overlap; no claim is made from it.
+- **Not a letter bias:** the answer letters were assigned by a fixed hash, and the model chose the "inherited" option under either letter.
+- **Its answers match the baseline's about half the time** (499 to 591 of 1,090).
+
+**Run notes.** One request failed with a server error and was asked again. While the model was loaded the machine's swap grew quickly, so from about the 400th answer on the model was unloaded and reloaded every three minutes by a loop outside the script; prompts and settings were unchanged (decision log, entry 89).
+
+**Conclusion.** By the reading fixed in the plan, a model that answers one way almost always gives a **second null result**. The planned question is still not answered, and nothing here supports or weakens the dissociation finding. **The prompts were not changed after S5 and should not be changed now without a new frozen plan**; a prompt adjusted until the bias disappears would be tuned on these results. The model's answers are not used as labels or for anything else.
 
 ## S6. Expert loanword labels for Romanian (World Loanword Database)
 

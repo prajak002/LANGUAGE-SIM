@@ -37,3 +37,11 @@
 1800 / 5150
 1850 / 5150
 1900 / 5150
+RESUMED 2026-10-12 17:45:23 after rewriting the truncated store (1900 rows kept)
+2575 titles; 3250 requests to make
+50 / 3250
+100 / 3250
+150 / 3250
+200 / 3250
+250 / 3250
+300 / 3250

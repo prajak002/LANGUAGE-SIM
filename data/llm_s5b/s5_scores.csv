@@ -1,0 +1,21 @@
+family,condition,subset,n,agrees_with_wiktionary,share,ci95_low,ci95_high,says_learned,unparsed,same_as_B3
+"ALL (pooled, related languages)",word,congruent,1090,421,0.3862,0.3578,0.4155,40,0,584
+"ALL (pooled, related languages)",word,dissociated,1090,834,0.7651,0.7391,0.7893,37,0,499
+"ALL (pooled, related languages)",word+etymon,congruent,1090,420,0.3853,0.3569,0.4146,39,0,591
+"ALL (pooled, related languages)",word+etymon,dissociated,1090,846,0.7761,0.7505,0.7999,31,0,507
+Ancient Greek,word,congruent,285,17,0.0596,0.0376,0.0934,4,0,114
+Ancient Greek,word,dissociated,285,268,0.9404,0.9066,0.9624,13,0,147
+Ancient Greek,word+etymon,congruent,285,16,0.0561,0.0348,0.0892,3,0,113
+Ancient Greek,word+etymon,dissociated,285,272,0.9544,0.9235,0.9732,9,0,149
+Latin,word,congruent,273,199,0.7289,0.6733,0.7782,15,0,196
+Latin,word,dissociated,273,187,0.685,0.6276,0.7372,10,0,121
+Latin,word+etymon,congruent,273,204,0.7473,0.6925,0.7951,22,0,201
+Latin,word+etymon,dissociated,273,190,0.696,0.639,0.7475,15,0,118
+Old Armenian,word,congruent,254,34,0.1339,0.0974,0.1812,21,0,103
+Old Armenian,word,dissociated,254,234,0.9213,0.8815,0.9485,10,0,127
+Old Armenian,word+etymon,congruent,254,27,0.1063,0.0741,0.1502,12,0,104
+Old Armenian,word+etymon,dissociated,254,241,0.9488,0.9144,0.9698,3,0,132
+Sanskrit,word,congruent,278,171,0.6151,0.5567,0.6704,0,0,171
+Sanskrit,word,dissociated,278,145,0.5216,0.463,0.5796,4,0,104
+Sanskrit,word+etymon,congruent,278,173,0.6223,0.564,0.6773,2,0,173
+Sanskrit,word+etymon,dissociated,278,143,0.5144,0.4558,0.5725,4,0,108

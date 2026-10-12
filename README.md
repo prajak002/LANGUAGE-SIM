@@ -122,7 +122,7 @@ Languages: Sanskrit → Hindi, Bengali, Marathi, Gujarati, Punjabi, Odia, Assame
 
 | Item | State when this was written | What it will add |
 |---|---|---|
-| Language-model evaluation (Gemma 3, run locally, no cost) | **Finished: a null result.** The small model answered "inherited" about four times in five whatever the word and was near chance | Nothing. The question whether a language model leans on resemblance stays open; a larger model was not tested |
+| Language-model evaluation (Gemma 3, two sizes, run locally, no cost) | **Finished: two null results.** The small model answered "inherited" about four times in five whatever the word and was near chance. The larger one (12 billion parameters, same prompts) answered "inherited" 97% of the time | Nothing. The question whether a language model leans on resemblance stays open. The prompts must not be adjusted without a new frozen plan |
 | Label history (past revisions of 2,575 pages) | Running slowly: about 400 of 5,150 requests. The first attempt was refused by Wikimedia | How often a label has changed over 2 and 5 years |
 | French and Romanian dictionary checks by program | **Blocked** by the sites' rules | Manual lookup sheets are in the kit instead |
 
@@ -167,6 +167,7 @@ python3 scripts/history_analysis.py data/raw/wiktionary/crosslingual_v1 data/raw
 | Dissociation, citation | `data/baseline_v1/s2_dissociation.csv`, `s3_citation.csv`, `oof_predictions.csv.gz` | `scripts/baseline_supplementary.py` | `docs/supplementary_plan.md` |
 | Turner at scale | `data/audit/turner_scale_v1/` | `scripts/turner_scale.py` | `docs/supplementary_plan_s4.md` |
 | Language model | `data/llm_s5/` | `scripts/llm_dissociation.py` | `docs/supplementary_plan_s5.md` |
+| Language model, larger | `data/llm_s5b/` | `scripts/llm_dissociation.py`, `scripts/llm_by_route.py` | `docs/supplementary_plan_s5b.md` |
 | Romanian expert check | `data/audit/wold_romanian_v1/`, `data/external/wold_romanian/` | `scripts/wold_romanian.py` | `docs/supplementary_plan_s6.md` |
 | Label history | `data/raw/wiktionary/history_v1/` | `scripts/fetch_history.py`, `scripts/history_analysis.py` | `docs/supplementary_plan.md` |
 | Hindi/Bengali source study | `data/annotation/pilot_1/`, `data/annotation/round_2/` | `scripts/compare_round.py`, `scripts/sense_citation.py` | `docs/evidence_extraction_protocol_v1.1.md` |

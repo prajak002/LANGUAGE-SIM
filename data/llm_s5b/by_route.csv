@@ -1,0 +1,41 @@
+family,condition,subset,wiktionary_route,n,model_says_learned,share_says_learned
+ALL,word,congruent,INH,391,5,0.0128
+ALL,word,congruent,LRN,699,35,0.0501
+ALL,word,dissociated,INH,847,25,0.0295
+ALL,word,dissociated,LRN,243,12,0.0494
+ALL,word+etymon,congruent,INH,391,5,0.0128
+ALL,word+etymon,congruent,LRN,699,34,0.0486
+ALL,word+etymon,dissociated,INH,847,16,0.0189
+ALL,word+etymon,dissociated,LRN,243,15,0.0617
+Ancient Greek,word,congruent,INH,13,0,0.0
+Ancient Greek,word,congruent,LRN,272,4,0.0147
+Ancient Greek,word,dissociated,INH,281,13,0.0463
+Ancient Greek,word,dissociated,LRN,4,0,0.0
+Ancient Greek,word+etymon,congruent,INH,13,0,0.0
+Ancient Greek,word+etymon,congruent,LRN,272,3,0.011
+Ancient Greek,word+etymon,dissociated,INH,281,9,0.032
+Ancient Greek,word+etymon,dissociated,LRN,4,0,0.0
+Latin,word,congruent,INH,190,3,0.0158
+Latin,word,congruent,LRN,83,12,0.1446
+Latin,word,dissociated,INH,181,2,0.011
+Latin,word,dissociated,LRN,92,8,0.087
+Latin,word+etymon,congruent,INH,190,4,0.0211
+Latin,word+etymon,congruent,LRN,83,18,0.2169
+Latin,word+etymon,dissociated,INH,181,3,0.0166
+Latin,word+etymon,dissociated,LRN,92,12,0.1304
+Old Armenian,word,congruent,INH,17,2,0.1176
+Old Armenian,word,congruent,LRN,237,19,0.0802
+Old Armenian,word,dissociated,INH,244,10,0.041
+Old Armenian,word,dissociated,LRN,10,0,0.0
+Old Armenian,word+etymon,congruent,INH,17,1,0.0588
+Old Armenian,word+etymon,congruent,LRN,237,11,0.0464
+Old Armenian,word+etymon,dissociated,INH,244,3,0.0123
+Old Armenian,word+etymon,dissociated,LRN,10,0,0.0
+Sanskrit,word,congruent,INH,171,0,0.0
+Sanskrit,word,congruent,LRN,107,0,0.0
+Sanskrit,word,dissociated,INH,141,0,0.0
+Sanskrit,word,dissociated,LRN,137,4,0.0292
+Sanskrit,word+etymon,congruent,INH,171,0,0.0
+Sanskrit,word+etymon,congruent,LRN,107,2,0.0187
+Sanskrit,word+etymon,dissociated,INH,141,1,0.0071
+Sanskrit,word+etymon,dissociated,LRN,137,3,0.0219
