@@ -387,3 +387,7 @@ Plan: `docs/supplementary_plan_s7.md` S7b. Script: `scripts/s7b_history_by_subse
 ## Known defect in S8a, S8c, S10 and S11 (found 2026-10-12, not rerun)
 
 These scripts attach the subset by (language, title, route). Where two senses share that key, one can carry the other's subset: at most 21 of 4,893 Indo-Aryan items, of which at most 3 are wrongly counted as dissociated and 6 wrongly left out. No stated conclusion depends on a difference that small. See decision log entry 110.
+
+## Known defect in the template reader (found 2026-10-13, not rerun)
+
+Where a template gives `tr=` before the ancestor form, the reader takes `tr` as the form: 21 baseline items (18 Hindi, 2 Marathi, 1 Romance). Eighteen were counted as dissociated learned items. Without them B3 is right on 27 of 260 dissociated items in the Sanskrit family, against the reported 40 of 278. None is among the linked items or the expert comparisons. See decision log entry 114.
