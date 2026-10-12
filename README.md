@@ -39,9 +39,9 @@ Wiktionary labels tens of thousands of words this way, and such labels have been
 
 ```mermaid
 flowchart LR
-    W["Modern word<br/>Hindi, Spanish, ..."] --> M{"Model"}
+    W["Modern word<br/>Hindi, Spanish, ..."] --> M["Model"]
     A["Ancestor form<br/>Sanskrit, Latin, ..."] --> M
-    M --> QWhat did it learn?
+    M --> Q{"What did it learn?"}
     Q -->|"hoped for"| H["The word's history"]
     Q -->|"what we find"| R["How much the word<br/>looks like the ancestor form"]
 ```
@@ -91,7 +91,7 @@ flowchart TD
     S --> IT["12,777 word senses<br/>16 languages"]
     S --> HI["Label history<br/>2,575 pages in 2021 and 2024"]
     IT --> BL["B. Baseline<br/>predict the label from form"]
-    BL --> SPDoes the label agree<br/>with resemblance?
+    BL --> SP{"Does the label agree<br/>with resemblance?"}
     SP -->|"yes"| CO["Congruent items<br/>model right on about 100%"]
     SP -->|"no"| DI["Dissociated items, the hard ones<br/>model right on 14% and 19%"]
     DI --> T["A comparative dictionary<br/>46% against 10%"]
