@@ -1,0 +1,16 @@
+family,subset,items_with_expert_class,wiktionary_agrees,wikt_low,wikt_high,B3_agrees,b3_low,b3_high
+ALL,congruent,142,137,0.9202,0.9849,137,0.9202,0.9849
+ALL,dissociated,48,45,0.8316,0.9785,22,0.3258,0.5971
+ALL,middle,88,83,0.8738,0.9755,69,0.6872,0.8572
+Ancient Greek,congruent,3,3,0.4385,1.0,3,0.4385,1.0
+Ancient Greek,dissociated,12,11,0.6461,0.9851,9,0.4677,0.9111
+Ancient Greek,middle,6,6,0.6097,1.0,6,0.6097,1.0
+Latin,congruent,55,55,0.9347,1.0,55,0.9347,1.0
+Latin,dissociated,9,8,0.565,0.9801,2,0.0632,0.5474
+Latin,middle,55,55,0.9347,1.0,42,0.6365,0.8563
+Old Armenian,congruent,2,1,0.0945,0.9055,1,0.0945,0.9055
+Old Armenian,dissociated,20,20,0.8389,1.0,10,0.2993,0.7007
+Old Armenian,middle,12,10,0.552,0.953,9,0.4677,0.9111
+Sanskrit,congruent,82,78,0.8812,0.9809,78,0.8812,0.9809
+Sanskrit,dissociated,7,6,0.4869,0.9743,1,0.0257,0.5131
+Sanskrit,middle,15,12,0.5481,0.9295,12,0.5481,0.9295

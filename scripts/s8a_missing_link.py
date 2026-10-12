@@ -100,7 +100,13 @@ for r in csv.DictReader(open(FORMS, encoding="utf-8")):
                     mia[entry].add(norm(f))
 print("link languages:", sorted(LINK), "| head-word keys:", len(head), "| articles with a link form:", len(mia))
 
-sub = {(r["lang"], r["title"], r["wiktionary_route"]): r["subset"] for r in csv.DictReader(gzip.open(B / "oof_predictions.csv.gz", "rt", encoding="utf-8"))}
+def subset_of(r):
+    d, inh = float(r["norm_edit_distance"]), r["wiktionary_route"] == "INH"
+    if (inh and d >= 0.5) or (not inh and d <= 0.15):
+        return "congruent"
+    if (inh and d <= 0.15) or (not inh and d >= 0.5):
+        return "dissociated"
+    return "middle"
 rows, cov = [], defaultdict(Counter)
 for r in csv.DictReader(gzip.open(B / "items.csv.gz", "rt", encoding="utf-8")):
     if r["lang"] not in SKT or r["wiktionary_route"] not in ("INH", "LRN"):
@@ -108,7 +114,7 @@ for r in csv.DictReader(gzip.open(B / "items.csv.gz", "rt", encoding="utf-8")):
     w, a = norm(translit(r["word_norm"])), norm(translit(r["etymon_norm"]))
     arts = head.get(a, set())
     forms = set().union(*(mia[x] for x in arts if x in mia)) if arts else set()
-    s = sub[(r["lang"], r["title"], r["wiktionary_route"])]
+    s = subset_of(r)
     for L in (r["lang"], "ALL"):
         k = cov[(L, r["wiktionary_route"], s)]
         k["items"] += 1

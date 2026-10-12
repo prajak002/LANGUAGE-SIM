@@ -1,0 +1,11 @@
+family,snapshot,dissociated_changed,dissociated_n,congruent_changed,congruent_n,difference_H1,ci95_low,ci95_high,interpreted
+ALL,2021-10-11,11,93,74,392,-0.0705,-0.1363,0.0182,yes
+ALL,2024-10-11,8,141,87,819,-0.0495,-0.0855,0.0052,yes
+Ancient Greek,2021-10-11,0,32,11,17,-0.6471,-0.8269,-0.3896,no (fewer than 30)
+Ancient Greek,2024-10-11,0,37,1,33,-0.0303,-0.1532,0.067,yes
+Latin,2021-10-11,4,26,35,193,-0.0275,-0.1378,0.1602,no (fewer than 30)
+Latin,2024-10-11,6,34,73,275,-0.089,-0.1971,0.077,yes
+Old Armenian,2021-10-11,0,25,2,22,-0.0909,-0.2781,0.0576,no (fewer than 30)
+Old Armenian,2024-10-11,0,32,1,36,-0.0278,-0.1417,0.0818,yes
+Sanskrit,2021-10-11,7,10,26,160,0.5375,0.2274,0.7359,no (fewer than 30)
+Sanskrit,2024-10-11,2,38,12,475,0.0274,-0.0149,0.1481,yes

@@ -88,14 +88,14 @@ flowchart TD
 flowchart TD
     C["Wiktionary categories<br/>17 language pairs, 4 ancestors"] --> S["Sample: 13,128 pages<br/>revision IDs stored"]
     S --> AU["A. Audit<br/>class sizes, consistency, citations"]
-    S --> IT["12,777 word senses<br/>16 languages"]
+    S --> IT["12,778 word senses<br/>16 languages"]
     S --> HI["Label history<br/>2,575 pages in 2021 and 2024"]
     IT --> BL["B. Baseline<br/>predict the label from form"]
     BL --> SP{"Does the label agree<br/>with resemblance?"}
     SP -->|"yes"| CO["Congruent items<br/>model right on about 100%"]
-    SP -->|"no"| DI["Dissociated items, the hard ones<br/>model right on 14% and 19%"]
+    SP -->|"no"| DI["Dissociated items, the hard ones<br/>model right on 10% and 19%"]
     DI --> T["A comparative dictionary<br/>46% against 10%"]
-    DI --> L["The intermediate stage<br/>83% unchanged"]
+    DI --> L["The intermediate stage<br/>84% unchanged"]
     DI --> X["Two expert sources<br/>side with Wiktionary on 45 of 48"]
     DI --> N["Three inputs, two models<br/>the intermediate form adds nothing"]
     S --> D["D. 48 Hindi and Bengali words<br/>looked up in four dictionaries"]
@@ -107,9 +107,9 @@ flowchart TD
 |---|---|---|---|
 | 1 | The labels are tidy but rarely cite a source | A learned-borrowing claim has its own citation in at most 4% of senses in 16 of 17 languages; the semi-learned class never exceeds 129 pages | `docs/crosslingual_audit_report.md` |
 | 2 | Form predicts the label | Macro-F1 0.86 to 0.96 (Sanskrit family), 0.75 to 0.91 (Romance), 0.62 and 0.59 (Greek, Armenian) | `docs/baseline_report.md` |
-| 3 | The models fail where label and resemblance disagree | Right on 40 of 278 (14%) and 52 of 273 (19%) dissociated items | `docs/supplementary_report.md` S2 |
-| 4 | Those labels follow a dictionary | Turner lists a matching form for 57 of 125 near-Sanskrit words called inherited (46%) and 100 of 996 called learned (10%) | S7a |
-| 5 | The intermediate stage explains the failure and does not repair it | A rule with no training agrees with the label on 1,476 of 1,852 items (80%) where the intermediate form changed; for 88 of 106 hard inherited items (83%) it did not change | S8 |
+| 3 | The models fail where label and resemblance disagree | Right on 27 of 260 (10%) and 52 of 272 (19%) dissociated items | `docs/supplementary_report.md` S2 |
+| 4 | Those labels follow a dictionary | Turner lists a matching form for 57 of 125 near-Sanskrit words called inherited (46%) and 100 of 1,001 called learned (10%) | S7a |
+| 5 | The intermediate stage explains the failure and does not repair it | A rule with no training agrees with the label on 1,484 of 1,864 items (80%) where the intermediate form changed; for 92 of 110 hard inherited items (84%) it did not change | S8 |
 | 6 | Expert sources agree with Wiktionary's inherited labels | Not loans: 651 of 684 Romanian words, 277 of 291 in thirteen languages; on 48 hard items the specialists side with Wiktionary on 45, the model on 22 | S6, S9 |
 | 7 | Most Romance learned labels are recent | In October 2024, 258 of 370 sampled ones were plain "borrowed from Latin"; inherited labels changed in 4 of 873 | S1 |
 | 8 | Dictionaries cannot settle the hard Hindi and Bengali cases | A route could be assigned to 26 of 58 senses, and to none of the 12 semi-learned ones | `docs/feasibility_report.md` |
@@ -133,7 +133,7 @@ The ancestor form buys the overall score at the cost of the hard items, and the 
 
 - **Word only:** both models are a little above chance. They cannot measure resemblance, so they cannot be misled by it.
 - **Word + ancestor form:** the logistic model now measures resemblance directly and drops to 6%. Its overall score rises from 0.79 to 0.90 at the same time. The Transformer follows resemblance less closely, scores lower overall, and sits at chance.
-- **+ intermediate form:** no real change in either model. For 83% of the hard inherited words the intermediate form is itself almost the Sanskrit form, so it carries nothing to learn from.
+- **+ intermediate form:** no real change in either model. For 84% of the hard inherited words the intermediate form is itself almost the Sanskrit form, so it carries nothing to learn from.
 
 </details>
 
@@ -162,9 +162,7 @@ flowchart LR
 - **No human expert has labelled the project's own items.** Blind sheets are ready in `data/annotation/expert_kit/` and unfilled.
 - **The dictionary lookups for the 48 words were made by an AI assistant.** A person compared 23 of the 134 source records with the dictionaries.
 - **The hard subset is a diagnostic split**, defined from the label and a distance. It is not an independent test set.
-- **Two known defects, not yet rerun:**
-  - Four analyses attach items to their subset by spelling; at most 9 of the 191 hard items are affected (decision log, entry 110).
-  - The template reader took a transliteration parameter for the ancestor form in 21 items; 18 of them were counted as hard items. Without them the model is right on 27 of 260 hard items in the Sanskrit family, not 40 of 278 (decision log, entry 114). The charts here show the figures as run.
+- **Two defects were found late and corrected.** The template reader took a transliteration parameter for the ancestor form in 21 items, and four analyses attached items to their subset by spelling. Both were fixed and everything built on the baseline was rerun into `v2` folders; the first-run files are kept beside them (decision log, entries 110, 114 and 116). Not redone: the language-model check and the annotation sheets.
 
 ## 5. How the work was kept honest
 
@@ -283,8 +281,7 @@ The full review is `data/release/LICENSING_REVIEW.md`. It is a draft and is not 
 1. Two qualified annotators fill the blind sheets for the hard items (`data/annotation/expert_kit/README.md`). This is the largest gap.
 2. Spot-check the remaining 111 dictionary lookups of round 2.
 3. S12: fine-tune a pretrained character-level model on the three inputs (`docs/supplementary_plan_s12.md`; notebook `docs/s12_kaggle_notebook.ipynb`).
-4. Rerun S8a, S8c, S10 and S11 with the subset taken from each item's own distance (decision log, entry 110).
-5. Correct the template reader for the `tr=` case, extend its test fixture, and rerun the baseline and what is built on it (decision log, entry 114).
+4. Rebuild the draft release file and the annotation sheets from the corrected baseline (`data/baseline_v2/`).
 
 ## 11. Rules for this repository
 

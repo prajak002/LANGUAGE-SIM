@@ -1,0 +1,17 @@
+lang,comparison,inherited_T3,inherited_T1,learned_T3,learned_T1,difference_T3_of_T1,ci95_low,ci95_high,interpreted
+ALL,near the Sanskrit form (d<=0.15): dissociated inherited minus congruent learned,57,125,100,1001,0.3561,0.269,0.4451,yes
+ALL,far from the Sanskrit form (d>=0.5): congruent inherited minus dissociated learned,976,2027,5,97,0.43,0.3629,0.4665,yes
+Assamese,near the Sanskrit form (d<=0.15): dissociated inherited minus congruent learned,2,5,4,51,0.3216,0.0197,0.6939,no (fewer than 30)
+Assamese,far from the Sanskrit form (d>=0.5): congruent inherited minus dissociated learned,71,324,0,11,0.2191,-0.043,0.2673,no (fewer than 30)
+Bengali,near the Sanskrit form (d<=0.15): dissociated inherited minus congruent learned,18,35,21,177,0.3956,0.2275,0.5564,yes
+Bengali,far from the Sanskrit form (d>=0.5): congruent inherited minus dissociated learned,131,270,2,16,0.3602,0.1177,0.468,no (fewer than 30)
+Gujarati,near the Sanskrit form (d<=0.15): dissociated inherited minus congruent learned,9,12,17,208,0.6683,0.3824,0.8321,no (fewer than 30)
+Gujarati,far from the Sanskrit form (d>=0.5): congruent inherited minus dissociated learned,131,304,0,8,0.4309,0.102,0.4871,no (fewer than 30)
+Hindi,near the Sanskrit form (d<=0.15): dissociated inherited minus congruent learned,6,13,13,194,0.3945,0.1608,0.6431,no (fewer than 30)
+Hindi,far from the Sanskrit form (d>=0.5): congruent inherited minus dissociated learned,154,279,1,6,0.3853,-0.0158,0.5334,no (fewer than 30)
+Marathi,near the Sanskrit form (d<=0.15): dissociated inherited minus congruent learned,11,40,18,189,0.1798,0.0552,0.3369,yes
+Marathi,far from the Sanskrit form (d>=0.5): congruent inherited minus dissociated learned,182,282,0,1,0.6454,-0.1501,0.6989,no (fewer than 30)
+Odia,near the Sanskrit form (d<=0.15): dissociated inherited minus congruent learned,5,13,19,129,0.2373,0.0179,0.5024,no (fewer than 30)
+Odia,far from the Sanskrit form (d>=0.5): congruent inherited minus dissociated learned,195,281,0,9,0.694,0.3896,0.7449,no (fewer than 30)
+Punjabi,near the Sanskrit form (d<=0.15): dissociated inherited minus congruent learned,6,7,8,53,0.7062,0.3171,0.8439,no (fewer than 30)
+Punjabi,far from the Sanskrit form (d>=0.5): congruent inherited minus dissociated learned,112,287,2,46,0.3468,0.2312,0.4123,yes

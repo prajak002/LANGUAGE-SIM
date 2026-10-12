@@ -108,7 +108,13 @@ for r in csv.DictReader(open(FORMS, encoding="utf-8")):
                 for entry in article_of.get(r["ID"], ()):
                     mia[entry].setdefault(norm(f), f)
 
-sub = {(r["lang"], r["title"], r["wiktionary_route"]): r["subset"] for r in csv.DictReader(gzip.open(B / "oof_predictions.csv.gz", "rt", encoding="utf-8"))}
+def subset_of(r):
+    d, inh = float(r["norm_edit_distance"]), r["wiktionary_route"] == "INH"
+    if (inh and d >= 0.5) or (not inh and d <= 0.15):
+        return "congruent"
+    if (inh and d <= 0.15) or (not inh and d >= 0.5):
+        return "dissociated"
+    return "middle"
 R = []
 for r in csv.DictReader(gzip.open(B / "items.csv.gz", "rt", encoding="utf-8")):
     if r["lang"] not in SKT or r["wiktionary_route"] not in ("INH", "LRN"):
@@ -122,7 +128,7 @@ for r in csv.DictReader(gzip.open(B / "items.csv.gz", "rt", encoding="utf-8")):
     if not forms or not w:
         continue
     m = min(sorted(forms), key=lambda f: ned(w, f))
-    R.append({**r, "subset": sub[(r["lang"], r["title"], r["wiktionary_route"])], "link": m, "dwm": ned(w, m), "dam": ned(a, m),
+    R.append({**r, "subset": subset_of(r), "link": m, "dwm": ned(w, m), "dam": ned(a, m),
               "fw": "".join(fine(tw)), "fa": "".join(fine(ta)), "fm": "".join(fine(forms[m]))})
 assert len(R) == 3276, len(R)
 print("linked items:", len(R), "| device:", DEV, flush=True)

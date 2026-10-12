@@ -1,0 +1,17 @@
+lang,n_cited,acc_cited,cited_ci_low,cited_ci_high,n_uncited,acc_uncited,uncited_ci_low,uncited_ci_high,difference,share_learned_among_cited,share_learned_among_uncited
+Armenian,3,,,,797,,,,skipped: fewer than 30 items in a group,,
+Assamese,6,,,,545,,,,skipped: fewer than 30 items in a group,,
+Bengali,39,0.9231,0.7968,0.9735,766,0.8943,0.8705,0.9141,0.0288,0.0769,0.5274
+Catalan,28,,,,791,,,,skipped: fewer than 30 items in a group,,
+French,10,,,,789,,,,skipped: fewer than 30 items in a group,,
+Galician,38,0.8947,0.7587,0.9583,750,0.8653,0.839,0.8879,0.0294,0.0,0.532
+Greek,254,0.6772,0.6174,0.7317,535,0.6,0.5579,0.6407,0.0772,0.8819,0.3159
+Gujarati,36,1.0,0.9036,1.0,737,0.9539,0.9362,0.9668,0.0461,0.0,0.5441
+Hindi,42,0.9762,0.8768,0.9958,760,0.9355,0.9158,0.9509,0.0407,0.0952,0.5355
+Italian,28,,,,791,,,,skipped: fewer than 30 items in a group,,
+Marathi,31,1.0,0.8897,1.0,721,0.896,0.8716,0.9162,0.104,0.0645,0.4938
+Odia,7,,,,629,,,,skipped: fewer than 30 items in a group,,
+Portuguese,38,0.8684,0.7267,0.9425,728,0.8709,0.8446,0.8933,-0.0025,0.3421,0.5412
+Punjabi,29,,,,546,,,,skipped: fewer than 30 items in a group,,
+Romanian,23,,,,793,,,,skipped: fewer than 30 items in a group,,
+Spanish,41,0.8537,0.7156,0.9312,751,0.8322,0.8038,0.8572,0.0214,0.3415,0.5206

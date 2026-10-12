@@ -1,0 +1,15 @@
+ancestor,held_out_lang,n_train,n_test,accuracy,macro_f1
+Sanskrit,Assamese,4343,551,0.9111,0.883
+Sanskrit,Bengali,4089,805,0.8696,0.8694
+Sanskrit,Gujarati,4121,773,0.9327,0.9327
+Sanskrit,Hindi,4092,802,0.919,0.9189
+Sanskrit,Marathi,4142,752,0.887,0.887
+Sanskrit,Odia,4258,636,0.8915,0.889
+Sanskrit,Punjabi,4319,575,0.7739,0.7387
+Latin,Catalan,4780,819,0.7778,0.7752
+Latin,French,4800,799,0.8636,0.8635
+Latin,Galician,4811,788,0.7779,0.7779
+Latin,Italian,4780,819,0.7057,0.7056
+Latin,Portuguese,4833,766,0.7898,0.7892
+Latin,Romanian,4783,816,0.7843,0.782
+Latin,Spanish,4807,792,0.7816,0.7814

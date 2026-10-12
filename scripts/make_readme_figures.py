@@ -1,7 +1,6 @@
 """Animated SVG charts for README.md, drawn from the result files. Usage: make_readme_figures.py REPO_ROOT
 
-No dependencies. Writes docs/figures/*.svg. The numbers are the as-run figures; see docs/decision_log.md
-entries 110 and 114 for two known defects that touch them.
+No dependencies. Writes docs/figures/*.svg. The numbers are from the corrected run (v2 folders).
 """
 import csv, gzip, sys
 from collections import Counter
@@ -37,7 +36,7 @@ def vbar(x, base, w, h, fill, delay=0.0):
 
 
 cell = Counter()
-for r in csv.DictReader(gzip.open(ROOT / "data/baseline_v1/oof_predictions.csv.gz", "rt", encoding="utf-8")):
+for r in csv.DictReader(gzip.open(ROOT / "data/baseline_v2/oof_predictions.csv.gz", "rt", encoding="utf-8")):
     fam = "Sanskrit family" if r["lang"] in SKT else "Romance" if r["lang"] in ROM else None
     if fam and r["subset"] != "middle":
         k = (fam, r["wiktionary_route"], float(r["norm_edit_distance"]) <= 0.15)
@@ -65,7 +64,7 @@ for f, fam in enumerate(("Sanskrit family", "Romance")):
 svg("label_by_resemblance.svg", 760, 285, b)
 
 acc = {}
-for r in csv.DictReader(open(ROOT / "data/audit/s11_v1/s11_by_subset.csv", encoding="utf-8")):
+for r in csv.DictReader(open(ROOT / "data/audit/s11_v2/s11_by_subset.csv", encoding="utf-8")):
     if r["lang"] == "ALL" and r["subset"] == "dissociated" and r["route"] == "both":
         acc[r["condition"]] = (int(r["correct"]), int(r["n"]))
 b = [text(20, 30, "Does more history in the input help on the hard items?", 16, weight="bold"),
@@ -86,7 +85,7 @@ b.append(f'<rect x="500" y="64" width="14" height="14" rx="3" fill="{INK}"/>' + 
 b.append(f'<rect x="620" y="64" width="14" height="14" rx="3" fill="{ALT}"/>' + text(640, 76, "Transformer", 12))
 svg("three_inputs.svg", 760, 290, b)
 
-f1 = {r["lang"]: float(r["macro_f1_mean"]) for r in csv.DictReader(open(ROOT / "data/baseline_v1/a1_cv.csv", encoding="utf-8")) if r["model"] == "B3"}
+f1 = {r["lang"]: float(r["macro_f1_mean"]) for r in csv.DictReader(open(ROOT / "data/baseline_v2/a1_cv.csv", encoding="utf-8")) if r["model"] == "B3"}
 order = sorted(SKT, key=lambda L: -f1[L]) + sorted(ROM, key=lambda L: -f1[L]) + ["Greek", "Armenian"]
 b = [text(20, 30, "How well form predicts Wiktionary's label, by language", 16, weight="bold"),
      text(20, 50, "Macro-F1 of the form-based model (B3), five-fold cross-validation. 0.5 is roughly chance.", 12, MUTED)]

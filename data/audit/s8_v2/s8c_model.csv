@@ -1,0 +1,28 @@
+model,subset,route,n,correct,accuracy,ci95_low,ci95_high
+B3,congruent,INH,1589,1586,0.9981,0.9945,0.9994
+B3,congruent,LRN,899,896,0.9967,0.9902,0.9989
+B3,congruent,both routes,2488,2482,0.9976,0.9947,0.9989
+B3,dissociated,INH,110,0,0.0,0.0,0.0337
+B3,dissociated,LRN,84,16,0.1905,0.1208,0.2872
+B3,dissociated,both routes,194,16,0.0825,0.0514,0.1298
+B3,middle,INH,301,245,0.814,0.7661,0.8539
+B3,middle,LRN,306,235,0.768,0.7175,0.8118
+B3,middle,both routes,607,480,0.7908,0.7566,0.8213
+L0,congruent,INH,1589,1544,0.9717,0.9623,0.9788
+L0,congruent,LRN,899,897,0.9978,0.9919,0.9994
+L0,congruent,both routes,2488,2441,0.9811,0.975,0.9858
+L0,dissociated,INH,110,2,0.0182,0.005,0.0639
+L0,dissociated,LRN,84,33,0.3929,0.2953,0.4998
+L0,dissociated,both routes,194,35,0.1804,0.1327,0.2406
+L0,middle,INH,301,179,0.5947,0.5384,0.6486
+L0,middle,LRN,306,214,0.6993,0.6458,0.748
+L0,middle,both routes,607,393,0.6474,0.6086,0.6844
+L1,congruent,INH,1589,1534,0.9654,0.9552,0.9733
+L1,congruent,LRN,899,895,0.9956,0.9886,0.9983
+L1,congruent,both routes,2488,2429,0.9763,0.9695,0.9816
+L1,dissociated,INH,110,2,0.0182,0.005,0.0639
+L1,dissociated,LRN,84,35,0.4167,0.3171,0.5235
+L1,dissociated,both routes,194,37,0.1907,0.1417,0.2518
+L1,middle,INH,301,181,0.6013,0.5451,0.655
+L1,middle,LRN,306,200,0.6536,0.5987,0.7047
+L1,middle,both routes,607,381,0.6277,0.5885,0.6652

@@ -26,7 +26,7 @@ def from_ancestor(src, code):
     return src == code or src.startswith(code + "-") or (code == "la" and src in OLD_LATIN)
 
 
-DIRECT = re.compile(r"\{\{\s*(" + "|".join(re.escape(k) for k in sorted(ROUTE, key=len, reverse=True)) + r")\s*\|[^|{}]*\|\s*([^|{}<]+)(?:\|\s*([^|{}<=]*))?")
+DIRECT = re.compile(r"\{\{\s*(" + "|".join(re.escape(k) for k in sorted(ROUTE, key=len, reverse=True)) + r")\s*\|[^|{}]*\|\s*([^|{}<]+)(?:\|\s*[A-Za-z0-9_]+=[^|{}]*)*(?:\|\s*([^|{}<=]*))?")
 TREE_TOP = re.compile(r"\|\s*:(inh|lbor|slbor|bor)(?:<[^|<>]*>)*\s*\|\s*([A-Za-z][A-Za-z.\-]*)[:>]([^|<>{}]*)")
 TREE_NESTED = re.compile(r"<ety:(inh|lbor|slbor|bor)<([A-Za-z][A-Za-z.\-]*):([^|<>{}]*)")
 

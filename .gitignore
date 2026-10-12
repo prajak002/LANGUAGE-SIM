@@ -8,7 +8,7 @@ paper/*.blg
 paper/*.out
 # derived from an unlicensed copy of Turner's dictionary: kept locally, never published
 *NOT_FOR_RELEASE*
-data/audit/turner_scale_v1/item_flags.csv.gz
+data/audit/turner_scale_v*/item_flags.csv.gz
 # answer keys of annotation sheets that are not yet filled
 data/annotation/expert_kit/_sealed_key_*
 # model answers: the model terms have not been reviewed; kept locally
