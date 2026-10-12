@@ -11,3 +11,6 @@ paper/*.out
 data/audit/turner_scale_v1/item_flags.csv.gz
 # answer keys of annotation sheets that are not yet filled
 data/annotation/expert_kit/_sealed_key_*
+# model answers: the model terms have not been reviewed; kept locally
+data/llm_s5/answers.jsonl
+data/llm_s5b/answers.jsonl
