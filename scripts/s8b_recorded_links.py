@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from wikt_routes import assertions_with_forms, ety_sections, ety_text, from_ancestor  # noqa: E402
+from wikt_routes import assertions_with_forms, ety_sections, ety_text, from_ancestor
 
 RAW, OUT = Path(sys.argv[1]), Path(sys.argv[2])
 OUT.mkdir(parents=True, exist_ok=True)
@@ -21,7 +21,7 @@ def is_link(src):
     return src in FIXED or src.startswith("pra") or (src.startswith("inc-") and src != "inc-pro")
 
 
-def normalise(s):  # unchanged from scripts/baseline.py
+def normalise(s):
     out = []
     for ch in unicodedata.normalize("NFD", s):
         cp = ord(ch)
@@ -36,7 +36,7 @@ def normalise(s):  # unchanged from scripts/baseline.py
     return "".join(out)
 
 
-def ned(a, b):  # unchanged from scripts/baseline.py
+def ned(a, b):
     if not a or not b:
         return 1.0
     prev = list(range(len(b) + 1))

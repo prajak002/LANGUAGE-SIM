@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from wikt_routes import ety_sections, ety_text, routes  # noqa: E402
+from wikt_routes import ety_sections, ety_text, routes
 
 RAW, HIST, B, OUT = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3]), Path(sys.argv[4])
 OUT.mkdir(parents=True, exist_ok=True)
@@ -40,7 +40,7 @@ for s in csv.DictReader(open(RAW / "sample.csv", encoding="utf-8")):
     if int(s["rank"]) > MAX_RANK or s["category"] not in ("INH", "LRN"):
         continue
     sub = subset.get((s["lang"], s["title"], s["category"]))
-    if sub is None:  # not a baseline item (Urdu, no single route, or no ancestor form)
+    if sub is None:
         not_item += 1
         continue
     for date in dates:

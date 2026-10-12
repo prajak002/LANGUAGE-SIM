@@ -7,7 +7,7 @@ import csv, gzip, json, subprocess, sys, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = {  # title -> {language: section wikitext or None}
+PAGES = {
     "A": {"Hindi": "\n===Etymology===\n{{lbor|hi|sa|अ}}.\n===Noun===\n# x\n===References===\n* {{R:hi:McGregor}}\n"},
     "B": {"Hindi": "\n===Etymology 1===\n{{inh|hi|psu|x}}, from {{inh|hi|sa|अ}}.<ref>{{R:CDIAL|1}}</ref>\n====Noun====\n# x\n"
                    "===Etymology 2===\n{{lbor|hi|sa|आ}}.\n====Noun====\n# y\n"},
@@ -18,7 +18,6 @@ PAGES = {  # title -> {language: section wikitext or None}
     "G": {"Spanish": "\n===Etymology===\n{{lbor|es|LL.|foo}}.\n===Noun===\n# x\n"},
     "H": {"Spanish": "\n===Etymology===\n{{lbor|es|la-med|foo}}.\n===Noun===\n# x\n"},
     "I": {"Spanish": "\n===Etymology===\n{{bor|es|la|foo}}.\n===Noun===\n# x\n"},
-    # etymology trees: nested chain with a reference template inside; another stage only; keyword with a modifier
     "J": {"Spanish": "\n===Etymology===\n{{ety|es|:inh|osp:foo<ety:inh<la:fōō<t:x>>><ref:{{R:es:DCECH|foo}}>|text=2|tree=1}}\n===Noun===\n# x\n"},
     "K": {"Spanish": "\n===Etymology===\n{{etymon|es|id=x|:inh|osp:foo<id:x>|tree=1}}\n===Noun===\n# x\n"},
     "M": {"Spanish": "\n===Etymology===\n{{ety|es|:bor<conj:and>|fr:foo|:lbor<conj:and>|la:foo|text=+}}\n===Noun===\n# x\n"},
@@ -26,24 +25,24 @@ PAGES = {  # title -> {language: section wikitext or None}
 MEMBERS = {("Hindi", "LRN"): "ABCDE", ("Hindi", "INH"): "BF", ("Spanish", "LRN"): "GHIM", ("Spanish", "INH"): "JK"}
 ANC = {"Hindi": ("Sanskrit", "sa"), "Spanish": ("Latin", "la")}
 NAME = {"LRN": "{L} learned borrowings from {A}", "SEMI": "{L} semi-learned borrowings from {A}", "INH": "{L} terms inherited from {A}"}
-EXPECTED = {  # (lang, category, measure) -> (k, n)
+EXPECTED = {
     ("Hindi", "", "M1_semi_share_of_learned_plus_semi"): (0, 5),
     ("Hindi", "", "M2_titles_in_two_or_more_categories"): (1, 6),
-    ("Hindi", "LRN", "M3_category_not_supported_by_template"): (2, 4),      # C and E; D has no section
-    ("Hindi", "LRN", "M3b_of_which_no_route_template_from_ancestor"): (1, 4),  # C only
+    ("Hindi", "LRN", "M3_category_not_supported_by_template"): (2, 4),
+    ("Hindi", "LRN", "M3b_of_which_no_route_template_from_ancestor"): (1, 4),
     ("Hindi", "LRN", "M4_multiple_etymologies"): (1, 4),
     ("Hindi", "LRN", "M5_conflicting_routes_under_one_spelling"): (1, 4),
-    ("Hindi", "LRN", "M6_entry_cites_any_reference"): (2, 4),               # A and B
-    ("Hindi", "LRN", "M7_etymology_cites_reference_inline"): (0, 2),        # A, and B's second etymology
+    ("Hindi", "LRN", "M6_entry_cites_any_reference"): (2, 4),
+    ("Hindi", "LRN", "M7_etymology_cites_reference_inline"): (0, 2),
     ("Hindi", "INH", "M3_category_not_supported_by_template"): (0, 2),
     ("Hindi", "INH", "M5_conflicting_routes_under_one_spelling"): (1, 2),
-    ("Hindi", "INH", "M7_etymology_cites_reference_inline"): (1, 2),        # B's first etymology
+    ("Hindi", "INH", "M7_etymology_cites_reference_inline"): (1, 2),
     ("Hindi", "ALL", "M6_entry_cites_any_reference"): (2, 5),
-    ("Spanish", "LRN", "M3_category_not_supported_by_template"): (1, 4),    # I: plain borrowing; M is supported
+    ("Spanish", "LRN", "M3_category_not_supported_by_template"): (1, 4),
     ("Spanish", "LRN", "M3b_of_which_no_route_template_from_ancestor"): (0, 4),
-    ("Spanish", "INH", "M3_category_not_supported_by_template"): (1, 2),    # K names Old Spanish only; J is supported
+    ("Spanish", "INH", "M3_category_not_supported_by_template"): (1, 2),
     ("Spanish", "INH", "M3c_of_which_same_route_stated_from_another_stage_only"): (1, 2),
-    ("Spanish", "INH", "M7_etymology_cites_reference_inline"): (1, 1),      # J
+    ("Spanish", "INH", "M7_etymology_cites_reference_inline"): (1, 1),
 }
 
 with tempfile.TemporaryDirectory() as tmp:

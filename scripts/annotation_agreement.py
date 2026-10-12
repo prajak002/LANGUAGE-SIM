@@ -34,7 +34,6 @@ def report(name, x, y):
 
 
 if sys.argv[1] == "--self-test":
-    # 2x2 worked example: 20 yes/yes, 5 yes/no, 10 no/yes, 15 no/no -> po = 0.70, pe = 0.50, kappa = 0.40
     po, k = kappa([("Y", "Y")] * 20 + [("Y", "N")] * 5 + [("N", "Y")] * 10 + [("N", "N")] * 15)
     assert abs(po - 0.70) < 1e-9 and abs(k - 0.40) < 1e-9, (po, k)
     print("kappa self-test passes")

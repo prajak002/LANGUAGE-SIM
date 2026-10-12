@@ -10,7 +10,7 @@ from pathlib import Path
 RAW, OUT = Path(sys.argv[1]), Path(sys.argv[2])
 OUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(Path(__file__).parent))
-from wikt_routes import assertions, ety_sections, ety_text, routes  # noqa: E402
+from wikt_routes import assertions, ety_sections, ety_text, routes
 
 
 def wilson(k, n):
@@ -46,7 +46,6 @@ def add(A, L, cat, measure, k, n, note=""):
 
 
 for A, code, L in pairs:
-    # M1, M2: whole population
     lrn, semi, inh = (size.get((L, c), 0) for c in ("LRN", "SEMI", "INH"))
     add(A, L, "", "M1_semi_share_of_learned_plus_semi", semi, lrn + semi, f"LRN={lrn} SEMI={semi} INH={inh}")
     mem = {}
@@ -61,7 +60,7 @@ for A, code, L in pairs:
     add(A, L, "", "M2_titles_in_two_or_more_categories", sum(v >= 2 for v in cnt.values()), len(union))
     add(A, L, "", "M2b_titles_in_both_LRN_and_INH", len(mem["LRN"] & mem["INH"]), len(mem["LRN"] | mem["INH"]))
 
-    pooled = {}  # title -> page-level facts, for the per-language pooled rows
+    pooled = {}
     for cat in ("LRN", "SEMI", "INH"):
         S = [s for s in sample if s["lang"] == L and s["category"] == cat]
         if not S:

@@ -25,7 +25,6 @@ SEED, SEEDS, EPOCHS, MAXLEN = 20261011, 3, 8, 128
 SKT = ["Assamese", "Bengali", "Gujarati", "Hindi", "Marathi", "Odia", "Punjabi"]
 LINK = {"Pa", "Pk"}
 DEV = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
-# transliteration and normalisation copied unchanged from scripts/turner_scale.py (S4)
 CONS = dict(zip("कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहळ",
                 ["k", "kh", "g", "gh", "ṅ", "c", "ch", "j", "jh", "ñ", "ṭ", "ṭh", "ḍ", "ḍh", "ṇ", "t", "th", "d", "dh", "n",
                  "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "ś", "ṣ", "s", "h", "ḷ"]))
@@ -65,7 +64,7 @@ def norm(latin):
     return re.sub(r"[nm](?=[kgcjtdpb])", "n", s)
 
 
-def ned(a, b):  # the baseline's normalised edit distance
+def ned(a, b):
     if not a or not b:
         return 1.0
     prev = list(range(len(b) + 1))
@@ -91,7 +90,6 @@ def fine(latin):
     return [ch for ch in s if ch.isalpha() or unicodedata.category(ch) == "Mn"]
 
 
-# ---- Turner side, in memory only: head-words, and the link-language forms each article lists (as in S10)
 article_of = defaultdict(set)
 for e in csv.DictReader(open(EDGES, encoding="utf-8")):
     if e["Kind"] == "reflex" and e["Child_ID"].startswith("f_"):
@@ -110,7 +108,6 @@ for r in csv.DictReader(open(FORMS, encoding="utf-8")):
                 for entry in article_of.get(r["ID"], ()):
                     mia[entry].setdefault(norm(f), f)
 
-# ---- items (as in S10), with the fine transliteration of the three forms
 sub = {(r["lang"], r["title"], r["wiktionary_route"]): r["subset"] for r in csv.DictReader(gzip.open(B / "oof_predictions.csv.gz", "rt", encoding="utf-8"))}
 R = []
 for r in csv.DictReader(gzip.open(B / "items.csv.gz", "rt", encoding="utf-8")):
@@ -137,7 +134,6 @@ for tr, te in folds:
 if SMOKE:
     folds, SEEDS, EPOCHS = [(folds[0][0][:300], folds[0][1][:100])], 1, 1
 
-# ---- reference: the S10 logistic models on these pooled folds
 TFIDF = lambda: TfidfVectorizer(analyzer="char_wb", ngram_range=(1, 3))
 bd = np.array([[float(r["norm_edit_distance"])] for r in R])
 ld = np.array([[r["dwm"], r["dam"]] for r in R])
@@ -152,7 +148,6 @@ for tr, te in folds:
     for m in X:
         prob[m][te] = LogisticRegression(max_iter=1000, random_state=SEED).fit(X[m](tr), y[tr]).predict_proba(X[m](te))[:, 1]
 
-# ---- the pretrained model
 NAME = "google/canine-s"
 PARTS = {"C0": ("fw",), "C1": ("fw", "fa"), "C2": ("fw", "fa", "fm")}
 tok = CanineTokenizer.from_pretrained(NAME)
@@ -223,7 +218,6 @@ if SMOKE:
     print("smoke run finished; nothing written")
     sys.exit(0)
 
-# ---- output
 OUT.mkdir(parents=True, exist_ok=True)
 MODELS = ("A0", "A1", "A2", "C0", "C1", "C2")
 pred = {m: prob[m] >= 0.5 for m in MODELS}

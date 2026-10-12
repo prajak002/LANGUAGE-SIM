@@ -1,184 +1,174 @@
-# Inherited or learned? Checking the labels that etymology models are trained on
+# What Form Cannot Tell
 
-**Status, 2026-10-11.** The analyses are done except two that are still running (section 6). A paper draft compiles. **The paper is not ready to submit:** it has six red gaps for the authors, and no two-person human validation exists yet.
+**Do models trained on Wiktionary's "inherited" and "learned" labels learn word history, or only resemblance?**
+An audit of the labels in 17 languages, a form-based baseline, and a set of checks on the words where the label and the resemblance disagree.
 
-| If you want to… | Open |
+| | |
 |---|---|
-| Read the paper | `paper/main.pdf` |
-| Understand the project in ten minutes | This file |
-| See what each author must do | Section 7 |
-| Check a number | Section 8 lists the report and result file for each part |
-| See every decision in order | `docs/decision_log.md` (entries 1–85) |
+| Paper draft | `paper/main.pdf` (13 pages; main text 8) |
+| Every decision, in order | `docs/decision_log.md` |
+| Every analysis report | `docs/supplementary_report.md`, `docs/crosslingual_audit_report.md`, `docs/baseline_report.md`, `docs/feasibility_report.md` |
+| Status, 2026-10-12 | All planned analyses run except S12 (a pretrained model; plan frozen, not run). No human expert has labelled the project's own items |
 
 ---
 
-## 1. The question, in plain words
+## 1. The question
 
 Many languages have two kinds of words from the same ancestor language.
 
 | Kind | What happened | What it tends to look like |
 |---|---|---|
-| **Inherited** | Passed down from parent to child over many centuries, changing its sounds on the way | Worn down; often far from the old form |
-| **Learned** | Borrowed later, straight out of the old language's books | Still close to the old form |
+| **Inherited** (*tadbhava*) | Passed down over many centuries, changing its sounds on the way | Worn down; often far from the old form |
+| **Learned** (*tatsama*) | Borrowed later, straight from the old language's books | Still close to the old form |
 | **Semi-learned** | Borrowed later, then partly adapted | In between |
 
-In Indian grammar the first two are called *tadbhava* and *tatsama*. Hindi and Bengali have them from Sanskrit; Spanish and French have them from Latin.
+Wiktionary labels tens of thousands of words this way, and such labels have been used to train classifiers. A high score on them can mean two different things:
 
-**Wiktionary labels tens of thousands of words this way**, and labels of this kind have been used to train models. This project asks three things:
+```mermaid
+flowchart LR
+    W["Modern word<br/>Hindi, Spanish, ..."] --> M{"Model"}
+    A["Ancestor form<br/>Sanskrit, Latin, ..."] --> M
+    M --> QWhat did it learn?
+    Q -->|"hoped for"| H["The word's history"]
+    Q -->|"what we find"| R["How much the word<br/>looks like the ancestor form"]
+```
 
-1. **What are these labels like?** How big are the classes, are they consistent, do they cite a source?
-2. **What is a model really learning from them?** History, or just "this word looks like the old form"?
-3. **Can the labels be checked against something independent?**
+## 2. The study in one picture
 
----
+```mermaid
+flowchart TD
+    C["Wiktionary categories<br/>17 language pairs, 4 ancestors"] --> S["Sample: 13,128 pages<br/>revision IDs stored"]
+    S --> AU["A. Audit<br/>class sizes, consistency, citations"]
+    S --> IT["12,777 word senses<br/>16 languages"]
+    S --> HI["Label history<br/>2,575 pages in 2021 and 2024"]
+    IT --> BL["B. Baseline<br/>predict the label from form"]
+    BL --> SPDoes the label agree<br/>with resemblance?
+    SP -->|"yes"| CO["Congruent items<br/>model right on about 100%"]
+    SP -->|"no"| DI["Dissociated items, the hard ones<br/>model right on 14% and 19%"]
+    DI --> T["A comparative dictionary<br/>46% against 10%"]
+    DI --> L["The intermediate stage<br/>83% unchanged"]
+    DI --> X["Two expert sources<br/>side with Wiktionary on 45 of 48"]
+    DI --> N["Three inputs, two models<br/>the intermediate form adds nothing"]
+    S --> D["D. 48 Hindi and Bengali words<br/>looked up in four dictionaries"]
+```
 
-## 2. What we found, in plain words
+## 3. Results
 
-### Finding 1. The labels are tidy but rarely say where they come from
-*(audit of 13,128 Wiktionary pages in 17 languages)*
-
-- The label on a page almost always matches the page's own etymology (only 5 of 6,009 "learned" pages do not).
-- **The semi-learned class is tiny in every language:** at most 129 pages.
-- **A "learned borrowing" claim carries its own citation in at most 4% of cases** in 16 of 17 languages. Greek is the exception at 57%. Many entries list references elsewhere on the page.
-
-### Finding 2. A model can predict the label from resemblance alone
-*(simple models on 12,777 word senses in 16 languages)*
-
-- For seven languages descended from Sanskrit, **one number**, how different the word is from its Sanskrit form, predicts Wiktionary's label with a macro-F1 score of 0.80 to 0.93. With letter patterns added: 0.86 to 0.96.
-- For seven Romance languages: 0.75 to 0.91.
-- For Greek and Armenian the label is barely predictable from form (0.62 and 0.59).
-
-### Finding 3. Where the label goes against resemblance, the model fails
-This is the sharpest result.
-
-- Take the words where label and looks **agree** (inherited and worn down, or learned and close to the old form). The model is right on **about 100%** of them in the Sanskrit family and 98% in Romance.
-- Take the few words where they **disagree** (inherited but almost identical to the old form, or learned but far from it). The model is right on **14%** and **19%**.
-- So the model has learned "looks like the ancestor form", not history.
-- **Two cautions.** This is partly built in, because the split uses a feature the model sees; a model that sees only the word still drops from 87% to 57%. And the disagreeing words are unchecked: each is either a real case or a mistake in Wiktionary.
-
-### Finding 3b. Those against-resemblance labels follow a dictionary
-
-- Take Indo-Aryan words that look almost like the Sanskrit form. Turner's comparative dictionary lists a matching form for **46%** of the ones Wiktionary calls inherited (57 of 125) and for **10%** of the ones it calls learned (100 of 996).
-- So on the items where the model fails, the label goes with a scholarly dictionary and not with resemblance.
-- **Caution:** Wiktionary's editors cite Turner, so this is not independent confirmation, and the automatic matcher makes errors.
-
-### Finding 3c. The "missing link" explains the failure and does not repair it
-
-- An inherited word passed through an intermediate stage (Prakrit, Old French). We compared each word with that stage.
-- **Where the intermediate form changed**, a simple rule with no training agrees with Wiktionary for 80% of Indo-Aryan items (1,476 of 1,852).
-- **The hard items are conservative words.** For 83% of the near-Sanskrit words labelled inherited (88 of 106), the Prakrit or Pali form is itself almost the Sanskrit form, so comparing forms cannot decide them.
-- **A model given the intermediate form does no better** on the hard items (17% against 18%). This is a negative result and is reported as one.
-- In the Latin family, 91% of inherited entries that state an Old French, Old Spanish, Old Galician-Portuguese or Old Catalan form are consistent with it.
-- **What this means:** for such words the route is a matter of record (dates, attestations, a dictionary's judgement), not a property of the word's shape.
-
-### Finding 4. The one expert check we could make came out in Wiktionary's favour
-*(Romanian, against a specialist's published loanword list, open licence)*
-
-- Of 684 words that Wiktionary calls inherited and the expert also covers, **the expert agrees on 651 (95%)**.
-- Learned words could not be measured: the expert's list covers basic vocabulary and has only 28 of them.
-- Six Romanian words are of the "label against resemblance" kind. **The expert sides with Wiktionary on all six; the model gets one right.** Six words are an illustration, not a measurement.
-
-### Finding 4b. A second expert source agrees, in thirteen languages
-
-- IE-CoR is an open database in which specialists record, for 170 basic meanings, whether a word is a loan. Thirteen of our languages are in it.
-- **Inherited labels:** of 291 sampled inherited-category words found there, the specialists treat **277 (95%)** as not a loan.
-- **The hard items:** specialists have judged 48 of the against-resemblance items. They agree with Wiktionary's label on **45**; the model agrees with them on **22**.
-- **Caution:** basic vocabulary only, one team, matched by spelling; only 21 learned words were found, so learned labels are still unchecked.
-
-### Finding 5. For Hindi and Bengali, dictionaries cannot settle the hard cases
-*(48 words looked up in four dictionaries)*
-
-- A route could be read off the dictionaries for 26 of 58 word senses.
-- **None of the 12 semi-learned cases and none of the 9 Bengali learned cases could be confirmed**: the dictionaries whose conventions were read have no marker for them.
-- A historical grammar of Bengali (Chatterji 1926) does mark semi-learned words, and names 2 of the 6 Bengali cases explicitly. This was a look after the fact and needs a human check.
-
-### What the project does **not** show
-- It does not show which Wiktionary labels are right, except the small Romanian check.
-- It has **no validation by two independent annotators**.
-- The Hindi and Bengali dictionary lookups were made by an AI assistant and have not been checked by a person.
-
----
-
-## 3. How the work was kept honest
-
-- **Plans were frozen before data were seen.** Each analysis has a plan file with a recorded fingerprint (SHA-256) in the decision log. The plan files are read-only.
-- **Changes after the fact are labelled.** Anything added later is called supplementary and says why.
-- **Mistakes are recorded, not hidden.** A first audit run was wrong because of a reader defect and was redone. A claim that 8 of 17 pages cite Turner was wrong and was corrected to 7 of 22. Six overreaching sentences in the draft were corrected in a claim-by-claim audit.
-- **Sites' access rules were respected.** Two dictionaries (French TLFi, Romanian DEX) forbid automated reading and were not used.
-- **Copyrighted dictionary text is never stored**, only entry references and paraphrases.
-
----
-
-## 4. The parts of the project
-
-| Part | What it does | Size | Report |
+| # | Finding | Key numbers | Report |
 |---|---|---|---|
-| A. Cross-lingual audit | Describes Wiktionary's route labels | 13,128 pages, 17 language pairs | `docs/crosslingual_audit_report.md` |
-| B. Form-based baseline | Predicts Wiktionary's label from word form | 12,777 senses, 16 languages | `docs/baseline_report.md` |
-| C. Supplementary analyses | Dissociation split, citation check, Turner at scale, Romanian expert check, language model, label history | see section 6 | `docs/supplementary_report.md` |
-| D. Hindi and Bengali source study | Looks 48 words up in dictionaries | 58 word senses | `docs/feasibility_report.md` |
-| E. Annotation kit | Blind sheets for human annotators | unfilled | `data/annotation/expert_kit/README.md` |
-| F. Release package | The benchmark as one file, with data sheet and licensing review | 12,777 rows; not published | `data/release/` |
+| 1 | The labels are tidy but rarely cite a source | A learned-borrowing claim has its own citation in at most 4% of senses in 16 of 17 languages; the semi-learned class never exceeds 129 pages | `docs/crosslingual_audit_report.md` |
+| 2 | Form predicts the label | Macro-F1 0.86 to 0.96 (Sanskrit family), 0.75 to 0.91 (Romance), 0.62 and 0.59 (Greek, Armenian) | `docs/baseline_report.md` |
+| 3 | The models fail where label and resemblance disagree | Right on 40 of 278 (14%) and 52 of 273 (19%) dissociated items | `docs/supplementary_report.md` S2 |
+| 4 | Those labels follow a dictionary | Turner lists a matching form for 57 of 125 near-Sanskrit words called inherited (46%) and 100 of 996 called learned (10%) | S7a |
+| 5 | The intermediate stage explains the failure and does not repair it | A rule with no training agrees with the label on 1,476 of 1,852 items (80%) where the intermediate form changed; for 88 of 106 hard inherited items (83%) it did not change | S8 |
+| 6 | Expert sources agree with Wiktionary's inherited labels | Not loans: 651 of 684 Romanian words, 277 of 291 in thirteen languages; on 48 hard items the specialists side with Wiktionary on 45, the model on 22 | S6, S9 |
+| 7 | Most Romance learned labels are recent | In October 2024, 258 of 370 sampled ones were plain "borrowed from Latin"; inherited labels changed in 4 of 873 | S1 |
+| 8 | Dictionaries cannot settle the hard Hindi and Bengali cases | A route could be assigned to 26 of 58 senses, and to none of the 12 semi-learned ones | `docs/feasibility_report.md` |
 
-Languages: Sanskrit → Hindi, Bengali, Marathi, Gujarati, Punjabi, Odia, Assamese, Urdu; Latin → Spanish, Portuguese, French, Italian, Romanian, Catalan, Galician; Ancient Greek → Greek; Old Armenian → Armenian. Urdu is in the audit only.
+**The three-input experiment** (3,276 Indo-Aryan items, folds grouped by ancestor form):
 
----
+| Model input | Logistic: macro-F1 | Logistic: hard items right (of 191) | Transformer: macro-F1 | Transformer: hard items right (of 191) |
+|---|---|---|---|---|
+| Word only | 0.79 | 115 | 0.78 | 114 |
+| Word + ancestor form | 0.90 | 12 | 0.86 | 97 |
+| Word + ancestor + intermediate form | 0.90 | 16 | 0.85 | 102 |
 
-## 5. What is validated, and by whom
+The ancestor form buys the overall score at the cost of the hard items, and the intermediate form restores nothing, in either model. (The paper's main text gives the per-language-fold version of the logistic run: 114, 17 and 21 of 191.)
 
-| Evidence | Checked against | Status |
-|---|---|---|
-| Wiktionary pages retrieved | Revision IDs stored for all 13,128 | Done |
-| Audit and baseline code | Hand-worked test cases | Passing |
-| Baseline leakage | Folds regrouped by ancestor form | Done; scores fell by at most 0.013 |
-| Romanian inherited labels | One expert's published list | 651 of 684 agree |
-| "Turner lists the form" rule by program | 38 hand records | 31 agree; gives candidates only |
-| Hindi/Bengali dictionary lookups (134) | A person | **Not done** |
-| Chatterji passages | Page images | **Not done** |
-| Dissociated items | Two independent annotators | **Not done; sheets ready** |
-| Learned and semi-learned labels in general | Anything independent | **Not done** |
+**Null results, reported as such:** two local language models (Gemma 3, 4 and 12 billion parameters) answered "inherited" whatever the word; hard items were not edited more often than easy ones.
 
----
+## 4. What is shown and what is not
 
-## 6. Still running or blocked
-
-| Item | State when this was written | What it will add |
-|---|---|---|
-| Language-model evaluation (Gemma 3, two sizes, run locally, no cost) | **Finished: two null results.** The small model answered "inherited" about four times in five whatever the word and was near chance. The larger one (12 billion parameters, same prompts) answered "inherited" 97% of the time | Nothing. The question whether a language model leans on resemblance stays open. The prompts must not be adjusted without a new frozen plan |
-| Label history (past revisions of 2,575 pages) | Resumed on 2026-10-12 after the stored file was found truncated and repaired; about 10 requests a minute | How often a label has changed over 2 and 5 years |
-| French and Romanian dictionary checks by program | **Blocked** by the sites' rules | Manual lookup sheets are in the kit instead |
-
-To finish the label history once its job ends:
+```mermaid
+flowchart LR
+    C1["Claim 1<br/>A model predicts<br/>Wiktionary's labels"] --> S1["SHOWN<br/>including where it fails"]
+    C2["Claim 2<br/>The labels agree with<br/>evidence outside Wiktionary"] --> S2["PARTLY<br/>inherited labels, where sources cover them;<br/>learned labels are not validated"]
+    C3["Claim 3<br/>A word's historical route<br/>can be reconstructed"] --> S3["NOT ATTEMPTED<br/>no reference routes exist"]
 ```
-python3 scripts/history_analysis.py data/raw/wiktionary/crosslingual_v1 data/raw/wiktionary/history_v1 data/audit/history_v1
+
+- **No human expert has labelled the project's own items.** Blind sheets are ready in `data/annotation/expert_kit/` and unfilled.
+- **The dictionary lookups for the 48 words were made by an AI assistant.** A person compared 23 of the 134 source records with the dictionaries.
+- **The hard subset is a diagnostic split**, defined from the label and a distance. It is not an independent test set.
+- **A known defect:** four analyses attach items to their subset by spelling; at most 9 of the 191 hard items are affected (decision log, entry 110).
+
+## 5. How the work was kept honest
+
+```mermaid
+sequenceDiagram
+    participant P as Plan
+    participant L as Decision log
+    participant D as Data
+    participant R as Report
+    P->>L: Plan frozen, SHA-256 recorded
+    L->>D: Only then is the data read or the model run
+    D->>R: Result reported whichever way it falls
+    R->>L: Deviations and corrections logged
 ```
-**No label-history number may go in the paper until this has been run.**
 
----
+- **Plans frozen before outcomes.** Each analysis has a plan file in `docs/` whose hash is in the decision log.
+- **Mistakes are recorded.** A reader defect in the first audit run, a wrong citation count and a transliteration bug were each corrected and logged.
+- **Sites' access rules were respected.** Two dictionaries that forbid automated reading were not used.
+- **Copyrighted dictionary text is never stored**, only entry references and paraphrases.
+- **Model output is never used as a label.**
 
-## 7. Who does what
+## 6. Reproduce
 
-"Person A" and "Person B" are the two authors; swap to fit who reads which language.
+**Set up** (Python 3.13):
+```
+uv venv .venv && uv pip install --python .venv/bin/python -r requirements.txt
+```
 
-### Both, separately and without comparing notes
+**Tests:**
+```
+.venv/bin/python tests/test_audit_fixture.py
+.venv/bin/python tests/test_baseline_helpers.py
+.venv/bin/python scripts/annotation_agreement.py --self-test
+```
 
-1. **Annotate the dissociated items (highest value).** `data/annotation/expert_kit/<language>_dissociation_annotator_A.csv` and `_B.csv`: Hindi 78 rows, Bengali 120, Marathi 104, Gujarati 44, Punjabi 124, Odia 50, Assamese 36. Label each word from dictionaries, without opening Wiktionary. Then run the agreement script named in the kit's README. If most turn out to be real cases, the paper has a validated benchmark; if most are errors, it has an error rate for Wiktionary. Either result is worth reporting.
-2. **Spot-check the assistant's dictionary lookups.** `data/annotation/pilot_1/spot_check.md` (23 rows) and the first *n* rows of `data/annotation/round_2/spot_check.md`. Agree *n* before starting.
+**Offline analyses.** These read only files in this repository. Rerun on 2026-10-12, they gave output identical to the committed result files, except the order of two tied rows in `references.csv`.
+```
+R=data/raw/wiktionary/crosslingual_v1
+.venv/bin/python scripts/audit_crosslingual.py      $R out/audit
+.venv/bin/python scripts/baseline.py                $R out/baseline
+.venv/bin/python scripts/baseline_supplementary.py  $R out/baseline
+.venv/bin/python scripts/history_analysis.py        $R data/raw/wiktionary/history_v1 out/history
+.venv/bin/python scripts/s8b_recorded_links.py      $R out/s8b
+```
 
-### Person A: evidence and data
+**Analyses that need a temporary copy of the Jambu database** (S4, S7a, S8a, S8c, S10, S11). Jambu's copy of Turner's dictionary has no licence, so it is not stored here: download it to a temporary folder, run, and delete it.
+```
+T=$(mktemp -d)
+curl -sL -o $T/forms.csv https://media.githubusercontent.com/media/moli-mandala/data/main/cldf/forms.csv
+curl -sL -o $T/edges.csv https://raw.githubusercontent.com/moli-mandala/data/main/cldf/edges.csv
+.venv/bin/python scripts/s8a_missing_link.py     $T/forms.csv $T/edges.csv data/baseline_v1 out/s8
+.venv/bin/python scripts/s10_three_conditions.py $T/forms.csv $T/edges.csv data/baseline_v1 out/s10
+rm -rf $T
+```
 
-3. Check the Chatterji passages on the page images (Internet Archive item `OriginDevelopmentOfBengali`, vol. 1, pp. 308, 376, 380, 403, 470, 534).
-4. Check the 130 "learned" and 21 "semi-learned" candidates where Turner seems to list the word (`data/audit/turner_scale_v1/`; **not for release**).
-5. Sign off or amend `data/release/LICENSING_REVIEW.md`.
+**The Transformer** (S11; about 30 minutes on a laptop GPU, PyTorch 2.14.1). Results vary slightly by device.
+```
+uv pip install --python .venv/bin/python -r requirements-neural.txt
+.venv/bin/python scripts/s11_transformer.py $T/forms.csv $T/edges.csv data/baseline_v1 out/s11
+```
 
-### Person B: paper and submission
+**The paper:** `cd paper && tectonic main.tex`
 
-6. Fill the six red `[LEAD: …]` gaps in `paper/main.tex` (search for `\lead{`). If a check was not done, the paper must say so.
-7. Check the venue's page limit, anonymity rules, checklist and policy on AI assistance. The draft discloses that an AI assistant did the lookups and the labelling and helped draft the paper; say the same of the analyses.
-8. Attach `data/audit/crosslingual_v1/tables.md` as supplementary material.
-9. Obtain and read Kanojia et al. 2019, which the draft cites only through the author's thesis.
+**Not needed to reproduce:** the fetch scripts (`scripts/fetch_*.py`). The retrieved pages are stored with their revision IDs under `data/raw/wiktionary/`.
 
----
+## 7. Repository map
+
+| Path | What is there |
+|---|---|
+| `paper/` | LaTeX source, bibliography, PDF |
+| `scripts/` | One script per analysis; the first line of each gives its plan and usage |
+| `tests/` | Hand-worked test cases for the template reader and the distance |
+| `docs/` | Frozen plans, reports, protocols, decision log |
+| `data/raw/wiktionary/` | Retrieved pages and past revisions, with revision IDs |
+| `data/audit/`, `data/baseline_v1/` | Result files |
+| `data/annotation/` | The 48-word dictionary study and the unfilled expert sheets |
+| `data/external/` | Rows used from two open expert databases, with attribution |
+| `data/release/` | Draft benchmark file, data sheet and licensing review (not published) |
+| `archive/` | Superseded drafts and plans, kept and never deleted |
 
 ## 8. Where every number comes from
 
@@ -197,38 +187,36 @@ python3 scripts/history_analysis.py data/raw/wiktionary/crosslingual_v1 data/raw
 | The same with a character Transformer (needs PyTorch) | `data/audit/s11_v1/` | `scripts/s11_transformer.py` | `docs/supplementary_plan_s11.md` |
 | Label history, two past snapshots | `data/audit/history_v1/`, `data/audit/s7_v1/s7b_*.csv` | `scripts/history_analysis.py`, `scripts/s7b_history_by_subset.py` | `docs/supplementary_plan.md` (S1), `docs/supplementary_plan_s7.md` (S7b) |
 | Romanian expert check | `data/audit/wold_romanian_v1/`, `data/external/wold_romanian/` | `scripts/wold_romanian.py` | `docs/supplementary_plan_s6.md` |
-| Label history | `data/raw/wiktionary/history_v1/` | `scripts/fetch_history.py`, `scripts/history_analysis.py` | `docs/supplementary_plan.md` |
 | Hindi/Bengali source study | `data/annotation/pilot_1/`, `data/annotation/round_2/` | `scripts/compare_round.py`, `scripts/sense_citation.py` | `docs/evidence_extraction_protocol_v1.1.md` |
 
-**Rebuild and test**
-```
-python3 tests/test_audit_fixture.py
-uv venv .venv && uv pip install --python .venv/bin/python scikit-learn
-.venv/bin/python tests/test_baseline_helpers.py
-python3 scripts/annotation_agreement.py --self-test
-cd paper && tectonic main.tex
-```
+## 9. Data and licences
 
----
+| Source | Terms as read | In this repository |
+|---|---|---|
+| English Wiktionary | CC BY-SA 4.0 | Page text with revision IDs |
+| World Loanword Database, Romanian (Schulte 2009) | CC BY 4.0 | Rows used |
+| IE-CoR 1.1 (Heggarty, Anderson and Scarborough 2024) | CC BY 4.0 | Rows used |
+| Turner's comparative dictionary; two of the three other dictionaries | In copyright | Entry references and paraphrases only |
+| Jambu database (copy of Turner) | No licence stated | Nothing. Files derived from it are named `NOT_FOR_RELEASE` and are ignored by git |
 
-## 9. Honest assessment
+The full review is `data/release/LICENSING_REVIEW.md`. It is a draft and is not legal advice. No licence file for the code has been chosen yet.
 
-- **What the evidence supports:** a careful audit of how Wiktionary records these labels in 17 languages; a clear demonstration that simple models reproduce the labels by resemblance and fail where resemblance misleads; one small expert check in Romanian; and a negative result on checking Hindi and Bengali labels in dictionaries.
-- **What holds the paper back:** the "label against resemblance" items, which carry the main claim, are validated for six Romanian words only. Two qualified annotators working through the sheets in section 7 would change that.
-- **Realistic placement today:** a workshop or Findings paper. A main-conference case needs the human annotation.
+## 10. Open work
 
----
+1. Two qualified annotators fill the blind sheets for the hard items (`data/annotation/expert_kit/README.md`). This is the largest gap.
+2. Spot-check the remaining 111 dictionary lookups of round 2.
+3. S12: fine-tune a pretrained character-level model on the three inputs (`docs/supplementary_plan_s12.md`; notebook `docs/s12_kaggle_notebook.ipynb`).
+4. Rerun S8a, S8c, S10 and S11 with the subset taken from each item's own distance (decision log, entry 110).
 
-## 10. Rules for this repository
+## 11. Rules for this repository
 
-- Nothing is committed, pushed or published without the project lead saying so.
-- Frozen files are read-only; corrections go in new files and in the decision log.
-- No dictionary text is stored for copyrighted dictionaries. `data/audit/turner_scale_v1/item_flags.csv.gz` is not for release.
-- External data kept with attribution: `data/external/wold_romanian/` (CC BY 4.0).
+- Frozen files are not edited; corrections go in new files and in the decision log.
+- Nothing is deleted: superseded files go to `archive/`.
+- No dictionary text is stored for copyrighted dictionaries.
 - Model output is never used as a label or as validation.
-- `research.md` §13 (Results) stays empty; it belongs to a later classifier study that has not been run.
+- `research.md` §13 (Results) stays empty; it belongs to a later study that has not been run.
 
-## 11. Words used in this file
+## 12. Words used in this file
 
 | Term | Meaning |
 |---|---|

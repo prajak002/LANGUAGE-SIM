@@ -12,7 +12,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 UA = "naacle-crosslingual-audit/1.0 (academic research; serial low-rate reads) python-urllib"
 API = "https://en.wiktionary.org/w/api.php"
 SEED, N, MIN_PAGES = "crosslingual-audit-v1-2026-10-11", 400, 100
-PAIRS = {  # ancestor name: (ancestor code, modern languages)
+PAIRS = {
     "Sanskrit": ("sa", ["Hindi", "Bengali", "Marathi", "Gujarati", "Punjabi", "Odia", "Assamese", "Nepali",
                         "Sinhalese", "Urdu", "Konkani", "Maithili"]),
     "Latin": ("la", ["Spanish", "Portuguese", "French", "Italian", "Romanian", "Catalan", "Galician", "Occitan"]),
@@ -111,7 +111,7 @@ def member_titles(name):
 
 
 def pages():
-    sample, need = [], {}  # need: title -> set of language names
+    sample, need = [], {}
     for r in included():
         ts = sorted(set(member_titles(r["category_name"])),
                     key=lambda t: hashlib.sha256(f"{SEED}|{r['lang']}|{r['ancestor']}|{r['category']}|{t}".encode()).hexdigest())[:N]

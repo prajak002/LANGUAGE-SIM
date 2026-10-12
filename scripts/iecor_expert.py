@@ -19,7 +19,7 @@ DONOR = {"Sanskrit": ("sanskrit", "vedic", "indo-aryan"), "Latin": ("latin",), "
 INDIC_TO_DEVA = [(0x0980, 0x09FF), (0x0A00, 0x0A7F), (0x0A80, 0x0AFF), (0x0B00, 0x0B7F)]
 
 
-def normalise(s):  # unchanged from scripts/baseline.py
+def normalise(s):
     out = []
     for ch in unicodedata.normalize("NFD", s):
         cp = ord(ch)
@@ -90,7 +90,6 @@ def expert(L, title):
     return "MIX"
 
 
-# ---- E1: the audit sample
 cats = defaultdict(set)
 for s in csv.DictReader(open(RAW / "sample.csv", encoding="utf-8")):
     if s["lang"] in FAMILY:
@@ -112,7 +111,6 @@ with open(OUT / "e1_sample_vs_expert.csv", "w", encoding="utf-8", newline="") as
         if " | " not in fam:
             print("E1", fam.ljust(14), c.ljust(8), f"found {n:4} of {n_sampled[(fam, c)]:5}  NL {k['NL']}  LA {k['LA']}  LO {k['LO']}  MIX {k['MIX']}")
 
-# ---- E2: baseline items against the expert class
 e2, detail = defaultdict(Counter), []
 for r in csv.DictReader(gzip.open(BASE / "oof_predictions.csv.gz", "rt", encoding="utf-8")):
     L = r["lang"]

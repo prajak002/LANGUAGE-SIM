@@ -15,12 +15,12 @@ from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import StratifiedKFold
 
 sys.path.insert(0, str(Path(__file__).parent))
-from wikt_routes import assertions_with_forms, ety_sections, ety_text, from_ancestor  # noqa: E402
+from wikt_routes import assertions_with_forms, ety_sections, ety_text, from_ancestor
 
 RAW, OUT = Path(sys.argv[1]), Path(sys.argv[2])
 OUT.mkdir(parents=True, exist_ok=True)
 SEED = 20261011
-INDIC_TO_DEVA = [(0x0980, 0x09FF), (0x0A00, 0x0A7F), (0x0A80, 0x0AFF), (0x0B00, 0x0B7F)]  # Bengali, Gurmukhi, Gujarati, Odia
+INDIC_TO_DEVA = [(0x0980, 0x09FF), (0x0A00, 0x0A7F), (0x0A80, 0x0AFF), (0x0B00, 0x0B7F)]
 
 
 def normalise(s):
@@ -56,7 +56,6 @@ def wilson(k, n):
     return round(c - h, 4), round(c + h, 4)
 
 
-# ---- items
 sections = {}
 with gzip.open(RAW / "sections.jsonl.gz", "rt", encoding="utf-8") as f:
     for line in f:
@@ -121,7 +120,6 @@ def score(y, p):
     return accuracy_score(y, p), f1_score(y, p, average="macro", zero_division=0)
 
 
-# ---- A1
 a1 = []
 for L in sorted(by, key=lambda x: (anc[x], x)):
     rows = [r for r in by[L] if r[5] in ("INH", "LRN")]
@@ -138,7 +136,6 @@ with open(OUT / "a1_cv.csv", "w", encoding="utf-8", newline="") as f:
     w.writerow(["ancestor", "lang", "n_inherited", "n_learned", "model", "accuracy_mean", "macro_f1_mean", "accuracy_sd", "macro_f1_sd"])
     w.writerows(a1)
 
-# ---- A2
 a2 = []
 for L in sorted(by, key=lambda x: (anc[x], x)):
     two, semi = [r for r in by[L] if r[5] in ("INH", "LRN")], [r for r in by[L] if r[5] == "SEMI"]
@@ -154,7 +151,6 @@ with open(OUT / "a2_semi.csv", "w", encoding="utf-8", newline="") as f:
     w.writerow(["ancestor", "lang", "n_semi", "model", "predicted_learned", "ci95_low", "ci95_high", "mean_ned_inherited", "mean_ned_semi", "mean_ned_learned"])
     w.writerows(a2)
 
-# ---- A3
 a3 = []
 for A in ("Sanskrit", "Latin"):
     Ls = sorted(L for L in by if anc[L] == A)

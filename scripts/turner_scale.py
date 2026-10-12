@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from wikt_routes import assertions_with_forms, ety_sections, ety_text  # noqa: E402
+from wikt_routes import assertions_with_forms, ety_sections, ety_text
 
 FORMS, EDGES, ITEMS, ANN, PRACT, OUT = sys.argv[1], sys.argv[2], sys.argv[3], Path(sys.argv[4]), Path(sys.argv[5]), Path(sys.argv[6])
 OUT.mkdir(parents=True, exist_ok=True)
@@ -31,7 +31,7 @@ def to_deva(s):
 def translit(s):
     """Devanagari to Latin with the inherent vowel; characters outside the table are dropped."""
     out, i = [], 0
-    s = unicodedata.normalize("NFC", s).replace("़", "")  # nukta ignored
+    s = unicodedata.normalize("NFC", s).replace("़", "")
     while i < len(s):
         c = s[i]
         if c in CONS:
@@ -76,8 +76,6 @@ def wilson(k, n):
     return round(max(0.0, c - h), 4), round(min(1.0, c + h), 4)
 
 
-# ---- Turner side: head-words and the forms each article lists per language (kept in memory only)
-# A form belongs to the article it is a reflex of (edges.csv); the Cognateset column is a sub-group label, not the article.
 article_of = defaultdict(set)
 for e in csv.DictReader(open(EDGES, encoding="utf-8")):
     if e["Kind"] == "reflex" and e["Child_ID"].startswith("f_"):
@@ -106,7 +104,6 @@ def check(word_deva, etymon_deva, lang):
     return arts, t2, t3
 
 
-# ---- validation against the hand records of the 48-lemma study
 LANG = {"hi": "Hindi", "bn": "Bengali"}
 val = []
 for rnd in ("pilot_1", "round_2"):
@@ -145,7 +142,6 @@ with open(OUT / "validation.csv", "w", encoding="utf-8", newline="") as f:
 passed = agree3 / len(cmp3) >= 0.8
 print("T3 validation", "PASSED" if passed else "FAILED (below 80%): T3 is not to be interpreted")
 
-# ---- the measures
 rows, flags = [], []
 items = [r for r in csv.DictReader(gzip.open(ITEMS, "rt", encoding="utf-8")) if r["lang"] in JAMBU]
 cnt = defaultdict(Counter)

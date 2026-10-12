@@ -69,7 +69,6 @@ def expert(word):
     return "MIX"
 
 
-# ---- V1
 cats = {}
 for c, name in (("LRN", "Romanian_learned_borrowings_from_Latin"), ("SEMI", "Romanian_semi-learned_borrowings_from_Latin"), ("INH", "Romanian_terms_inherited_from_Latin")):
     with gzip.open(RAW / "members" / (name + ".jsonl.gz"), "rt", encoding="utf-8") as f:
@@ -104,7 +103,6 @@ with open(OUT / "v1_shares.csv", "w", encoding="utf-8", newline="") as f:
 donor_lrn = Counter(d for t in cats["LRN"] - multi if expert(t) == "BO" for e in by_word[norm(t)] for d in e["donors"])
 print("donors named for learned-category words where Latin is not named:", donor_lrn.most_common(6))
 
-# ---- V2
 v2, detail = Counter(), []
 for r in csv.DictReader(gzip.open(BASE / "oof_predictions.csv.gz", "rt", encoding="utf-8")):
     if r["lang"] != "Romanian":

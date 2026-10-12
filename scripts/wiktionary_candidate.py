@@ -41,7 +41,7 @@ def ety_text(chunk):
 
 
 def routes(ety, lang):
-    found = []  # (route, source language)
+    found = []
     for t in re.findall(r"\{\{([^{}]*)\}\}", ety):
         parts = [p.strip() for p in t.split("|")]
         name = parts[0]

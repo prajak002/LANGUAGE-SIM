@@ -12,7 +12,6 @@ from pathlib import Path
 RAW, OUT, TAG = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3]
 MODE, PILOT = (sys.argv[4], sys.argv[5]) if len(sys.argv) > 5 else (None, None)
 LANGS = {"hi": "Hindi", "bn": "Bengali"}
-# Templates whose first positional argument after the language is the content worth keeping.
 FORM_OF = re.compile(r"\{\{([^{}|]*(?: of|form))\|[a-z-]+\|([^{}|]+)[^{}]*\}\}")
 
 
@@ -37,7 +36,7 @@ def clean(defn):
     s = FORM_OF.sub(lambda m: f"{m.group(1)} {m.group(2)}", s)
     s = re.sub(r"\{\{(?:l|m|link|mention)\|[a-z-]+\|([^{}|]+)[^{}]*\}\}", r"\1", s)
     s = re.sub(r"\{\{(?:gloss|gl|non-gloss|ng|n-g)\|([^{}|]+)[^{}]*\}\}", r"\1", s)
-    while re.search(r"\{\{[^{}]*\}\}", s):  # labels, qualifiers and everything else are dropped
+    while re.search(r"\{\{[^{}]*\}\}", s):
         s = re.sub(r"\{\{[^{}]*\}\}", "", s)
     s = re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]", r"\1", s)
     s = re.sub(r"'{2,}", "", s)

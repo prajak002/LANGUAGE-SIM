@@ -15,7 +15,7 @@ from sklearn.metrics import f1_score
 from sklearn.model_selection import StratifiedKFold
 
 sys.path.insert(0, str(Path(__file__).parent))
-from wikt_routes import assertions_with_forms, ety_sections, ety_text, from_ancestor  # noqa: E402
+from wikt_routes import assertions_with_forms, ety_sections, ety_text, from_ancestor
 
 RAW, D = Path(sys.argv[1]), Path(sys.argv[2])
 SEED = 20261011

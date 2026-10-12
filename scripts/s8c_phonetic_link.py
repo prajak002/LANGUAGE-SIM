@@ -16,7 +16,7 @@ from sklearn.model_selection import StratifiedKFold
 
 FORMS, EDGES, B, OUT = sys.argv[1], sys.argv[2], Path(sys.argv[3]), Path(sys.argv[4])
 ALL_MIA = len(sys.argv) > 5 and sys.argv[5] == "all-mia"
-UNIT = len(sys.argv) > 5 and sys.argv[5] == "unit-cost"  # addition after the plan: same segments, every substitution costs 1
+UNIT = len(sys.argv) > 5 and sys.argv[5] == "unit-cost"
 TAG = "_all_mia" if ALL_MIA else ""
 PRE = "s8c_unit_cost" if UNIT else "s8c"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -24,7 +24,6 @@ csv.field_size_limit(10 ** 9)
 SEED = 20261011
 SKT = ["Assamese", "Bengali", "Gujarati", "Hindi", "Marathi", "Odia", "Punjabi"]
 LINK = {"Pa", "Pk"} | ({"Ap", "As", "Dhp", "jmag", "jmh", "KharI", "MIA", "NiDoc", "OMIA"} if ALL_MIA else set())
-# transliteration and normalisation copied unchanged from scripts/turner_scale.py (S4)
 CONS = dict(zip("कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहळ",
                 ["k", "kh", "g", "gh", "ṅ", "c", "ch", "j", "jh", "ñ", "ṭ", "ṭh", "ḍ", "ḍh", "ṇ", "t", "th", "d", "dh", "n",
                  "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "ś", "ṣ", "s", "h", "ḷ"]))
@@ -64,7 +63,7 @@ def norm(latin):
     return re.sub(r"[nm](?=[kgcjtdpb])", "n", s)
 
 
-def ned(a, b):  # the baseline's normalised edit distance
+def ned(a, b):
     if not a or not b:
         return 1.0
     prev = list(range(len(b) + 1))
@@ -76,7 +75,6 @@ def ned(a, b):  # the baseline's normalised edit distance
     return prev[-1] / max(len(a), len(b))
 
 
-# ---- the phonetic distance of S8c
 PLACE = {**dict.fromkeys("kgṅ", "velar"), **dict.fromkeys("cjñśy", "palatal"), **dict.fromkeys("ṭḍṇṣrḷ", "retroflex"),
          **dict.fromkeys("tdnsl", "dental"), **dict.fromkeys("pbmv", "labial"), "h": "glottal"}
 MANNER = {**dict.fromkeys("kgcjṭḍtdpb", "stop"), **dict.fromkeys("ṅñṇnm", "nasal"), **dict.fromkeys("śṣs", "sibilant"),
@@ -89,7 +87,7 @@ SEG = re.compile(r"[kgcjṭḍtdpb][hʰ]|ai|au|r̥̄|r̥|.[̀-ͯ]*")
 
 def segments(latin):
     s = unicodedata.normalize("NFD", latin.lower())
-    s = re.sub("(?<=[aeiou\u0304\u0325])[\u0301\u0300\u0302\u030c\u0306]", "", s)  # accent marks on vowels; the acute of ś is kept
+    s = re.sub("(?<=[aeiou\u0304\u0325])[\u0301\u0300\u0302\u030c\u0306]", "", s)
     s = unicodedata.normalize("NFC", s).replace("ṃ", "ṁ").replace("m̐", "ṁ").replace("ḥ", "").replace("ṛ", "r̥").replace("ṝ", "r̥̄").replace("w", "v")
     out = []
     for m in SEG.findall(s):
@@ -137,7 +135,6 @@ def wilson(k, n):
     return round(max(0.0, c - h), 4), round(min(1.0, c + h), 4)
 
 
-# ---- Turner side, in memory only: head-words, and the link-language forms each article lists
 article_of = defaultdict(set)
 for e in csv.DictReader(open(EDGES, encoding="utf-8")):
     if e["Kind"] == "reflex" and e["Child_ID"].startswith("f_"):
@@ -157,7 +154,6 @@ for r in csv.DictReader(open(FORMS, encoding="utf-8")):
                     mia[entry].add(f.strip())
 print("link languages:", sorted(LINK), "| head-word keys:", len(head), "| articles with a link form:", len(mia))
 
-# ---- items
 sub = {(r["lang"], r["title"], r["wiktionary_route"]): r["subset"] for r in csv.DictReader(gzip.open(B / "oof_predictions.csv.gz", "rt", encoding="utf-8"))}
 rows, cov = [], defaultdict(Counter)
 for r in csv.DictReader(gzip.open(B / "items.csv.gz", "rt", encoding="utf-8")):
@@ -185,7 +181,6 @@ with open(OUT / f"{PRE}_coverage{TAG}.csv", "w", encoding="utf-8", newline="") a
     for (L, route, s), k in sorted(cov.items()):
         wr.writerow([L, route, s, k["items"], k["T1"], k["linked"], round(k["linked"] / k["items"], 4)])
 
-# ---- A2: three-way split by the fixed rule
 CATS = ["link unchanged", "through the link", "skips the link"]
 a2 = defaultdict(Counter)
 for r in rows:
@@ -201,7 +196,6 @@ with open(OUT / f"{PRE}_split{TAG}.csv", "w", encoding="utf-8", newline="") as f
         if L == "ALL":
             print("A2", route, s.ljust(11), f"n={n:4} ", "  ".join(f"{c}: {k[c]} ({100 * k[c] / n:.0f}%)" for c in CATS))
 
-# ---- A1: link-aware model against resemblance alone and B3, same items and folds
 acc, f1rows, paired, skipped, preds = defaultdict(Counter), [], Counter(), [], []
 for L in SKT:
     R = [r for r in rows if r["lang"] == L]

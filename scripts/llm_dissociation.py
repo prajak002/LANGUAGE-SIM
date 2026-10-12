@@ -50,7 +50,7 @@ def prompt(r, with_etymon):
 
 
 store = OUT / "answers.jsonl"
-if MODE == "export":  # the frozen prompts as a file, for running the same evaluation on another machine
+if MODE == "export":
     with open(OUT / "prompts.jsonl", "w", encoding="utf-8") as f:
         for r in items:
             for cond in ("word", "word+etymon"):

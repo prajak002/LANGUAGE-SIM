@@ -4,7 +4,7 @@ import re
 ROUTE = {"inh": "INH", "inh+": "INH", "inherited": "INH", "lbor": "LRN", "learned borrowing": "LRN",
          "slbor": "SEMI", "semi-learned borrowing": "SEMI", "bor": "BOR", "bor+": "BOR", "borrowed": "BOR"}
 ETYMON_KW = {"inh": "INH", "lbor": "LRN", "slbor": "SEMI", "bor": "BOR"}
-OLD_LATIN = {"VL.", "LL.", "ML.", "NL.", "CL.", "EL.", "RL."}  # etymology-only codes for stages of Latin
+OLD_LATIN = {"VL.", "LL.", "ML.", "NL.", "CL.", "EL.", "RL."}
 
 
 def ety_sections(sec):
@@ -27,7 +27,6 @@ def from_ancestor(src, code):
 
 
 DIRECT = re.compile(r"\{\{\s*(" + "|".join(re.escape(k) for k in sorted(ROUTE, key=len, reverse=True)) + r")\s*\|[^|{}]*\|\s*([^|{}<]+)(?:\|\s*([^|{}<=]*))?")
-# ety / etymon trees: "|:inh|la:word", "|:lbor<conj:and>|la:word", nested "<ety:inh<la:word>>", and the older "sa>word>id".
 TREE_TOP = re.compile(r"\|\s*:(inh|lbor|slbor|bor)(?:<[^|<>]*>)*\s*\|\s*([A-Za-z][A-Za-z.\-]*)[:>]([^|<>{}]*)")
 TREE_NESTED = re.compile(r"<ety:(inh|lbor|slbor|bor)<([A-Za-z][A-Za-z.\-]*):([^|<>{}]*)")
 

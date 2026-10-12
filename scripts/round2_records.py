@@ -6,8 +6,6 @@ def url(s, q, mode):
     hws = "" if mode == "ft" else "&searchhws=yes"
     return f"https://dsal.uchicago.edu/cgi-bin/app/{APP[s][1]}?qs={urllib.parse.quote(q)}&matchtype={'default' if mode=='ft' else mode}{hws}"
 NQ = ("T", None, None, "not queried", "—", "No Indo-Aryan etymon is proposed by the language dictionary, so no Turner head-word was looked up (deviation from v1.1 §6′, logged)", "—", "—")
-# item: (id, lang, lemma, sense, label, pathway, mia, strength, conf, flags, notes, [checks])
-# check: (src, query, mode, found, entry_ref, evidence paraphrase, route_asserted, loan_mark)
 I = [
 ("1a61764406-1","hi","भेदना","to invade, penetrate","UNK","","","none","low","","Found only in the Hindi sabdasagara, which asserts no route under v1.1",[
  ("P","भेदना","ft","no","—","No headword for the verb; only the noun bhed (marked S) and derivatives","—",""),

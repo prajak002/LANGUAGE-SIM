@@ -11,7 +11,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 UA = "naacle-crosslingual-audit/1.0 (academic research; serial low-rate reads) python-urllib"
 API = "https://en.wiktionary.org/w/api.php"
 SNAPSHOTS, MAX_RANK = ["2024-10-11T00:00:00Z", "2021-10-11T00:00:00Z"], 60
-PAUSE = 4.0  # seconds between requests; the first run at 1.5 s was answered with HTTP 429
+PAUSE = 4.0
 _last, _429 = [0.0], [0]
 
 

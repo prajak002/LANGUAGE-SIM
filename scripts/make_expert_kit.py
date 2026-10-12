@@ -7,7 +7,7 @@ import csv, gzip, hashlib, json, os, re, sys, urllib.parse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from wikt_routes import assertions_with_forms, ety_sections, ety_text, from_ancestor  # noqa: E402
+from wikt_routes import assertions_with_forms, ety_sections, ety_text, from_ancestor
 
 RAW, OUT = Path(sys.argv[1]), Path(sys.argv[2])
 OUT.mkdir(parents=True, exist_ok=True)
@@ -51,7 +51,7 @@ for s in csv.DictReader(open(RAW / "sample.csv", encoding="utf-8")):
             pool.setdefault((L, kinds.pop()), []).append((iid, t, i, gloss(chunk), sections[t]["revid"]))
 for L, n in PER_ROUTE.items():
     chosen = [(iid, t, i, g, rev, r) for r in ("INH", "LRN", "SEMI") for iid, t, i, g, rev in sorted(pool.get((L, r), []))[:n]]
-    chosen.sort()  # hash order mixes the routes
+    chosen.sort()
     manual = L in LOOKUP
     cols = ["item_id", "lang", "word", "gloss"] + (["lookup_url", "etymology_marker_as_printed", "label", "notes"] if manual
                                                     else ["label", "confidence", "sources_consulted", "notes"])
@@ -69,4 +69,4 @@ for L, n in PER_ROUTE.items():
         w.writerow(["item_id", "word", "ety_index", "revid", "wiktionary_route"])
         w.writerows([iid, t, i, rev, r] for iid, t, i, g, rev, r in chosen)
     os.chmod(key, 0o444)
-    print(L, len(chosen), "items")  # counts only: routes stay in the sealed key
+    print(L, len(chosen), "items")

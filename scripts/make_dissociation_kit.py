@@ -29,4 +29,4 @@ for L in LANGS:
         w.writerow(["item_id", "word", "wiktionary_route", "subset", "norm_edit_distance"])
         w.writerows([ident(r), r["title"], r["wiktionary_route"], r["subset"], r["norm_edit_distance"]] for r in rows)
     os.chmod(path, 0o444)
-    print(L, len(rows), "rows")  # counts only
+    print(L, len(rows), "rows")
