@@ -1,0 +1,28 @@
+ancestor,lang,n_semi,model,predicted_learned,ci95_low,ci95_high,mean_ned_inherited,mean_ned_semi,mean_ned_learned
+Ancient Greek,Greek,0,skipped: fewer than 20 semi-learned items,,,,0.1008,,0.0389
+Latin,Catalan,70,B1,30,0.3194,0.5452,0.436,0.3413,0.2045
+Latin,Catalan,70,B3,32,0.3457,0.573,0.436,0.3413,0.2045
+Latin,French,25,B1,11,0.2667,0.6293,0.5201,0.3874,0.2229
+Latin,French,25,B3,12,0.3003,0.665,0.5201,0.3874,0.2229
+Latin,Galician,26,B1,4,0.0615,0.3353,0.456,0.4766,0.2418
+Latin,Galician,26,B3,6,0.1103,0.4205,0.456,0.4766,0.2418
+Latin,Italian,58,B1,21,0.2505,0.4907,0.4067,0.3524,0.2453
+Latin,Italian,58,B3,39,0.5442,0.7792,0.4067,0.3524,0.2453
+Latin,Portuguese,129,B1,62,0.3962,0.5661,0.4531,0.3599,0.2298
+Latin,Portuguese,129,B3,74,0.4874,0.6556,0.4531,0.3599,0.2298
+Latin,Romanian,3,skipped: fewer than 20 semi-learned items,,,,0.4564,0.4222,0.1962
+Latin,Spanish,128,B1,56,0.3546,0.524,0.452,0.3634,0.2365
+Latin,Spanish,128,B3,73,0.4837,0.6528,0.452,0.3634,0.2365
+Old Armenian,Armenian,31,B1,19,0.4382,0.7627,0.1208,0.211,0.1051
+Old Armenian,Armenian,31,B3,17,0.3777,0.7084,0.1208,0.211,0.1051
+Sanskrit,Assamese,7,skipped: fewer than 20 semi-learned items,,,,0.6561,0.4321,0.1742
+Sanskrit,Bengali,43,B1,12,0.1675,0.4269,0.5839,0.435,0.1036
+Sanskrit,Bengali,43,B3,14,0.2049,0.4748,0.5839,0.435,0.1036
+Sanskrit,Gujarati,30,B1,15,0.3315,0.6685,0.6531,0.3479,0.0502
+Sanskrit,Gujarati,30,B3,15,0.3315,0.6685,0.6531,0.3479,0.0502
+Sanskrit,Hindi,96,B1,29,0.2193,0.4001,0.6183,0.4769,0.0912
+Sanskrit,Hindi,96,B3,23,0.1653,0.3339,0.6183,0.4769,0.0912
+Sanskrit,Marathi,12,skipped: fewer than 20 semi-learned items,,,,0.5765,0.5237,0.0579
+Sanskrit,Odia,3,skipped: fewer than 20 semi-learned items,,,,0.6325,0.4667,0.1116
+Sanskrit,Punjabi,35,B1,9,0.1416,0.4207,0.7533,0.6482,0.3084
+Sanskrit,Punjabi,35,B3,12,0.2083,0.5085,0.7533,0.6482,0.3084

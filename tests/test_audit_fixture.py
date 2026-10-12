@@ -1,7 +1,7 @@
 """Hand-checked fixture for scripts/audit_crosslingual.py and scripts/crosslingual_tables.py.
 
 Run: python3 tests/test_audit_fixture.py
-Nine invented pages whose measures were worked out by hand (see EXPECTED). No network.
+Twelve invented pages whose measures were worked out by hand (see EXPECTED). No network.
 """
 import csv, gzip, json, subprocess, sys, tempfile
 from pathlib import Path
@@ -18,8 +18,12 @@ PAGES = {  # title -> {language: section wikitext or None}
     "G": {"Spanish": "\n===Etymology===\n{{lbor|es|LL.|foo}}.\n===Noun===\n# x\n"},
     "H": {"Spanish": "\n===Etymology===\n{{lbor|es|la-med|foo}}.\n===Noun===\n# x\n"},
     "I": {"Spanish": "\n===Etymology===\n{{bor|es|la|foo}}.\n===Noun===\n# x\n"},
+    # etymology trees: nested chain with a reference template inside; another stage only; keyword with a modifier
+    "J": {"Spanish": "\n===Etymology===\n{{ety|es|:inh|osp:foo<ety:inh<la:fōō<t:x>>><ref:{{R:es:DCECH|foo}}>|text=2|tree=1}}\n===Noun===\n# x\n"},
+    "K": {"Spanish": "\n===Etymology===\n{{etymon|es|id=x|:inh|osp:foo<id:x>|tree=1}}\n===Noun===\n# x\n"},
+    "M": {"Spanish": "\n===Etymology===\n{{ety|es|:bor<conj:and>|fr:foo|:lbor<conj:and>|la:foo|text=+}}\n===Noun===\n# x\n"},
 }
-MEMBERS = {("Hindi", "LRN"): "ABCDE", ("Hindi", "INH"): "BF", ("Spanish", "LRN"): "GHI", ("Spanish", "INH"): ""}
+MEMBERS = {("Hindi", "LRN"): "ABCDE", ("Hindi", "INH"): "BF", ("Spanish", "LRN"): "GHIM", ("Spanish", "INH"): "JK"}
 ANC = {"Hindi": ("Sanskrit", "sa"), "Spanish": ("Latin", "la")}
 NAME = {"LRN": "{L} learned borrowings from {A}", "SEMI": "{L} semi-learned borrowings from {A}", "INH": "{L} terms inherited from {A}"}
 EXPECTED = {  # (lang, category, measure) -> (k, n)
@@ -35,8 +39,11 @@ EXPECTED = {  # (lang, category, measure) -> (k, n)
     ("Hindi", "INH", "M5_conflicting_routes_under_one_spelling"): (1, 2),
     ("Hindi", "INH", "M7_etymology_cites_reference_inline"): (1, 2),        # B's first etymology
     ("Hindi", "ALL", "M6_entry_cites_any_reference"): (2, 5),
-    ("Spanish", "LRN", "M3_category_not_supported_by_template"): (1, 3),    # I: plain borrowing
-    ("Spanish", "LRN", "M3b_of_which_no_route_template_from_ancestor"): (0, 3),
+    ("Spanish", "LRN", "M3_category_not_supported_by_template"): (1, 4),    # I: plain borrowing; M is supported
+    ("Spanish", "LRN", "M3b_of_which_no_route_template_from_ancestor"): (0, 4),
+    ("Spanish", "INH", "M3_category_not_supported_by_template"): (1, 2),    # K names Old Spanish only; J is supported
+    ("Spanish", "INH", "M3c_of_which_same_route_stated_from_another_stage_only"): (1, 2),
+    ("Spanish", "INH", "M7_etymology_cites_reference_inline"): (1, 1),      # J
 }
 
 with tempfile.TemporaryDirectory() as tmp:

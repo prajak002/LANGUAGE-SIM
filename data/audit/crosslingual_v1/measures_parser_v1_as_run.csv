@@ -1,0 +1,403 @@
+ancestor,lang,category,measure,k,n,share,ci95_low,ci95_high,note
+Ancient Greek,Greek,,M1_semi_share_of_learned_plus_semi,0,1225,0.0,0.0,0.0031,LRN=1225 SEMI=0 INH=3427
+Ancient Greek,Greek,,M2_titles_in_two_or_more_categories,13,4639,0.0028,0.0016,0.0048,
+Ancient Greek,Greek,,M2b_titles_in_both_LRN_and_INH,13,4639,0.0028,0.0016,0.0048,
+Ancient Greek,Greek,LRN,M3_category_not_supported_by_template,3,400,0.0075,0.0026,0.0218,no_language_section=0
+Ancient Greek,Greek,LRN,M3b_of_which_no_route_template_from_ancestor,3,400,0.0075,0.0026,0.0218,
+Ancient Greek,Greek,LRN,M4_multiple_etymologies,9,400,0.0225,0.0119,0.0422,
+Ancient Greek,Greek,LRN,M5_conflicting_routes_under_one_spelling,2,400,0.005,0.0014,0.018,
+Ancient Greek,Greek,LRN,M6_entry_cites_any_reference,320,400,0.8,0.758,0.8363,
+Ancient Greek,Greek,LRN,M7_etymology_cites_reference_inline,227,397,0.5718,0.5227,0.6195,senses with the category's route
+Ancient Greek,Greek,INH,M3_category_not_supported_by_template,3,400,0.0075,0.0026,0.0218,no_language_section=0
+Ancient Greek,Greek,INH,M3b_of_which_no_route_template_from_ancestor,3,400,0.0075,0.0026,0.0218,
+Ancient Greek,Greek,INH,M4_multiple_etymologies,10,400,0.025,0.0136,0.0454,
+Ancient Greek,Greek,INH,M5_conflicting_routes_under_one_spelling,1,400,0.0025,0.0004,0.014,
+Ancient Greek,Greek,INH,M6_entry_cites_any_reference,198,400,0.495,0.4463,0.5438,
+Ancient Greek,Greek,INH,M7_etymology_cites_reference_inline,34,398,0.0854,0.0618,0.117,senses with the category's route
+Ancient Greek,Greek,ALL,M4_multiple_etymologies,19,798,0.0238,0.0153,0.0369,"distinct sampled titles, categories pooled (not population-weighted)"
+Ancient Greek,Greek,ALL,M5_conflicting_routes_under_one_spelling,3,798,0.0038,0.0013,0.011,"distinct sampled titles, categories pooled (not population-weighted)"
+Ancient Greek,Greek,ALL,M6_entry_cites_any_reference,516,798,0.6466,0.6128,0.679,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Catalan,,M1_semi_share_of_learned_plus_semi,70,3684,0.019,0.0151,0.0239,LRN=3614 SEMI=70 INH=2118
+Latin,Catalan,,M2_titles_in_two_or_more_categories,11,5791,0.0019,0.0011,0.0034,
+Latin,Catalan,,M2b_titles_in_both_LRN_and_INH,10,5722,0.0017,0.0009,0.0032,
+Latin,Catalan,LRN,M3_category_not_supported_by_template,0,400,0.0,0.0,0.0095,no_language_section=0
+Latin,Catalan,LRN,M3b_of_which_no_route_template_from_ancestor,0,400,0.0,0.0,0.0095,
+Latin,Catalan,LRN,M4_multiple_etymologies,20,400,0.05,0.0326,0.076,
+Latin,Catalan,LRN,M5_conflicting_routes_under_one_spelling,3,400,0.0075,0.0026,0.0218,
+Latin,Catalan,LRN,M6_entry_cites_any_reference,362,400,0.905,0.8723,0.93,
+Latin,Catalan,LRN,M7_etymology_cites_reference_inline,16,403,0.0397,0.0246,0.0635,senses with the category's route
+Latin,Catalan,SEMI,M3_category_not_supported_by_template,0,70,0.0,0.0,0.052,no_language_section=0
+Latin,Catalan,SEMI,M3b_of_which_no_route_template_from_ancestor,0,70,0.0,0.0,0.052,
+Latin,Catalan,SEMI,M4_multiple_etymologies,2,70,0.0286,0.0079,0.0983,
+Latin,Catalan,SEMI,M5_conflicting_routes_under_one_spelling,1,70,0.0143,0.0025,0.0766,
+Latin,Catalan,SEMI,M6_entry_cites_any_reference,65,70,0.9286,0.8434,0.9691,
+Latin,Catalan,SEMI,M7_etymology_cites_reference_inline,5,70,0.0714,0.0309,0.1566,senses with the category's route
+Latin,Catalan,INH,M3_category_not_supported_by_template,2,400,0.005,0.0014,0.018,no_language_section=0
+Latin,Catalan,INH,M3b_of_which_no_route_template_from_ancestor,2,400,0.005,0.0014,0.018,
+Latin,Catalan,INH,M4_multiple_etymologies,70,400,0.175,0.1409,0.2153,
+Latin,Catalan,INH,M5_conflicting_routes_under_one_spelling,1,400,0.0025,0.0004,0.014,
+Latin,Catalan,INH,M6_entry_cites_any_reference,357,400,0.8925,0.8583,0.9192,
+Latin,Catalan,INH,M7_etymology_cites_reference_inline,12,415,0.0289,0.0166,0.0499,senses with the category's route
+Latin,Catalan,ALL,M4_multiple_etymologies,92,870,0.1057,0.087,0.1279,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Catalan,ALL,M5_conflicting_routes_under_one_spelling,5,870,0.0057,0.0025,0.0134,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Catalan,ALL,M6_entry_cites_any_reference,784,870,0.9011,0.8795,0.9193,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,French,,M1_semi_share_of_learned_plus_semi,25,2722,0.0092,0.0062,0.0135,LRN=2697 SEMI=25 INH=2191
+Latin,French,,M2_titles_in_two_or_more_categories,2,4910,0.0004,0.0001,0.0015,
+Latin,French,,M2b_titles_in_both_LRN_and_INH,1,4886,0.0002,0.0,0.0012,
+Latin,French,LRN,M3_category_not_supported_by_template,0,400,0.0,0.0,0.0095,no_language_section=0
+Latin,French,LRN,M3b_of_which_no_route_template_from_ancestor,0,400,0.0,0.0,0.0095,
+Latin,French,LRN,M4_multiple_etymologies,13,400,0.0325,0.0191,0.0548,
+Latin,French,LRN,M5_conflicting_routes_under_one_spelling,0,400,0.0,0.0,0.0095,
+Latin,French,LRN,M6_entry_cites_any_reference,356,400,0.89,0.8555,0.917,
+Latin,French,LRN,M7_etymology_cites_reference_inline,2,404,0.005,0.0014,0.0179,senses with the category's route
+Latin,French,SEMI,M3_category_not_supported_by_template,1,25,0.04,0.0071,0.1954,no_language_section=0
+Latin,French,SEMI,M3b_of_which_no_route_template_from_ancestor,1,25,0.04,0.0071,0.1954,
+Latin,French,SEMI,M4_multiple_etymologies,4,25,0.16,0.064,0.3465,
+Latin,French,SEMI,M5_conflicting_routes_under_one_spelling,1,25,0.04,0.0071,0.1954,
+Latin,French,SEMI,M6_entry_cites_any_reference,22,25,0.88,0.7004,0.9583,
+Latin,French,SEMI,M7_etymology_cites_reference_inline,0,25,0.0,0.0,0.1332,senses with the category's route
+Latin,French,INH,M3_category_not_supported_by_template,15,400,0.0375,0.0229,0.0609,no_language_section=0
+Latin,French,INH,M3b_of_which_no_route_template_from_ancestor,15,400,0.0375,0.0229,0.0609,
+Latin,French,INH,M4_multiple_etymologies,64,400,0.16,0.1273,0.1991,
+Latin,French,INH,M5_conflicting_routes_under_one_spelling,0,400,0.0,0.0,0.0095,
+Latin,French,INH,M6_entry_cites_any_reference,364,400,0.91,0.8779,0.9343,
+Latin,French,INH,M7_etymology_cites_reference_inline,7,400,0.0175,0.0085,0.0357,senses with the category's route
+Latin,French,ALL,M4_multiple_etymologies,81,825,0.0982,0.0797,0.1204,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,French,ALL,M5_conflicting_routes_under_one_spelling,1,825,0.0012,0.0002,0.0068,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,French,ALL,M6_entry_cites_any_reference,742,825,0.8994,0.877,0.9181,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Galician,,M1_semi_share_of_learned_plus_semi,26,911,0.0285,0.0195,0.0415,LRN=885 SEMI=26 INH=2397
+Latin,Galician,,M2_titles_in_two_or_more_categories,10,3298,0.003,0.0016,0.0056,
+Latin,Galician,,M2b_titles_in_both_LRN_and_INH,10,3272,0.0031,0.0017,0.0056,
+Latin,Galician,LRN,M3_category_not_supported_by_template,1,400,0.0025,0.0004,0.014,no_language_section=0
+Latin,Galician,LRN,M3b_of_which_no_route_template_from_ancestor,1,400,0.0025,0.0004,0.014,
+Latin,Galician,LRN,M4_multiple_etymologies,23,400,0.0575,0.0386,0.0848,
+Latin,Galician,LRN,M5_conflicting_routes_under_one_spelling,4,400,0.01,0.0039,0.0254,
+Latin,Galician,LRN,M6_entry_cites_any_reference,324,400,0.81,0.7687,0.8454,
+Latin,Galician,LRN,M7_etymology_cites_reference_inline,0,399,0.0,0.0,0.0095,senses with the category's route
+Latin,Galician,SEMI,M3_category_not_supported_by_template,4,26,0.1538,0.0615,0.3353,no_language_section=0
+Latin,Galician,SEMI,M3b_of_which_no_route_template_from_ancestor,4,26,0.1538,0.0615,0.3353,
+Latin,Galician,SEMI,M4_multiple_etymologies,1,26,0.0385,0.0068,0.1889,
+Latin,Galician,SEMI,M5_conflicting_routes_under_one_spelling,1,26,0.0385,0.0068,0.1889,
+Latin,Galician,SEMI,M6_entry_cites_any_reference,26,26,1.0,0.8713,1.0,
+Latin,Galician,SEMI,M7_etymology_cites_reference_inline,2,22,0.0909,0.0253,0.2781,senses with the category's route
+Latin,Galician,INH,M3_category_not_supported_by_template,64,400,0.16,0.1273,0.1991,no_language_section=0
+Latin,Galician,INH,M3b_of_which_no_route_template_from_ancestor,63,400,0.1575,0.1251,0.1964,
+Latin,Galician,INH,M4_multiple_etymologies,78,400,0.195,0.1592,0.2367,
+Latin,Galician,INH,M5_conflicting_routes_under_one_spelling,0,400,0.0,0.0,0.0095,
+Latin,Galician,INH,M6_entry_cites_any_reference,366,400,0.915,0.8836,0.9385,
+Latin,Galician,INH,M7_etymology_cites_reference_inline,34,343,0.0991,0.0718,0.1353,senses with the category's route
+Latin,Galician,ALL,M4_multiple_etymologies,101,825,0.1224,0.1018,0.1466,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Galician,ALL,M5_conflicting_routes_under_one_spelling,5,825,0.0061,0.0026,0.0141,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Galician,ALL,M6_entry_cites_any_reference,715,825,0.8667,0.8418,0.8882,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Italian,,M1_semi_share_of_learned_plus_semi,64,2089,0.0306,0.0241,0.0389,LRN=2025 SEMI=64 INH=3499
+Latin,Italian,,M2_titles_in_two_or_more_categories,20,5567,0.0036,0.0023,0.0055,
+Latin,Italian,,M2b_titles_in_both_LRN_and_INH,19,5504,0.0035,0.0022,0.0054,
+Latin,Italian,LRN,M3_category_not_supported_by_template,1,400,0.0025,0.0004,0.014,no_language_section=0
+Latin,Italian,LRN,M3b_of_which_no_route_template_from_ancestor,1,400,0.0025,0.0004,0.014,
+Latin,Italian,LRN,M4_multiple_etymologies,46,400,0.115,0.0873,0.15,
+Latin,Italian,LRN,M5_conflicting_routes_under_one_spelling,3,400,0.0075,0.0026,0.0218,
+Latin,Italian,LRN,M6_entry_cites_any_reference,208,400,0.52,0.4711,0.5685,
+Latin,Italian,LRN,M7_etymology_cites_reference_inline,6,402,0.0149,0.0069,0.0322,senses with the category's route
+Latin,Italian,SEMI,M3_category_not_supported_by_template,5,64,0.0781,0.0338,0.1702,no_language_section=0
+Latin,Italian,SEMI,M3b_of_which_no_route_template_from_ancestor,5,64,0.0781,0.0338,0.1702,
+Latin,Italian,SEMI,M4_multiple_etymologies,7,64,0.1094,0.054,0.209,
+Latin,Italian,SEMI,M5_conflicting_routes_under_one_spelling,0,64,0.0,0.0,0.0566,
+Latin,Italian,SEMI,M6_entry_cites_any_reference,36,64,0.5625,0.4409,0.6771,
+Latin,Italian,SEMI,M7_etymology_cites_reference_inline,0,59,0.0,0.0,0.0611,senses with the category's route
+Latin,Italian,INH,M3_category_not_supported_by_template,3,400,0.0075,0.0026,0.0218,no_language_section=0
+Latin,Italian,INH,M3b_of_which_no_route_template_from_ancestor,3,400,0.0075,0.0026,0.0218,
+Latin,Italian,INH,M4_multiple_etymologies,99,400,0.2475,0.2077,0.2921,
+Latin,Italian,INH,M5_conflicting_routes_under_one_spelling,3,400,0.0075,0.0026,0.0218,
+Latin,Italian,INH,M6_entry_cites_any_reference,159,400,0.3975,0.3507,0.4462,
+Latin,Italian,INH,M7_etymology_cites_reference_inline,21,412,0.051,0.0336,0.0767,senses with the category's route
+Latin,Italian,ALL,M4_multiple_etymologies,151,863,0.175,0.1511,0.2017,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Italian,ALL,M5_conflicting_routes_under_one_spelling,5,863,0.0058,0.0025,0.0135,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Italian,ALL,M6_entry_cites_any_reference,402,863,0.4658,0.4328,0.4992,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Portuguese,,M1_semi_share_of_learned_plus_semi,129,4335,0.0298,0.0251,0.0352,LRN=4206 SEMI=129 INH=2479
+Latin,Portuguese,,M2_titles_in_two_or_more_categories,20,6794,0.0029,0.0019,0.0045,
+Latin,Portuguese,,M2b_titles_in_both_LRN_and_INH,19,6666,0.0029,0.0018,0.0044,
+Latin,Portuguese,LRN,M3_category_not_supported_by_template,12,400,0.03,0.0172,0.0517,no_language_section=0
+Latin,Portuguese,LRN,M3b_of_which_no_route_template_from_ancestor,12,400,0.03,0.0172,0.0517,
+Latin,Portuguese,LRN,M4_multiple_etymologies,43,400,0.1075,0.0808,0.1417,
+Latin,Portuguese,LRN,M5_conflicting_routes_under_one_spelling,2,400,0.005,0.0014,0.018,
+Latin,Portuguese,LRN,M6_entry_cites_any_reference,367,400,0.9175,0.8864,0.9407,
+Latin,Portuguese,LRN,M7_etymology_cites_reference_inline,1,391,0.0026,0.0005,0.0143,senses with the category's route
+Latin,Portuguese,SEMI,M3_category_not_supported_by_template,6,129,0.0465,0.0215,0.0978,no_language_section=0
+Latin,Portuguese,SEMI,M3b_of_which_no_route_template_from_ancestor,6,129,0.0465,0.0215,0.0978,
+Latin,Portuguese,SEMI,M4_multiple_etymologies,19,129,0.1473,0.0964,0.2186,
+Latin,Portuguese,SEMI,M5_conflicting_routes_under_one_spelling,1,129,0.0078,0.0014,0.0426,
+Latin,Portuguese,SEMI,M6_entry_cites_any_reference,126,129,0.9767,0.9339,0.9921,
+Latin,Portuguese,SEMI,M7_etymology_cites_reference_inline,4,123,0.0325,0.0127,0.0806,senses with the category's route
+Latin,Portuguese,INH,M3_category_not_supported_by_template,113,400,0.2825,0.2406,0.3285,no_language_section=0
+Latin,Portuguese,INH,M3b_of_which_no_route_template_from_ancestor,113,400,0.2825,0.2406,0.3285,
+Latin,Portuguese,INH,M4_multiple_etymologies,93,400,0.2325,0.1938,0.2763,
+Latin,Portuguese,INH,M5_conflicting_routes_under_one_spelling,3,400,0.0075,0.0026,0.0218,
+Latin,Portuguese,INH,M6_entry_cites_any_reference,375,400,0.9375,0.9094,0.9573,
+Latin,Portuguese,INH,M7_etymology_cites_reference_inline,20,290,0.069,0.0451,0.1041,senses with the category's route
+Latin,Portuguese,ALL,M4_multiple_etymologies,154,928,0.1659,0.1434,0.1913,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Portuguese,ALL,M5_conflicting_routes_under_one_spelling,5,928,0.0054,0.0023,0.0126,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Portuguese,ALL,M6_entry_cites_any_reference,867,928,0.9343,0.9165,0.9485,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Romanian,,M1_semi_share_of_learned_plus_semi,3,1637,0.0018,0.0006,0.0054,LRN=1634 SEMI=3 INH=2116
+Latin,Romanian,,M2_titles_in_two_or_more_categories,5,3748,0.0013,0.0006,0.0031,
+Latin,Romanian,,M2b_titles_in_both_LRN_and_INH,5,3745,0.0013,0.0006,0.0031,
+Latin,Romanian,LRN,M3_category_not_supported_by_template,20,400,0.05,0.0326,0.076,no_language_section=0
+Latin,Romanian,LRN,M3b_of_which_no_route_template_from_ancestor,20,400,0.05,0.0326,0.076,
+Latin,Romanian,LRN,M4_multiple_etymologies,6,400,0.015,0.0069,0.0323,
+Latin,Romanian,LRN,M5_conflicting_routes_under_one_spelling,2,400,0.005,0.0014,0.018,
+Latin,Romanian,LRN,M6_entry_cites_any_reference,116,400,0.29,0.2477,0.3363,
+Latin,Romanian,LRN,M7_etymology_cites_reference_inline,0,380,0.0,0.0,0.01,senses with the category's route
+Latin,Romanian,SEMI,M3_category_not_supported_by_template,0,3,0.0,0.0,0.5615,no_language_section=0
+Latin,Romanian,SEMI,M3b_of_which_no_route_template_from_ancestor,0,3,0.0,0.0,0.5615,
+Latin,Romanian,SEMI,M4_multiple_etymologies,0,3,0.0,0.0,0.5615,
+Latin,Romanian,SEMI,M5_conflicting_routes_under_one_spelling,0,3,0.0,0.0,0.5615,
+Latin,Romanian,SEMI,M6_entry_cites_any_reference,0,3,0.0,0.0,0.5615,
+Latin,Romanian,SEMI,M7_etymology_cites_reference_inline,0,3,0.0,0.0,0.5615,senses with the category's route
+Latin,Romanian,INH,M3_category_not_supported_by_template,1,400,0.0025,0.0004,0.014,no_language_section=0
+Latin,Romanian,INH,M3b_of_which_no_route_template_from_ancestor,1,400,0.0025,0.0004,0.014,
+Latin,Romanian,INH,M4_multiple_etymologies,50,400,0.125,0.0961,0.161,
+Latin,Romanian,INH,M5_conflicting_routes_under_one_spelling,1,400,0.0025,0.0004,0.014,
+Latin,Romanian,INH,M6_entry_cites_any_reference,125,400,0.3125,0.269,0.3595,
+Latin,Romanian,INH,M7_etymology_cites_reference_inline,21,418,0.0502,0.0331,0.0756,senses with the category's route
+Latin,Romanian,ALL,M4_multiple_etymologies,56,803,0.0697,0.0541,0.0895,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Romanian,ALL,M5_conflicting_routes_under_one_spelling,3,803,0.0037,0.0013,0.0109,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Romanian,ALL,M6_entry_cites_any_reference,241,803,0.3001,0.2694,0.3327,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Spanish,,M1_semi_share_of_learned_plus_semi,129,3474,0.0371,0.0313,0.0439,LRN=3345 SEMI=129 INH=2815
+Latin,Spanish,,M2_titles_in_two_or_more_categories,15,6274,0.0024,0.0014,0.0039,
+Latin,Spanish,,M2b_titles_in_both_LRN_and_INH,13,6147,0.0021,0.0012,0.0036,
+Latin,Spanish,LRN,M3_category_not_supported_by_template,10,400,0.025,0.0136,0.0454,no_language_section=0
+Latin,Spanish,LRN,M3b_of_which_no_route_template_from_ancestor,9,400,0.0225,0.0119,0.0422,
+Latin,Spanish,LRN,M4_multiple_etymologies,41,400,0.1025,0.0765,0.1361,
+Latin,Spanish,LRN,M5_conflicting_routes_under_one_spelling,1,400,0.0025,0.0004,0.014,
+Latin,Spanish,LRN,M6_entry_cites_any_reference,375,400,0.9375,0.9094,0.9573,
+Latin,Spanish,LRN,M7_etymology_cites_reference_inline,5,392,0.0128,0.0055,0.0295,senses with the category's route
+Latin,Spanish,SEMI,M3_category_not_supported_by_template,5,129,0.0388,0.0167,0.0875,no_language_section=0
+Latin,Spanish,SEMI,M3b_of_which_no_route_template_from_ancestor,5,129,0.0388,0.0167,0.0875,
+Latin,Spanish,SEMI,M4_multiple_etymologies,21,129,0.1628,0.109,0.2361,
+Latin,Spanish,SEMI,M5_conflicting_routes_under_one_spelling,2,129,0.0155,0.0043,0.0548,
+Latin,Spanish,SEMI,M6_entry_cites_any_reference,128,129,0.9922,0.9574,0.9986,
+Latin,Spanish,SEMI,M7_etymology_cites_reference_inline,7,125,0.056,0.0274,0.1111,senses with the category's route
+Latin,Spanish,INH,M3_category_not_supported_by_template,52,400,0.13,0.1005,0.1665,no_language_section=0
+Latin,Spanish,INH,M3b_of_which_no_route_template_from_ancestor,52,400,0.13,0.1005,0.1665,
+Latin,Spanish,INH,M4_multiple_etymologies,84,400,0.21,0.1729,0.2526,
+Latin,Spanish,INH,M5_conflicting_routes_under_one_spelling,1,400,0.0025,0.0004,0.014,
+Latin,Spanish,INH,M6_entry_cites_any_reference,364,400,0.91,0.8779,0.9343,
+Latin,Spanish,INH,M7_etymology_cites_reference_inline,26,356,0.073,0.0503,0.1049,senses with the category's route
+Latin,Spanish,ALL,M4_multiple_etymologies,146,929,0.1572,0.1352,0.182,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Spanish,ALL,M5_conflicting_routes_under_one_spelling,4,929,0.0043,0.0017,0.011,"distinct sampled titles, categories pooled (not population-weighted)"
+Latin,Spanish,ALL,M6_entry_cites_any_reference,867,929,0.9333,0.9154,0.9476,"distinct sampled titles, categories pooled (not population-weighted)"
+Old Armenian,Armenian,,M1_semi_share_of_learned_plus_semi,32,1785,0.0179,0.0127,0.0252,LRN=1753 SEMI=32 INH=1363
+Old Armenian,Armenian,,M2_titles_in_two_or_more_categories,29,3119,0.0093,0.0065,0.0133,
+Old Armenian,Armenian,,M2b_titles_in_both_LRN_and_INH,29,3087,0.0094,0.0065,0.0135,
+Old Armenian,Armenian,LRN,M3_category_not_supported_by_template,0,400,0.0,0.0,0.0095,no_language_section=0
+Old Armenian,Armenian,LRN,M3b_of_which_no_route_template_from_ancestor,0,400,0.0,0.0,0.0095,
+Old Armenian,Armenian,LRN,M4_multiple_etymologies,15,400,0.0375,0.0229,0.0609,
+Old Armenian,Armenian,LRN,M5_conflicting_routes_under_one_spelling,6,400,0.015,0.0069,0.0323,
+Old Armenian,Armenian,LRN,M6_entry_cites_any_reference,72,400,0.18,0.1455,0.2206,
+Old Armenian,Armenian,LRN,M7_etymology_cites_reference_inline,1,404,0.0025,0.0004,0.0139,senses with the category's route
+Old Armenian,Armenian,SEMI,M3_category_not_supported_by_template,1,32,0.0312,0.0055,0.1574,no_language_section=0
+Old Armenian,Armenian,SEMI,M3b_of_which_no_route_template_from_ancestor,1,32,0.0312,0.0055,0.1574,
+Old Armenian,Armenian,SEMI,M4_multiple_etymologies,2,32,0.0625,0.0173,0.2015,
+Old Armenian,Armenian,SEMI,M5_conflicting_routes_under_one_spelling,0,32,0.0,0.0,0.1072,
+Old Armenian,Armenian,SEMI,M6_entry_cites_any_reference,6,32,0.1875,0.0889,0.3531,
+Old Armenian,Armenian,SEMI,M7_etymology_cites_reference_inline,0,31,0.0,0.0,0.1103,senses with the category's route
+Old Armenian,Armenian,INH,M3_category_not_supported_by_template,6,400,0.015,0.0069,0.0323,no_language_section=0
+Old Armenian,Armenian,INH,M3b_of_which_no_route_template_from_ancestor,6,400,0.015,0.0069,0.0323,
+Old Armenian,Armenian,INH,M4_multiple_etymologies,28,400,0.07,0.0489,0.0993,
+Old Armenian,Armenian,INH,M5_conflicting_routes_under_one_spelling,7,400,0.0175,0.0085,0.0357,
+Old Armenian,Armenian,INH,M6_entry_cites_any_reference,101,400,0.2525,0.2124,0.2973,
+Old Armenian,Armenian,INH,M7_etymology_cites_reference_inline,4,396,0.0101,0.0039,0.0257,senses with the category's route
+Old Armenian,Armenian,ALL,M4_multiple_etymologies,45,832,0.0541,0.0407,0.0716,"distinct sampled titles, categories pooled (not population-weighted)"
+Old Armenian,Armenian,ALL,M5_conflicting_routes_under_one_spelling,13,832,0.0156,0.0092,0.0265,"distinct sampled titles, categories pooled (not population-weighted)"
+Old Armenian,Armenian,ALL,M6_entry_cites_any_reference,179,832,0.2151,0.1886,0.2443,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Assamese,,M1_semi_share_of_learned_plus_semi,7,156,0.0449,0.0219,0.0897,LRN=149 SEMI=7 INH=1082
+Sanskrit,Assamese,,M2_titles_in_two_or_more_categories,0,1238,0.0,0.0,0.0031,
+Sanskrit,Assamese,,M2b_titles_in_both_LRN_and_INH,0,1231,0.0,0.0,0.0031,
+Sanskrit,Assamese,LRN,M3_category_not_supported_by_template,0,149,0.0,0.0,0.0251,no_language_section=0
+Sanskrit,Assamese,LRN,M3b_of_which_no_route_template_from_ancestor,0,149,0.0,0.0,0.0251,
+Sanskrit,Assamese,LRN,M4_multiple_etymologies,3,149,0.0201,0.0069,0.0575,
+Sanskrit,Assamese,LRN,M5_conflicting_routes_under_one_spelling,0,149,0.0,0.0,0.0251,
+Sanskrit,Assamese,LRN,M6_entry_cites_any_reference,58,149,0.3893,0.3147,0.4694,
+Sanskrit,Assamese,LRN,M7_etymology_cites_reference_inline,0,149,0.0,0.0,0.0251,senses with the category's route
+Sanskrit,Assamese,SEMI,M3_category_not_supported_by_template,0,7,0.0,0.0,0.3543,no_language_section=0
+Sanskrit,Assamese,SEMI,M3b_of_which_no_route_template_from_ancestor,0,7,0.0,0.0,0.3543,
+Sanskrit,Assamese,SEMI,M4_multiple_etymologies,1,7,0.1429,0.0257,0.5131,
+Sanskrit,Assamese,SEMI,M5_conflicting_routes_under_one_spelling,0,7,0.0,0.0,0.3543,
+Sanskrit,Assamese,SEMI,M6_entry_cites_any_reference,1,7,0.1429,0.0257,0.5131,
+Sanskrit,Assamese,SEMI,M7_etymology_cites_reference_inline,0,7,0.0,0.0,0.3543,senses with the category's route
+Sanskrit,Assamese,INH,M3_category_not_supported_by_template,16,400,0.04,0.0248,0.064,no_language_section=0
+Sanskrit,Assamese,INH,M3b_of_which_no_route_template_from_ancestor,16,400,0.04,0.0248,0.064,
+Sanskrit,Assamese,INH,M4_multiple_etymologies,39,400,0.0975,0.0721,0.1305,
+Sanskrit,Assamese,INH,M5_conflicting_routes_under_one_spelling,0,400,0.0,0.0,0.0095,
+Sanskrit,Assamese,INH,M6_entry_cites_any_reference,50,400,0.125,0.0961,0.161,
+Sanskrit,Assamese,INH,M7_etymology_cites_reference_inline,4,401,0.01,0.0039,0.0254,senses with the category's route
+Sanskrit,Assamese,ALL,M4_multiple_etymologies,43,556,0.0773,0.0579,0.1026,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Assamese,ALL,M5_conflicting_routes_under_one_spelling,0,556,0.0,0.0,0.0069,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Assamese,ALL,M6_entry_cites_any_reference,109,556,0.196,0.1652,0.2311,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Bengali,,M1_semi_share_of_learned_plus_semi,44,1119,0.0393,0.0294,0.0524,LRN=1075 SEMI=44 INH=1045
+Sanskrit,Bengali,,M2_titles_in_two_or_more_categories,13,2151,0.006,0.0035,0.0103,
+Sanskrit,Bengali,,M2b_titles_in_both_LRN_and_INH,12,2108,0.0057,0.0033,0.0099,
+Sanskrit,Bengali,LRN,M3_category_not_supported_by_template,0,400,0.0,0.0,0.0095,no_language_section=0
+Sanskrit,Bengali,LRN,M3b_of_which_no_route_template_from_ancestor,0,400,0.0,0.0,0.0095,
+Sanskrit,Bengali,LRN,M4_multiple_etymologies,9,400,0.0225,0.0119,0.0422,
+Sanskrit,Bengali,LRN,M5_conflicting_routes_under_one_spelling,1,400,0.0025,0.0004,0.014,
+Sanskrit,Bengali,LRN,M6_entry_cites_any_reference,126,400,0.315,0.2714,0.3621,
+Sanskrit,Bengali,LRN,M7_etymology_cites_reference_inline,3,400,0.0075,0.0026,0.0218,senses with the category's route
+Sanskrit,Bengali,SEMI,M3_category_not_supported_by_template,1,44,0.0227,0.004,0.1181,no_language_section=0
+Sanskrit,Bengali,SEMI,M3b_of_which_no_route_template_from_ancestor,1,44,0.0227,0.004,0.1181,
+Sanskrit,Bengali,SEMI,M4_multiple_etymologies,3,44,0.0682,0.0235,0.1823,
+Sanskrit,Bengali,SEMI,M5_conflicting_routes_under_one_spelling,1,44,0.0227,0.004,0.1181,
+Sanskrit,Bengali,SEMI,M6_entry_cites_any_reference,17,44,0.3864,0.2572,0.5338,
+Sanskrit,Bengali,SEMI,M7_etymology_cites_reference_inline,0,43,0.0,0.0,0.082,senses with the category's route
+Sanskrit,Bengali,INH,M3_category_not_supported_by_template,18,400,0.045,0.0287,0.07,no_language_section=0
+Sanskrit,Bengali,INH,M3b_of_which_no_route_template_from_ancestor,18,400,0.045,0.0287,0.07,
+Sanskrit,Bengali,INH,M4_multiple_etymologies,45,400,0.1125,0.0851,0.1472,
+Sanskrit,Bengali,INH,M5_conflicting_routes_under_one_spelling,7,400,0.0175,0.0085,0.0357,
+Sanskrit,Bengali,INH,M6_entry_cites_any_reference,175,400,0.4375,0.3897,0.4865,
+Sanskrit,Bengali,INH,M7_etymology_cites_reference_inline,35,399,0.0877,0.0637,0.1196,senses with the category's route
+Sanskrit,Bengali,ALL,M4_multiple_etymologies,57,844,0.0675,0.0525,0.0865,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Bengali,ALL,M5_conflicting_routes_under_one_spelling,9,844,0.0107,0.0056,0.0201,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Bengali,ALL,M6_entry_cites_any_reference,318,844,0.3768,0.3447,0.41,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Gujarati,,M1_semi_share_of_learned_plus_semi,30,496,0.0605,0.0427,0.085,LRN=466 SEMI=30 INH=1161
+Sanskrit,Gujarati,,M2_titles_in_two_or_more_categories,5,1652,0.003,0.0013,0.0071,
+Sanskrit,Gujarati,,M2b_titles_in_both_LRN_and_INH,3,1624,0.0018,0.0006,0.0054,
+Sanskrit,Gujarati,LRN,M3_category_not_supported_by_template,1,400,0.0025,0.0004,0.014,no_language_section=0
+Sanskrit,Gujarati,LRN,M3b_of_which_no_route_template_from_ancestor,1,400,0.0025,0.0004,0.014,
+Sanskrit,Gujarati,LRN,M4_multiple_etymologies,12,400,0.03,0.0172,0.0517,
+Sanskrit,Gujarati,LRN,M5_conflicting_routes_under_one_spelling,3,400,0.0075,0.0026,0.0218,
+Sanskrit,Gujarati,LRN,M6_entry_cites_any_reference,167,400,0.4175,0.3702,0.4664,
+Sanskrit,Gujarati,LRN,M7_etymology_cites_reference_inline,0,399,0.0,0.0,0.0095,senses with the category's route
+Sanskrit,Gujarati,SEMI,M3_category_not_supported_by_template,0,30,0.0,0.0,0.1135,no_language_section=0
+Sanskrit,Gujarati,SEMI,M3b_of_which_no_route_template_from_ancestor,0,30,0.0,0.0,0.1135,
+Sanskrit,Gujarati,SEMI,M4_multiple_etymologies,2,30,0.0667,0.0185,0.2132,
+Sanskrit,Gujarati,SEMI,M5_conflicting_routes_under_one_spelling,2,30,0.0667,0.0185,0.2132,
+Sanskrit,Gujarati,SEMI,M6_entry_cites_any_reference,10,30,0.3333,0.1923,0.5122,
+Sanskrit,Gujarati,SEMI,M7_etymology_cites_reference_inline,0,30,0.0,0.0,0.1135,senses with the category's route
+Sanskrit,Gujarati,INH,M3_category_not_supported_by_template,33,400,0.0825,0.0593,0.1136,no_language_section=0
+Sanskrit,Gujarati,INH,M3b_of_which_no_route_template_from_ancestor,32,400,0.08,0.0572,0.1108,
+Sanskrit,Gujarati,INH,M4_multiple_etymologies,20,400,0.05,0.0326,0.076,
+Sanskrit,Gujarati,INH,M5_conflicting_routes_under_one_spelling,0,400,0.0,0.0,0.0095,
+Sanskrit,Gujarati,INH,M6_entry_cites_any_reference,196,400,0.49,0.4413,0.5389,
+Sanskrit,Gujarati,INH,M7_etymology_cites_reference_inline,34,369,0.0921,0.0667,0.126,senses with the category's route
+Sanskrit,Gujarati,ALL,M4_multiple_etymologies,34,830,0.041,0.0295,0.0567,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Gujarati,ALL,M5_conflicting_routes_under_one_spelling,5,830,0.006,0.0026,0.014,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Gujarati,ALL,M6_entry_cites_any_reference,373,830,0.4494,0.4159,0.4834,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Hindi,,M1_semi_share_of_learned_plus_semi,98,1435,0.0683,0.0564,0.0825,LRN=1337 SEMI=98 INH=2241
+Sanskrit,Hindi,,M2_titles_in_two_or_more_categories,45,3630,0.0124,0.0093,0.0165,
+Sanskrit,Hindi,,M2b_titles_in_both_LRN_and_INH,32,3546,0.009,0.0064,0.0127,
+Sanskrit,Hindi,LRN,M3_category_not_supported_by_template,1,400,0.0025,0.0004,0.014,no_language_section=0
+Sanskrit,Hindi,LRN,M3b_of_which_no_route_template_from_ancestor,1,400,0.0025,0.0004,0.014,
+Sanskrit,Hindi,LRN,M4_multiple_etymologies,17,400,0.0425,0.0267,0.067,
+Sanskrit,Hindi,LRN,M5_conflicting_routes_under_one_spelling,8,400,0.02,0.0102,0.039,
+Sanskrit,Hindi,LRN,M6_entry_cites_any_reference,325,400,0.8125,0.7713,0.8477,
+Sanskrit,Hindi,LRN,M7_etymology_cites_reference_inline,4,402,0.01,0.0039,0.0253,senses with the category's route
+Sanskrit,Hindi,SEMI,M3_category_not_supported_by_template,1,98,0.0102,0.0018,0.0556,no_language_section=0
+Sanskrit,Hindi,SEMI,M3b_of_which_no_route_template_from_ancestor,1,98,0.0102,0.0018,0.0556,
+Sanskrit,Hindi,SEMI,M4_multiple_etymologies,22,98,0.2245,0.1532,0.3166,
+Sanskrit,Hindi,SEMI,M5_conflicting_routes_under_one_spelling,13,98,0.1327,0.0792,0.2138,
+Sanskrit,Hindi,SEMI,M6_entry_cites_any_reference,78,98,0.7959,0.7057,0.8638,
+Sanskrit,Hindi,SEMI,M7_etymology_cites_reference_inline,6,98,0.0612,0.0284,0.1272,senses with the category's route
+Sanskrit,Hindi,INH,M3_category_not_supported_by_template,32,400,0.08,0.0572,0.1108,no_language_section=0
+Sanskrit,Hindi,INH,M3b_of_which_no_route_template_from_ancestor,32,400,0.08,0.0572,0.1108,
+Sanskrit,Hindi,INH,M4_multiple_etymologies,50,400,0.125,0.0961,0.161,
+Sanskrit,Hindi,INH,M5_conflicting_routes_under_one_spelling,4,400,0.01,0.0039,0.0254,
+Sanskrit,Hindi,INH,M6_entry_cites_any_reference,342,400,0.855,0.8171,0.8861,
+Sanskrit,Hindi,INH,M7_etymology_cites_reference_inline,34,387,0.0879,0.0636,0.1203,senses with the category's route
+Sanskrit,Hindi,ALL,M4_multiple_etymologies,87,895,0.0972,0.0795,0.1184,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Hindi,ALL,M5_conflicting_routes_under_one_spelling,23,895,0.0257,0.0172,0.0383,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Hindi,ALL,M6_entry_cites_any_reference,742,895,0.8291,0.803,0.8523,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Marathi,,M1_semi_share_of_learned_plus_semi,12,370,0.0324,0.0186,0.0558,LRN=358 SEMI=12 INH=955
+Sanskrit,Marathi,,M2_titles_in_two_or_more_categories,4,1321,0.003,0.0012,0.0078,
+Sanskrit,Marathi,,M2b_titles_in_both_LRN_and_INH,3,1310,0.0023,0.0008,0.0067,
+Sanskrit,Marathi,LRN,M3_category_not_supported_by_template,1,358,0.0028,0.0005,0.0157,no_language_section=0
+Sanskrit,Marathi,LRN,M3b_of_which_no_route_template_from_ancestor,1,358,0.0028,0.0005,0.0157,
+Sanskrit,Marathi,LRN,M4_multiple_etymologies,8,358,0.0223,0.0114,0.0435,
+Sanskrit,Marathi,LRN,M5_conflicting_routes_under_one_spelling,3,358,0.0084,0.0029,0.0243,
+Sanskrit,Marathi,LRN,M6_entry_cites_any_reference,296,358,0.8268,0.7842,0.8625,
+Sanskrit,Marathi,LRN,M7_etymology_cites_reference_inline,2,357,0.0056,0.0015,0.0202,senses with the category's route
+Sanskrit,Marathi,SEMI,M3_category_not_supported_by_template,0,12,0.0,0.0,0.2425,no_language_section=0
+Sanskrit,Marathi,SEMI,M3b_of_which_no_route_template_from_ancestor,0,12,0.0,0.0,0.2425,
+Sanskrit,Marathi,SEMI,M4_multiple_etymologies,1,12,0.0833,0.0149,0.3539,
+Sanskrit,Marathi,SEMI,M5_conflicting_routes_under_one_spelling,0,12,0.0,0.0,0.2425,
+Sanskrit,Marathi,SEMI,M6_entry_cites_any_reference,11,12,0.9167,0.6461,0.9851,
+Sanskrit,Marathi,SEMI,M7_etymology_cites_reference_inline,1,12,0.0833,0.0149,0.3539,senses with the category's route
+Sanskrit,Marathi,INH,M3_category_not_supported_by_template,18,400,0.045,0.0287,0.07,no_language_section=0
+Sanskrit,Marathi,INH,M3b_of_which_no_route_template_from_ancestor,18,400,0.045,0.0287,0.07,
+Sanskrit,Marathi,INH,M4_multiple_etymologies,26,400,0.065,0.0447,0.0935,
+Sanskrit,Marathi,INH,M5_conflicting_routes_under_one_spelling,3,400,0.0075,0.0026,0.0218,
+Sanskrit,Marathi,INH,M6_entry_cites_any_reference,341,400,0.8525,0.8144,0.8839,
+Sanskrit,Marathi,INH,M7_etymology_cites_reference_inline,28,392,0.0714,0.0499,0.1013,senses with the category's route
+Sanskrit,Marathi,ALL,M4_multiple_etymologies,32,767,0.0417,0.0297,0.0583,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Marathi,ALL,M5_conflicting_routes_under_one_spelling,3,767,0.0039,0.0013,0.0114,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Marathi,ALL,M6_entry_cites_any_reference,646,767,0.8422,0.8147,0.8663,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Odia,,M1_semi_share_of_learned_plus_semi,3,272,0.011,0.0038,0.0319,LRN=269 SEMI=3 INH=655
+Sanskrit,Odia,,M2_titles_in_two_or_more_categories,1,926,0.0011,0.0002,0.0061,
+Sanskrit,Odia,,M2b_titles_in_both_LRN_and_INH,1,923,0.0011,0.0002,0.0061,
+Sanskrit,Odia,LRN,M3_category_not_supported_by_template,0,269,0.0,0.0,0.0141,no_language_section=0
+Sanskrit,Odia,LRN,M3b_of_which_no_route_template_from_ancestor,0,269,0.0,0.0,0.0141,
+Sanskrit,Odia,LRN,M4_multiple_etymologies,2,269,0.0074,0.002,0.0267,
+Sanskrit,Odia,LRN,M5_conflicting_routes_under_one_spelling,1,269,0.0037,0.0007,0.0208,
+Sanskrit,Odia,LRN,M6_entry_cites_any_reference,227,269,0.8439,0.7957,0.8824,
+Sanskrit,Odia,LRN,M7_etymology_cites_reference_inline,0,270,0.0,0.0,0.014,senses with the category's route
+Sanskrit,Odia,SEMI,M3_category_not_supported_by_template,0,3,0.0,0.0,0.5615,no_language_section=0
+Sanskrit,Odia,SEMI,M3b_of_which_no_route_template_from_ancestor,0,3,0.0,0.0,0.5615,
+Sanskrit,Odia,SEMI,M4_multiple_etymologies,0,3,0.0,0.0,0.5615,
+Sanskrit,Odia,SEMI,M5_conflicting_routes_under_one_spelling,0,3,0.0,0.0,0.5615,
+Sanskrit,Odia,SEMI,M6_entry_cites_any_reference,3,3,1.0,0.4385,1.0,
+Sanskrit,Odia,SEMI,M7_etymology_cites_reference_inline,0,3,0.0,0.0,0.5615,senses with the category's route
+Sanskrit,Odia,INH,M3_category_not_supported_by_template,23,400,0.0575,0.0386,0.0848,no_language_section=0
+Sanskrit,Odia,INH,M3b_of_which_no_route_template_from_ancestor,23,400,0.0575,0.0386,0.0848,
+Sanskrit,Odia,INH,M4_multiple_etymologies,3,400,0.0075,0.0026,0.0218,
+Sanskrit,Odia,INH,M5_conflicting_routes_under_one_spelling,0,400,0.0,0.0,0.0095,
+Sanskrit,Odia,INH,M6_entry_cites_any_reference,319,400,0.7975,0.7554,0.834,
+Sanskrit,Odia,INH,M7_etymology_cites_reference_inline,6,377,0.0159,0.0073,0.0343,senses with the category's route
+Sanskrit,Odia,ALL,M4_multiple_etymologies,5,672,0.0074,0.0032,0.0173,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Odia,ALL,M5_conflicting_routes_under_one_spelling,1,672,0.0015,0.0003,0.0084,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Odia,ALL,M6_entry_cites_any_reference,549,672,0.817,0.786,0.8444,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Punjabi,,M1_semi_share_of_learned_plus_semi,36,260,0.1385,0.1017,0.1857,LRN=224 SEMI=36 INH=1453
+Sanskrit,Punjabi,,M2_titles_in_two_or_more_categories,2,1711,0.0012,0.0003,0.0043,
+Sanskrit,Punjabi,,M2b_titles_in_both_LRN_and_INH,1,1676,0.0006,0.0001,0.0034,
+Sanskrit,Punjabi,LRN,M3_category_not_supported_by_template,0,224,0.0,0.0,0.0169,no_language_section=0
+Sanskrit,Punjabi,LRN,M3b_of_which_no_route_template_from_ancestor,0,224,0.0,0.0,0.0169,
+Sanskrit,Punjabi,LRN,M4_multiple_etymologies,10,224,0.0446,0.0244,0.0802,
+Sanskrit,Punjabi,LRN,M5_conflicting_routes_under_one_spelling,2,224,0.0089,0.0025,0.032,
+Sanskrit,Punjabi,LRN,M6_entry_cites_any_reference,207,224,0.9241,0.8818,0.9521,
+Sanskrit,Punjabi,LRN,M7_etymology_cites_reference_inline,1,225,0.0044,0.0008,0.0247,senses with the category's route
+Sanskrit,Punjabi,SEMI,M3_category_not_supported_by_template,0,36,0.0,0.0,0.0964,no_language_section=0
+Sanskrit,Punjabi,SEMI,M3b_of_which_no_route_template_from_ancestor,0,36,0.0,0.0,0.0964,
+Sanskrit,Punjabi,SEMI,M4_multiple_etymologies,2,36,0.0556,0.0154,0.1814,
+Sanskrit,Punjabi,SEMI,M5_conflicting_routes_under_one_spelling,1,36,0.0278,0.0049,0.1417,
+Sanskrit,Punjabi,SEMI,M6_entry_cites_any_reference,28,36,0.7778,0.6192,0.8828,
+Sanskrit,Punjabi,SEMI,M7_etymology_cites_reference_inline,1,36,0.0278,0.0049,0.1417,senses with the category's route
+Sanskrit,Punjabi,INH,M3_category_not_supported_by_template,81,400,0.2025,0.166,0.2446,no_language_section=0
+Sanskrit,Punjabi,INH,M3b_of_which_no_route_template_from_ancestor,81,400,0.2025,0.166,0.2446,
+Sanskrit,Punjabi,INH,M4_multiple_etymologies,43,400,0.1075,0.0808,0.1417,
+Sanskrit,Punjabi,INH,M5_conflicting_routes_under_one_spelling,0,400,0.0,0.0,0.0095,
+Sanskrit,Punjabi,INH,M6_entry_cites_any_reference,359,400,0.8975,0.8639,0.9235,
+Sanskrit,Punjabi,INH,M7_etymology_cites_reference_inline,17,333,0.0511,0.0321,0.0802,senses with the category's route
+Sanskrit,Punjabi,ALL,M4_multiple_etymologies,54,659,0.0819,0.0633,0.1054,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Punjabi,ALL,M5_conflicting_routes_under_one_spelling,2,659,0.003,0.0008,0.011,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Punjabi,ALL,M6_entry_cites_any_reference,593,659,0.8998,0.8746,0.9205,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Urdu,,M1_semi_share_of_learned_plus_semi,48,257,0.1868,0.1439,0.2389,LRN=209 SEMI=48 INH=769
+Sanskrit,Urdu,,M2_titles_in_two_or_more_categories,13,1012,0.0128,0.0075,0.0219,
+Sanskrit,Urdu,,M2b_titles_in_both_LRN_and_INH,10,968,0.0103,0.0056,0.0189,
+Sanskrit,Urdu,LRN,M3_category_not_supported_by_template,0,209,0.0,0.0,0.018,no_language_section=0
+Sanskrit,Urdu,LRN,M3b_of_which_no_route_template_from_ancestor,0,209,0.0,0.0,0.018,
+Sanskrit,Urdu,LRN,M4_multiple_etymologies,28,209,0.134,0.0943,0.1868,
+Sanskrit,Urdu,LRN,M5_conflicting_routes_under_one_spelling,9,209,0.0431,0.0228,0.0798,
+Sanskrit,Urdu,LRN,M6_entry_cites_any_reference,145,209,0.6938,0.6283,0.7523,
+Sanskrit,Urdu,LRN,M7_etymology_cites_reference_inline,1,214,0.0047,0.0008,0.026,senses with the category's route
+Sanskrit,Urdu,SEMI,M3_category_not_supported_by_template,1,48,0.0208,0.0037,0.109,no_language_section=0
+Sanskrit,Urdu,SEMI,M3b_of_which_no_route_template_from_ancestor,1,48,0.0208,0.0037,0.109,
+Sanskrit,Urdu,SEMI,M4_multiple_etymologies,6,48,0.125,0.0586,0.247,
+Sanskrit,Urdu,SEMI,M5_conflicting_routes_under_one_spelling,4,48,0.0833,0.0329,0.1955,
+Sanskrit,Urdu,SEMI,M6_entry_cites_any_reference,36,48,0.75,0.6122,0.8508,
+Sanskrit,Urdu,SEMI,M7_etymology_cites_reference_inline,11,48,0.2292,0.1331,0.3654,senses with the category's route
+Sanskrit,Urdu,INH,M3_category_not_supported_by_template,95,400,0.2375,0.1984,0.2816,no_language_section=0
+Sanskrit,Urdu,INH,M3b_of_which_no_route_template_from_ancestor,92,400,0.23,0.1914,0.2737,
+Sanskrit,Urdu,INH,M4_multiple_etymologies,54,400,0.135,0.105,0.172,
+Sanskrit,Urdu,INH,M5_conflicting_routes_under_one_spelling,7,400,0.0175,0.0085,0.0357,
+Sanskrit,Urdu,INH,M6_entry_cites_any_reference,296,400,0.74,0.6949,0.7806,
+Sanskrit,Urdu,INH,M7_etymology_cites_reference_inline,77,315,0.2444,0.2003,0.2948,senses with the category's route
+Sanskrit,Urdu,ALL,M4_multiple_etymologies,79,648,0.1219,0.0989,0.1494,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Urdu,ALL,M5_conflicting_routes_under_one_spelling,11,648,0.017,0.0095,0.0301,"distinct sampled titles, categories pooled (not population-weighted)"
+Sanskrit,Urdu,ALL,M6_entry_cites_any_reference,472,648,0.7284,0.6929,0.7612,"distinct sampled titles, categories pooled (not population-weighted)"

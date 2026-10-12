@@ -9,10 +9,8 @@ from pathlib import Path
 
 RAW, OUT = Path(sys.argv[1]), Path(sys.argv[2])
 OUT.mkdir(parents=True, exist_ok=True)
-ROUTE = {"inh": "INH", "inh+": "INH", "inherited": "INH", "lbor": "LRN", "learned borrowing": "LRN",
-         "slbor": "SEMI", "semi-learned borrowing": "SEMI", "bor": "BOR", "bor+": "BOR", "borrowed": "BOR"}
-ETYMON_KW = {"inh": "INH", "lbor": "LRN", "slbor": "SEMI", "bor": "BOR"}
-OLD_LATIN = {"VL.", "LL.", "ML.", "NL.", "CL.", "EL.", "RL."}  # etymology-only codes for stages of Latin
+sys.path.insert(0, str(Path(__file__).parent))
+from wikt_routes import assertions, ety_sections, ety_text, routes  # noqa: E402
 
 
 def wilson(k, n):
@@ -21,45 +19,6 @@ def wilson(k, n):
     z, p = 1.959964, k / n
     c, h = (p + z * z / (2 * n)) / (1 + z * z / n), z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / (1 + z * z / n)
     return (round(max(0.0, c - h), 4), round(min(1.0, c + h), 4))
-
-
-def ety_sections(sec):
-    heads = list(re.finditer(r"^===\s*Etymology(?: \d+)?\s*===\s*$", sec, re.M))
-    if len(heads) <= 1:
-        return [sec]
-    return [sec[h.start(): (heads[i + 1].start() if i + 1 < len(heads) else len(sec))] for i, h in enumerate(heads)]
-
-
-def ety_text(chunk):
-    m = re.search(r"^=+\s*Etymology(?: \d+)?\s*=+\s*$", chunk, re.M)
-    if not m:
-        return ""
-    nxt = re.search(r"^=+[^=].*?=+\s*$", chunk[m.end():], re.M)
-    return chunk[m.end(): m.end() + nxt.start()] if nxt else chunk[m.end():]
-
-
-def from_ancestor(src, code):
-    return src == code or src.startswith(code + "-") or (code == "la" and src in OLD_LATIN)
-
-
-def routes(ety, code):
-    """Routes (INH, LRN, SEMI, BOR) that the etymology templates assert from the ancestor."""
-    found = set()
-    for t in re.findall(r"\{\{([^{}]*)\}\}", ety):
-        parts = [p.strip() for p in t.split("|")]
-        pos = [p for p in parts[1:] if "=" not in p]
-        if parts[0] in ROUTE and len(pos) >= 2 and from_ancestor(pos[1], code):
-            found.add(ROUTE[parts[0]])
-        elif parts[0] in ("etymon", "ety"):
-            kw = None
-            for p in pos[1:]:
-                if p.startswith(":"):
-                    kw = ETYMON_KW.get(p[1:])
-                elif kw and re.match(r"^[A-Za-z.-]+[:>]", p):
-                    if from_ancestor(re.split(r"[:>]", p)[0], code):
-                        found.add(kw)
-                    kw = None
-    return found
 
 
 def has_ref(text):
@@ -107,7 +66,7 @@ for A, code, L in pairs:
         S = [s for s in sample if s["lang"] == L and s["category"] == cat]
         if not S:
             continue
-        n_sec = k_unsup = k_none = k_multi = k_conf = k_ref = n_sense = k_sense_ref = 0
+        n_sec = k_unsup = k_none = k_stage = k_multi = k_conf = k_ref = n_sense = k_sense_ref = 0
         missing = 0
         for s in S:
             sec = (sections.get(s["title"], {}).get("sections") or {}).get(L)
@@ -117,12 +76,14 @@ for A, code, L in pairs:
             n_sec += 1
             chunks = ety_sections(sec)
             per_sense = [routes(ety_text(c), code) for c in chunks]
+            kinds_any = {r for c in chunks for r, _ in assertions(ety_text(c))}
             page_routes = set().union(*per_sense)
             single = {next(iter(r)) for r in per_sense if len(r & {"INH", "LRN", "SEMI"}) == 1 for r in [r & {"INH", "LRN", "SEMI"}]}
             unsup, conf, multi, ref = cat not in page_routes, len(single) >= 2 and len(chunks) >= 2, len(chunks) >= 2, \
                 has_ref(sec) or bool(re.search(r"^=+\s*(References|Further reading)\s*=+\s*$", sec, re.M))
             k_unsup += unsup
             k_none += unsup and not page_routes
+            k_stage += unsup and cat in kinds_any
             k_multi += multi
             k_conf += conf
             k_ref += ref
@@ -136,6 +97,8 @@ for A, code, L in pairs:
                     k_sense_ref += has_ref(ety_text(c))
         add(A, L, cat, "M3_category_not_supported_by_template", k_unsup, n_sec, f"no_language_section={missing}")
         add(A, L, cat, "M3b_of_which_no_route_template_from_ancestor", k_none, n_sec)
+        add(A, L, cat, "M3c_of_which_same_route_stated_from_another_stage_only", k_stage, n_sec,
+            "addition to the plan: the page states this route from an intermediate stage; the ancestor is reached only through another entry")
         add(A, L, cat, "M4_multiple_etymologies", k_multi, n_sec)
         add(A, L, cat, "M5_conflicting_routes_under_one_spelling", k_conf, n_sec)
         add(A, L, cat, "M6_entry_cites_any_reference", k_ref, n_sec)

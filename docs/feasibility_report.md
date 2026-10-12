@@ -133,3 +133,9 @@ Three options, in the order I would consider them:
 - A person must check the passages on the page images (vol. 1, pp. 308, 376, 380, 403, 470, 534).
 
 **References verified.** The four dictionary citations were checked against the DSAL citation pages. Chatterji's definitions of the three terms were read (vol. 1, Appendix D, §111, pp. 189–191, OCR).
+
+## 11. Addendum, 2026-10-11: cross-lingual audit (decision log 74–75)
+
+A separate, automatic audit of Wiktionary's own records in 17 language pairs is reported in `docs/crosslingual_audit_report.md`. It bears on two statements in this report:
+- **§7 ("OVL is mostly homographs").** At scale, titles with conflicting routes are rare (0–2.6% of sampled titles). The OVL stratum selected such pages by construction, so §7 describes the stratum and not Wiktionary in general.
+- **§4 change 2 of protocol v1.1 (category against template).** For learned and semi-learned categories the category and the page's template almost always agree (5 of 6,009 and 12 of 756 sampled pages do not). The उपवास case is an exception, not a pattern.

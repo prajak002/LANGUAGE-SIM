@@ -30,6 +30,8 @@ table("M1–M2. Semi-learned share; titles in two or more categories (whole popu
        ("In both learned and inherited", "", "M2b_titles_in_both_LRN_and_INH")])
 table("M3. Category not supported by a template on the page (sample)",
       [(c, k, "M3_category_not_supported_by_template") for c, k in (("Learned", "LRN"), ("Semi-learned", "SEMI"), ("Inherited", "INH"))])
+table("M3c (addition to the plan). Inherited category: same route stated from an intermediate stage only",
+      [("Inherited", "INH", "M3c_of_which_same_route_stated_from_another_stage_only")])
 table("M3b. Of the sampled pages, no route template from the ancestor at all",
       [(c, k, "M3b_of_which_no_route_template_from_ancestor") for c, k in (("Learned", "LRN"), ("Semi-learned", "SEMI"), ("Inherited", "INH"))])
 table("M4–M5. Multiple etymologies; conflicting routes under one spelling (sample)",

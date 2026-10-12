@@ -1,0 +1,6 @@
+measure,k,n,share,ci95_low,ci95_high
+inherited category: expert says not borrowed,651,684,0.9518,0.933,0.9654
+"learned category: expert says borrowed, Latin named",19,28,0.6786,0.4934,0.8207
+"learned category: expert says borrowed, Latin not named",4,28,0.1429,0.057,0.3149
+learned category: expert says not borrowed,5,28,0.1786,0.0788,0.3559
+inherited category: expert says borrowed (BL or BO),18,684,0.0263,0.0167,0.0412
