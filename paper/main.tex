@@ -8,6 +8,7 @@
 \usepackage{microtype}
 \usepackage{booktabs}
 \usepackage{xcolor}
+\usepackage{tikz}
 
 \newcommand{\lead}[1]{\textcolor{red}{\textbf{[LEAD: #1]}}}
 \newcommand{\lbl}[1]{\textsc{#1}}
@@ -34,12 +35,42 @@ Before such labels are used to train or to evaluate a model, it is worth asking 
 
 Our findings are these.
 \begin{itemize}
-\item \textbf{Form predicts the label, except where it matters} (\S\ref{sec:baseline}). One number, the distance to the ancestor form, predicts the label well in 14 of 16 languages. On the items whose label goes against resemblance the models are right 14\% to 19\% of the time.
+\item \textbf{Form predicts the label, except where it matters} (\S\ref{sec:baseline}). One number, the distance to the ancestor form, predicts the label well in 14 of 16 languages. On the items whose label goes against resemblance the models are right 14\% to 19\% of the time (Figure~\ref{fig:grid}).
 \item \textbf{Those labels follow a dictionary} (\S\ref{sec:link}). Among Indo-Aryan words that look like the Sanskrit form, a comparative dictionary lists a reflex for those Wiktionary calls inherited about as often as for any inherited word, and far more often than for those it calls learned; and specialists' loan judgements, where they exist, side with Wiktionary on 45 of 48 such items.
 \item \textbf{The intermediate stage explains the failure} (\S\ref{sec:link}). Where the intermediate form changed, a fixed rule with no training agrees with the label for 80\% of items. The hard items are conservative words whose intermediate form did not change, so no comparison of forms can decide them, and a model that is given the intermediate form does no better.
 \item \textbf{The labels are thinly sourced and hard to check independently}: a cross-lingual audit of how the routes are recorded (\S\ref{sec:audit}), and a study of 48 Hindi and Bengali lemmas in four dictionaries (\S\ref{sec:method}--\ref{sec:why}).
 \end{itemize}
 The audit covers 13,128 pages and gives sample proportions; their intervals are in Appendix~\ref{app:denominators} and the supplementary tables. The source-grounded study is small and was stratified by hand to over-sample hard cases, so for it \textbf{we report raw counts, and no count estimates a rate for Hindi or Bengali vocabulary.} Two small parts compare labels with specialists' judgements, for basic vocabulary; no part establishes more generally which labels are historically correct.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize]
+\node[anchor=east] at (-0.05,1.35) {inherited};
+\node[anchor=east] at (-0.05,0.45) {learned};
+\node[font=\footnotesize\bfseries] at (1.50,2.42) {Sanskrit family};
+\node at (0.75,2.08) {far}; \node at (2.25,2.08) {near};
+\draw[fill=white] (0.00,0.90) rectangle (1.50,1.80);
+\node[align=center] at (0.75,1.35) {\textbf{99.9\%}\\[-1pt]{\scriptsize $n$=2,180}};
+\draw[fill=black!22] (1.50,0.90) rectangle (3.00,1.80);
+\node[align=center] at (2.25,1.35) {\textbf{0.7\%}\\[-1pt]{\scriptsize $n$=141}};
+\draw[fill=black!22] (0.00,0.00) rectangle (1.50,0.90);
+\node[align=center] at (0.75,0.45) {\textbf{28.5\%}\\[-1pt]{\scriptsize $n$=137}};
+\draw[fill=white] (1.50,0.00) rectangle (3.00,0.90);
+\node[align=center] at (2.25,0.45) {\textbf{99.9\%}\\[-1pt]{\scriptsize $n$=1,557}};
+\node[font=\footnotesize\bfseries] at (4.75,2.42) {Romance};
+\node at (4.00,2.08) {far}; \node at (5.50,2.08) {near};
+\draw[fill=white] (3.25,0.90) rectangle (4.75,1.80);
+\node[align=center] at (4.00,1.35) {\textbf{99.0\%}\\[-1pt]{\scriptsize $n$=1,356}};
+\draw[fill=black!22] (4.75,0.90) rectangle (6.25,1.80);
+\node[align=center] at (5.50,1.35) {\textbf{22.7\%}\\[-1pt]{\scriptsize $n$=181}};
+\draw[fill=black!22] (3.25,0.00) rectangle (4.75,0.90);
+\node[align=center] at (4.00,0.45) {\textbf{12.0\%}\\[-1pt]{\scriptsize $n$=92}};
+\draw[fill=white] (4.75,0.00) rectangle (6.25,0.90);
+\node[align=center] at (5.50,0.45) {\textbf{97.2\%}\\[-1pt]{\scriptsize $n$=723}};
+\end{tikzpicture}
+\caption{Accuracy of the form-based model B3 (\S\ref{sec:baseline}) by Wiktionary's label and by distance of the word from the ancestor form (far: at least 0.5; near: at most 0.15). Shaded: the dissociated items, where label and resemblance disagree.}
+\label{fig:grid}
+\end{figure}
 
 \section{Related Work}
 
@@ -138,26 +169,69 @@ Armenian & 0.48 & 0.59 & 0.12 & 0.21 & 0.11 & 17/31 \\
 
 \paragraph{The labels that go against resemblance follow a dictionary.} A dissociated item is either a word whose history and form disagree or a labelling error. In a further analysis, frozen before it was computed, we asked what \citeauthor{turner1966cdial}'s comparative dictionary lists for them, using the automatic matcher described and tested in \S\ref{sec:why}. Take the Indo-Aryan words whose form is almost the Sanskrit form (distance at most 0.15). Wiktionary calls 141 of them inherited and 1,557 learned, and B3 cannot tell these apart. Where the etymon is a head-word of the dictionary, the article lists a matching form for the language in 57 of 125 of those called inherited (46\%) and in 100 of 996 of those called learned (10\%): a difference of 36 points (95\% interval 27 to 45), in the same direction in all seven languages. (Over all matched items, whatever their form, the same matcher gives 49\% and 9.1\%; \S\ref{sec:why}.) The first figure equals the rate for ordinary inherited words far from the Sanskrit form (976 of 2,025, 48\%); for words far from it that Wiktionary calls learned the rate is 5 of 97. \textbf{On the items where form misleads the models, Wiktionary's label goes with the dictionary and not with resemblance.} This is not independent confirmation: editors cite this dictionary, so the label may come from the same article, and the matcher errs in both directions at a rate near the learned figure. It does show that these labels carry information from a source that a form-based model cannot recover, and it makes labelling error an unlikely account of most of them.
 
-\paragraph{The intermediate stage.} An inherited word should carry the changes of the stage it passed through. For the Indo-Aryan items we took the Pali and Prakrit forms that Turner's dictionary lists under the etymon. They are found through the etymon and do not depend on Wiktionary's label. The rule below and its thresholds were frozen before any such form was read; 3,276 of the 4,893 inherited and learned items have such a form. Let $w$ be the word, $a$ the ancestor form and $m$ the intermediate form closest to $w$, all transliterated, with the distance used above. The \textit{link is unchanged} if $m$ is within 0.15 of $a$. Otherwise the word goes \textit{through the link} if it is closer to $m$ than to $a$, and \textit{skips the link} if it is not (Table~\ref{tab:link}). \textbf{Where the intermediate form changed, the rule alone agrees with Wiktionary}: 966 inherited items go through the link and 510 learned items skip it, 1,476 of 1,852 (80\%), with no training. \textbf{The hard items are those with nothing to change.} For 88 of the 106 near-Sanskrit words that Wiktionary calls inherited (83\%), the Pali or Prakrit form is itself almost the Sanskrit form. These are conservative words: their label can be right, and no comparison of forms can show it. The same holds for 60\% of the learned words that resemble Sanskrit; for the other 40\% the classical argument applies, since the intermediate form changed and the modern word did not. The remaining 18 near-Sanskrit inherited items skip a link that changed, and are candidates for a wrong or a semi-learned label.
+\paragraph{The intermediate stage.} An inherited word should carry the changes of the stage it passed through. For the Indo-Aryan items we took the Pali and Prakrit forms that Turner's dictionary lists under the etymon. They are found through the etymon and do not depend on Wiktionary's label. The rule below and its thresholds were frozen before any such form was read; 3,276 of the 4,893 inherited and learned items have such a form. Let $w$ be the word, $a$ the ancestor form and $m$ the intermediate form closest to $w$, all transliterated, with the distance used above. The \textit{link is unchanged} if $m$ is within 0.15 of $a$. Otherwise the word goes \textit{through the link} if it is closer to $m$ than to $a$, and \textit{skips the link} if it is not (Figure~\ref{tab:link}). \textbf{Where the intermediate form changed, the rule alone agrees with Wiktionary}: 966 inherited items go through the link and 510 learned items skip it, 1,476 of 1,852 (80\%), with no training. \textbf{The hard items are those with nothing to change.} For 88 of the 106 near-Sanskrit words that Wiktionary calls inherited (83\%), the Pali or Prakrit form is itself almost the Sanskrit form. These are conservative words: their label can be right, and no comparison of forms can show it. The same holds for 60\% of the learned words that resemble Sanskrit; for the other 40\% the classical argument applies, since the intermediate form changed and the modern word did not. The remaining 18 near-Sanskrit inherited items skip a link that changed, and are candidates for a wrong or a semi-learned label.
 
-\begin{table}[t]
-\centering\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lrrrr}
-\toprule
-\textbf{Label, form} & $n$ & \textbf{Unch.} & \textbf{Through} & \textbf{Skips} \\
-\midrule
-Inherited, far & 1,594 & 27 & 56 & 17 \\
-\textbf{Inherited, near} & 106 & \textbf{83} & 0 & 17 \\
-Learned, near & 893 & 60 & 0 & 40 \\
-\textbf{Learned, far} & 85 & 48 & 16 & 35 \\
-\bottomrule
-\end{tabular}
-\caption{The intermediate stage, seven Indo-Aryan languages. Items with a Pali or Prakrit form in Turner's dictionary, by Wiktionary label and by distance to the Sanskrit form (near: at most 0.15; far: at least 0.5); dissociated rows in bold. Percentages of $n$: intermediate form unchanged from Sanskrit, word closer to the intermediate form, word not showing its change.}
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize]
+\node[anchor=east] at (-0.05,3.20) {Inherited, far {\scriptsize(1,594)}};
+\draw[fill=black!60] (0.000,3.05) rectangle (1.161,3.35);
+\node[text=white,font=\scriptsize] at (0.581,3.20) {27};
+\draw[fill=black!20] (1.161,3.05) rectangle (3.569,3.35);
+\node[text=black,font=\scriptsize] at (2.365,3.20) {56};
+\draw[fill=white] (3.569,3.05) rectangle (4.300,3.35);
+\node[text=black,font=\scriptsize] at (3.934,3.20) {17};
+\node[anchor=east] at (-0.05,2.78) {\textbf{Inherited, near} {\scriptsize(106)}};
+\draw[fill=black!60] (0.000,2.63) rectangle (3.569,2.93);
+\node[text=white,font=\scriptsize] at (1.784,2.78) {83};
+\draw[fill=white] (3.569,2.63) rectangle (4.300,2.93);
+\node[text=black,font=\scriptsize] at (3.934,2.78) {17};
+\node[anchor=east] at (-0.05,2.36) {Learned, near {\scriptsize(893)}};
+\draw[fill=black!60] (0.000,2.21) rectangle (2.580,2.51);
+\node[text=white,font=\scriptsize] at (1.290,2.36) {60};
+\draw[fill=white] (2.580,2.21) rectangle (4.300,2.51);
+\node[text=black,font=\scriptsize] at (3.440,2.36) {40};
+\node[anchor=east] at (-0.05,1.94) {\textbf{Learned, far} {\scriptsize(85)}};
+\draw[fill=black!60] (0.000,1.79) rectangle (2.085,2.09);
+\node[text=white,font=\scriptsize] at (1.042,1.94) {48};
+\draw[fill=black!20] (2.085,1.79) rectangle (2.780,2.09);
+\node[text=black,font=\scriptsize] at (2.432,1.94) {16};
+\draw[fill=white] (2.780,1.79) rectangle (4.300,2.09);
+\node[text=black,font=\scriptsize] at (3.540,1.94) {35};
+\draw[fill=black!60] (0,3.62) rectangle (0.25,3.82); \node[anchor=west] at (0.27,3.72) {unchanged};
+\draw[fill=black!20] (1.95,3.62) rectangle (2.2,3.82); \node[anchor=west] at (2.22,3.72) {through};
+\draw[fill=white] (3.4,3.62) rectangle (3.65,3.82); \node[anchor=west] at (3.67,3.72) {skips};
+\node[anchor=west,font=\footnotesize\bfseries] at (-2.95,3.72) {(a)};
+\node[anchor=west,font=\footnotesize\bfseries] at (-2.95,1.0) {(b)};
+\node[anchor=west] at (-2.45,1.0) {\% right, 191 hard items};
+\draw[fill=black!60] (1.15,0.9) rectangle (1.4,1.1); \node[anchor=west] at (1.42,1.0) {logistic};
+\draw[fill=black!20] (2.55,0.9) rectangle (2.8,1.1); \node[anchor=west] at (2.82,1.0) {Transformer};
+\draw (-2.3,-0.75) -- (4.3,-0.75); \draw (-2.3,-0.75) -- (-2.3,0.50);
+\node[anchor=east,font=\scriptsize] at (-2.32,-0.75) {0};
+\node[anchor=east,font=\scriptsize] at (-2.32,-0.12) {50};
+\node[anchor=east,font=\scriptsize] at (-2.32,0.50) {100};
+\draw[dashed] (-2.3,-0.125) -- (4.3,-0.125);
+\draw[fill=black!60] (-1.95,-0.75) rectangle (-1.30,0.002);
+\node[font=\scriptsize] at (-1.625,0.132) {60};
+\draw[fill=black!20] (-1.23,-0.75) rectangle (-0.58,-0.004);
+\node[font=\scriptsize] at (-0.905,0.126) {60};
+\node[font=\scriptsize] at (-1.265,-0.92) {word};
+\draw[fill=black!60] (0.20,-0.75) rectangle (0.85,-0.671);
+\node[font=\scriptsize] at (0.525,-0.541) {6};
+\draw[fill=black!20] (0.92,-0.75) rectangle (1.57,-0.115);
+\node[font=\scriptsize] at (1.245,0.015) {51};
+\node[font=\scriptsize] at (0.885,-0.92) {+ ancestor};
+\draw[fill=black!60] (2.35,-0.75) rectangle (3.00,-0.645);
+\node[font=\scriptsize] at (2.675,-0.515) {8};
+\draw[fill=black!20] (3.07,-0.75) rectangle (3.72,-0.083);
+\node[font=\scriptsize] at (3.395,0.047) {53};
+\node[font=\scriptsize] at (3.035,-0.92) {+ intermediate};
+\end{tikzpicture}
+\caption{The intermediate stage, seven Indo-Aryan languages. (a) Items with a Pali or Prakrit form in Turner's dictionary, by Wiktionary label and distance to the Sanskrit form (near and far as in Figure~\ref{fig:grid}; $n$ in brackets; dissociated rows in bold). Percentages: intermediate form unchanged from Sanskrit, word closer to the intermediate form (through), word not showing its change (skips). (b) Accuracy on the dissociated items by model input (the word; with the ancestor form; with the intermediate form as well), both models on the same pooled folds (Appendix~\ref{app:further}); the dashed line is 50\%.}
 \label{tab:link}
-\end{table}
+\end{figure}
 
-\paragraph{The link does not repair the model.} We compared three inputs on the same linked items, with folds grouped by etymon and the plan frozen first: the word alone, the word with the ancestor form (B3), and both with the intermediate form and its two distances. Macro-F1 is 0.78, 0.90 and 0.90. On the 191 dissociated items the three are right on 114 (60\%), 17 (9\%) and 21 (11\%); on the 106 dissociated inherited items the last two are right on two. \textbf{The ancestor form buys the overall score at the cost of the hard items, and the intermediate form restores nothing.} A character Transformer on the same inputs scores lower overall (macro-F1 0.86 and 0.85 with the ancestor form) and is near chance on these items (97 and 102 of 191): the intermediate form again adds nothing (Appendix~\ref{app:further}). The split explains it: on these items the link carries no change to detect. Neither finding depends on the coarse transliteration: with a segment-based distance that keeps vowel length, retroflexion, sibilants and aspiration (frozen before it was computed), 88 of the 106 hard inherited items again have an unchanged link, or 69 with the strictest costing, and the models are right on 39 and 37 of 191. The intermediate forms that Wiktionary itself records show the same pattern in all four families (Appendix~\ref{app:further}).
+\paragraph{The link does not repair the model.} We compared three inputs on the same linked items, with folds grouped by etymon and the plan frozen first: the word alone, the word with the ancestor form (B3), and both with the intermediate form and its two distances. Macro-F1 is 0.78, 0.90 and 0.90. On the 191 dissociated items the three are right on 114 (60\%), 17 (9\%) and 21 (11\%). \textbf{The ancestor form buys the overall score at the cost of the hard items, and the intermediate form restores nothing.} A character Transformer on the same inputs scores lower overall (macro-F1 0.86 and 0.85 with the ancestor form) and is near chance on these items (97 and 102 of 191): the intermediate form again adds nothing (Appendix~\ref{app:further}). The split explains it: on these items the link carries no change to detect. A finer, segment-based distance and the intermediate forms that Wiktionary itself records, in all four families, give the same picture (Appendix~\ref{app:further}).
 
 \paragraph{Expert judgements.} Two open sources give specialists' loan judgements, both for basic meanings; each comparison was frozen before a word row was read. In the Romanian vocabulary of the World Loanword Database \citep{schulte2009romanian}, 684 of the 2,111 titles in Wiktionary's inherited category are found, and the specialist considers 651 not borrowed (95.2\%; 95\% interval 93.3 to 96.5); only 28 of 1,629 learned-category words are found, 19 of them borrowed with Latin as a donor. The IE-CoR database \citep{heggarty2024iecor} records loan status for 170 basic meanings and includes thirteen of our languages, from all four families: of 291 sampled inherited-category titles found in it, its team treats 277 as not a loan (95.2\%; 92.1 to 97.1), and it has only 21 of our learned-category words. \textbf{On the dissociated items the specialists side with Wiktionary.} IE-CoR judges 48 of them, 46 of which are near-ancestor words that Wiktionary calls inherited (32 Greek or Armenian); it agrees with Wiktionary's label on 45 (94\%; 83 to 98), and B3 agrees with it on 22. The Romanian source judges six and agrees with Wiktionary on all six, B3 on one. These are few words of basic vocabulary, judged by one specialist or one team, and Romanian is in both sources; this is not a two-annotator validation, and it says little about learned labels.
 
@@ -185,29 +259,8 @@ We read the conventions of the first three dictionaries from their front matter 
 
 \subsection{Labels and rules}
 
-Each sense receives one label: inherited (\lbl{inh}), learned (\lbl{lrn}), semi-learned (\lbl{semi}), external loan (\lbl{ext}), disputed between sources (\lbl{dis}), found with no route stated (\lbl{unk}), or found in no source (\lbl{nsf}). Table~\ref{tab:rules} gives the rules that connect a dictionary observation to a route. Phonological shape alone never decides a label. \lbl{semi} is assigned only on an explicit statement, and we expected it to be unrecoverable because no source has a marker for it. Each label also carries an evidence strength: \textit{explicit} if the source states the route, \textit{structural} if the route follows from a documented convention of the source, and \textit{none}.
+Each sense receives one label: inherited (\lbl{inh}), learned (\lbl{lrn}), semi-learned (\lbl{semi}), external loan (\lbl{ext}), disputed between sources (\lbl{dis}), found with no route stated (\lbl{unk}), or found in no source (\lbl{nsf}). Table~\ref{tab:rules} (Appendix) gives the rules that connect a dictionary observation to a route. Phonological shape alone never decides a label. \lbl{semi} is assigned only on an explicit statement, and we expected it to be unrecoverable because no source has a marker for it. Each label also carries an evidence strength: \textit{explicit} if the source states the route, \textit{structural} if the route follows from a documented convention of the source, and \textit{none}.
 
-\begin{table}[t]
-\centering\small
-\begin{tabular}{p{0.60\columnwidth}p{0.28\columnwidth}}
-\toprule
-\textbf{Observation} & \textbf{Route} \\
-\midrule
-Turner lists the form, with no loan mark & inherited \\
-Turner marks the form as a loanword & as stated \\
-Turner has the etymon, but no form for the language & not stated \\
-Platts marks the word S & learned \\
-Platts marks it H and cites a Prakrit form & inherited \\
-Platts marks it H, Sanskrit form only & not stated \\
-Platts marks it P, A or T & external \\
-J.~D\=asa cites a Pali or Prakrit form & inherited \\
-J.~D\=asa cites only Sanskrit & not stated \\
-J.~D\=asa cites a non-Indo-Aryan source & external \\
-\bottomrule
-\end{tabular}
-\caption{Label rules of protocol v1.1 (abridged). All inherited and learned routes in this table have structural strength.}
-\label{tab:rules}
-\end{table}
 
 \subsection{Blinding and freezing}
 
@@ -320,6 +373,28 @@ One dictionary is in the public domain, and we treat the other three as in copyr
 
 The selection rules, both protocol versions, the blind sheets, the frozen label files and the source checks are kept with SHA-256 hashes in a dated decision log. We intend to release what is derived from Wiktionary (the item lists with revision identifiers, the subsets, the baseline predictions and the recorded intermediate forms), the scripts and the frozen plans, and, for the dictionary study, entry references and our paraphrases. No dictionary text is released, and nothing from the machine-readable copy of Turner's dictionary.
 
+\begin{table}[h]
+\centering\small
+\begin{tabular}{p{0.60\columnwidth}p{0.28\columnwidth}}
+\toprule
+\textbf{Observation} & \textbf{Route} \\
+\midrule
+Turner lists the form, with no loan mark & inherited \\
+Turner marks the form as a loanword & as stated \\
+Turner has the etymon, but no form for the language & not stated \\
+Platts marks the word S & learned \\
+Platts marks it H and cites a Prakrit form & inherited \\
+Platts marks it H, Sanskrit form only & not stated \\
+Platts marks it P, A or T & external \\
+J.~D\=asa cites a Pali or Prakrit form & inherited \\
+J.~D\=asa cites only Sanskrit & not stated \\
+J.~D\=asa cites a non-Indo-Aryan source & external \\
+\bottomrule
+\end{tabular}
+\caption{Label rules of protocol v1.1 (abridged). All inherited and learned routes in this table have structural strength.}
+\label{tab:rules}
+\end{table}
+
 \section{Further Checks}
 \label{app:further}
 
@@ -333,7 +408,7 @@ The selection rules, both protocol versions, the blind sheets, the frozen label 
 
 \paragraph{A post hoc check of a historical grammar.} After the study was complete, we searched the text of \citet{chatterji1926} for the 6 Bengali senses that Wiktionary calls semi-learned. \textbf{This check was not blind, it followed no frozen rule, and it used a scanned text; it adds no labels to our counts.} Chatterji uses the abbreviations \textit{ts.}, \textit{sts.} and \textit{tbh.} for tatsama, semi-tatsama and tadbhava words. He calls \textit{j\=ait} \gl{caste} and \textit{jochn\=a} \gl{moonlight} semi-tatsama explicitly (vol.~1, pp.~308 and 470). Two more, \textit{soy\=ad} \gl{taste} and \textit{soy\=ami} \gl{husband}, appear in a list that opens with that label (p.~534), and 2 were not found. The distinction that the dictionaries cannot express is therefore stated in the scholarly literature for some words. A grammar cites words as examples and has no entry for every word, so its coverage of a random sample is unknown. The passages were read in the machine-recognised text of the scan and were not compared with the page images.
 
-\paragraph{A neural model on the three inputs.} To see whether the result depends on the linear model, we trained a character Transformer (3 layers, width 128, from random initialisation, no pretrained model, nothing tuned, 5 seeds averaged) on the same 3,276 linked items, with the seven languages pooled and folds grouped by etymon over all of them; the plan was frozen before any training. The logistic models were rerun on these folds for reference. Macro-F1 for the word alone, with the ancestor form, and with the intermediate form as well is 0.79, 0.90 and 0.90 for the logistic models and 0.78, 0.86 and 0.85 for the Transformer. On the 191 dissociated items the logistic models are right on 115, 12 and 16, and the Transformer on 114, 97 and 102 (51\% and 53\%; intervals 44--58\% and 46--60\%). The Transformer is therefore near chance on these items where the linear model is far below it, and it pays for this on the congruent items (92\% against 99.8\%). \textbf{In neither model does the intermediate form help, and in neither does a model that sees the ancestor form beat the one that sees the word alone on these items.} When the Transformer's least confident predictions are set aside, dissociated items are dropped more often than others (at 50\% coverage 41 of 191 are kept) but the ones kept are still at chance (21 of 41). An earlier planned test that added only the two link distances to the linear model gave 33 against 35 of 191.
+\paragraph{A neural model on the three inputs.} To see whether the result depends on the linear model, we trained a character Transformer (3 layers, width 128, from random initialisation, no pretrained model, nothing tuned, 5 seeds averaged) on the same 3,276 linked items, with the seven languages pooled and folds grouped by etymon over all of them; the plan was frozen before any training. The logistic models were rerun on these folds for reference. Macro-F1 for the word alone, with the ancestor form, and with the intermediate form as well is 0.79, 0.90 and 0.90 for the logistic models and 0.78, 0.86 and 0.85 for the Transformer. On the 191 dissociated items the logistic models are right on 115, 12 and 16, and the Transformer on 114, 97 and 102 (51\% and 53\%; intervals 44--58\% and 46--60\%). The Transformer is therefore near chance on these items where the linear model is far below it, and it pays for this on the congruent items (92\% against 99.8\%). \textbf{In neither model does the intermediate form help, and in neither does a model that sees the ancestor form beat the one that sees the word alone on these items.} When the Transformer's least confident predictions are set aside, dissociated items are dropped more often than others (at 50\% coverage 41 of 191 are kept) but the ones kept are still at chance (21 of 41). An earlier planned test that added only the two link distances to the linear model gave 33 against 35 of 191. On the 106 dissociated inherited items the linear models with the ancestor form, with and without the intermediate form, are each right on two (per-language folds). Neither finding depends on the coarse transliteration: with a segment-based distance that keeps vowel length, retroflexion, sibilants and aspiration (frozen before it was computed), 88 of the 106 hard inherited items again have an unchanged link, or 69 with the strictest costing, and the models are right on 39 and 37 of 191.
 
 \paragraph{The history of the labels.} For the first 60 pages of each category (3,250 sample rows, 2,575 pages) we read the last revision before 11 October 2024 and before 11 October 2021 with the same template reader, under a plan frozen before any past revision was retrieved. \textbf{Inherited labels are stable}: of 873 that stated a route from the ancestor in 2024, 4 named a different one. \textbf{Learned labels in Romance are recent}: of 370 that stated a route in 2024, 259 (70\%; 65--74) named a different one, and 258 of these were marked as plain borrowings from Latin; in 2021 the figure is 171 of 178. For the languages descended from Sanskrit it is 22 of 376 (6\%) in 2024 and 50 of 126 in 2021, again mostly plain borrowings. The learned label in these languages is thus largely a later relabelling of words that were already marked as borrowed from the ancestor. Changes between inherited and learned are rare: 5 pages that are now learned were inherited in 2024, over all four families. We did not examine who made the edits or why. Labels on dissociated items were not changed more often than labels on congruent items (8 of 145 against 87 of 815 in 2024), so we make no claim that editors were less certain of them. A stable label is not a correct label.
 
@@ -385,7 +460,7 @@ Table~\ref{tab:prior} sets this paper beside the closest computational work that
 
 \begin{table*}[t]
 \centering\footnotesize
-\begin{tabular}{p{0.15\textwidth}p{0.24\textwidth}p{0.27\textwidth}p{0.26\textwidth}}
+\begin{tabular}{p{0.14\textwidth}p{0.23\textwidth}p{0.26\textwidth}p{0.25\textwidth}}
 \toprule
 \textbf{Work} & \textbf{Task} & \textbf{Data and method} & \textbf{Relation to this paper} \\
 \midrule
