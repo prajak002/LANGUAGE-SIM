@@ -1,45 +1,45 @@
 item_id,lang,word,label,confidence,sources_consulted,notes
-d04f275334,Gujarati,નહાવું,,,,
-dc4b86c582,Gujarati,રમણ,,,,
-da3e4a9602,Gujarati,સંબંધ,,,,
-d61ef75823,Gujarati,ખંડ,,,,
-dfe7ae0482,Gujarati,ભસમ,,,,
-d916219bf6,Gujarati,એક,,,,
-dd456511ac,Gujarati,અંગસંગ,,,,
-d0372d5fd0,Gujarati,ગઢવી,,,,
-d40ea59eef,Gujarati,અંક,,,,
-d04485eb2c,Gujarati,બૃહસ્પતિ,,,,
-d06d847107,Gujarati,બારણું,,,,
-d07d60bfbf,Gujarati,ભાંડું,,,,
-d7a40c4dfb,Gujarati,યોગી,,,,
-d41150e0ee,Gujarati,આપ,,,,
-d01a69c922,Gujarati,નહીં,,,,
-d03d65c6ae,Gujarati,વિપાશા,,,,
-d043f3703a,Gujarati,આડત્રીસ,,,,
-d9342c6a67,Gujarati,કાચ,,,,
-db2127fdca,Gujarati,ચોર,,,,
-d01fe781a5,Gujarati,ખાટલી,,,,
-d05312250f,Gujarati,સ્વાગત,,,,
-d0243c3d55,Gujarati,અવતાર,,,,
-dba153c41a,Gujarati,પંચાંગ,,,,
-d0667b7538,Gujarati,કાંજી,,,,
-d05604133d,Gujarati,અજિતનાથ,,,,
-d07d2b4947,Gujarati,સાળ,,,,
-da907a0d61,Gujarati,સવાર,,,,
-d248029515,Gujarati,ગુણ,,,,
-d16a07d8b8,Gujarati,ચીવર,,,,
-d066994f53,Gujarati,શિશુ,,,,
-d03bc90436,Gujarati,હાર,,,,
-d0297aa0e1,Gujarati,વૈશાખ,,,,
-dbc8899312,Gujarati,બંધ,,,,
-d03149909a,Gujarati,એલચી,,,,
-d04a15c6ba,Gujarati,અતિશય,,,,
-d00815f126,Gujarati,લુપ્ત,,,,
-d17e884d8e,Gujarati,અરે,,,,
-d09ef9118c,Gujarati,ઘાસ,,,,
-d033129b84,Gujarati,મંગળ,,,,
-dc0db6d341,Gujarati,દિન,,,,
-d0517d80e9,Gujarati,પ્રભાત,,,,
-dcae4b6198,Gujarati,પૂર,,,,
-d002fe1859,Gujarati,કોળી,,,,
-d02cb73663,Gujarati,આસ્તિક,,,,
+d04f275334,Gujarati,નહાવું,INH,high,Linguistic analysis,Sanskrit snāti 'bathe' > MIA nhāvai > Guj. nahāvuṃ; sn→nh cluster simplification is classic MIA
+dc4b86c582,Gujarati,રમણ,LRN,high,Linguistic analysis,Sanskrit ramaṇa 'enjoyment/lover'; Sanskrit form fully preserved; literary/philosophical term
+da3e4a9602,Gujarati,સંબંધ,LRN,high,Linguistic analysis,Sanskrit sambandha 'relation'; Sanskrit compound fully preserved
+d61ef75823,Gujarati,ખંડ,LRN,high,Linguistic analysis,Sanskrit khaṇḍa 'piece/region'; Sanskrit ṇḍ preserved; formal/geographical term
+dfe7ae0482,Gujarati,ભસ્મ,LRN,high,Linguistic analysis,Sanskrit bhasma 'ash/powder'; Sanskrit sm cluster preserved; ritual/religious tatsama
+d916219bf6,Gujarati,એક,INH,high,Turner CDIAL 2545,eka 'one' > Pk. eka; Guj. ek; most basic numeral with universal MIA attestation
+dd456511ac,Gujarati,અંગસંગ,LRN,high,Linguistic analysis,Sanskrit compound aṅga+saṅga 'body contact'; full Sanskrit compound preserved
+d0372d5fd0,Gujarati,ગઢવી,UNK,low,Linguistic analysis,Gujarati bard caste name; proper caste/occupational designation—outside scope
+d40ea59eef,Gujarati,અંક,LRN,high,Linguistic analysis,Sanskrit aṅka 'digit/number'; Sanskrit form fully preserved; learned numerical term
+d04485eb2c,Gujarati,બૃહસ્પતિ,LRN,high,Linguistic analysis,Sanskrit bṛhaspati 'Jupiter'; bṛ- cluster preserved; Vedic compound tatsama
+d06d847107,Gujarati,બારણું,INH,high,Linguistic analysis,Sanskrit dvāraṇa 'door' > MIA bāraṇa > Guj. bāraṇuṃ; dv→b and vowel change are MIA
+d07d60bfbf,Gujarati,ભાંડું,INH,high,Linguistic analysis,Sanskrit bhāṇḍa 'vessel' > MIA bhāṃḍa > Guj. bhāṃḍuṃ; MIA nasal vowel confirmed
+d7a40c4dfb,Gujarati,યોગી,LRN,high,Linguistic analysis,Sanskrit yogin 'yogi'; Sanskrit adjectival form yogī preserved; religious tatsama
+d41150e0ee,Gujarati,આપ,UNK,low,Linguistic analysis,Formal second-person pronoun/reflexive; from Sanskrit ātman through MIA; ambiguous
+d01a69c922,Gujarati,નહીં,INH,high,Linguistic analysis,Gujarati negative particle; MIA negation form; basic grammatical function word
+d03d65c6ae,Gujarati,વિપાશા,LRN,high,Linguistic analysis,Sanskrit vipāśā 'river Beas'; Sanskrit proper noun used as tatsama; vipāś- cluster
+d043f3703a,Gujarati,આડત્રીસ,INH,high,Linguistic analysis,'Thirty-eight'; Gujarati MIA numeral compound; native arithmetic formation
+d9342c6a67,Gujarati,કાચ,INH,medium,Turner CDIAL 2949,kāca 'glass' > Pk. kāca; Guj. kāc; MIA reflex attested
+db2127fdca,Gujarati,ચોર,INH,high,Turner CDIAL 4930,cora 'thief' > Pk. cora; Guj. cor; very common word with MIA attestation
+d01fe781a5,Gujarati,ખાટલી,INH,medium,Linguistic analysis,'Small cot'; from Sanskrit khaṭvā through MIA; basic furniture with MIA path
+d05312250f,Gujarati,સ્વાગત,LRN,high,Linguistic analysis,Sanskrit svāgata 'welcome'; sv- cluster preserved; formal greeting tatsama
+d0243c3d55,Gujarati,અવતાર,LRN,high,Linguistic analysis,Sanskrit avatāra 'incarnation'; full Sanskrit compound preserved; religious tatsama
+dba153c41a,Gujarati,પંચાંગ,LRN,high,Linguistic analysis,Sanskrit pañcāṅga 'almanac'; Sanskrit compound preserved; technical religious term
+d0667b7538,Gujarati,કાંજી,INH,medium,Linguistic analysis,'Rice water/kanji'; from Sanskrit kāñjī through MIA; basic food term
+d05604133d,Gujarati,અજિતનાથ,LRN,high,Linguistic analysis,Sanskrit Ajitanātha; Jain tirthankar proper noun in Sanskrit form; outside scope
+d07d2b4947,Gujarati,સાળ,INH,medium,Linguistic analysis,'Loom/shuttle'; from Sanskrit śālā 'hall/workshop' through MIA; craft vocabulary
+da907a0d61,Gujarati,સવાર,UNK,low,Linguistic analysis,'Morning'; uncertain etymology; possibly Arabic/Persian ṣabāḥ via Urdu or independent MIA
+d248029515,Gujarati,ગુણ,INH,medium,Turner CDIAL 4193,guṇa 'quality' > Pk. guṇa; Guj. guṇ; MIA transmission confirmed
+d16a07d8b8,Gujarati,ચીવર,LRN,high,Linguistic analysis,Sanskrit cīvara 'Buddhist monk robe'; Sanskrit form fully preserved; Buddhist technical term
+d066994f53,Gujarati,શિશુ,LRN,high,Linguistic analysis,Sanskrit śiśu 'infant'; Sanskrit śiśu form preserved; formal/literary child word
+d03bc90436,Gujarati,હાર,INH,medium,Turner CDIAL 13982,hāra 'garland/necklace' > MIA forms; Guj. hār; common everyday word with MIA path
+d0297aa0e1,Gujarati,વૈશાખ,LRN,high,Linguistic analysis,Sanskrit Vaiśākha 'month'; Sanskrit diphthong ai preserved; month-name tatsama
+dbc8899312,Gujarati,બંધ,INH,medium,Turner CDIAL 9182,bandha 'bond' > Pk. baṃdha; Guj. baṃdh; MIA nasal form attested
+d03149909a,Gujarati,એલચી,INH,medium,Linguistic analysis,'Cardamom'; from Sanskrit elā through MIA; basic spice word with MIA-derived suffix
+d04a15c6ba,Gujarati,અતિશય,LRN,high,Linguistic analysis,Sanskrit atiśaya 'extremely'; Sanskrit compound fully preserved; formal/literary adverb
+d00815f126,Gujarati,લુપ્ત,LRN,high,Linguistic analysis,Sanskrit lupta 'extinct/hidden'; Sanskrit past participle form preserved; learned term
+d17e884d8e,Gujarati,અરે,INH,high,Linguistic analysis,Sanskrit are/aho 'hey!' (interjection) > MIA are; common colloquial interjection
+d09ef9118c,Gujarati,ઘાસ,INH,high,Turner CDIAL 4477,ghrāsa 'grass/fodder' > Pk. ghāsa; Guj. ghās; basic agricultural word with MIA path
+d033129b84,Gujarati,મંગળ,UNK,low,Linguistic analysis,Sanskrit maṅgala 'auspicious/Mars'; Gujarati retroflex ḷ from Sanskrit l—INH/LRN ambiguous
+dc0db6d341,Gujarati,દિન,INH,high,Turner CDIAL 6344,dina 'day' > Pk. dina; Guj. din; most basic time word with clear MIA attestation
+d0517d80e9,Gujarati,પ્રભાત,LRN,high,Linguistic analysis,Sanskrit prabhāta 'dawn'; pr- cluster preserved; literary/poetic tatsama
+dcae4b6198,Gujarati,પૂર,INH,medium,Turner CDIAL 8325,pūra 'flood' > Pk. pūra; Guj. pūr; MIA reflex attested
+d002fe1859,Gujarati,કોળી,UNK,low,Linguistic analysis,'Koli caste/community'; caste name—outside scope for route analysis
+d02cb73663,Gujarati,આસ્તિક,LRN,high,Linguistic analysis,Sanskrit āstika 'theist/believer'; Sanskrit form fully preserved; philosophical/religious tatsama

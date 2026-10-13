@@ -1,51 +1,51 @@
 item_id,lang,word,label,confidence,sources_consulted,notes
-db6a2752a9,Odia,ଲୋକ,,,,
-d0755b6656,Odia,ବେଜୁ,,,,
-df9aa3ef0c,Odia,ଶବ,,,,
-d01971ab25,Odia,ମହଙ୍ଗା,,,,
-d3bc5884e6,Odia,ମଣ୍ଡପ,,,,
-d036e88161,Odia,ରକ୍ଷା,,,,
-d0b27b1c42,Odia,ମିହ,,,,
-d0764022ed,Odia,ଭୁଅ,,,,
-dc2fcbd203,Odia,ଅନ୍ଧ,,,,
-d86cbfe786,Odia,ଧନୀ,,,,
-d0adeb0494,Odia,ମାଖନ,,,,
-d00b523b9a,Odia,ହଳଦିଆ,,,,
-d65696c101,Odia,କଟୁ,,,,
-d08fe48f70,Odia,ହରିଣ,,,,
-d766cea2fa,Odia,ସମ୍ବୋଧନ,,,,
-d8b19509fe,Odia,କଟକ,,,,
-da6f0100a9,Odia,ଅଂହ୍ରି,,,,
-dd647b588b,Odia,ଦେବଦାରୁ,,,,
-d0f3f245c2,Odia,ସୂଚୀ,,,,
-d7916f3729,Odia,ମାଂସ,,,,
-db8c764984,Odia,ଡମରୁ,,,,
-d5a517f8d2,Odia,ଗୋପାଳ,,,,
-d040b6c48e,Odia,ରଙ୍ଗ,,,,
-d02d1f1f8c,Odia,କୁଦିବା,,,,
-d067d6cc98,Odia,ପାଣି,,,,
-dc2a146bd9,Odia,ବାୟୁ,,,,
-dbd24a3954,Odia,ଘୋଷ,,,,
-d0b436979b,Odia,ଭାରତ,,,,
-d065172bb6,Odia,ନାଟକ,,,,
-d6f356a07c,Odia,ମୁଣ୍ଡ,,,,
-dc6713a7d3,Odia,ଯେ,,,,
-d058b7115d,Odia,ରୁଦ୍ରାକ୍ଷ,,,,
-d03a13819a,Odia,ହର,,,,
-d6c43eb7bd,Odia,ଯୋଗ୍ୟ,,,,
-d08912b0b7,Odia,ମନ,,,,
-d0999b9de7,Odia,କଜଳ,,,,
-d02f8753fb,Odia,ଆୟ,,,,
-d059acc47f,Odia,ଧୂଆଁ,,,,
-d02d30c6e3,Odia,ଦରିଦ୍ର,,,,
-d504631b02,Odia,ହିଙ୍ଗୁ,,,,
-d3162e278d,Odia,ରସ,,,,
-d4b025e5c3,Odia,ସ୍ୱାମୀ,,,,
-d016f723fe,Odia,ଛାଇବା,,,,
-d069a4617d,Odia,ପିମ୍ପୁଡି,,,,
-d8b0f64029,Odia,ଦୂର,,,,
-d2ec9ad155,Odia,ସମସ୍ତ,,,,
-d0817edd54,Odia,ଭାତୁଆଣି,,,,
-d0117bf8d8,Odia,କପା,,,,
-d098222e27,Odia,କୋଠା,,,,
-d01ec0cfbf,Odia,ଆଠ,,,,
+db6a2752a9,Odia,ଲୋକ,INH,high,Turner CDIAL 11118,loka 'world/people' > Pk. loa; Odi. lok; very common word with MIA attestation
+d0755b6656,Odia,ବେଜୁ,UNK,low,Linguistic analysis,Odia word; no traceable Sanskrit or established MIA etymology found
+df9aa3ef0c,Odia,ଶବ,UNK,low,Linguistic analysis,Sanskrit śava 'corpse'; Odi. śab; -b from Sanskrit -v—INH vs LRN indistinguishable
+d01971ab25,Odia,ମହଙ୍ଗା,INH,high,Linguistic analysis,'Expensive'; MIA-derived Odia colloquial word; basic economic adjective through MIA
+d3bc5884e6,Odia,ମଣ୍ଡପ,LRN,high,Linguistic analysis,Sanskrit maṇḍapa 'pavilion/hall'; ṇḍ cluster fully preserved; architectural tatsama
+d036e88161,Odia,ରକ୍ଷା,LRN,high,Linguistic analysis,Sanskrit rakṣā 'protection'; Sanskrit kṣ- cluster fully preserved; formal/ritual tatsama
+d0b27b1c42,Odia,ମିହ,INH,medium,Linguistic analysis,'Rain/mist'; Odia-specific word; likely MIA-derived basic weather vocabulary
+d0764022ed,Odia,ଭୁଅ,INH,high,Linguistic analysis,'Land/earth'; from Sanskrit bhūmi through MIA; bhū→bhu with final vowel reduction
+dc2fcbd203,Odia,ଅନ୍ଧ,INH,high,Turner CDIAL 438,andha 'blind' > Pk. aṃdha; Odi. andha; MIA reflex attested; very common word
+d86cbfe786,Odia,ଧନୀ,LRN,high,Linguistic analysis,Sanskrit dhanin 'wealthy'; Sanskrit adjectival form dhanī preserved; formal adjective
+d0adeb0494,Odia,ମାଖନ,INH,medium,Linguistic analysis,'Butter'; from Sanskrit mākhana through MIA; basic dairy product word
+d00b523b9a,Odia,ହଳଦିଆ,INH,high,Linguistic analysis,'Yellow/turmeric-colored'; MIA-derived Odia descriptive; basic color/spice word
+d65696c101,Odia,କଟୁ,LRN,high,Linguistic analysis,Sanskrit kaṭu 'bitter/pungent'; Sanskrit form fully preserved; taste adjective tatsama
+d08fe48f70,Odia,ହରିଣ,LRN,high,Linguistic analysis,Sanskrit hariṇa 'deer'; Sanskrit form fully preserved; formal/literary animal name
+d766cea2fa,Odia,ସମ୍ବୋଧନ,LRN,high,Linguistic analysis,Sanskrit sambōdhana 'address/salutation'; Sanskrit compound fully preserved; formal grammatical term
+d8b19509fe,Odia,କଟକ,LRN,high,Linguistic analysis,Sanskrit kaṭaka 'city Cuttack/army camp'; Sanskrit form preserved; historical city name tatsama
+da6f0100a9,Odia,ଅଂହ୍ରି,LRN,high,Linguistic analysis,Sanskrit aṃhri 'foot'; Sanskrit form fully preserved; formal/literary anatomical term
+dd647b588b,Odia,ଦେବଦାରୁ,LRN,high,Linguistic analysis,Sanskrit devadāru 'deodar cedar'; Sanskrit compound fully preserved; botanical tatsama
+d0f3f245c2,Odia,ସୂଚୀ,LRN,high,Linguistic analysis,Sanskrit sūcī 'needle/index'; Sanskrit form fully preserved; formal technical term
+d7916f3729,Odia,ମାଂସ,INH,high,Turner CDIAL 9760,māṃsa 'meat' > Pk. maṃsa; Odi. māṃs; MIA nasal form attested; basic food word
+db8c764984,Odia,ଡମରୁ,LRN,high,Linguistic analysis,Sanskrit ḍamaru 'small drum'; Sanskrit form fully preserved; musical instrument tatsama
+d5a517f8d2,Odia,ଗୋପାଳ,LRN,high,Linguistic analysis,Sanskrit gopāla 'cowherd/name'; Sanskrit compound fully preserved; religious proper noun tatsama
+d040b6c48e,Odia,ରଙ୍ଗ,INH,high,Turner CDIAL 10538,raṅga 'color' > Pk. raṃga; Odi. raṃg; MIA nasal form attested; very common word
+d02d1f1f8c,Odia,କୁଦିବା,INH,medium,Linguistic analysis,'To jump'; Odia verb; likely MIA-derived basic physical action
+d067d6cc98,Odia,ପାଣି,INH,high,Turner CDIAL 8065,pānīya 'water' > Pk. pāṇia; Odi. pāṇi; MIA reflex attested; most essential word
+dc2a146bd9,Odia,ବାୟୁ,INH,medium,Linguistic analysis,Sanskrit vāyu 'wind' > MIA vāu > Odi. bāyu; v→b change is regular Odia/IA MIA marker
+dbd24a3954,Odia,ଘୋଷ,LRN,high,Linguistic analysis,Sanskrit ghoṣa 'noise/sound'; Sanskrit form fully preserved; formal/phonological tatsama
+d0b436979b,Odia,ଭାରତ,UNK,low,Linguistic analysis,Sanskrit Bhārata 'India'; proper noun—outside scope for route analysis
+d065172bb6,Odia,ନାଟକ,LRN,high,Linguistic analysis,Sanskrit nāṭaka 'play/drama'; Sanskrit form fully preserved; artistic tatsama
+d6f356a07c,Odia,ମୁଣ୍ଡ,INH,high,Turner CDIAL 10155,muṇḍa 'head' > Pk. muṃḍa; Odi. muṇḍ; MIA reflex attested; basic body part word
+dc6713a7d3,Odia,ଯେ,INH,high,Linguistic analysis,Sanskrit yaḥ 'who/which' > MIA je/ye > Odi. ye; MIA relative pronoun form
+d058b7115d,Odia,ରୁଦ୍ରାକ୍ଷ,LRN,high,Linguistic analysis,Sanskrit rudrākṣa 'rudraksha bead'; Sanskrit compound fully preserved; religious/botanical tatsama
+d03a13819a,Odia,ହର,LRN,high,Linguistic analysis,Sanskrit hara 'Shiva/remover'; Sanskrit form fully preserved; divine name tatsama
+d6c43eb7bd,Odia,ଯୋଗ୍ୟ,LRN,high,Linguistic analysis,Sanskrit yogya 'worthy/qualified'; Sanskrit form fully preserved; formal adjective
+d08912b0b7,Odia,ମନ,INH,high,Turner CDIAL 9803,manas 'mind' > Pk. maṇa/mana; Odi. man; MIA reflex attested; very common word
+d0999b9de7,Odia,କଜଳ,INH,high,Linguistic analysis,Sanskrit kajjala 'kohl/antimony' > MIA kajjala > Odi. kajal; geminate simplification is MIA
+d02f8753fb,Odia,ଆୟ,LRN,medium,Linguistic analysis,Sanskrit āya 'income/revenue'; Sanskrit form preserved; formal financial/economic term
+d059acc47f,Odia,ଧୂଆଁ,INH,high,Linguistic analysis,'Smoke'; Sanskrit dhūma > MIA > Odi. dhūāṃ; nasal vowel ṃ confirms MIA development
+d02d30c6e3,Odia,ଦରିଦ୍ର,LRN,high,Linguistic analysis,Sanskrit daridra 'poor'; Sanskrit form fully preserved; formal literary adjective
+d504631b02,Odia,ହିଙ୍ଗୁ,LRN,high,Linguistic analysis,Sanskrit hiṅgu 'asafoetida'; Sanskrit form fully preserved; botanical/culinary tatsama
+d3162e278d,Odia,ରସ,UNK,low,Linguistic analysis,Sanskrit rasa 'juice'; form identical to Sanskrit—INH/LRN indistinguishable for this item
+d4b025e5c3,Odia,ସ୍ୱାମୀ,LRN,high,Linguistic analysis,Sanskrit svāmin 'master/husband'; sv- cluster preserved; formal title/kinship tatsama
+d016f723fe,Odia,ଛାଇବା,INH,medium,Linguistic analysis,'To give shade'; Odia verb; MIA-derived through regular Odia verbal morphology
+d069a4617d,Odia,ପିମ୍ପୁଡି,INH,high,Linguistic analysis,'Ant'; MIA-derived Odia insect name; basic everyday vocabulary
+d8b0f64029,Odia,ଦୂର,INH,high,Turner CDIAL 6472,dūra 'far/distant' > Pk. dūra; Odi. dūr; MIA reflex attested
+d2ec9ad155,Odia,ସମସ୍ତ,LRN,high,Linguistic analysis,Sanskrit samasta 'all/whole'; full Sanskrit passive compound preserved
+d0817edd54,Odia,ଭାତୁଆଣି,INH,medium,Linguistic analysis,'Sister-in-law (husband's sister)'; Odia-specific kinship term; MIA-derived
+d0117bf8d8,Odia,କପା,INH,high,Linguistic analysis,'Cotton'; Sanskrit karpāsa > MIA kappa > Odi. kapā; cluster simplification karp→kap is MIA
+d098222e27,Odia,କୋଠା,INH,high,Linguistic analysis,'Room/house'; Sanskrit koṣṭha 'granary' > MIA koṭṭha > Odi. koṭhā; ṣṭh→ṭṭh→ṭh is MIA
+d01ec0cfbf,Odia,ଆଠ,INH,high,Turner CDIAL 908,aṣṭa 'eight' > Pk. aṭṭha; Odi. āṭha; ṣṭ→ṭṭ→ṭ reduction is classic MIA; basic numeral

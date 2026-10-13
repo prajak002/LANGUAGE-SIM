@@ -137,7 +137,7 @@ flowchart LR
     C3["Claim 3<br/>A word's historical route<br/>can be reconstructed"] --> S3["NOT ATTEMPTED<br/>no reference routes exist"]
 ```
 
-- **No human expert has labelled the project's own items.** Blind sheets are ready in `data/annotation/expert_kit/` and unfilled.
+- **No human expert has labelled the project's own items.** Blank blind sheets for the hard items are ready in `data/annotation/expert_kit_v2/`. The sheets in `data/annotation/expert_kit/` were filled by a language model in two passes; they are not expert annotation and nothing from them is in the paper (see the note in that folder).
 - **The dictionary lookups for the 48 words were made by an AI assistant.** A person compared 23 of the 134 source records with the dictionaries.
 - **The hard subset is a diagnostic split**, defined from the label and a distance. It is not an independent test set.
 - **Two defects were found late and corrected.** The template reader took a transliteration parameter for the ancestor form in 21 items, and four analyses attached items to their subset by spelling. Both were fixed and everything built on the baseline was rerun into `v2` folders; the first-run files are kept beside them (decision log, entries 110, 114 and 116). Not redone: the language-model check and the annotation sheets.
