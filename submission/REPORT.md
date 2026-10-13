@@ -24,8 +24,8 @@ Prepared 2026-10-13. Everything below was checked by running it, not estimated.
 |---|---|
 | Template | Official ACL style, `\usepackage[review]{acl}`, style files unmodified |
 | Compiles | Yes, from a clean unzip of `paper_source.zip`, with no error and no undefined reference (tectonic). Not tested with pdfLaTeX; the source is ASCII-only |
-| Total pages | 16 |
-| Main content | Ends on page 8. The Conclusion and the Limitations heading are both on page 8 |
+| Total pages | 15 |
+| Main content | Ends on the last line of page 8, with the Conclusion. Limitations begins page 9 |
 | Limitations | Present, after the Conclusion, before the references |
 | Distinct cited works | 20, all used |
 | Abstract | 250 words |
@@ -47,6 +47,8 @@ Prepared 2026-10-13. Everything below was checked by running it, not estimated.
 
 - The two-pass annotation result was removed from the paper, because the lead disputes who filled those sheets. Nothing else in the paper depended on it.
 - Contributions and recommended practices are now short bulleted lists, and a Conclusion section was added.
+- The introduction opens with the general question (what a score on labels from a collaborative resource measures), the parts are presented as one four-step argument, and the Conclusion states three lessons for other such labels.
+- The Limitations section is four short paragraphs instead of a list of fifteen items. Every limitation is still stated; details of the corrected defects moved to the appendix.
 - The framing no longer calls resemblance a shortcut. Majority rates and balanced accuracy replace "chance".
 
 ## What was not done
