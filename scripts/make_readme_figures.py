@@ -117,3 +117,65 @@ for i, (lab, key, fill) in enumerate(rows):
     b.append(text(680, y + 15, f"{k} of {n}", 12, fill, weight="bold"))
 svg("label_history.svg", 760, 210, b)
 print("wrote", sorted(p.name for p in OUT.glob("*.svg")))
+
+
+def card(x, y, w, h, stroke, fill, title, lines, title_size=15):
+    out = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{fill}" stroke="{stroke}" stroke-width="2"/>',
+           text(x + 16, y + 28, title, title_size, INK, weight="bold")]
+    out += [text(x + 16, y + 50 + 18 * i, s, 12, MUTED if not s.startswith("Example") else INK) for i, s in enumerate(lines)]
+    return "".join(out)
+
+
+def arrow(d, colour):
+    return f'<path d="{d}" fill="none" stroke="{colour}" stroke-width="2" marker-end="url(#a{colour[1:]})"/>'
+
+
+BLUE, GREEN, PURPLE, GOLD = "#2b6cb0", GOOD, "#6b46c1", "#b7791f"
+b = ["<defs>" + "".join(f'<marker id="a{c[1:]}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">'
+                        f'<path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>' for c in (BLUE, GREEN, BAD)) + "</defs>"]
+b.append(card(20, 30, 220, 110, BLUE, "#ebf8ff", "Modern word", ["Hindi, Spanish, ...", "Example: जल (Hindi, water)"]))
+b.append(card(20, 170, 220, 110, GREEN, "#f0fff4", "Ancestor form", ["Sanskrit, Latin, ...", "Example: जल (Sanskrit)"]))
+b.append(card(300, 70, 230, 170, PURPLE, "#faf5ff", "Model", ["Logistic regression on spelling", "distance and letter n-grams;", "a small character Transformer;",
+                                                              "a pretrained character model", "(CANINE-S)."]))
+b.append(arrow("M240,85 H270 V130 H298", BLUE))
+b.append(arrow("M240,225 H270 V180 H298", GREEN))
+b.append(f'<polygon points="640,95 720,155 640,215 560,155" fill="#fffff0" stroke="{GOLD}" stroke-width="2"/>')
+b.append(text(640, 150, "What did", 14, INK, "middle", "bold") + text(640, 168, "it learn?", 14, INK, "middle", "bold"))
+b.append(arrow("M530,155 H558", BLUE))
+b.append(card(790, 20, 330, 130, GREEN, "#f0fff4", "The word's history", ["Inherited through Prakrit, or borrowed", "later from Sanskrit books.",
+                                                                          "Example: जल, Wiktionary says inherited", "(not checked by an expert)"]))
+b.append(card(790, 170, 330, 130, BAD, "#fff5f5", "How much the word looks like", ["the ancestor form.", "Example: जल against जल, distance 0.00,",
+                                                                                   "so the model says learned: wrong", "by Wiktionary's label"], 14))
+b.append(arrow("M700,140 V85 H788", GREEN))
+b.append(arrow("M700,170 V235 H788", BAD))
+b.append(text(744, 78, "hoped for", 12, GREEN, "middle", "bold") + text(744, 252, "what we find", 12, BAD, "middle", "bold"))
+svg("what_the_model_learns.svg", 1140, 320, b)
+
+
+TEAL = "#2c7a7b"
+b = ["<defs>" + "".join(f'<marker id="a{c[1:]}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">'
+                        f'<path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>' for c in (BLUE, GREEN, BAD, PURPLE)) + "</defs>"]
+b.append(card(300, 20, 500, 92, BLUE, "#ebf8ff", "Wiktionary categories", ["17 language pairs, 4 ancestors, all Indo-European:",
+                                                                           "Sanskrit, Latin, Ancient Greek, Old Armenian"], 17))
+b.append(card(350, 150, 400, 80, BLUE, "#ebf8ff", "Sample: 13,128 pages", ["revision IDs stored"], 17))
+b.append(card(20, 150, 260, 100, GREEN, "#f0fff4", "A. Audit", ["class sizes, consistency,", "citations"]))
+b.append(card(820, 150, 300, 100, PURPLE, "#faf5ff", "D. 48 Hindi and Bengali words", ["looked up in four dictionaries", "(automated; 23 of 134 rows checked)"]))
+b.append(card(250, 280, 290, 75, TEAL, "#e6fffa", "12,778 word senses", ["16 languages"]))
+b.append(card(570, 280, 290, 75, GOLD, "#fffff0", "Label history", ["2,575 pages in 2021 and 2024"]))
+b.append(card(250, 395, 290, 75, PURPLE, "#faf5ff", "B. Baseline", ["predict the label from form"]))
+b.append(f'<polygon points="395,495 545,560 395,625 245,560" fill="#ebf8ff" stroke="{BLUE}" stroke-width="2"/>')
+b.append(text(395, 556, "Does the label agree", 13, INK, "middle", "bold") + text(395, 574, "with resemblance?", 13, INK, "middle", "bold"))
+b.append(card(640, 520, 300, 80, GREEN, "#f0fff4", "Congruent items", ["model right on about 100%"]))
+b.append(card(220, 740, 350, 100, BAD, "#fff5f5", "Dissociated items, the hard ones", ["model right on 10% (Sanskrit family)", "and 19% (Romance)"]))
+for k, (t, s) in enumerate([("A comparative dictionary", "lists a matching form: 46% against 10%"), ("The intermediate stage", "84% unchanged in hard inherited words"),
+                            ("Two expert sources", "side with Wiktionary on 45 of 48"), ("Three inputs, three models", "the intermediate form adds nothing")]):
+    y = 650 + 72 * k
+    b.append(card(660, y, 460, 62, BAD, "#fff5f5", t, [s], 14))
+    b.append(arrow(f"M570,790 H615 V{y + 31} H658", BAD))
+for d, c in (("M550,112 V148", BLUE), ("M350,190 H282", GREEN), ("M750,190 H818", PURPLE), ("M450,230 V278", BLUE), ("M650,230 V255 H715 V278", BLUE),
+             ("M395,355 V393", BLUE), ("M395,470 V493", BLUE), ("M545,560 H638", GREEN), ("M395,625 V738", BAD)):
+    b.append(arrow(d, c))
+b.append(text(592, 552, "yes", 12, GREEN, "middle", "bold") + text(415, 686, "no", 12, BAD, "start", "bold"))
+b.append(f'<rect x="20" y="960" width="1100" height="60" rx="10" fill="#ebf8ff" stroke="{BLUE}" stroke-width="1"/>')
+b.append(text(36, 986, "Question", 14, INK, weight="bold") + text(36, 1006, "What does a model learn from Wiktionary's inherited and learned labels, and are the labels it gets wrong really wrong?", 12, MUTED))
+svg("pipeline.svg", 1140, 1040, b)

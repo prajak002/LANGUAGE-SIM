@@ -37,14 +37,7 @@ Many languages have two kinds of words from the same ancestor language.
 
 Wiktionary labels tens of thousands of words this way, and such labels have been used to train classifiers. A high score on them can mean two different things:
 
-```mermaid
-flowchart LR
-    W["Modern word<br/>Hindi, Spanish, ..."] --> M["Model"]
-    A["Ancestor form<br/>Sanskrit, Latin, ..."] --> M
-    M --> Q{"What did it learn?"}
-    Q -->|"hoped for"| H["The word's history"]
-    Q -->|"what we find"| R["How much the word<br/>looks like the ancestor form"]
-```
+<p align="center"><img src="docs/figures/what_the_model_learns.svg" alt="A modern word and its ancestor form go into a model. Hoped for: the model learns the word's history. What we find: it learns how much the word looks like the ancestor form." width="900"></p>
 
 ### Four real Hindi words
 
@@ -84,22 +77,7 @@ flowchart TD
 
 ## 2. The study in one picture
 
-```mermaid
-flowchart TD
-    C["Wiktionary categories<br/>17 language pairs, 4 ancestors"] --> S["Sample: 13,128 pages<br/>revision IDs stored"]
-    S --> AU["A. Audit<br/>class sizes, consistency, citations"]
-    S --> IT["12,778 word senses<br/>16 languages"]
-    S --> HI["Label history<br/>2,575 pages in 2021 and 2024"]
-    IT --> BL["B. Baseline<br/>predict the label from form"]
-    BL --> SP{"Does the label agree<br/>with resemblance?"}
-    SP -->|"yes"| CO["Congruent items<br/>model right on about 100%"]
-    SP -->|"no"| DI["Dissociated items, the hard ones<br/>model right on 10% and 19%"]
-    DI --> T["A comparative dictionary<br/>46% against 10%"]
-    DI --> L["The intermediate stage<br/>84% unchanged"]
-    DI --> X["Two expert sources<br/>side with Wiktionary on 45 of 48"]
-    DI --> N["Three inputs, two models<br/>the intermediate form adds nothing"]
-    S --> D["D. 48 Hindi and Bengali words<br/>looked up in four dictionaries"]
-```
+<p align="center"><img src="docs/figures/pipeline.svg" alt="The pipeline: Wiktionary categories in 17 language pairs; a sample of 13,128 pages; an audit; 12,778 word senses and a form-based baseline; congruent items where the model is right on about 100% and dissociated items where it is right on 10% and 19%; four checks of the dissociated items; label history; and 48 Hindi and Bengali words looked up in four dictionaries." width="900"></p>
 
 ## 3. Results
 
