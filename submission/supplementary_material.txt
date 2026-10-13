@@ -1,0 +1,76 @@
+SUPPLEMENTARY MATERIAL
+======================
+
+This package accompanies the anonymous submission "What Form Cannot Tell:
+Resemblance, the Intermediate Stage, and Wiktionary's Inherited and Learned
+Labels in 17 Languages". It contains no author names, affiliations or links.
+
+Contents
+--------
+index.html
+    One standalone web page. Open it in any browser. It needs no network
+    connection, no server and no other file. It has no tracking or analytics.
+
+supplementary_material.txt
+    This file.
+
+What the page shows
+-------------------
+Overview          The question, four headline figures and the pipeline diagram.
+Question          What a classifier sees (the modern word and the ancestor
+                  form) and what was hoped for against what was found.
+Data and setup    The 17 language pairs, the sample of 13,128 pages, the
+                  12,778 items, the three baseline models and the definition
+                  of congruent and dissociated (hard) items.
+Results           Macro-F1 per language for the distance-only model and the
+                  full form-based model. Accuracy on congruent and hard items
+                  with the majority rate. The recount for 15 threshold pairs.
+Hard items        Three inputs for three models (logistic regression, a
+                  character Transformer, a pretrained character model) with
+                  balanced accuracy. What raises accuracy on the hard items
+                  (training weights, word meaning, a dictionary record) and
+                  how far. The outside checks.
+Label history     How many labels named a different route two years earlier,
+                  and when and by how many accounts the changed labels were set.
+Code              Eight excerpts from the scripts that produced the results,
+                  unchanged, each with a copy button.
+Reproducibility   Environment, seeds and what can and cannot be rerun.
+Limits            The main limits of the study.
+
+Relation to the paper
+---------------------
+The page expands the paper and makes no claim that the paper does not make.
+Every number on it is read by a script from the result files of the corrected
+run, or, for the pretrained model, from the printed summary of that run. The
+tables give per-language and per-condition figures for which the paper has
+only ranges or pooled values.
+
+Code excerpts
+-------------
+normalised edit distance; normalisation of the scripts to Devanagari; the
+features of the three baseline models; the congruent and dissociated split;
+the reading of one etymology section per sense; training weights by route and
+distance band; meaning features from definition lines; the threshold grid.
+They are excerpts, not a runnable package.
+
+Environment
+-----------
+Python with numpy 2.5.4, scipy 1.18.1 and scikit-learn 1.9.1 for everything
+except the two neural models. Seed 20261011 for folds and models. The
+character Transformer was trained with 5 seeds and the pretrained model with
+3. Hardware for the pretrained model: one GPU. Other details of the neural
+runs are in the paper's appendix.
+
+Reproducibility notes and known limits
+--------------------------------------
+- The experiments cannot be reproduced end to end from this package. It holds
+  excerpts and results, not the page texts or the full scripts.
+- The analyses that read the comparative dictionary used a machine-readable
+  copy that carries no licence. It was used for analysis only, and nothing
+  from it is included or released.
+- Per-item predictions of the pretrained model are not available. Its figures
+  come from the printed summary of the run.
+- The labels studied are not validated. Scores measure agreement with the
+  labels, not historical accuracy.
+- The split into congruent and dissociated items is defined by a feature of
+  the model and is a diagnostic, not an independent test set.
