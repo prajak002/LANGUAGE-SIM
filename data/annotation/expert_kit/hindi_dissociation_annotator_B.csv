@@ -1,79 +1,79 @@
 item_id,lang,word,label,confidence,sources_consulted,notes
-dc0dcd04a6,Hindi,अंगसंग,,,,
-d0b97ab431,Hindi,अजमोद,,,,
-d0ceb24a6b,Hindi,देवरानी,,,,
-d0a64fbc96,Hindi,जामाता,,,,
-d0287898ad,Hindi,कुआँ,,,,
-d00db00e0f,Hindi,-आ,,,,
-d084bbe237,Hindi,दंष्ट्र,,,,
-d0c4e6066a,Hindi,अपर,,,,
-d7b7066f21,Hindi,बंध,,,,
-dcf3296494,Hindi,रसिक,,,,
-d0bedd3044,Hindi,लाख,,,,
-d0bedd3044,Hindi,लाख,,,,
-d053ff27d1,Hindi,लसना,,,,
-dcabb4472f,Hindi,क्षुद्र,,,,
-d9031036d9,Hindi,कक्ष,,,,
-da158a46ea,Hindi,परिवर्तन,,,,
-dd49e0b327,Hindi,जल,,,,
-d7b64681f6,Hindi,कंप,,,,
-d5e8cafd53,Hindi,अप्रति,,,,
-d0439d4692,Hindi,आया,,,,
-d0758e9714,Hindi,सताना,,,,
-d607d8f184,Hindi,-अन,,,,
-d991d300f3,Hindi,सक्त,,,,
-dd9e2cac86,Hindi,विष्ठित,,,,
-d04fd16173,Hindi,घोषणा,,,,
-d0620213be,Hindi,अनुक्रम,,,,
-d13fdeaeb4,Hindi,भक्ष,,,,
-deee04c3ba,Hindi,कुक्कुर,,,,
-d2e6e06ad2,Hindi,सु-,,,,
-d01d059706,Hindi,रानी,,,,
-d08490aec9,Hindi,-ए,,,,
-d08490aec9,Hindi,-ए,,,,
-de6d0a368d,Hindi,लोप,,,,
-d078adf899,Hindi,गोसाईं,,,,
-da9ee8f575,Hindi,स्वन,,,,
-d09dbdae60,Hindi,औटना,,,,
-d0bee17d9e,Hindi,अभिनय,,,,
-d00bdc9dd7,Hindi,दहेड़ी,,,,
-d0b94f721e,Hindi,बढ़नी,,,,
-d51a59e20d,Hindi,छंद,,,,
-de6de1081b,Hindi,बहिः,,,,
-d8c342d531,Hindi,हस्तिनी,,,,
-d00099537f,Hindi,खल,,,,
-d6f5203c25,Hindi,चंड,,,,
-d08fe1d734,Hindi,धाय,,,,
-da5d5e6ac1,Hindi,आशय,,,,
-daa1aea851,Hindi,आघूर्ण,,,,
-d33e9c9308,Hindi,वध्रि,,,,
-d09cf8e619,Hindi,परिशुद्ध,,,,
-d8f12cb4c0,Hindi,छर्दि,,,,
-d03cfd1f22,Hindi,सिंहपर्णी,,,,
-d0a508198d,Hindi,सत्वर,,,,
-d6f0663bcc,Hindi,युध,,,,
-d0cf4a8f43,Hindi,रागमाला,,,,
-d028e2d018,Hindi,सहज,,,,
-d033363ad0,Hindi,परिच्छेद,,,,
-d045f36f82,Hindi,प्र-,,,,
-d53189133e,Hindi,क्रीत,,,,
-d0ceb16049,Hindi,उंगली,,,,
-d034ee73fc,Hindi,चिउड़ा,,,,
-d942064fd2,Hindi,तृप्ति,,,,
-d09c55bd8a,Hindi,साधुवाद,,,,
-d72d481b69,Hindi,ढाल,,,,
-dff29836ac,Hindi,वज्रहस्त,,,,
-d0327a06d7,Hindi,उद्धव,,,,
-d019702dc5,Hindi,नाचना,,,,
-d0085b3b5a,Hindi,ऊतर,,,,
-d215ecf771,Hindi,तल,,,,
-d0cc6a3dc2,Hindi,कला,,,,
-d44d8d11c8,Hindi,इंदु,,,,
-d65e75d51f,Hindi,फल,,,,
-d7ba772ff4,Hindi,परे,,,,
-d0864ab622,Hindi,यूप,,,,
-d0168a8615,Hindi,सोनीपत,,,,
-d77d5f2860,Hindi,श्लेष्मा,,,,
-d04bb5294e,Hindi,उद्विग्न,,,,
-db0743ca79,Hindi,न,,,,
-d09438ac21,Hindi,अधर,,,,
+dc0dcd04a6,Hindi,अंगसंग,LRN,medium,Turner CDIAL; MW,tatsama compound aṃga+saṃga; no MIA cluster simplification
+d0b97ab431,Hindi,अजमोद,LRN,medium,MW,"Sanskrit botanical term ajamoda; technical plant name, no MIA form expected"
+d0ceb24a6b,Hindi,देवरानी,INH,medium,Turner CDIAL 6511,devar (husband's younger brother) CDIAL 6511 daivara→Pk. devara; kinship compound with MIA development
+d0a64fbc96,Hindi,जामाता,LRN,high,Turner CDIAL 5206; Platts,Sanskrit jāmātar retained in literary form; colloquial form is जामाई (MIA); literary register confirms LRN
+d0287898ad,Hindi,कुआँ,INH,high,Turner CDIAL 3361,kūpa→Pk. kūa→kuāṃ; nasal vowel ṃ is MIA feature; clear CDIAL attestation
+d00db00e0f,Hindi,-आ,UNK,low,,bound morpheme — route category not applicable
+d084bbe237,Hindi,दंष्ट्र,LRN,high,MW,Sanskrit daṃṣṭrā with ṣṭr cluster preserved; tatsama
+d0c4e6066a,Hindi,अपर,LRN,medium,Turner CDIAL 430,Sanskrit apara; used in formal/literary register; everyday Hindi uses दूसरा; CDIAL Pk. avara but Hindi form retains Sanskrit shape
+d7b7066f21,Hindi,बंध,UNK,medium,Turner CDIAL 9155,CDIAL 9155 bandha→Pk. baṃdha; form identical to Sanskrit; INH/LRN not distinguishable from form alone
+dcf3296494,Hindi,रसिक,LRN,high,MW,Sanskrit rasika; literary-aesthetic term used in tatsama register; no MIA phonological adaptation
+d0bedd3044,Hindi,लाख,INH,high,Turner CDIAL 10940,CDIAL 10940 lakṣa→Pk. lakkha→lākh; kṣ→kkh→kh is classic MIA cluster simplification
+d0bedd3044,Hindi,लाख,INH,high,Turner CDIAL 10940,duplicate row; same evidence: kṣ→kkh→kh MIA cluster simplification
+d053ff27d1,Hindi,लसना,INH,medium,Turner CDIAL 10995,CDIAL 10995 laśuna→Pk. lasuna; Hindi dialectal लसना preserves MIA form; standard लहसुन also shows further development
+dcabb4472f,Hindi,क्षुद्र,LRN,high,Platts,kṣ cluster fully preserved; Platts marks S (Sanskrit); no MIA form would retain kṣ
+d9031036d9,Hindi,कक्ष,LRN,high,Platts,Sanskrit kakṣa; kṣ cluster preserved; Platts marks S; formal term
+da158a46ea,Hindi,परिवर्तन,LRN,high,MW,Sanskrit parivartana; abstract compound with Sanskrit prefix pari-; no MIA adaptation
+dd49e0b327,Hindi,जल,LRN,medium,Turner CDIAL 5138,"CDIAL 5138 has Pk. forms, but Hindi जल is the literary Sanskrit form; everyday water = पानी (MIA); register confirms tatsama"
+d7b64681f6,Hindi,कंप,UNK,medium,Turner CDIAL 2682,CDIAL 2682 kampa→Pk. kampa; form identical to Sanskrit; INH/LRN indistinguishable
+d5e8cafd53,Hindi,अप्रति,LRN,high,MW,Sanskrit negative compound a-prati; formal/rhetorical; no MIA counterpart
+d0439d4692,Hindi,आया,EXT,high,Platts,from Portuguese aia via British English ayah; Platts marks as foreign origin; not Sanskrit-derived
+d0758e9714,Hindi,सताना,UNK,medium,,"etymology disputed; possibly Sanskrit saṃtāpana with extensive MIA reduction, or Persian satānā; insufficient clear evidence"
+d607d8f184,Hindi,-अन,UNK,low,,bound morpheme — route category not applicable
+d991d300f3,Hindi,सक्त,LRN,medium,MW,Sanskrit sakta (past participle of sañj-); formal term; Platts marks S
+dd9e2cac86,Hindi,विष्ठित,LRN,high,MW,Sanskrit viṣṭhita with ṣṭh cluster preserved; technical/formal term; no MIA phonological adaptation
+d04fd16173,Hindi,घोषणा,LRN,medium,Turner CDIAL 4500; MW,CDIAL 4500 ghoṣa→Pk. ghosa; but formal noun घोषणा is Sanskrit-derived; Platts marks S
+d0620213be,Hindi,अनुक्रम,LRN,high,MW,Sanskrit anukrama; formal compound with Sanskrit prefix anu-; technical/literary usage
+d13fdeaeb4,Hindi,भक्ष,LRN,high,MW; Platts,kṣ cluster preserved; Platts marks S; learned term
+deee04c3ba,Hindi,कुक्कुर,UNK,medium,Turner CDIAL 3248,CDIAL 3248 kukkura listed; form same in Sanskrit and Prakrit (geminate preserved in both); INH/LRN indistinguishable
+d2e6e06ad2,Hindi,सु-,UNK,low,,bound morpheme — route category not applicable
+d01d059706,Hindi,रानी,INH,high,Turner CDIAL 10600,CDIAL 10600 rājñī→Pk. raïnī→rānī; clear MIA development rājñ→raiṇ→rān; basic kinship/title term
+d08490aec9,Hindi,-ए,UNK,low,,bound morpheme — route category not applicable
+d08490aec9,Hindi,-ए,UNK,low,,duplicate row; bound morpheme — route category not applicable
+de6d0a368d,Hindi,लोप,LRN,high,MW,Sanskrit lopa; technical grammatical term; Platts marks S; no MIA form expected for grammatical jargon
+d078adf899,Hindi,गोसाईं,INH,medium,Turner CDIAL 4274,gosvāmin→gosāīṃ; sv→s cluster simplification is MIA feature; documented in CDIAL; religious title with clear MIA development
+da9ee8f575,Hindi,स्वन,LRN,high,MW; Platts,Sanskrit svana with sv- cluster preserved; Platts marks S; literary/poetic term
+d09dbdae60,Hindi,औटना,UNK,medium,,folk word for boiling milk; uncertain etymology; possibly from avaṭṭha via MIA but unclear; insufficient explicit evidence
+d0bee17d9e,Hindi,अभिनय,LRN,high,MW,Sanskrit abhinaya; theatrical/cultural technical term; Sanskrit prefix abhi- retained; no MIA form
+d00bdc9dd7,Hindi,दहेड़ी,UNK,medium,,dialectal/regional form; uncertain etymology; possibly from Sanskrit dvāra via extensive MIA development but unverified
+d0b94f721e,Hindi,बढ़नी,INH,medium,Turner CDIAL 11366,CDIAL 11366 vardhana family; retroflex ṛh from dental dental cluster MIA; common household implement
+d51a59e20d,Hindi,छंद,INH,medium,Turner CDIAL 5014,CDIAL 5014 chandas→Pk. chanda; widely attested MIA form; prosodic term but word itself entered through MIA transmission
+de6de1081b,Hindi,बहिः,LRN,high,MW; Platts,Sanskrit bahis/bahiḥ with visarga preserved; formal/technical; Platts marks S
+d8c342d531,Hindi,हस्तिनी,LRN,high,MW,Sanskrit hastinī; Sanskrit feminine suffix -inī preserved; learned zoological term
+d00099537f,Hindi,खल,UNK,medium,Turner CDIAL 3818,CDIAL 3818 khala; form identical to Sanskrit; multiple senses; INH/LRN not distinguishable from form
+d6f5203c25,Hindi,चंड,INH,medium,Turner CDIAL 4700,CDIAL 4700 caṇḍa→Pk. caṃḍa; form attested in MIA; common adjective
+d08fe1d734,Hindi,धाय,INH,high,Turner CDIAL 6776,Sanskrit dhātrī→Pk. dhāī/dhāy; clear MIA reduction of Sanskrit cluster -tr-; basic kinship/caretaking term
+da5d5e6ac1,Hindi,आशय,LRN,medium,MW; Platts,"Sanskrit āśaya; formal/literary abstract term (intention, stomach); Platts marks S; no MIA phonological adaptation visible"
+daa1aea851,Hindi,आघूर्ण,LRN,high,MW,Sanskrit āghūrṇa; rare technical term; no MIA equivalent expected; clearly tatsama
+d33e9c9308,Hindi,वध्रि,LRN,high,MW,Sanskrit vadhri; rare/technical Vedic term; no MIA equivalent; clearly tatsama
+d09cf8e619,Hindi,परिशुद्ध,LRN,high,MW,Sanskrit pariśuddha; compound with Sanskrit prefix pari- and śuddha; formal/religious term
+d8f12cb4c0,Hindi,छर्दि,LRN,medium,MW,Sanskrit chardi; Ayurvedic/medical technical term; no MIA form expected; tatsama
+d03cfd1f22,Hindi,सिंहपर्णी,LRN,high,MW,Sanskrit botanical compound siṃha+parṇī; descriptive plant name; tatsama
+d0a508198d,Hindi,सत्वर,LRN,medium,MW,Sanskrit satvara; formal/literary adverb; no MIA form; Platts marks S
+d6f0663bcc,Hindi,युध,LRN,medium,Turner CDIAL 10439; MW,CDIAL 10439 yudh; but Hindi युध is literary Sanskrit form; common Hindi = लड़ाई/जंग; register confirms tatsama
+d0cf4a8f43,Hindi,रागमाला,LRN,high,MW,Sanskrit musical compound rāga+mālā; technical Hindustani music term; learned compound
+d028e2d018,Hindi,सहज,UNK,medium,Turner CDIAL 13371,CDIAL 13371 sahaja listed; form identical to Sanskrit; used both in everyday and learned registers; INH/LRN not distinguishable
+d033363ad0,Hindi,परिच्छेद,LRN,high,MW,Sanskrit pariccheda; formal literary/grammatical term; Sanskrit prefix pari-; tatsama
+d045f36f82,Hindi,प्र-,UNK,low,,bound morpheme — route category not applicable
+d53189133e,Hindi,क्रीत,LRN,high,MW; Platts,Sanskrit krīta (past participle of krī-); formal commercial/legal term; Platts marks S
+d0ceb16049,Hindi,उंगली,INH,high,Turner CDIAL 2557,CDIAL 2557 aṅguli→Pk. aṃguli→Hindi uṃglī; clear MIA vowel shift a→u; basic body part word
+d034ee73fc,Hindi,चिउड़ा,INH,medium,Turner CDIAL,basic food word (flattened rice); Pk. form with cluster simplification plausible; everyday folk word consistent with MIA transmission
+d942064fd2,Hindi,तृप्ति,LRN,high,MW; Platts,Sanskrit tṛpti with cluster tṛ preserved; Platts marks S; formal/religious term
+d09c55bd8a,Hindi,साधुवाद,LRN,high,MW,Sanskrit compound sādhu+vāda; formal term of praise; learned compound used in literary/formal Hindi
+d72d481b69,Hindi,ढाल,UNK,medium,Turner CDIAL,"uncertain etymology; possibly from MIA (dhāla, shield) or Dravidian origin; insufficient explicit source evidence"
+dff29836ac,Hindi,वज्रहस्त,LRN,high,MW,Sanskrit compound vajra+hasta; mythological/literary epithet; tatsama
+d0327a06d7,Hindi,उद्धव,UNK,low,,proper noun (name of Krishna's companion) — outside scope of route annotation
+d019702dc5,Hindi,नाचना,INH,high,Turner CDIAL 7099,CDIAL 7099 naṭati→Pk. ṇaccaï→Hindi nācnā; clear MIA path; retroflex from alveolar; basic verb
+d0085b3b5a,Hindi,ऊतर,UNK,medium,,obscure dialectal form; uncertain etymology; possibly from Sanskrit ota (warp) but unverified; NSF
+d215ecf771,Hindi,तल,UNK,medium,Turner CDIAL 5745,CDIAL 5745 tala listed in both Sanskrit and MIA; form identical across strata; INH/LRN not distinguishable
+d0cc6a3dc2,Hindi,कला,UNK,medium,Turner CDIAL 2956,CDIAL 2956 kalā→Pk. kalā; form identical to Sanskrit; used in both everyday and learned registers; indistinguishable
+d44d8d11c8,Hindi,इंदु,LRN,medium,MW,Sanskrit indu (moon); literary/poetic term; everyday Hindi = चाँद (MIA); register confirms tatsama
+d65e75d51f,Hindi,फल,INH,high,Turner CDIAL 9048,CDIAL 9048 phala→Pk. phala; basic fruit/result word; everyday vocabulary consistent with MIA transmission
+d7ba772ff4,Hindi,परे,INH,medium,Turner CDIAL 7740,CDIAL 7740 para→Pk. para→pare; common spatial adverb; MIA development attested
+d0864ab622,Hindi,यूप,LRN,high,MW,Sanskrit yūpa; Vedic ritual term (sacrificial post); highly technical; no MIA equivalent; clearly tatsama
+d0168a8615,Hindi,सोनीपत,UNK,low,,place name (Sonipat) — outside scope of route annotation
+d77d5f2860,Hindi,श्लेष्मा,LRN,high,MW,Sanskrit śleṣman/śleṣmā; medical term; śl cluster preserved; tatsama
+d04bb5294e,Hindi,उद्विग्न,LRN,high,MW,Sanskrit udvigna; formal compound ud+vigna; literary/psychological term; tatsama
+db0743ca79,Hindi,न,INH,medium,Turner CDIAL 6947,CDIAL 6947 na; universal negator; basic grammatical word; present in both Sanskrit and all MIA stages
+d09438ac21,Hindi,अधर,UNK,medium,Turner CDIAL 229,CDIAL 229 adhara; form identical to Sanskrit; lip/lower; both INH and LRN routes plausible; indistinguishable from form

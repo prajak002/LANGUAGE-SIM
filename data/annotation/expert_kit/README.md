@@ -1,5 +1,14 @@
 # Expert annotation kit (prepared 2026-10-11; nothing here has been annotated)
 
+> **Status on 2026-10-13: the sheets in this folder are filled, by a language model, not by people.**
+> The project lead had Claude Sonnet 4.6 fill all 22 sheets (commit `328da62` on the branch `annotation-update`); "annotator A" and "annotator B" are two instruction sets given to the same model. They are **model passes, not expert annotation**, and agreement between them is not inter-annotator agreement.
+> - 728 of the 879 rows in the A sheets give "Linguistic analysis" or nothing as the source: the label was assigned from the form of the word (Sanskrit clusters kept, so learned; Middle Indo-Aryan changes, so inherited). That is the cue the paper's classifiers use, and the paper's own rule is that shape alone never decides a label.
+> - The dictionary references were not verified. Where both passes cite a Turner entry number for the same word, the numbers differ in 58 of 79 cases.
+> - These are the first kit's sheets, made before the reader correction: the Hindi dissociation sheets contain items that were dissociated only through that defect, and the Hindi B sheet holds a different sample from the A sheet.
+> - Nothing from these sheets is reported in the paper.
+> - The blank sheets as they were are kept in `archive/expert_kit_blank_2026-10-11/`. The corrected blank dissociation sheets for human annotators are in `data/annotation/expert_kit_v2/`.
+
+
 The paper has no independent human labels. This kit lets two people produce them. **The assistant cannot do this part**, and its own dictionary extraction does not count as independent annotation.
 
 ## Hindi and Bengali: independent route labels (90 senses each)

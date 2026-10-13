@@ -1,37 +1,37 @@
 item_id,lang,word,label,confidence,sources_consulted,notes
-d03d891cb6,Assamese,ঘড়ী,,,,
-d08a6089d2,Assamese,পেলা,,,,
-da94be9126,Assamese,সহোদৰ,,,,
-d30d053196,Assamese,স্ৱপ্ন,,,,
-d2229e9552,Assamese,সোমবাৰ,,,,
-d07609f282,Assamese,খেজুৰ,,,,
-d09e2094c3,Assamese,পটি,,,,
-deb4438451,Assamese,পেল,,,,
-d4e7cc95ad,Assamese,উৎসব,,,,
-de08a0d05f,Assamese,বৰ্ণ,,,,
-d0061cad65,Assamese,ধোঁৱা,,,,
-d0f72fffd7,Assamese,ৰথ,,,,
-d00ed0cb9d,Assamese,বাদুলি,,,,
-d05f3aba4e,Assamese,পচলা,,,,
-d6f94e5cdd,Assamese,বয়স,,,,
-d07e24adce,Assamese,মৈ,,,,
-d08469f167,Assamese,সাঁতোৰ,,,,
-d06e8f129c,Assamese,পত্নী,,,,
-d04d1a6d7b,Assamese,কুৰুই,,,,
-d61340c020,Assamese,স্বৰ,,,,
-d00d81c0d0,Assamese,অযুত,,,,
-d1d0f68f0b,Assamese,পল,,,,
-d083d408ba,Assamese,আঙুল,,,,
-d03de1d961,Assamese,তুমি,,,,
-db7776f06d,Assamese,মঙলবাৰ,,,,
-d061033910,Assamese,কেঁচে,,,,
-d68fe933a1,Assamese,ৰবিবাৰ,,,,
-d68961f0cf,Assamese,স্বামী,,,,
-d7014bde3e,Assamese,গৌৰৱ,,,,
-d09402a16f,Assamese,সিৰ,,,,
-d59d60805b,Assamese,ৰস,,,,
-ddfd8a065c,Assamese,শণ,,,,
-d910bd9138,Assamese,বল,,,,
-d08877675b,Assamese,ক‌’লা,,,,
-d7341ad332,Assamese,এক,,,,
-d05fb2f64d,Assamese,গাভৰু,,,,
+d03d891cb6,Assamese,ঘড়ী,INH,medium,Turner CDIAL 4461,ghaṭikā 'small pot/hour' > MIA ghaḍī; Assamese ghaṛī; retroflex ṛ confirms MIA development
+d08a6089d2,Assamese,পেলা,INH,medium,Linguistic analysis,'Throw/discard'; basic MIA-derived Assamese verb; no Sanskrit tatsama equivalent
+da94be9126,Assamese,সহোদৰ,LRN,high,Linguistic analysis,Sanskrit sahodara 'brother'; Sanskrit compound fully preserved; sa+udara form intact
+d30d053196,Assamese,স্ৱপ্ন,LRN,high,Linguistic analysis,Sanskrit svapna 'dream'; sv- cluster preserved; no MIA simplification
+d2229e9552,Assamese,সোমবাৰ,LRN,high,Linguistic analysis,Sanskrit soma+vāra 'Monday'; full Sanskrit compound; day-name tatsama
+d07609f282,Assamese,খেজুৰ,UNK,low,Linguistic analysis,'Date palm'; possibly from Arabic khurma via Persian; uncertain route
+d09e2094c3,Assamese,পটি,INH,medium,Linguistic analysis,'Strip/bandage'; from Sanskrit paṭṭī through MIA; basic cloth/strip word
+deb4438451,Assamese,পেল,INH,medium,Linguistic analysis,Past tense form; MIA-derived Assamese verbal form
+d4e7cc95ad,Assamese,উৎসব,LRN,high,Linguistic analysis,Sanskrit utsava 'festival'; উৎ- prefix in full Sanskrit form
+de08a0d05f,Assamese,বৰ্ণ,LRN,high,Linguistic analysis,Sanskrit varṇa 'color/letter'; v→b is Assamese phonology but ṇa preserved; LRN
+d0061cad65,Assamese,ধোঁৱা,INH,high,Linguistic analysis,'Smoke'; from Sanskrit dhūma through MIA; nasal vowel ঁ is diagnostic MIA feature
+d0f72fffd7,Assamese,ৰথ,LRN,medium,Linguistic analysis,Sanskrit ratha 'chariot'; Assamese ৰথ preserves Sanskrit form; tatsama religious/formal term
+d00ed0cb9d,Assamese,বাদুলি,INH,medium,Linguistic analysis,'Bat (animal)'; from Sanskrit valgulī through MIA valguli > bāduli; MIA development
+d05f3aba4e,Assamese,পচলা,INH,medium,Linguistic analysis,'Slipped/fallen'; MIA-derived Assamese word; basic physical action vocabulary
+d6f94e5cdd,Assamese,বয়স,INH,high,Turner CDIAL 11523,vayaḥ/vāyas 'age' > Pk. vayasa; Assamese boyos; v→b and vowel changes are MIA markers
+d07e24adce,Assamese,মৈ,INH,high,Linguistic analysis,Assamese first-person pronoun 'I'; MIA pronoun form; basic grammatical word
+d08469f167,Assamese,সাঁতোৰ,INH,medium,Linguistic analysis,'Swimming'; MIA-derived Assamese compound; nasal vowel ঁ confirms MIA path
+d06e8f129c,Assamese,পত্নী,LRN,high,Linguistic analysis,Sanskrit patnī 'wife'; Sanskrit -tnī cluster preserved; formal/learned kinship term
+d04d1a6d7b,Assamese,কুৰুই,UNK,low,Linguistic analysis,Assamese plant/tree name; no clear Sanskrit or MIA etymology found
+d61340c020,Assamese,স্বৰ,LRN,high,Linguistic analysis,Sanskrit svara 'sound/note'; sv- cluster preserved; musical/phonological tatsama
+d00d81c0d0,Assamese,অযুত,LRN,high,Linguistic analysis,Sanskrit ayuta 'ten thousand'; full Sanskrit numeral form preserved
+d1d0f68f0b,Assamese,পল,UNK,low,Linguistic analysis,Sanskrit pala 'unit of weight/moment'; form identical to Sanskrit—INH/LRN indistinguishable
+d083d408ba,Assamese,আঙুল,INH,high,Turner CDIAL 163,aṅgula 'finger' > Pk. aṃgula; Assamese āṅgul; MIA nasal form attested
+d03de1d961,Assamese,তুমি,INH,high,Linguistic analysis,Assamese second-person pronoun 'you' (familiar); MIA pronoun from Sanskrit tvam through MIA
+db7776f06d,Assamese,মঙলবাৰ,LRN,high,Linguistic analysis,Sanskrit maṅgala+vāra 'Tuesday'; full Sanskrit compound day-name
+d061033910,Assamese,কেঁচে,INH,medium,Linguistic analysis,'In raw/immature state'; MIA-derived Assamese form; nasal vowel ẽ confirms MIA path
+d68fe933a1,Assamese,ৰবিবাৰ,LRN,high,Linguistic analysis,Sanskrit ravi+vāra 'Sunday'; full Sanskrit compound day-name
+d68961f0cf,Assamese,স্বামী,LRN,high,Linguistic analysis,Sanskrit svāmin 'husband/master'; sv- cluster preserved; formal kinship/title term
+d7014bde3e,Assamese,গৌৰৱ,LRN,high,Linguistic analysis,Sanskrit gaurava 'dignity/honor'; Sanskrit diphthong au preserved; no MIA reduction
+d09402a16f,Assamese,সিৰ,INH,high,Linguistic analysis,'Head'; from Sanskrit śiras through MIA sira; śiras→sir is regular MIA
+d59d60805b,Assamese,ৰস,UNK,low,Linguistic analysis,Sanskrit rasa 'juice'; form identical to Sanskrit—INH/LRN indistinguishable for this item
+ddfd8a065c,Assamese,শণ,UNK,low,Linguistic analysis,Sanskrit śaṇa 'hemp'; form close to Sanskrit but no clear MIA diagnostic available
+d910bd9138,Assamese,বল,INH,medium,Turner CDIAL 9185,bala 'strength' > Pk. bala; Assamese bol; very common word with MIA attestation
+d08877675b,Assamese,ক'লা,INH,high,Linguistic analysis,'Black'; Sanskrit kāla → MIA kāla → Assamese kolā; vowel change a→o is MIA feature
+d7341ad332,Assamese,এক,INH,high,Turner CDIAL 2545,eka 'one' > Pk. eka; Assamese ek; most basic numeral with universal MIA attestation
+d05fb2f64d,Assamese,গাভৰু,INH,medium,Linguistic analysis,'Young woman/maiden'; Assamese-specific MIA-derived word; basic native vocabulary

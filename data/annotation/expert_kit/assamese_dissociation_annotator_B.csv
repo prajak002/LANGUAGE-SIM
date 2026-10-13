@@ -1,37 +1,37 @@
 item_id,lang,word,label,confidence,sources_consulted,notes
-d03d891cb6,Assamese,ঘড়ী,,,,
-d08a6089d2,Assamese,পেলা,,,,
-da94be9126,Assamese,সহোদৰ,,,,
-d30d053196,Assamese,স্ৱপ্ন,,,,
-d2229e9552,Assamese,সোমবাৰ,,,,
-d07609f282,Assamese,খেজুৰ,,,,
-d09e2094c3,Assamese,পটি,,,,
-deb4438451,Assamese,পেল,,,,
-d4e7cc95ad,Assamese,উৎসব,,,,
-de08a0d05f,Assamese,বৰ্ণ,,,,
-d0061cad65,Assamese,ধোঁৱা,,,,
-d0f72fffd7,Assamese,ৰথ,,,,
-d00ed0cb9d,Assamese,বাদুলি,,,,
-d05f3aba4e,Assamese,পচলা,,,,
-d6f94e5cdd,Assamese,বয়স,,,,
-d07e24adce,Assamese,মৈ,,,,
-d08469f167,Assamese,সাঁতোৰ,,,,
-d06e8f129c,Assamese,পত্নী,,,,
-d04d1a6d7b,Assamese,কুৰুই,,,,
-d61340c020,Assamese,স্বৰ,,,,
-d00d81c0d0,Assamese,অযুত,,,,
-d1d0f68f0b,Assamese,পল,,,,
-d083d408ba,Assamese,আঙুল,,,,
-d03de1d961,Assamese,তুমি,,,,
-db7776f06d,Assamese,মঙলবাৰ,,,,
-d061033910,Assamese,কেঁচে,,,,
-d68fe933a1,Assamese,ৰবিবাৰ,,,,
-d68961f0cf,Assamese,স্বামী,,,,
-d7014bde3e,Assamese,গৌৰৱ,,,,
-d09402a16f,Assamese,সিৰ,,,,
-d59d60805b,Assamese,ৰস,,,,
-ddfd8a065c,Assamese,শণ,,,,
-d910bd9138,Assamese,বল,,,,
-d08877675b,Assamese,ক‌’লা,,,,
-d7341ad332,Assamese,এক,,,,
-d05fb2f64d,Assamese,গাভৰু,,,,
+d03d891cb6,Assamese,ঘড়ী,INH,medium,Turner CDIAL 4407,ghaṭikā→MIA ghaḍī→As. ghaṛī; retroflex ḍ from ṭ is MIA feature; basic timekeeping word
+d08a6089d2,Assamese,পেলা,INH,medium,,basic Assamese verb 'throw'; MIA-derived everyday vocabulary
+da94be9126,Assamese,সহোদৰ,LRN,high,MW,Sanskrit sahodara; -dara cluster preserved; formal kinship term; tatsama
+d30d053196,Assamese,স্ৱপ্ন,LRN,high,MW,sv-cluster fully preserved in Assamese স্ৱ; tatsama
+d2229e9552,Assamese,সোমবাৰ,LRN,high,MW,Sanskrit soma+vāra; full Sanskrit compound for Monday; tatsama
+d07609f282,Assamese,খেজুৰ,EXT,medium,,date palm; from Arabic kharjūra/Persian khurma via Urdu; not Sanskrit-derived
+d09e2094c3,Assamese,পটি,INH,medium,Turner CDIAL 7760,paṭṭī→Pk. paṭṭī→As. pati/poti; cluster simplification MIA
+deb4438451,Assamese,পেল,INH,medium,Turner CDIAL 8812,past tense; MIA-derived Assamese verbal form; basic everyday word
+d4e7cc95ad,Assamese,উৎসব,LRN,high,MW,উৎ- prefix fully preserved; Sanskrit utsava; tatsama
+de08a0d05f,Assamese,বৰ্ণ,LRN,medium,MW,Sanskrit varṇa; Assamese বৰ্ণ retains Sanskrit ṇ; formal literary/linguistic term; register confirms tatsama
+d0061cad65,Assamese,ধোঁৱা,INH,high,,nasal vowel ঁ is MIA diagnostic; smoke word dhūma→MIA dhuma→dhũā; basic everyday word
+d0f72fffd7,Assamese,ৰথ,LRN,high,MW,Sanskrit ratha; formal literary term; tatsama
+d00ed0cb9d,Assamese,বাদুলি,INH,medium,Turner CDIAL 11249,Sanskrit valgulī→MIA; bat name; v→b is MIA; everyday fauna word
+d05f3aba4e,Assamese,পচলা,INH,medium,,MIA-derived Assamese word; basic everyday vocabulary
+d6f94e5cdd,Assamese,বয়স,INH,high,Turner CDIAL 11384,vayaḥ→Pk. vayasa→As. boyos; v→b is MIA; basic everyday word
+d07e24adce,Assamese,মৈ,INH,high,,Assamese first-person pronoun 'I'; MIA pronoun development; basic grammatical word
+d08469f167,Assamese,সাঁতোৰ,INH,high,,nasal vowel ঁ is MIA feature; 'swimming'; basic everyday activity word
+d06e8f129c,Assamese,পত্নী,LRN,high,MW,Sanskrit patnī; -tnī cluster; tatsama
+d04d1a6d7b,Assamese,কুৰুই,UNK,low,,Assamese plant name; no clear Sanskrit/MIA etymology found
+d61340c020,Assamese,স্বৰ,LRN,high,MW,Sanskrit svara; sv- cluster; tatsama
+d00d81c0d0,Assamese,অযুত,LRN,high,MW,Sanskrit ayuta 'ten thousand'; formal numeral; tatsama
+d1d0f68f0b,Assamese,পল,LRN,medium,MW,Sanskrit pala; technical unit of weight/time; form identical to Sanskrit; register suggests tatsama
+d083d408ba,Assamese,আঙুল,INH,high,Turner CDIAL 2557,aṅgula→Pk. aṃgula→As. āṃgul; basic body-part word; MIA attested
+d03de1d961,Assamese,তুমি,INH,high,,second-person pronoun 'you' (familiar); MIA pronoun; basic grammatical word
+db7776f06d,Assamese,মঙলবাৰ,LRN,high,MW,Sanskrit maṅgala+vāra; Tuesday; tatsama compound
+d061033910,Assamese,কেঁচে,INH,high,,MIA-derived Assamese; nasal vowel is MIA feature; basic vocabulary
+d68fe933a1,Assamese,ৰবিবাৰ,LRN,high,MW,Sanskrit ravi+vāra; Sunday; tatsama compound
+d68961f0cf,Assamese,স্বামী,LRN,high,MW,Sanskrit svāmin; sv- cluster; tatsama
+d7014bde3e,Assamese,গৌৰৱ,LRN,high,MW,Sanskrit gaurava; -av cluster; tatsama
+d09402a16f,Assamese,সিৰ,INH,medium,Turner CDIAL 12476,śiras→MIA sisa→As. sir; cluster simplification; basic body-part word
+d59d60805b,Assamese,ৰস,INH,medium,Turner CDIAL 10626,rasa→Pk. rasa; CDIAL attests MIA; common everyday word for juice/flavor; INH
+ddfd8a065c,Assamese,শণ,UNK,low,,Sanskrit śaṇa 'hemp'; form close to Sanskrit; insufficient MIA evidence
+d910bd9138,Assamese,বল,INH,high,Turner CDIAL 9148,bala→Pk. bala→As. bol; basic everyday word; MIA attested
+d08877675b,Assamese,ক‌’লা,INH,high,,"vowel change (ā→o, elision); 'black' is basic color word; MIA development"
+d7341ad332,Assamese,এক,INH,high,Turner CDIAL 2545,eka→Pk. eka; As. ek; most basic numeral; MIA attested
+d05fb2f64d,Assamese,গাভৰু,INH,medium,,Assamese-specific; basic social vocabulary; MIA-derived

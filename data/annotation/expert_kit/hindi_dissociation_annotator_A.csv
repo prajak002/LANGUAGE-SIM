@@ -1,79 +1,79 @@
 item_id,lang,word,label,confidence,sources_consulted,notes
-dc0dcd04a6,Hindi,अंगसंग,,,,
-d0b97ab431,Hindi,अजमोद,,,,
-d0ceb24a6b,Hindi,देवरानी,,,,
-d0a64fbc96,Hindi,जामाता,,,,
-d0287898ad,Hindi,कुआँ,,,,
-d00db00e0f,Hindi,-आ,,,,
-d084bbe237,Hindi,दंष्ट्र,,,,
-d0c4e6066a,Hindi,अपर,,,,
-d7b7066f21,Hindi,बंध,,,,
-dcf3296494,Hindi,रसिक,,,,
-d0bedd3044,Hindi,लाख,,,,
-d0bedd3044,Hindi,लाख,,,,
-d053ff27d1,Hindi,लसना,,,,
-dcabb4472f,Hindi,क्षुद्र,,,,
-d9031036d9,Hindi,कक्ष,,,,
-da158a46ea,Hindi,परिवर्तन,,,,
-dd49e0b327,Hindi,जल,,,,
-d7b64681f6,Hindi,कंप,,,,
-d5e8cafd53,Hindi,अप्रति,,,,
-d0439d4692,Hindi,आया,,,,
-d0758e9714,Hindi,सताना,,,,
-d607d8f184,Hindi,-अन,,,,
-d991d300f3,Hindi,सक्त,,,,
-dd9e2cac86,Hindi,विष्ठित,,,,
-d04fd16173,Hindi,घोषणा,,,,
-d0620213be,Hindi,अनुक्रम,,,,
-d13fdeaeb4,Hindi,भक्ष,,,,
-deee04c3ba,Hindi,कुक्कुर,,,,
-d2e6e06ad2,Hindi,सु-,,,,
-d01d059706,Hindi,रानी,,,,
-d08490aec9,Hindi,-ए,,,,
-d08490aec9,Hindi,-ए,,,,
-de6d0a368d,Hindi,लोप,,,,
-d078adf899,Hindi,गोसाईं,,,,
-da9ee8f575,Hindi,स्वन,,,,
-d09dbdae60,Hindi,औटना,,,,
-d0bee17d9e,Hindi,अभिनय,,,,
-d00bdc9dd7,Hindi,दहेड़ी,,,,
-d0b94f721e,Hindi,बढ़नी,,,,
-d51a59e20d,Hindi,छंद,,,,
-de6de1081b,Hindi,बहिः,,,,
-d8c342d531,Hindi,हस्तिनी,,,,
-d00099537f,Hindi,खल,,,,
-d6f5203c25,Hindi,चंड,,,,
-d08fe1d734,Hindi,धाय,,,,
-da5d5e6ac1,Hindi,आशय,,,,
-daa1aea851,Hindi,आघूर्ण,,,,
-d33e9c9308,Hindi,वध्रि,,,,
-d09cf8e619,Hindi,परिशुद्ध,,,,
-d8f12cb4c0,Hindi,छर्दि,,,,
-d03cfd1f22,Hindi,सिंहपर्णी,,,,
-d0a508198d,Hindi,सत्वर,,,,
-d6f0663bcc,Hindi,युध,,,,
-d0cf4a8f43,Hindi,रागमाला,,,,
-d028e2d018,Hindi,सहज,,,,
-d033363ad0,Hindi,परिच्छेद,,,,
-d045f36f82,Hindi,प्र-,,,,
-d53189133e,Hindi,क्रीत,,,,
-d0ceb16049,Hindi,उंगली,,,,
-d034ee73fc,Hindi,चिउड़ा,,,,
-d942064fd2,Hindi,तृप्ति,,,,
-d09c55bd8a,Hindi,साधुवाद,,,,
-d72d481b69,Hindi,ढाल,,,,
-dff29836ac,Hindi,वज्रहस्त,,,,
-d0327a06d7,Hindi,उद्धव,,,,
-d019702dc5,Hindi,नाचना,,,,
-d0085b3b5a,Hindi,ऊतर,,,,
-d215ecf771,Hindi,तल,,,,
-d0cc6a3dc2,Hindi,कला,,,,
-d44d8d11c8,Hindi,इंदु,,,,
-d65e75d51f,Hindi,फल,,,,
-d7ba772ff4,Hindi,परे,,,,
-d0864ab622,Hindi,यूप,,,,
-d0168a8615,Hindi,सोनीपत,,,,
-d77d5f2860,Hindi,श्लेष्मा,,,,
-d04bb5294e,Hindi,उद्विग्न,,,,
-db0743ca79,Hindi,न,,,,
-d09438ac21,Hindi,अधर,,,,
+dc0dcd04a6,Hindi,अंगसंग,UNK,low,"Platts (NSF); CDIAL (not tried)","Compound aṅga+saṃga. Neither component listed as unit. Route undecidable from available sources."
+d0b97ab431,Hindi,अजमोद,UNK,low,"Platts (NSF); CDIAL 5 ajamōda (no Hindi reflex listed)","CDIAL lists Skt ajamōda with Gu. and Si. reflexes but no Hindi form. Form identical to Skt. LRN diagnostic but insufficient evidence per protocol."
+d0ceb24a6b,Hindi,देवरानी,INH,medium,"CDIAL 6534 dēvarajāni","Turner lists H. deurānī as reflex of Skt dēvarajaśnī; Pk. dē(v)arāṇī- attested. Phonological reduction of the compound visible. No loanword mark. REG-A (Pk. dē(v)arāṇī-)."
+d0a64fbc96,Hindi,जामाता,LRN,high,"Platts p. 380 jāmātā","Platts marks S (Sanskrit). Skt jāmātṛ 'son-in-law'. No Prakrit form cited. Structural evidence for LRN per protocol."
+d0287898ad,Hindi,कुआँ,INH,high,"CDIAL 3400 kūpa; Platts p. 830 kūp (S, cross-refs kūʼā)","Turner lists H. kūā kū̃ā̃ kũwā under kūpa (CDIAL 3400). Pk. kūva- attested. No loanword mark on Hindi reflex. Note: Platts lists kūp as S (learned), but kūā form shows MIA vowel shift kū→kū̃ā. Contradiction between sources; Turner evidence stronger for kūāṃ form. REG-A (Pk. kūva-)."
+d00db00e0f,Hindi,-आ,UNK,low,"—","Grammatical suffix. Route of transmission does not apply to bound morphemes. Outside scope of this protocol."
+d084bbe237,Hindi,दंष्ट्र,UNK,low,"Platts p. 521 daṃṣṭrā (H) and daṃṣṭrī (S)","Two Platts entries: daṃṣṭrā marked H (no Prk cited) → no route evidence; daṃṣṭrī marked S → LRN. The sheet headword दंष्ट्र matches neither exactly. Unable to assign without identifying which sense/form is intended. Marked UNK."
+d0c4e6066a,Hindi,अपर,LRN,high,"Platts p. 60 apar","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d7b7066f21,Hindi,बंध,LRN,medium,"CDIAL bandha (band-h entries); Platts (NSF for बंध as headword)","Turner lists inherited Hindi reflex as bā̃dh (बाँध, 'dam/dike') showing regular MIA nasalization. Form बंध preserves Sanskrit consonant cluster without MIA change. LRN by structural reasoning: the inherited reflex is bā̃dh not bandh. Medium confidence — Platts entry not found for this headword directly."
+dcf3296494,Hindi,रसिक,LRN,high,"Platts p. 591 rasik","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d0bedd3044,Hindi,लाख,INH,high,"Platts p. 953 lākh (two entries)","Both senses (lac/gum, and hundred-thousand) marked H with Prakrit forms: Pk. lakkhā (gum) and Pk. lakkhaṃ (number). REG-A. High confidence."
+d0bedd3044,Hindi,लाख,INH,high,"Platts p. 953 lākh (two entries)","Duplicate row — same item_id. Same evidence as above. Pk. lakkhaṃ for 'hundred thousand' sense. INH REG-A."
+d053ff27d1,Hindi,लसना,INH,medium,"Platts p. 957 lasnā / lisnā","Platts marks H; Pk. las(i) cited. Structural evidence for INH. However this Platts entry is for the verb 'to shine/stick'. If the sheet item is a different homograph (e.g. dialect word for garlic), that sense is NSF and this label may not apply. Medium confidence due to possible homograph."
+dcabb4472f,Hindi,क्षुद्र,LRN,high,"Platts p. 836 kshudra","Platts marks S (Sanskrit). Sanskrit consonant cluster kṣ- intact. No Prakrit form cited. Structural evidence for LRN."
+d9031036d9,Hindi,कक्ष,LRN,high,"Platts p. 840 kaksh","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+da158a46ea,Hindi,परिवर्तन,LRN,high,"Platts p. 256 pari-vartan","Platts marks S (Sanskrit). Full Sanskrit compound intact. No Prakrit form cited. Structural evidence for LRN."
+dd49e0b327,Hindi,जल,LRN,high,"Platts p. 380 jala","Platts marks S (Sanskrit). No Prakrit form cited. Form identical to Skt jala. Structural evidence for LRN. Note: Pali also has jala-; form-based argument inconclusive, but Platts classification stands as structural evidence."
+d7b64681f6,Hindi,कंप,LRN,medium,"CDIAL 2765 kampa; Platts (NSF for kaṃp as headword)","Turner CDIAL 2765: inherited Hindi reflex listed as H. kā̃p (showing MIA nasalization of vowel, cf. Pk. kaṃpa-). Form कंप preserves Sanskrit nasal cluster without MIA vowel change. LRN by structural reasoning: expected inherited form is kāṃp not kaṃp. Medium confidence."
+d5e8cafd53,Hindi,अप्रति,LRN,medium,"Platts (compounds of aprati- all S)","No direct entry for अप्रति found. All five attested compounds of aprati- are marked S in Platts. Probable LRN by analogy with compounds, but direct evidence absent. Medium confidence."
+d0439d4692,Hindi,आया,EXT,high,"Platts p. 111 āyā","Platts marks H but explicitly states 'from the Portuguese'. Portuguese aia 'nursemaid'. EXT (non-Indo-Aryan donor)."
+d0758e9714,Hindi,सताना,INH,high,"Platts p. 637 satānā","Platts marks H; Pk. saṃtāv(i) cited; Skt santāpayati root identified. Structural evidence for INH. REG-A (Pk. saṃtāv-)."
+d607d8f184,Hindi,-अन,UNK,low,"—","Grammatical suffix. Route of transmission does not apply to bound morphemes. Outside scope of this protocol."
+d991d300f3,Hindi,सक्त,UNK,low,"Platts p. 663 sakt (H, cross-ref); CDIAL (śakta only, different word)","Platts marks H for सक्त but cross-refers to śakt (S). CDIAL returns only śakta (from √śak), a different word. Without clear Prakrit evidence for sañj-derived sakta, route is undecidable. UNK."
+dd9e2cac86,Hindi,विष्ठित,UNK,low,"Platts (NSF); CDIAL (not tried)","Rare word not found in Platts. Sanskrit viṣṭhita (pp. of vi+sthā). Likely tatsama by diagnostic (Sanskrit prefix vi- + cluster preserved) but diagnostics alone insufficient per protocol."
+d04fd16173,Hindi,घोषणा,LRN,high,"Platts p. 939 ghoshaṇā","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d0620213be,Hindi,अनुक्रम,LRN,high,"Platts p. 94 anu-kram","Platts marks S (Sanskrit). Full Sanskrit compound intact. No Prakrit form cited. Structural evidence for LRN."
+d13fdeaeb4,Hindi,भक्ष,LRN,high,"Platts p. 189 bhaksh","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+deee04c3ba,Hindi,कुक्कुर,LRN,high,"Platts p. 839 kukkur","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN. Note: reduplicated Sanskrit form preserved intact."
+d2e6e06ad2,Hindi,सु-,UNK,low,"—","Grammatical prefix. Route of transmission does not apply to bound morphemes. Outside scope of this protocol."
+d01d059706,Hindi,रानी,INH,high,"CDIAL 10692 rājñī","Turner lists H. rānī as reflex of Skt rājñī. Pali raññī-, Pk. raṇṇī- attested. Regular MIA development (rājñī → raṇṇī → rānī). No loanword mark. REG-A."
+d08490aec9,Hindi,-ए,UNK,low,"—","Grammatical suffix. Route of transmission does not apply to bound morphemes. Outside scope of this protocol."
+d08490aec9,Hindi,-ए,UNK,low,"—","Duplicate row — same item_id. Same assessment as above."
+de6d0a368d,Hindi,लोप,LRN,high,"Platts p. 967 lopa","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d078adf899,Hindi,गोसाईं,INH,medium,"CDIAL 4342 gōsvāmin; Platts p. 925 gosāʼīṃ (H)","Turner CDIAL 4342: H. gosāī˜ listed as reflex of Skt gōsvāmin. Pk. gōsāviā- attested (though feminine 'courtesan', meaning differs). Platts marks H. Phonological reduction gsv → s visible. INH with some uncertainty due to semantic gap between Pk. and Hindi forms. REG-A (Pk. gōsāviā-)."
+da9ee8f575,Hindi,स्वन,LRN,medium,"CDIAL 13901 svaná; Platts (NSF for svana)","Turner CDIAL 13901: inherited Hindi reflex listed as H. san (सन, 'whizz') showing regular MIA sibilant simplification (sv→s). Form स्वन preserves Sanskrit sv- cluster unchanged. LRN by structural reasoning: expected inherited reflex is san not svana. Medium confidence."
+d09dbdae60,Hindi,औटना,INH,high,"Platts p. 103 auṭnā","Platts marks entry with Pk. oauṭṭ(i) and Skt avakuṭya. Prakrit form cited. Structural evidence for INH. REG-A (Pk. oauṭṭ-)."
+d0bee17d9e,Hindi,अभिनय,UNK,low,"Platts (NSF); CDIAL (NSF for abhinaya)","Not found in either source. Sanskrit compound abhi+naya. Likely tatsama by diagnostic but diagnostics insufficient per protocol. UNK."
+d00bdc9dd7,Hindi,दहेड़ी,UNK,low,"Platts (NSF for daheṛī and dahāṛī)","Not found in Platts. Etymology unclear; may be from Skt dehaḷī (threshold) via MIA, but no source evidence found. UNK."
+d0b94f721e,Hindi,बढ़नी,INH,high,"CDIAL 11378 várdhana","Turner CDIAL 11378: H. baṛhnī listed under vardhana ('broom' sense). Pa. vaḍḍhaṇī-, Pk. vaḍḍhaṇī- attested. No loanword mark. REG-A (Pk. vaḍḍhaṇī-)."
+d51a59e20d,Hindi,छंद,UNK,low,"CDIAL 4988 chándas; Platts (NSF for metre sense)","Turner CDIAL 4988: no Hindi reflex for metre sense (only B. chā̃d, Or. chānda listed). Platts entry found only for छंदना (H, 'to bind') — different word. The metre term may be a learned borrowing but insufficient source evidence. UNK."
+de6de1081b,Hindi,बहिः,LRN,medium,"CDIAL 9186 bahís; Platts (NSF)","Turner CDIAL 9186: Pali bahi, bahiṃ; Pk. bahi, bahiṃ listed. No Hindi reflex listed. The form बहिः preserves Sanskrit visarga — visarga retention is a strong diagnostic of tatsama (learned) borrowing. LRN by structural reasoning. Medium confidence (visarga diagnostic, no Platts marker)."
+d8c342d531,Hindi,हस्तिनी,LRN,high,"Platts p. 1229 hastinī","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d00099537f,Hindi,खल,LRN,high,"Platts p. 877 khal","Platts marks S (Sanskrit) for the 'wicked person' sense. No Prakrit form cited. Structural evidence for LRN."
+d6f5203c25,Hindi,चंड,UNK,low,"Platts (NSF for caṇḍa); CDIAL (not tried)","Not found as standalone headword in Platts. Related compound forms (caṇḍūl etc.) are H but from Sanskrit. Without direct evidence for caṇḍa route, UNK."
+d08fe1d734,Hindi,धाय,UNK,low,"Platts p. 540 dhāʼe (H, 'sound/noise')","Platts finds dhāy only as 'sound, noise' (H, no Prk cited). If the sheet item is धाय 'wet-nurse' (from Skt dhātrī), that sense is NSF. Route undecidable. UNK."
+da5d5e6ac1,Hindi,आशय,LRN,high,"Platts p. 58 āśay","Platts marks S (Sanskrit), cross-refs āsay. Structural evidence for LRN."
+daa1aea851,Hindi,आघूर्ण,UNK,low,"Platts (NSF); CDIAL (not tried)","Rare Sanskrit technical term (āghūrṇa 'whirling'). Not in Platts. Likely LRN by diagnostic but insufficient evidence. UNK."
+d33e9c9308,Hindi,वध्रि,UNK,low,"Platts (NSF); CDIAL (NSF for vadhra/vadhri)","Not found in either source. Very rare Sanskrit word. UNK."
+d09cf8e619,Hindi,परिशुद्ध,LRN,high,"Platts p. 249 pari-śuddha","Platts marks S (Sanskrit). No Prakrit form cited. Full Sanskrit compound intact. Structural evidence for LRN."
+d8f12cb4c0,Hindi,छर्दि,LRN,high,"Platts p. 461 ćhardi","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d03cfd1f22,Hindi,सिंहपर्णी,UNK,low,"Platts (NSF); CDIAL (not tried)","Compound siṃha+parṇī. Not found in Platts. Likely LRN (full Sanskrit compound) but diagnostics insufficient per protocol. UNK."
+d0a508198d,Hindi,सत्वर,LRN,high,"Platts p. 637 satvar","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d6f0663bcc,Hindi,युध,LRN,high,"Platts p. 1250 yudh","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d0cf4a8f43,Hindi,रागमाला,UNK,low,"Platts (NSF); CDIAL (not tried)","Compound rāga+mālā ('garland of rāgas'). Not found in Platts as unit. Likely LRN (both components from Sanskrit) but diagnostics insufficient per protocol. UNK."
+d028e2d018,Hindi,सहज,DIS,medium,"Platts p. 706 sahaj (two entries)","Platts lists TWO entries: (1) S — 'born together, congenital, innate'; (2) H — 'easy, simple' from Skt sahyaṃ. Sources assign different routes to this headword. DIS between Platts S and Platts H entries."
+d033363ad0,Hindi,परिच्छेद,LRN,high,"Platts p. 246 pari-ććhed","Platts marks S (Sanskrit). Full Sanskrit compound intact. No Prakrit form cited. Structural evidence for LRN."
+d045f36f82,Hindi,प्र-,UNK,low,"—","Grammatical prefix. Route of transmission does not apply to bound morphemes. Outside scope of this protocol."
+d53189133e,Hindi,क्रीत,LRN,high,"Platts p. 830 krīta","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d0ceb16049,Hindi,उंगली,INH,high,"CDIAL 135 aṅguli","Turner CDIAL 135: H. aṅgulī, uṅglī listed as reflex of Skt aṅguli. Pa. aṅgulī-, Pk. aṃgulī- attested. No loanword mark. REG-A (Pa. aṅgulī-, Pk. aṃgulī-)."
+d034ee73fc,Hindi,चिउड़ा,INH,high,"CDIAL 4818 cipiṭa","Turner CDIAL 4818: H. cyūṛā / cūṛā listed under cipiṭa. Pa. cipiṭa-, Pk. civiḍha- attested. Nepali ciurā also listed. No loanword mark. REG-A (Pa. cipiṭa-, Pk. civiḍha-)."
+d942064fd2,Hindi,तृप्ति,LRN,high,"Platts p. 316 tr̤ipti","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d09c55bd8a,Hindi,साधुवाद,UNK,low,"Platts (NSF); CDIAL (not tried)","Compound sādhu+vāda. Not found in Platts. Likely LRN (both components are Sanskrit-origin) but diagnostics insufficient per protocol. UNK."
+d72d481b69,Hindi,ढाल,LRN,medium,"Platts p. 572 ḍhāl","Platts marks S (Sanskrit), but adds note 'prob. a Prk. form'. Contradictory: if it is a Prakrit form, it should be H+Pk→INH, but Platts still assigns S. Following the S marker as per protocol: structural evidence for LRN. Medium confidence due to Platts' own expressed uncertainty."
+dff29836ac,Hindi,वज्रहस्त,UNK,low,"Platts (NSF); CDIAL (not tried)","Compound vajra+hasta. Not found in Platts. Likely LRN (Sanskrit compound) but diagnostics insufficient per protocol. UNK."
+d0327a06d7,Hindi,उद्धव,UNK,low,"Platts (NSF); CDIAL (NSF)","Not found in either source. Primarily a proper name (Uddhava, companion of Krishna). Proper names outside scope. UNK."
+d019702dc5,Hindi,नाचना,INH,high,"Platts p. 1112 nāćnā","Platts marks H; Pk. nac(i) cited; Skt nṛtyati root. Structural evidence for INH. REG-A (Pk. nac-)."
+d0085b3b5a,Hindi,ऊतर,UNK,low,"Platts p. 102 ūtar-pātar (H, uncertain etymology)","Only compound ūtarātar found in Platts, marked H with uncertain etymology (ut-tara+patra?). Standalone ऊतर NSF. Route undecidable. UNK."
+d215ecf771,Hindi,तल,LRN,medium,"Platts p. 325 tala (S); also talā (H, Pk. talaō)","Platts marks headword तल as S (LRN). However related form तला is H with Pk. talaō (INH). If the sheet item is the standalone stem तल, S marker applies → LRN. Medium confidence due to ambiguity between तल and तला."
+d0cc6a3dc2,Hindi,कला,LRN,high,"Platts p. 848 kalā","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d44d8d11c8,Hindi,इंदु,UNK,low,"CDIAL 1570 indu; Platts (NSF)","Turner CDIAL 1570: no Hindi reflex listed for indu. Only Pali indu- and Sinhala iňdu (borrowed from Pali) attested. The absence of a Hindi NIA reflex suggests the word may not have been continuously transmitted. Likely LRN (direct Sanskrit borrowing) but insufficient direct evidence. UNK."
+d65e75d51f,Hindi,फल,LRN,high,"Platts p. 288 phal","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d7ba772ff4,Hindi,परे,LRN,high,"Platts p. 245 pare","Platts marks S (Sanskrit), as locative of para. No Prakrit form cited. Structural evidence for LRN."
+d0864ab622,Hindi,यूप,LRN,high,"Platts p. 1253 yūp","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+d0168a8615,Hindi,सोनीपत,UNK,low,"Platts (NSF); CDIAL (not tried)","Toponym (city in Haryana). Place names are outside scope of this protocol. UNK."
+d77d5f2860,Hindi,श्लेष्मा,LRN,high,"Platts p. 733 śleshmā","Platts marks S (Sanskrit). Sanskrit consonant cluster śl- intact. No Prakrit form cited. Structural evidence for LRN."
+d04bb5294e,Hindi,उद्विग्न,LRN,high,"Platts p. 33 udvigna","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
+db0743ca79,Hindi,न,UNK,low,"Platts p. 1109 na (H)","Platts marks H but gives no Prakrit form. Protocol: H with no Prk form = no route evidence. Grammatical particle; route concept may not apply. UNK."
+d09438ac21,Hindi,अधर,LRN,high,"Platts p. 34 adhar","Platts marks S (Sanskrit). No Prakrit form cited. Structural evidence for LRN."
