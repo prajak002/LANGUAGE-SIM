@@ -130,7 +130,7 @@ for r in csv.DictReader(gzip.open(B / "items.csv.gz", "rt", encoding="utf-8")):
     m = min(sorted(forms), key=lambda f: ned(w, f))
     R.append({**r, "subset": subset_of(r), "link": m, "dwm": ned(w, m), "dam": ned(a, m),
               "fw": "".join(fine(tw)), "fa": "".join(fine(ta)), "fm": "".join(fine(forms[m]))})
-assert len(R) == 3276, len(R)
+assert len(R) == 3289, len(R)
 print("linked items:", len(R), "| device:", DEV, flush=True)
 y = np.array([r["wiktionary_route"] == "LRN" for r in R])
 strata = [f'{r["lang"]}|{r["wiktionary_route"]}' for r in R]

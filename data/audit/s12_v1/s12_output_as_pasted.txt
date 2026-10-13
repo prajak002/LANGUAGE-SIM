@@ -1,0 +1,49 @@
+# S12 full run, Kaggle, Tesla T4, 2026-10-13. Lines below are the script's printed summary as the project lead
+# pasted it into the session; the result files (s12_results.zip, s12_run.log) were still on Kaggle when this was written.
+linked items: 3289 | device: cuda
+F1 ALL A0 3289 2000 1289 0.7873 0.8499 0.7247
+F1 ALL A1 3289 2000 1289 0.9007 0.9218 0.8795
+F1 ALL A2 3289 2000 1289 0.9019 0.9228 0.8811
+F1 ALL C0 3289 2000 1289 0.76 0.8229 0.6972 0.7437 0.75
+F1 ALL C1 3289 2000 1289 0.8449 0.8758 0.814 0.8226 0.8377
+F1 ALL C2 3289 2000 1289 0.8461 0.8804 0.8117 0.8262 0.8425
+congruent   both A0 2095/2488 = 84.2% (0.8272, 0.8558)
+congruent   both A1 2487/2488 = 100.0% (0.9977, 0.9999)
+congruent   both A2 2485/2488 = 99.9% (0.9965, 0.9996)
+congruent   both C0 2017/2488 = 81.1% (0.7948, 0.8256)
+congruent   both C1 2252/2488 = 90.5% (0.893, 0.916)
+congruent   both C2 2269/2488 = 91.2% (0.9002, 0.9225)
+middle      both A0 440/607 = 72.5% (0.688, 0.7589)
+middle      both A1 481/607 = 79.2% (0.7584, 0.8228)
+middle      both A2 487/607 = 80.2% (0.7688, 0.832)
+middle      both C0 422/607 = 69.5% (0.6575, 0.7305)
+middle      both C1 438/607 = 72.2% (0.6846, 0.7558)
+middle      both C2 441/607 = 72.7% (0.6897, 0.7605)
+dissociated both A0 115/194 = 59.3% (0.5225, 0.6595)
+dissociated both A1 9/194 = 4.6% (0.0246, 0.0858)
+dissociated both A2 9/194 = 4.6% (0.0246, 0.0858)
+dissociated both C0 115/194 = 59.3% (0.5225, 0.6595)
+dissociated both C1 109/194 = 56.2% (0.4915, 0.6298)
+dissociated both C2 98/194 = 50.5% (0.4354, 0.5747)
+dissociated INH  A0 72/110 = 65.5% (0.5618, 0.7368)
+dissociated INH  A1 1/110 = 0.9% (0.0016, 0.0497)
+dissociated INH  A2 2/110 = 1.8% (0.005, 0.0639)
+dissociated INH  C0 66/110 = 60.0% (0.5066, 0.6867)
+dissociated INH  C1 48/110 = 43.6% (0.3474, 0.5296)
+dissociated INH  C2 44/110 = 40.0% (0.3133, 0.4934)
+dissociated LRN  A0 43/84 = 51.2% (0.4069, 0.6159)
+dissociated LRN  A1 8/84 = 9.5% (0.0491, 0.1768)
+dissociated LRN  A2 7/84 = 8.3% (0.041, 0.1622)
+dissociated LRN  C0 49/84 = 58.3% (0.4765, 0.6829)
+dissociated LRN  C1 61/84 = 72.6% (0.6225, 0.8101)
+dissociated LRN  C2 54/84 = 64.3% (0.5362, 0.737)
+abstain C1 1.0 3289 0.851 194 194 109
+abstain C1 0.9 2960 0.8811 194 163 91
+abstain C1 0.8 2631 0.908 194 135 80
+abstain C1 0.7 2302 0.9257 194 96 50
+abstain C1 0.5 1644 0.9507 194 48 30
+abstain C2 1.0 3289 0.8538 194 194 98
+abstain C2 0.9 2960 0.8868 194 164 82
+abstain C2 0.8 2631 0.9088 194 127 61
+abstain C2 0.7 2302 0.9275 194 92 44
+abstain C2 0.5 1644 0.9538 194 36 20
