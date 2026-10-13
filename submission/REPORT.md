@@ -53,7 +53,7 @@ Prepared 2026-10-13. Everything below was checked by running it, not estimated.
 
 ## What was not done
 
-- **Semicolons** were not removed throughout. The abstract has none.
+- (Done in a later pass: semicolons are removed from all prose, long sentences are split, and ranges are written "N to M" in the text.)
 - **A methodology/experimental-setup/results split** was not imposed. The paper keeps its own structure (audit, baseline, hard items, dictionary study), which follows the argument.
 - **The disclosure that a language model made the dictionary lookups of the 48-lemma study was kept.** That is not disputed, it is in the project's records, and reporting those counts without it would mislead.
 - **Three cited papers** (Gururangan et al. 2018, McCoy et al. 2019, Poliak et al. 2018) were read as abstracts only.
