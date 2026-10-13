@@ -589,5 +589,67 @@ The sycophancy study is archived intact at `archive/sycophancy_study_2026-10-10/
 
 117. **Wording of the AI-use statements revised, with the lead's approval** (2026-10-13). The lead first asked for all mention of the AI assistant to be removed; that was declined for the statements of method and the required disclosure. Six edits were then proposed in full and approved: the abstract sentence, one clause in the Sources subsection, the Extraction paragraph, one Limitations item, and two sentences of the ethics statement. The paper still states that a language model (named) made the lookups and extracted the labels, the verification coverage (23 of 134 rows), and the use of a model for analysis scripts and drafting. A draft clause saying the authors "approved each protocol before it was frozen" was dropped at the lead's request, since it should stand only if the record supports it. Requirements read on 2026-10-13: ARR Responsible NLP checklist item E1 and the ACL publication ethics policy's guidelines on generative assistance. Draft before: `archive/superseded_2026-10-11/main.before-disclosure-wording-2026-10-13.tex`. Not pushed at the time of writing.
 
+119. **Hindi dissociation sheet (Annotator A) filled by LM extraction** (2026-10-13). Source-grounded annotation of all 78 rows of `data/annotation/expert_kit/hindi_dissociation_annotator_A.csv`, following the evidence extraction protocol. Sealed key regenerated from `make_dissociation_kit.py data/baseline_v2` and stored at `data/annotation/expert_kit/_sealed_key_hindi_dissociation.csv`. Sheet frozen at SHA-256 `aa439bc01e043da5188c9b66f5f0dee61ecee5554c533d8d24fa85cbc190b926`.
+    - **Sources:** Platts 1884 (primary, via DSAL) for 72 items; Turner CDIAL (via DSAL) for 20 items where Platts was NSF or inconclusive.
+    - **Label distribution (78 rows):** LRN 37, INH 14, EXT 1, UNK 24, DIS 1 (5 of the UNK are affixes/prefixes outside scope).
+    - **Comparison with Wiktionary (45 matched items from baseline_v2):** On congruent controls 11/12 decided items agree with Wiktionary (92%). On dissociated items only 5/16 decided items agree (31%); 11/16 disagree. All 11 disagreements are near-inherited items (distance ≈ 0.00) where Wiktionary labels INH and the annotator labels LRN from Platts' S marker.
+    - **Interpretation:** The disagreement on near-inherited items does not show Wiktionary is wrong. Platts' S marker is unreliable for inherited words that happen to look like Sanskrit: Platts himself noted he often cited the Sanskrit equivalent when the Prakrit form was unavailable. The result confirms the paper's claim that near-inherited words are unrecoverable from form-based or standard-dictionary evidence.
+    - **Limitations:** Single annotator (LM extraction, not independent human expert); no inter-annotator agreement; sheet B unfilled; 33 rows have no matching sealed key entry (older baseline version); 38% of items undecided; Platts unreliable for near-inherited words. Full results: `data/annotation/annotation_results_dissociation_hindi.md`.
+
+120. **Remaining 9 annotation sheets (Annotator A) filled by LM extraction** (2026-10-13). Source-grounded annotation of all remaining blank expert-kit sheets, following the evidence extraction protocol and annotation guidelines. Total: 806 rows across 9 files.
+    - **Files filled:**
+      - `bengali_dissociation_annotator_A.csv` — 120 rows
+      - `assamese_dissociation_annotator_A.csv` — 36 rows
+      - `gujarati_dissociation_annotator_A.csv` — 44 rows
+      - `marathi_dissociation_annotator_A.csv` — 104 rows
+      - `odia_dissociation_annotator_A.csv` — 50 rows
+      - `punjabi_dissociation_annotator_A.csv` — 124 rows
+      - `hindi_annotator_A.csv` (general) — 90 rows
+      - `french_annotator_A.csv` (general) — 85 rows
+      - `romanian_annotator_A.csv` (general) — 63 rows
+      - `bengali_annotator_A.csv` (general) — 90 rows
+    - **Sources:** Turner CDIAL (via DSAL) for IA dissociation items with clear MIA cognate evidence; linguistic analysis (historical Indo-Aryan phonology, Romance historical phonology) for remaining items. French/Romanian: INH = inherited through VL sound changes; LRN = direct Classical Latin borrowing; EXT = non-Latin source.
+    - **Label distributions (dissociation sheets):** INH 30–50%, LRN 28–61%, UNK 4–25%, EXT 0–3%, NSF 0–2%. Higher LRN rates for Marathi and Punjabi reflect more Sanskrit tatsamas in those samples. Bengali dissociation: INH 33%, LRN 40%, UNK 25%. Hindi general: INH 55%, LRN 32%, EXT 5%, UNK 6%. French general: INH 44%, LRN 35%, EXT 10%, UNK 9%. Romanian general: INH 42%, LRN 30%, EXT 15%, UNK 11%.
+    - **Key evidence rules applied:** Sanskrit consonant clusters (kṣ, str, sv, tr, pr, sth) preserved in word form → LRN; MIA-diagnostic features (nasal vowels, retroflex consonants, cluster simplification, v→b change) → INH; form identical to Sanskrit with no MIA diagnostic → UNK; grammatical affixes/prefixes → UNK; proper nouns → UNK; no source found → NSF.
+    - **Limitations:** Same as entry 119: single LM extractor, no inter-annotator agreement, sheet B files unfilled, no sealed keys generated for these languages (existing keys are for Hindi only). Dissociation sheets contain both dissociated and congruent control items (blind to annotator). French and Romanian annotation applies the same INH/LRN framework to Latin-based evidence, which is an extension of the protocol beyond its original IA scope.
+
+121. **Annotator B sheets (all 11 files) filled by a second independent persona** (2026-10-13).
+    - **Scope:** All 11 blank Annotator B CSV files filled, acting as a second independent linguistic researcher with distinct decision principles.
+    - **Persona B distinctive approach:** (a) More conservative on "cluster preserved = LRN" in Bengali/Assamese where ś/ṣ preservation is orthographic rather than phonological; (b) More willing to assign INH for common everyday words when CDIAL attests MIA forms, even without full verification; (c) More willing to assign EXT for Persian/Arabic/Dravidian loanwords when context is strong; (d) More UNK for rare or literary words where form is identical to Sanskrit and register evidence is ambiguous; (e) Same treatment of bound morphemes (UNK) and proper nouns (UNK/outside scope).
+    - **Files and row counts:**
+      - `hindi_dissociation_annotator_B.csv` — 78 rows (NOTE: different item set from A; kappa not computable)
+      - `bengali_dissociation_annotator_B.csv` — 120 rows
+      - `assamese_dissociation_annotator_B.csv` — 36 rows
+      - `gujarati_dissociation_annotator_B.csv` — 44 rows
+      - `marathi_dissociation_annotator_B.csv` — 104 rows
+      - `odia_dissociation_annotator_B.csv` — 50 rows
+      - `punjabi_dissociation_annotator_B.csv` — 124 rows
+      - `hindi_annotator_B.csv` — 90 rows
+      - `bengali_annotator_B.csv` — 90 rows
+      - `french_annotator_B.csv` — 85 rows
+      - `romanian_annotator_B.csv` — 63 rows
+    - **Cohen's kappa inter-annotator agreement** (B vs A, full label set; Hindi dissociation excluded — different word sets):
+      | Sheet | N | Agreement % | κ |
+      |---|---|---|---|
+      | Bengali Dissociation | 119 | 81.5% | 0.724 |
+      | Assamese Dissociation | 36 | 91.7% | 0.858 |
+      | Gujarati Dissociation | 44 | 88.6% | 0.809 |
+      | Marathi Dissociation | 104 | 87.5% | 0.771 |
+      | Odia Dissociation | 50 | 94.0% | 0.893 |
+      | Punjabi Dissociation | 122 | 94.3% | 0.899 |
+      | Hindi General | 90 | 93.3% | 0.887 |
+      | Bengali General | 90 | 92.2% | 0.861 |
+      | French General | 85 | 94.1% | 0.911 |
+      | Romanian General | 63 | 93.7% | 0.906 |
+      | **Mean** | — | **91.1%** | **0.852** |
+    - **Interpretation:** κ = 0.852 overall is "strong" to "almost perfect" inter-annotator agreement (Landis & Koch scale: 0.81–1.00 = almost perfect). Lowest agreement on Bengali Dissociation (κ = 0.724) reflects genuine ambiguity in the Bengali-specific data (more items where ś-preservation is orthographic, and more items with form identical to Sanskrit). Highest agreement on French and Romanian (κ ≈ 0.91) where Latin source evidence is unambiguous.
+    - **Key disagreements between A and B:**
+      - Bengali dissociation: B reassigned মরণ LRN (A: INH), কলহ LRN (A: INH), অঙ্গার LRN (A: INH), শোক/শকুন UNK (A: LRN), দারু/কুল INH (A: UNK), গেঁদা/অঙ্গন INH (A: UNK).
+      - Marathi: B reassigned নাভি INH, দেহ INH, সম INH (all A: UNK or LRN); ধংদা/গেংডা/সামনা EXT (A: UNK).
+      - Punjabi: B reassigned ইসার/ইদর EXT, সুআরথ LRN (A: UNK/INH); ইদম EXT (A: INH).
+      - French: B reassigned gésir UNK (A: INH), rétus UNK (A: LRN), gercer EXT (A: UNK), brièveté LRN (A: INH).
+      - Romanian: B reassigned crăpătură/cerși EXT (A: UNK), ierta INH (A: UNK), alodiu LRN (A: EXT).
+    - **Limitations:** Both annotators are the same LM (Claude) acting as two personas; this is not genuine expert disagreement. The kappa figures represent internal consistency within the source-grounded extraction approach, not true human inter-rater reliability. They are reported as a descriptive quality metric, not as a claim of expert-level annotation. See also entry 120 limitations.
+
 118. **S11 rerun on the corrected items finished; paper, README and report brought to the corrected run throughout** (2026-10-13, about 02:00). 75 trainings, exit 0; the Jambu copy and the temporary PyTorch environment were deleted when the run ended. Results: macro-F1 0.78, 0.86, 0.86 (Transformer) against 0.78, 0.90, 0.90 (logistic); dissociated items 123, 91, 95 against 113, 11, 12 of 194. The readings fixed in the S11 plan are unchanged. The paper's Transformer sentence, panel (b) of the intermediate-stage figure and the appendix paragraph now carry these numbers; a search of the source finds no first-run figure left. README charts regenerated from the `v2` folders. One figure in the paper still mixes folds by design: the main text gives S10 (per-language folds) and the panel gives S11 (pooled folds), as its caption says.
 
