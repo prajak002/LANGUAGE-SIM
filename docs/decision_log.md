@@ -703,3 +703,8 @@ The sycophancy study is archived intact at `archive/sycophancy_study_2026-10-10/
     - Ranges in running text are written "N to M" throughout; en-dash ranges remain only inside tables and the bibliography.
     - Checked: no double space, no space before punctuation, no trailing space.
     - 15 pages; the Conclusion ends on page 8 and Limitations begins page 9. `submission/paper.pdf` and `paper_source.zip` rebuilt; the zip compiled from a clean unzip. Draft before: `archive/superseded_2026-10-11/main.before-plain-2026-10-13.tex`.
+
+139. **README brought up to date and made more explanatory** (2026-10-13), at the lead's instruction. Previous version: `archive/superseded_2026-10-11/README.before-explainer-2026-10-13.md`.
+    - **Corrected, because stale:** the paper's page count; the status line (the pretrained model has been run); the statement that nobody looked at who made the label edits; "chance" as the yardstick on the hard items (now the majority rate); the word "shortcut", which the paper withdrew.
+    - **Added:** why resemblance is the textbook test and where its blind spot is; why the study matters outside etymology; the three-model table with balanced accuracy; the table of what helps and how far; four questions a reader usually asks, with answers; the bot finding; reproduce commands and source rows for S12 to S15; the `submission/` folder; three glossary terms.
+    - Every figure in it is one already in the paper or the result files.
