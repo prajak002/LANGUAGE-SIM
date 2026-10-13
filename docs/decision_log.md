@@ -697,3 +697,9 @@ The sycophancy study is archived intact at `archive/sycophancy_study_2026-10-10/
     - **Limitations:** the lead asked for the section to be removed. It was not, because ARR desk-rejects a paper without it. It was rewritten from fifteen list items into four short paragraphs. Every limitation is still stated. The details of the two late defects (21 items with a misread ancestor form; subset joined by spelling; 14% in the first run against 10%; the small-model check not redone) moved to the appendix paragraph on corrections.
     - **Cut to stay within 8 pages:** the category counts for Bengali in the introduction (they are in Table 3), two sentences of "Reading these results", and wording in section 6, the Discussion and the Conclusion.
     - **State:** 15 pages; the main text ends on the last line of page 8 and Limitations begins page 9 (checked on the rendered pages; no slack). `submission/paper.pdf` and `paper_source.zip` rebuilt, the zip compiled from a clean unzip. Draft before: `archive/superseded_2026-10-11/main.before-broader-2026-10-13.tex`.
+
+138. **Paper: sentence and punctuation pass** (2026-10-13, about 16:00), at the lead's instruction. No number and no claim changed.
+    - Every semicolon in the prose was removed: 38 in the main text by hand (53 edits that also split eleven sentences of more than 45 words), 33 from the Limitations onward by rule (a semicolon inside brackets became a comma, one between clauses became a full stop).
+    - Ranges in running text are written "N to M" throughout; en-dash ranges remain only inside tables and the bibliography.
+    - Checked: no double space, no space before punctuation, no trailing space.
+    - 15 pages; the Conclusion ends on page 8 and Limitations begins page 9. `submission/paper.pdf` and `paper_source.zip` rebuilt; the zip compiled from a clean unzip. Draft before: `archive/superseded_2026-10-11/main.before-plain-2026-10-13.tex`.
